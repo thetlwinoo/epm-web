@@ -1,0 +1,143 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="invoices">
+            <h2><span jhiTranslate="epmwebApp.invoices.detail.title">Invoices</span> {{invoices.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="epmwebApp.invoices.invoiceDate">Invoice Date</span></dt>
+                <dd>
+                    <span>{{invoices.invoiceDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.invoices.customerPurchaseOrderNumber">Customer Purchase Order Number</span></dt>
+                <dd>
+                    <span>{{invoices.customerPurchaseOrderNumber}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.invoices.isCreditNote">Is Credit Note</span></dt>
+                <dd>
+                    <span>{{invoices.isCreditNote}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.invoices.creditNoteReason">Credit Note Reason</span></dt>
+                <dd>
+                    <span>{{invoices.creditNoteReason}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.invoices.comments">Comments</span></dt>
+                <dd>
+                    <span>{{invoices.comments}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.invoices.deliveryInstructions">Delivery Instructions</span></dt>
+                <dd>
+                    <span>{{invoices.deliveryInstructions}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.invoices.internalComments">Internal Comments</span></dt>
+                <dd>
+                    <span>{{invoices.internalComments}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.invoices.totalDryItems">Total Dry Items</span></dt>
+                <dd>
+                    <span>{{invoices.totalDryItems}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.invoices.totalChillerItems">Total Chiller Items</span></dt>
+                <dd>
+                    <span>{{invoices.totalChillerItems}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.invoices.deliveryRun">Delivery Run</span></dt>
+                <dd>
+                    <span>{{invoices.deliveryRun}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.invoices.runPosition">Run Position</span></dt>
+                <dd>
+                    <span>{{invoices.runPosition}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.invoices.returnedDeliveryData">Returned Delivery Data</span></dt>
+                <dd>
+                    <span>{{invoices.returnedDeliveryData}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.invoices.confirmedDeliveryTime">Confirmed Delivery Time</span></dt>
+                <dd>
+                    <span>{{invoices.confirmedDeliveryTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.invoices.confirmedReceivedBy">Confirmed Received By</span></dt>
+                <dd>
+                    <span>{{invoices.confirmedReceivedBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.invoices.paymentMethod">Payment Method</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'epmwebApp.PaymentMethod.' + invoices.paymentMethod}}">{{invoices.paymentMethod}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.invoices.status">Status</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'epmwebApp.InvoiceStatus.' + invoices.status}}">{{invoices.status}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.invoices.lastEditedBy">Last Edited By</span></dt>
+                <dd>
+                    <span>{{invoices.lastEditedBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.invoices.lastEditedWhen">Last Edited When</span></dt>
+                <dd>
+                    <span>{{invoices.lastEditedWhen}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.invoices.contactPerson">Contact Person</span></dt>
+                <dd>
+                    <div *ngIf="invoices.contactPersonId">
+                        <a [routerLink]="['/people', invoices.contactPersonId, 'view']">{{invoices.contactPersonFullName}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.invoices.salespersonPerson">Salesperson Person</span></dt>
+                <dd>
+                    <div *ngIf="invoices.salespersonPersonId">
+                        <a [routerLink]="['/people', invoices.salespersonPersonId, 'view']">{{invoices.salespersonPersonFullName}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.invoices.packedByPerson">Packed By Person</span></dt>
+                <dd>
+                    <div *ngIf="invoices.packedByPersonId">
+                        <a [routerLink]="['/people', invoices.packedByPersonId, 'view']">{{invoices.packedByPersonFullName}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.invoices.accountsPerson">Accounts Person</span></dt>
+                <dd>
+                    <div *ngIf="invoices.accountsPersonId">
+                        <a [routerLink]="['/people', invoices.accountsPersonId, 'view']">{{invoices.accountsPersonFullName}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.invoices.customer">Customer</span></dt>
+                <dd>
+                    <div *ngIf="invoices.customerId">
+                        <a [routerLink]="['/customers', invoices.customerId, 'view']">{{invoices.customerId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.invoices.billToCustomer">Bill To Customer</span></dt>
+                <dd>
+                    <div *ngIf="invoices.billToCustomerId">
+                        <a [routerLink]="['/customers', invoices.billToCustomerId, 'view']">{{invoices.billToCustomerId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.invoices.deliveryMethod">Delivery Method</span></dt>
+                <dd>
+                    <div *ngIf="invoices.deliveryMethodId">
+                        <a [routerLink]="['/delivery-methods', invoices.deliveryMethodId, 'view']">{{invoices.deliveryMethodName}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.invoices.order">Order</span></dt>
+                <dd>
+                    <div *ngIf="invoices.orderId">
+                        <a [routerLink]="['/orders', invoices.orderId, 'view']">{{invoices.orderId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/invoices', invoices.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

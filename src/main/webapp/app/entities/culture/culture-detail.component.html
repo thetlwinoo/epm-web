@@ -1,0 +1,31 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="culture">
+            <h2><span jhiTranslate="epmwebApp.culture.detail.title">Culture</span> {{culture.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="epmwebApp.culture.code">Code</span></dt>
+                <dd>
+                    <span>{{culture.code}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.culture.name">Name</span></dt>
+                <dd>
+                    <span>{{culture.name}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/culture', culture.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+{
+  "epmwebApp": {
+    "productSet": {
+      "home": {
+        "title": "Product Sets",
+        "createLabel": "Product Set အသစ်ထည့်မည်",
+        "createOrEditLabel": "Product Set အသစ်ထည့်ခြင်း (သို့) ပြုပြင်ခြင်း",
+        "notFound": "No Product Sets found"
+      },
+      "created": "{{ param }} အိုင်ဒီဖြင့် Product Set အသစ်တစ်ခုအား ထည့်ပြီးပါပြီ။",
+      "updated": "{{ param }} အိုင်ဒီဖြင့် Product Set တစ်ခုအား ပြုပြင်ပြီးပါပြီ။",
+      "deleted": "{{ param }} အိုင်ဒီဖြင့် Product Set တစ်ခုအား ဖျက်ပြီးပါပြီ။",
+      "delete": {
+        "question": "Product Set {{ id }} အား ဖျက်ပါမည်။ သေချာပါသလား?"
+      },
+      "detail": {
+        "title": "Product Set"
+      },
+      "name": "Name",
+      "noOfPerson": "No Of Person",
+      "isExclusive": "Is Exclusive"
+    }
+  }
+}

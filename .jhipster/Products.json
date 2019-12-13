@@ -1,0 +1,92 @@
+{
+    "name": "Products",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "handle",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "productNumber",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "searchDetails",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "text"
+        },
+        {
+            "fieldName": "sellCount",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "thumbnailList",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "activeInd",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "lastEditedBy",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "lastEditedWhen",
+            "fieldType": "Instant"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "productDocument",
+            "otherEntityRelationshipName": "products",
+            "relationshipName": "productDocument",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "stockItems",
+            "otherEntityRelationshipName": "product",
+            "relationshipName": "stockItemList"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "suppliers",
+            "otherEntityRelationshipName": "products",
+            "relationshipName": "supplier",
+            "otherEntityField": "name"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "productCategory",
+            "otherEntityRelationshipName": "products",
+            "relationshipName": "productCategory",
+            "otherEntityField": "name"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "productBrand",
+            "otherEntityRelationshipName": "products",
+            "relationshipName": "productBrand",
+            "otherEntityField": "name"
+        }
+    ],
+    "changelogDate": "20191213033130",
+    "entityTableName": "products",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": true,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

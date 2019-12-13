@@ -1,0 +1,35 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="productCatalog">
+            <h2><span jhiTranslate="epmwebApp.productCatalog.detail.title">Product Catalog</span> {{productCatalog.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="epmwebApp.productCatalog.productCategory">Product Category</span></dt>
+                <dd>
+                    <div *ngIf="productCatalog.productCategoryId">
+                        <a [routerLink]="['/product-category', productCatalog.productCategoryId, 'view']">{{productCatalog.productCategoryName}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.productCatalog.product">Product</span></dt>
+                <dd>
+                    <div *ngIf="productCatalog.productId">
+                        <a [routerLink]="['/products', productCatalog.productId, 'view']">{{productCatalog.productName}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/product-catalog', productCatalog.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

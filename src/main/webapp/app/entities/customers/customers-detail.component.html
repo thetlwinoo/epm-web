@@ -1,0 +1,31 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="customers">
+            <h2><span jhiTranslate="epmwebApp.customers.detail.title">Customers</span> {{customers.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="epmwebApp.customers.accountNumber">Account Number</span></dt>
+                <dd>
+                    <span>{{customers.accountNumber}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.customers.user">User</span></dt>
+                <dd>
+                    {{customers.userLogin}}
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/customers', customers.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

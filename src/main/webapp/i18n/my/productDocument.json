@@ -1,0 +1,41 @@
+{
+  "epmwebApp": {
+    "productDocument": {
+      "home": {
+        "title": "Product Documents",
+        "createLabel": "Product Document အသစ်ထည့်မည်",
+        "createOrEditLabel": "Product Document အသစ်ထည့်ခြင်း (သို့) ပြုပြင်ခြင်း",
+        "notFound": "No Product Documents found"
+      },
+      "created": "{{ param }} အိုင်ဒီဖြင့် Product Document အသစ်တစ်ခုအား ထည့်ပြီးပါပြီ။",
+      "updated": "{{ param }} အိုင်ဒီဖြင့် Product Document တစ်ခုအား ပြုပြင်ပြီးပါပြီ။",
+      "deleted": "{{ param }} အိုင်ဒီဖြင့် Product Document တစ်ခုအား ဖျက်ပြီးပါပြီ။",
+      "delete": {
+        "question": "Product Document {{ id }} အား ဖျက်ပါမည်။ သေချာပါသလား?"
+      },
+      "detail": {
+        "title": "Product Document"
+      },
+      "videoUrl": "Video Url",
+      "highlights": "Highlights",
+      "longDescription": "Long Description",
+      "shortDescription": "Short Description",
+      "description": "Description",
+      "careInstructions": "Care Instructions",
+      "productType": "Product Type",
+      "modelName": "Model Name",
+      "modelNumber": "Model Number",
+      "fabricType": "Fabric Type",
+      "specialFeatures": "Special Features",
+      "productComplianceCertificate": "Product Compliance Certificate",
+      "genuineAndLegal": "Genuine And Legal",
+      "countryOfOrigin": "Country Of Origin",
+      "usageAndSideEffects": "Usage And Side Effects",
+      "safetyWarnning": "Safety Warnning",
+      "warrantyPeriod": "Warranty Period",
+      "warrantyPolicy": "Warranty Policy",
+      "warrantyType": "Warranty Type",
+      "culture": "Culture"
+    }
+  }
+}

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <!--
+        Added the constraints for entity SpecialDeals.
+    -->
+    <changeSet id="20191213033127-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="buying_group_id"
+                                 baseTableName="special_deals"
+                                 constraintName="fk_special_deals_buying_group_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="buying_groups"/>
+
+        <addForeignKeyConstraint baseColumnNames="customer_category_id"
+                                 baseTableName="special_deals"
+                                 constraintName="fk_special_deals_customer_category_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="customer_categories"/>
+
+        <addForeignKeyConstraint baseColumnNames="customer_id"
+                                 baseTableName="special_deals"
+                                 constraintName="fk_special_deals_customer_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="customers"/>
+
+        <addForeignKeyConstraint baseColumnNames="product_category_id"
+                                 baseTableName="special_deals"
+                                 constraintName="fk_special_deals_product_category_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="product_category"/>
+
+        <addForeignKeyConstraint baseColumnNames="stock_item_id"
+                                 baseTableName="special_deals"
+                                 constraintName="fk_special_deals_stock_item_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="stock_items"/>
+
+    </changeSet>
+</databaseChangeLog>

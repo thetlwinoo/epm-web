@@ -1,0 +1,67 @@
+{
+    "name": "StateProvinces",
+    "fields": [
+        {
+            "fieldName": "code",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "salesTerritory",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "border",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "latestRecordedPopulation",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "validFrom",
+            "fieldType": "Instant",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "validTo",
+            "fieldType": "Instant",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "countries",
+            "otherEntityRelationshipName": "stateProvinces",
+            "relationshipName": "country",
+            "otherEntityField": "name"
+        }
+    ],
+    "changelogDate": "20191213033106",
+    "entityTableName": "state_provinces",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": true,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

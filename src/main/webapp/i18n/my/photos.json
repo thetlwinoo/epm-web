@@ -1,0 +1,41 @@
+{
+  "epmwebApp": {
+    "photos": {
+      "home": {
+        "title": "Photos",
+        "createLabel": "Photos အသစ်ထည့်မည်",
+        "createOrEditLabel": "Photos အသစ်ထည့်ခြင်း (သို့) ပြုပြင်ခြင်း",
+        "notFound": "No Photos found"
+      },
+      "created": "{{ param }} အိုင်ဒီဖြင့် Photos အသစ်တစ်ခုအား ထည့်ပြီးပါပြီ။",
+      "updated": "{{ param }} အိုင်ဒီဖြင့် Photos တစ်ခုအား ပြုပြင်ပြီးပါပြီ။",
+      "deleted": "{{ param }} အိုင်ဒီဖြင့် Photos တစ်ခုအား ဖျက်ပြီးပါပြီ။",
+      "delete": {
+        "question": "Photos {{ id }} အား ဖျက်ပါမည်။ သေချာပါသလား?"
+      },
+      "detail": {
+        "title": "Photos"
+      },
+      "thumbnailPhoto": "Thumbnail Photo",
+      "originalPhoto": "Original Photo",
+      "bannerTallPhoto": "Banner Tall Photo",
+      "bannerWidePhoto": "Banner Wide Photo",
+      "circlePhoto": "Circle Photo",
+      "sharpenedPhoto": "Sharpened Photo",
+      "squarePhoto": "Square Photo",
+      "watermarkPhoto": "Watermark Photo",
+      "thumbnailPhotoBlob": "Thumbnail Photo Blob",
+      "originalPhotoBlob": "Original Photo Blob",
+      "bannerTallPhotoBlob": "Banner Tall Photo Blob",
+      "bannerWidePhotoBlob": "Banner Wide Photo Blob",
+      "circlePhotoBlob": "Circle Photo Blob",
+      "sharpenedPhotoBlob": "Sharpened Photo Blob",
+      "squarePhotoBlob": "Square Photo Blob",
+      "watermarkPhotoBlob": "Watermark Photo Blob",
+      "priority": "Priority",
+      "defaultInd": "Default Ind",
+      "stockItem": "Stock Item",
+      "productCategory": "Product Category"
+    }
+  }
+}

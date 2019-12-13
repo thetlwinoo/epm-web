@@ -1,0 +1,43 @@
+{
+    "name": "ShoppingCartItems",
+    "fields": [
+        {
+            "fieldName": "quantity",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "lastEditedBy",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "lastEditedWhen",
+            "fieldType": "Instant"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "stockItems",
+            "otherEntityRelationshipName": "shoppingCartItems",
+            "relationshipName": "stockItem",
+            "otherEntityField": "name"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "shoppingCarts",
+            "otherEntityRelationshipName": "cartItemList",
+            "relationshipName": "cart",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20191213033157",
+    "entityTableName": "shopping_cart_items",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": true,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

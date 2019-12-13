@@ -1,0 +1,29 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="wishlists">
+            <h2><span jhiTranslate="epmwebApp.wishlists.detail.title">Wishlists</span> {{wishlists.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="epmwebApp.wishlists.wishlistUser">Wishlist User</span></dt>
+                <dd>
+                    <div *ngIf="wishlists.wishlistUserId">
+                        <a [routerLink]="['/people', wishlists.wishlistUserId, 'view']">{{wishlists.wishlistUserId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/wishlists', wishlists.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

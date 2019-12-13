@@ -1,0 +1,33 @@
+{
+  "epmwebApp": {
+    "invoiceLines": {
+      "home": {
+        "title": "Invoice Lines",
+        "createLabel": "Invoice Lines အသစ်ထည့်မည်",
+        "createOrEditLabel": "Invoice Lines အသစ်ထည့်ခြင်း (သို့) ပြုပြင်ခြင်း",
+        "notFound": "No Invoice Lines found"
+      },
+      "created": "{{ param }} အိုင်ဒီဖြင့် Invoice Lines အသစ်တစ်ခုအား ထည့်ပြီးပါပြီ။",
+      "updated": "{{ param }} အိုင်ဒီဖြင့် Invoice Lines တစ်ခုအား ပြုပြင်ပြီးပါပြီ။",
+      "deleted": "{{ param }} အိုင်ဒီဖြင့် Invoice Lines တစ်ခုအား ဖျက်ပြီးပါပြီ။",
+      "delete": {
+        "question": "Invoice Lines {{ id }} အား ဖျက်ပါမည်။ သေချာပါသလား?"
+      },
+      "detail": {
+        "title": "Invoice Lines"
+      },
+      "description": "Description",
+      "quantity": "Quantity",
+      "unitPrice": "Unit Price",
+      "taxRate": "Tax Rate",
+      "taxAmount": "Tax Amount",
+      "lineProfit": "Line Profit",
+      "extendedPrice": "Extended Price",
+      "lastEditedBy": "Last Edited By",
+      "lastEditedWhen": "Last Edited When",
+      "packageType": "Package Type",
+      "stockItem": "Stock Item",
+      "invoice": "Invoice"
+    }
+  }
+}

@@ -1,0 +1,89 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="specialDeals">
+            <h2><span jhiTranslate="epmwebApp.specialDeals.detail.title">Special Deals</span> {{specialDeals.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="epmwebApp.specialDeals.dealDescription">Deal Description</span></dt>
+                <dd>
+                    <span>{{specialDeals.dealDescription}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.specialDeals.startDate">Start Date</span></dt>
+                <dd>
+                    <span>{{specialDeals.startDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.specialDeals.endDate">End Date</span></dt>
+                <dd>
+                    <span>{{specialDeals.endDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.specialDeals.discountAmount">Discount Amount</span></dt>
+                <dd>
+                    <span>{{specialDeals.discountAmount}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.specialDeals.discountPercentage">Discount Percentage</span></dt>
+                <dd>
+                    <span>{{specialDeals.discountPercentage}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.specialDeals.discountCode">Discount Code</span></dt>
+                <dd>
+                    <span>{{specialDeals.discountCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.specialDeals.unitPrice">Unit Price</span></dt>
+                <dd>
+                    <span>{{specialDeals.unitPrice}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.specialDeals.lastEditedBy">Last Edited By</span></dt>
+                <dd>
+                    <span>{{specialDeals.lastEditedBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.specialDeals.lastEditedWhen">Last Edited When</span></dt>
+                <dd>
+                    <span>{{specialDeals.lastEditedWhen}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.specialDeals.buyingGroup">Buying Group</span></dt>
+                <dd>
+                    <div *ngIf="specialDeals.buyingGroupId">
+                        <a [routerLink]="['/buying-groups', specialDeals.buyingGroupId, 'view']">{{specialDeals.buyingGroupName}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.specialDeals.customerCategory">Customer Category</span></dt>
+                <dd>
+                    <div *ngIf="specialDeals.customerCategoryId">
+                        <a [routerLink]="['/customer-categories', specialDeals.customerCategoryId, 'view']">{{specialDeals.customerCategoryName}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.specialDeals.customer">Customer</span></dt>
+                <dd>
+                    <div *ngIf="specialDeals.customerId">
+                        <a [routerLink]="['/customers', specialDeals.customerId, 'view']">{{specialDeals.customerId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.specialDeals.productCategory">Product Category</span></dt>
+                <dd>
+                    <div *ngIf="specialDeals.productCategoryId">
+                        <a [routerLink]="['/product-category', specialDeals.productCategoryId, 'view']">{{specialDeals.productCategoryName}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.specialDeals.stockItem">Stock Item</span></dt>
+                <dd>
+                    <div *ngIf="specialDeals.stockItemId">
+                        <a [routerLink]="['/stock-items', specialDeals.stockItemId, 'view']">{{specialDeals.stockItemId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/special-deals', specialDeals.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

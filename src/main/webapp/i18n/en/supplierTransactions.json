@@ -1,0 +1,34 @@
+{
+  "epmwebApp": {
+    "supplierTransactions": {
+      "home": {
+        "title": "Supplier Transactions",
+        "createLabel": "Create a new Supplier Transactions",
+        "createOrEditLabel": "Create or edit a Supplier Transactions",
+        "notFound": "No Supplier Transactions found"
+      },
+      "created": "A new Supplier Transactions is created with identifier {{ param }}",
+      "updated": "A Supplier Transactions is updated with identifier {{ param }}",
+      "deleted": "A Supplier Transactions is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Supplier Transactions {{ id }}?"
+      },
+      "detail": {
+        "title": "Supplier Transactions"
+      },
+      "supplierInvoiceNumber": "Supplier Invoice Number",
+      "transactionDate": "Transaction Date",
+      "amountExcludingTax": "Amount Excluding Tax",
+      "taxAmount": "Tax Amount",
+      "transactionAmount": "Transaction Amount",
+      "outstandingBalance": "Outstanding Balance",
+      "finalizationDate": "Finalization Date",
+      "isFinalized": "Is Finalized",
+      "lastEditedBy": "Last Edited By",
+      "lastEditedWhen": "Last Edited When",
+      "supplier": "Supplier",
+      "transactionType": "Transaction Type",
+      "purchaseOrder": "Purchase Order"
+    }
+  }
+}

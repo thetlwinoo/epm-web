@@ -1,0 +1,35 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="compareProducts">
+            <h2><span jhiTranslate="epmwebApp.compareProducts.detail.title">Compare Products</span> {{compareProducts.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="epmwebApp.compareProducts.product">Product</span></dt>
+                <dd>
+                    <div *ngIf="compareProducts.productId">
+                        <a [routerLink]="['/products', compareProducts.productId, 'view']">{{compareProducts.productName}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.compareProducts.compare">Compare</span></dt>
+                <dd>
+                    <div *ngIf="compareProducts.compareId">
+                        <a [routerLink]="['/compares', compareProducts.compareId, 'view']">{{compareProducts.compareId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/compare-products', compareProducts.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

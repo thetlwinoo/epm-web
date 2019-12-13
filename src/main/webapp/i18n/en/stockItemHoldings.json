@@ -1,0 +1,28 @@
+{
+  "epmwebApp": {
+    "stockItemHoldings": {
+      "home": {
+        "title": "Stock Item Holdings",
+        "createLabel": "Create a new Stock Item Holdings",
+        "createOrEditLabel": "Create or edit a Stock Item Holdings",
+        "notFound": "No Stock Item Holdings found"
+      },
+      "created": "A new Stock Item Holdings is created with identifier {{ param }}",
+      "updated": "A Stock Item Holdings is updated with identifier {{ param }}",
+      "deleted": "A Stock Item Holdings is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Stock Item Holdings {{ id }}?"
+      },
+      "detail": {
+        "title": "Stock Item Holdings"
+      },
+      "quantityOnHand": "Quantity On Hand",
+      "binLocation": "Bin Location",
+      "lastStocktakeQuantity": "Last Stocktake Quantity",
+      "lastCostPrice": "Last Cost Price",
+      "reorderLevel": "Reorder Level",
+      "targerStockLevel": "Targer Stock Level",
+      "stockItemHoldingOnStockItem": "Stock Item Holding On Stock Item"
+    }
+  }
+}

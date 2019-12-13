@@ -1,0 +1,41 @@
+{
+  "epmwebApp": {
+    "photos": {
+      "home": {
+        "title": "Photos",
+        "createLabel": "Create a new Photos",
+        "createOrEditLabel": "Create or edit a Photos",
+        "notFound": "No Photos found"
+      },
+      "created": "A new Photos is created with identifier {{ param }}",
+      "updated": "A Photos is updated with identifier {{ param }}",
+      "deleted": "A Photos is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Photos {{ id }}?"
+      },
+      "detail": {
+        "title": "Photos"
+      },
+      "thumbnailPhoto": "Thumbnail Photo",
+      "originalPhoto": "Original Photo",
+      "bannerTallPhoto": "Banner Tall Photo",
+      "bannerWidePhoto": "Banner Wide Photo",
+      "circlePhoto": "Circle Photo",
+      "sharpenedPhoto": "Sharpened Photo",
+      "squarePhoto": "Square Photo",
+      "watermarkPhoto": "Watermark Photo",
+      "thumbnailPhotoBlob": "Thumbnail Photo Blob",
+      "originalPhotoBlob": "Original Photo Blob",
+      "bannerTallPhotoBlob": "Banner Tall Photo Blob",
+      "bannerWidePhotoBlob": "Banner Wide Photo Blob",
+      "circlePhotoBlob": "Circle Photo Blob",
+      "sharpenedPhotoBlob": "Sharpened Photo Blob",
+      "squarePhotoBlob": "Square Photo Blob",
+      "watermarkPhotoBlob": "Watermark Photo Blob",
+      "priority": "Priority",
+      "defaultInd": "Default Ind",
+      "stockItem": "Stock Item",
+      "productCategory": "Product Category"
+    }
+  }
+}

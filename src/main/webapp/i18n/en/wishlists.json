@@ -1,0 +1,23 @@
+{
+  "epmwebApp": {
+    "wishlists": {
+      "home": {
+        "title": "Wishlists",
+        "createLabel": "Create a new Wishlists",
+        "createOrEditLabel": "Create or edit a Wishlists",
+        "notFound": "No Wishlists found"
+      },
+      "created": "A new Wishlists is created with identifier {{ param }}",
+      "updated": "A Wishlists is updated with identifier {{ param }}",
+      "deleted": "A Wishlists is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Wishlists {{ id }}?"
+      },
+      "detail": {
+        "title": "Wishlists"
+      },
+      "wishlistUser": "Wishlist User",
+      "wishlistList": "Wishlist List"
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "epmwebApp": {
+    "stockItemTransactions": {
+      "home": {
+        "title": "Stock Item Transactions",
+        "createLabel": "Stock Item Transactions အသစ်ထည့်မည်",
+        "createOrEditLabel": "Stock Item Transactions အသစ်ထည့်ခြင်း (သို့) ပြုပြင်ခြင်း",
+        "notFound": "No Stock Item Transactions found"
+      },
+      "created": "{{ param }} အိုင်ဒီဖြင့် Stock Item Transactions အသစ်တစ်ခုအား ထည့်ပြီးပါပြီ။",
+      "updated": "{{ param }} အိုင်ဒီဖြင့် Stock Item Transactions တစ်ခုအား ပြုပြင်ပြီးပါပြီ။",
+      "deleted": "{{ param }} အိုင်ဒီဖြင့် Stock Item Transactions တစ်ခုအား ဖျက်ပြီးပါပြီ။",
+      "delete": {
+        "question": "Stock Item Transactions {{ id }} အား ဖျက်ပါမည်။ သေချာပါသလား?"
+      },
+      "detail": {
+        "title": "Stock Item Transactions"
+      },
+      "transactionOccuredWhen": "Transaction Occured When",
+      "quantity": "Quantity",
+      "lastEditedBy": "Last Edited By",
+      "lastEditedWhen": "Last Edited When",
+      "stockItem": "Stock Item",
+      "customer": "Customer",
+      "invoice": "Invoice",
+      "supplier": "Supplier",
+      "transactionType": "Transaction Type",
+      "purchaseOrder": "Purchase Order"
+    }
+  }
+}

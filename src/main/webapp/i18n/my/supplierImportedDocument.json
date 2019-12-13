@@ -1,0 +1,26 @@
+{
+  "epmwebApp": {
+    "supplierImportedDocument": {
+      "home": {
+        "title": "Supplier Imported Documents",
+        "createLabel": "Supplier Imported Document အသစ်ထည့်မည်",
+        "createOrEditLabel": "Supplier Imported Document အသစ်ထည့်ခြင်း (သို့) ပြုပြင်ခြင်း",
+        "notFound": "No Supplier Imported Documents found"
+      },
+      "created": "{{ param }} အိုင်ဒီဖြင့် Supplier Imported Document အသစ်တစ်ခုအား ထည့်ပြီးပါပြီ။",
+      "updated": "{{ param }} အိုင်ဒီဖြင့် Supplier Imported Document တစ်ခုအား ပြုပြင်ပြီးပါပြီ။",
+      "deleted": "{{ param }} အိုင်ဒီဖြင့် Supplier Imported Document တစ်ခုအား ဖျက်ပြီးပါပြီ။",
+      "delete": {
+        "question": "Supplier Imported Document {{ id }} အား ဖျက်ပါမည်။ သေချာပါသလား?"
+      },
+      "detail": {
+        "title": "Supplier Imported Document"
+      },
+      "importedTemplate": "Imported Template",
+      "importedFailedTemplate": "Imported Failed Template",
+      "lastEditedBy": "Last Edited By",
+      "lastEditedWhen": "Last Edited When",
+      "uploadTransaction": "Upload Transaction"
+    }
+  }
+}

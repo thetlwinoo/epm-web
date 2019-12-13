@@ -1,0 +1,25 @@
+{
+  "epmwebApp": {
+    "personEmailAddress": {
+      "home": {
+        "title": "Person Email Addresses",
+        "createLabel": "Create a new Person Email Address",
+        "createOrEditLabel": "Create or edit a Person Email Address",
+        "notFound": "No Person Email Addresses found"
+      },
+      "created": "A new Person Email Address is created with identifier {{ param }}",
+      "updated": "A Person Email Address is updated with identifier {{ param }}",
+      "deleted": "A Person Email Address is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Person Email Address {{ id }}?"
+      },
+      "detail": {
+        "title": "Person Email Address"
+      },
+      "emailAddress": "Email Address",
+      "defaultInd": "Default Ind",
+      "activeInd": "Active Ind",
+      "person": "Person"
+    }
+  }
+}

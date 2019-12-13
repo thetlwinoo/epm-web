@@ -1,0 +1,61 @@
+{
+    "name": "ShoppingCarts",
+    "fields": [
+        {
+            "fieldName": "totalPrice",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "totalCargoPrice",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "lastEditedBy",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "lastEditedWhen",
+            "fieldType": "Instant"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "people",
+            "otherEntityRelationshipName": "cart",
+            "relationshipName": "cartUser",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "shoppingCartItems",
+            "otherEntityRelationshipName": "cart",
+            "relationshipName": "cartItemList"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "customers",
+            "otherEntityRelationshipName": "shoppingCarts",
+            "relationshipName": "customer",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "specialDeals",
+            "otherEntityRelationshipName": "cartDiscount",
+            "relationshipName": "specialDeals",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20191213033156",
+    "entityTableName": "shopping_carts",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": true,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

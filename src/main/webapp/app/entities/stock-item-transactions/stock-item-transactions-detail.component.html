@@ -1,0 +1,75 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="stockItemTransactions">
+            <h2><span jhiTranslate="epmwebApp.stockItemTransactions.detail.title">Stock Item Transactions</span> {{stockItemTransactions.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="epmwebApp.stockItemTransactions.transactionOccuredWhen">Transaction Occured When</span></dt>
+                <dd>
+                    <span>{{stockItemTransactions.transactionOccuredWhen}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItemTransactions.quantity">Quantity</span></dt>
+                <dd>
+                    <span>{{stockItemTransactions.quantity}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItemTransactions.lastEditedBy">Last Edited By</span></dt>
+                <dd>
+                    <span>{{stockItemTransactions.lastEditedBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItemTransactions.lastEditedWhen">Last Edited When</span></dt>
+                <dd>
+                    <span>{{stockItemTransactions.lastEditedWhen}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItemTransactions.stockItem">Stock Item</span></dt>
+                <dd>
+                    <div *ngIf="stockItemTransactions.stockItemId">
+                        <a [routerLink]="['/stock-items', stockItemTransactions.stockItemId, 'view']">{{stockItemTransactions.stockItemName}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItemTransactions.customer">Customer</span></dt>
+                <dd>
+                    <div *ngIf="stockItemTransactions.customerId">
+                        <a [routerLink]="['/customers', stockItemTransactions.customerId, 'view']">{{stockItemTransactions.customerId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItemTransactions.invoice">Invoice</span></dt>
+                <dd>
+                    <div *ngIf="stockItemTransactions.invoiceId">
+                        <a [routerLink]="['/invoices', stockItemTransactions.invoiceId, 'view']">{{stockItemTransactions.invoiceId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItemTransactions.supplier">Supplier</span></dt>
+                <dd>
+                    <div *ngIf="stockItemTransactions.supplierId">
+                        <a [routerLink]="['/suppliers', stockItemTransactions.supplierId, 'view']">{{stockItemTransactions.supplierName}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItemTransactions.transactionType">Transaction Type</span></dt>
+                <dd>
+                    <div *ngIf="stockItemTransactions.transactionTypeId">
+                        <a [routerLink]="['/transaction-types', stockItemTransactions.transactionTypeId, 'view']">{{stockItemTransactions.transactionTypeName}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItemTransactions.purchaseOrder">Purchase Order</span></dt>
+                <dd>
+                    <div *ngIf="stockItemTransactions.purchaseOrderId">
+                        <a [routerLink]="['/purchase-orders', stockItemTransactions.purchaseOrderId, 'view']">{{stockItemTransactions.purchaseOrderId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/stock-item-transactions', stockItemTransactions.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

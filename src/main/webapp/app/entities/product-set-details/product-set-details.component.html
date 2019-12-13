@@ -1,0 +1,65 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="epmwebApp.productSetDetails.home.title">Product Set Details</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-product-set-details" [routerLink]="['/product-set-details/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="epmwebApp.productSetDetails.home.createLabel">
+            Create a new Product Set Details
+            </span>
+        </button>
+    </h2>
+    <jhi-alert-error></jhi-alert-error>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="productSetDetails?.length === 0">
+        <span jhiTranslate="epmwebApp.productSetDetails.home.notFound">No productSetDetails found</span>
+    </div>
+    <div class="table-responsive" *ngIf="productSetDetails?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+            <tr>
+            <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.productSetDetails.subGroupNo">Sub Group No</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.productSetDetails.subGroupMinCount">Sub Group Min Count</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.productSetDetails.subGroupMinTotal">Sub Group Min Total</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.productSetDetails.minCount">Min Count</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.productSetDetails.maxCount">Max Count</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.productSetDetails.isOptional">Is Optional</span></th>
+            <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let productSetDetails of productSetDetails ;trackBy: trackId">
+                <td><a [routerLink]="['/product-set-details', productSetDetails.id, 'view' ]">{{productSetDetails.id}}</a></td>
+                <td>{{productSetDetails.subGroupNo}}</td>
+                <td>{{productSetDetails.subGroupMinCount}}</td>
+                <td>{{productSetDetails.subGroupMinTotal}}</td>
+                <td>{{productSetDetails.minCount}}</td>
+                <td>{{productSetDetails.maxCount}}</td>
+                <td>{{productSetDetails.isOptional}}</td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/product-set-details', productSetDetails.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/product-set-details', productSetDetails.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit" (click)="delete(productSetDetails)"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

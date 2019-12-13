@@ -1,0 +1,85 @@
+{
+    "name": "Countries",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "formalName",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "isoAplha3Code",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "isoNumericCode",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "countryType",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "latestRecordedPopulation",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "continent",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "region",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "subregion",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "border",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "validFrom",
+            "fieldType": "Instant",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "validTo",
+            "fieldType": "Instant",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20191213033105",
+    "entityTableName": "countries",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": true,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

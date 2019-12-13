@@ -1,0 +1,97 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="epmwebApp.people.home.title">People</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-people" [routerLink]="['/people/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="epmwebApp.people.home.createLabel">
+            Create a new People
+            </span>
+        </button>
+    </h2>
+    <jhi-alert-error></jhi-alert-error>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="people?.length === 0">
+        <span jhiTranslate="epmwebApp.people.home.notFound">No people found</span>
+    </div>
+    <div class="table-responsive" *ngIf="people?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+            <tr>
+            <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.people.fullName">Full Name</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.people.preferredName">Preferred Name</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.people.searchName">Search Name</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.people.gender">Gender</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.people.isPermittedToLogon">Is Permitted To Logon</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.people.logonName">Logon Name</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.people.isExternalLogonProvider">Is External Logon Provider</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.people.isSystemUser">Is System User</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.people.isEmployee">Is Employee</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.people.isSalesPerson">Is Sales Person</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.people.isGuestUser">Is Guest User</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.people.emailPromotion">Email Promotion</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.people.userPreferences">User Preferences</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.people.phoneNumber">Phone Number</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.people.emailAddress">Email Address</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.people.photo">Photo</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.people.customFields">Custom Fields</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.people.otherLanguages">Other Languages</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.people.validFrom">Valid From</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.people.validTo">Valid To</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.people.user">User</span></th>
+            <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let people of people ;trackBy: trackId">
+                <td><a [routerLink]="['/people', people.id, 'view' ]">{{people.id}}</a></td>
+                <td>{{people.fullName}}</td>
+                <td>{{people.preferredName}}</td>
+                <td>{{people.searchName}}</td>
+                <td jhiTranslate="{{'epmwebApp.Gender.' + people.gender}}">{{people.gender}}</td>
+                <td>{{people.isPermittedToLogon}}</td>
+                <td>{{people.logonName}}</td>
+                <td>{{people.isExternalLogonProvider}}</td>
+                <td>{{people.isSystemUser}}</td>
+                <td>{{people.isEmployee}}</td>
+                <td>{{people.isSalesPerson}}</td>
+                <td>{{people.isGuestUser}}</td>
+                <td>{{people.emailPromotion}}</td>
+                <td>{{people.userPreferences}}</td>
+                <td>{{people.phoneNumber}}</td>
+                <td>{{people.emailAddress}}</td>
+                <td>{{people.photo}}</td>
+                <td>{{people.customFields}}</td>
+                <td>{{people.otherLanguages}}</td>
+                <td>{{people.validFrom | date:'medium'}}</td>
+                <td>{{people.validTo | date:'medium'}}</td>
+                <td>
+                    {{people.userLogin}}
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/people', people.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/people', people.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit" (click)="delete(people)"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

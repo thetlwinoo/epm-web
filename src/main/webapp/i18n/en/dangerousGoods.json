@@ -1,0 +1,23 @@
+{
+  "epmwebApp": {
+    "dangerousGoods": {
+      "home": {
+        "title": "Dangerous Goods",
+        "createLabel": "Create a new Dangerous Goods",
+        "createOrEditLabel": "Create or edit a Dangerous Goods",
+        "notFound": "No Dangerous Goods found"
+      },
+      "created": "A new Dangerous Goods is created with identifier {{ param }}",
+      "updated": "A Dangerous Goods is updated with identifier {{ param }}",
+      "deleted": "A Dangerous Goods is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Dangerous Goods {{ id }}?"
+      },
+      "detail": {
+        "title": "Dangerous Goods"
+      },
+      "name": "Name",
+      "stockItem": "Stock Item"
+    }
+  }
+}

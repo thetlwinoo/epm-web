@@ -1,0 +1,24 @@
+{
+  "epmwebApp": {
+    "buyingGroups": {
+      "home": {
+        "title": "Buying Groups",
+        "createLabel": "Create a new Buying Groups",
+        "createOrEditLabel": "Create or edit a Buying Groups",
+        "notFound": "No Buying Groups found"
+      },
+      "created": "A new Buying Groups is created with identifier {{ param }}",
+      "updated": "A Buying Groups is updated with identifier {{ param }}",
+      "deleted": "A Buying Groups is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Buying Groups {{ id }}?"
+      },
+      "detail": {
+        "title": "Buying Groups"
+      },
+      "name": "Name",
+      "validFrom": "Valid From",
+      "validTo": "Valid To"
+    }
+  }
+}

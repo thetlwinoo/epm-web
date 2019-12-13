@@ -1,0 +1,59 @@
+{
+    "name": "VehicleTemperatures",
+    "fields": [
+        {
+            "fieldName": "vehicleRegistration",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "chillerSensorNumber",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "recordedWhen",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "temperature",
+            "fieldType": "BigDecimal",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "isCompressed",
+            "fieldType": "Boolean",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "fullSensorData",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "compressedSensorData",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20191213033155",
+    "entityTableName": "vehicle_temperatures",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": true,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

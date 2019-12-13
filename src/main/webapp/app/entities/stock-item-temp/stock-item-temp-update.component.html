@@ -1,0 +1,437 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-stock-item-temp-heading" jhiTranslate="epmwebApp.stockItemTemp.home.createOrEditLabel">Create or edit a Stock Item Temp</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.stockItemTemp.stockItemName" for="field_stockItemName">Stock Item Name</label>
+                    <input type="text" class="form-control" name="stockItemName" id="field_stockItemName"
+                           formControlName="stockItemName"/>
+                    <div *ngIf="editForm.get('stockItemName').invalid && (editForm.get('stockItemName').dirty || editForm.get('stockItemName').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('stockItemName').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.stockItemTemp.vendorCode" for="field_vendorCode">Vendor Code</label>
+                    <input type="text" class="form-control" name="vendorCode" id="field_vendorCode"
+                           formControlName="vendorCode"/>
+                    <div *ngIf="editForm.get('vendorCode').invalid && (editForm.get('vendorCode').dirty || editForm.get('vendorCode').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('vendorCode').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.stockItemTemp.vendorSKU" for="field_vendorSKU">Vendor SKU</label>
+                    <input type="text" class="form-control" name="vendorSKU" id="field_vendorSKU"
+                           formControlName="vendorSKU"/>
+                    <div *ngIf="editForm.get('vendorSKU').invalid && (editForm.get('vendorSKU').dirty || editForm.get('vendorSKU').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('vendorSKU').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.stockItemTemp.barcode" for="field_barcode">Barcode</label>
+                    <input type="text" class="form-control" name="barcode" id="field_barcode"
+                           formControlName="barcode"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.stockItemTemp.barcodeTypeId" for="field_barcodeTypeId">Barcode Type Id</label>
+                    <input type="number" class="form-control" name="barcodeTypeId" id="field_barcodeTypeId"
+                           formControlName="barcodeTypeId"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.stockItemTemp.barcodeTypeName" for="field_barcodeTypeName">Barcode Type Name</label>
+                    <input type="text" class="form-control" name="barcodeTypeName" id="field_barcodeTypeName"
+                           formControlName="barcodeTypeName"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.stockItemTemp.productType" for="field_productType">Product Type</label>
+                    <input type="text" class="form-control" name="productType" id="field_productType"
+                           formControlName="productType"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.stockItemTemp.productCategoryId" for="field_productCategoryId">Product Category Id</label>
+                    <input type="number" class="form-control" name="productCategoryId" id="field_productCategoryId"
+                           formControlName="productCategoryId"/>
+                    <div *ngIf="editForm.get('productCategoryId').invalid && (editForm.get('productCategoryId').dirty || editForm.get('productCategoryId').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('productCategoryId').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('productCategoryId')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.stockItemTemp.productCategoryName" for="field_productCategoryName">Product Category Name</label>
+                    <input type="text" class="form-control" name="productCategoryName" id="field_productCategoryName"
+                           formControlName="productCategoryName"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.stockItemTemp.productAttributeSetId" for="field_productAttributeSetId">Product Attribute Set Id</label>
+                    <input type="number" class="form-control" name="productAttributeSetId" id="field_productAttributeSetId"
+                           formControlName="productAttributeSetId"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.stockItemTemp.productAttributeId" for="field_productAttributeId">Product Attribute Id</label>
+                    <input type="number" class="form-control" name="productAttributeId" id="field_productAttributeId"
+                           formControlName="productAttributeId"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.stockItemTemp.productAttributeValue" for="field_productAttributeValue">Product Attribute Value</label>
+                    <input type="text" class="form-control" name="productAttributeValue" id="field_productAttributeValue"
+                           formControlName="productAttributeValue"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.stockItemTemp.productOptionSetId" for="field_productOptionSetId">Product Option Set Id</label>
+                    <input type="number" class="form-control" name="productOptionSetId" id="field_productOptionSetId"
+                           formControlName="productOptionSetId"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.stockItemTemp.productOptionId" for="field_productOptionId">Product Option Id</label>
+                    <input type="number" class="form-control" name="productOptionId" id="field_productOptionId"
+                           formControlName="productOptionId"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.stockItemTemp.productOptionValue" for="field_productOptionValue">Product Option Value</label>
+                    <input type="text" class="form-control" name="productOptionValue" id="field_productOptionValue"
+                           formControlName="productOptionValue"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.stockItemTemp.modelName" for="field_modelName">Model Name</label>
+                    <input type="text" class="form-control" name="modelName" id="field_modelName"
+                           formControlName="modelName"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.stockItemTemp.modelNumber" for="field_modelNumber">Model Number</label>
+                    <input type="text" class="form-control" name="modelNumber" id="field_modelNumber"
+                           formControlName="modelNumber"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.stockItemTemp.materialId" for="field_materialId">Material Id</label>
+                    <input type="number" class="form-control" name="materialId" id="field_materialId"
+                           formControlName="materialId"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.stockItemTemp.materialName" for="field_materialName">Material Name</label>
+                    <input type="text" class="form-control" name="materialName" id="field_materialName"
+                           formControlName="materialName"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.stockItemTemp.shortDescription" for="field_shortDescription">Short Description</label>
+                    <textarea class="form-control" name="shortDescription" id="field_shortDescription"
+                              formControlName="shortDescription"></textarea>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.stockItemTemp.description" for="field_description">Description</label>
+                    <textarea class="form-control" name="description" id="field_description"
+                              formControlName="description"></textarea>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.stockItemTemp.productBrandId" for="field_productBrandId">Product Brand Id</label>
+                    <input type="number" class="form-control" name="productBrandId" id="field_productBrandId"
+                           formControlName="productBrandId"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.stockItemTemp.productBrandName" for="field_productBrandName">Product Brand Name</label>
+                    <input type="text" class="form-control" name="productBrandName" id="field_productBrandName"
+                           formControlName="productBrandName"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.stockItemTemp.highlights" for="field_highlights">Highlights</label>
+                    <textarea class="form-control" name="highlights" id="field_highlights"
+                              formControlName="highlights"></textarea>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.stockItemTemp.searchDetails" for="field_searchDetails">Search Details</label>
+                    <textarea class="form-control" name="searchDetails" id="field_searchDetails"
+                              formControlName="searchDetails"></textarea>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.stockItemTemp.careInstructions" for="field_careInstructions">Care Instructions</label>
+                    <textarea class="form-control" name="careInstructions" id="field_careInstructions"
+                              formControlName="careInstructions"></textarea>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.stockItemTemp.dangerousGoods" for="field_dangerousGoods">Dangerous Goods</label>
+                    <input type="text" class="form-control" name="dangerousGoods" id="field_dangerousGoods"
+                           formControlName="dangerousGoods"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.stockItemTemp.videoUrl" for="field_videoUrl">Video Url</label>
+                    <input type="text" class="form-control" name="videoUrl" id="field_videoUrl"
+                           formControlName="videoUrl"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.stockItemTemp.unitPrice" for="field_unitPrice">Unit Price</label>
+                    <input type="number" class="form-control" name="unitPrice" id="field_unitPrice"
+                           formControlName="unitPrice"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.stockItemTemp.remommendedRetailPrice" for="field_remommendedRetailPrice">Remommended Retail Price</label>
+                    <input type="number" class="form-control" name="remommendedRetailPrice" id="field_remommendedRetailPrice"
+                           formControlName="remommendedRetailPrice"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.stockItemTemp.currencyCode" for="field_currencyCode">Currency Code</label>
+                    <input type="text" class="form-control" name="currencyCode" id="field_currencyCode"
+                           formControlName="currencyCode"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.stockItemTemp.quantityOnHand" for="field_quantityOnHand">Quantity On Hand</label>
+                    <input type="number" class="form-control" name="quantityOnHand" id="field_quantityOnHand"
+                           formControlName="quantityOnHand"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.stockItemTemp.warrantyPeriod" for="field_warrantyPeriod">Warranty Period</label>
+                    <input type="text" class="form-control" name="warrantyPeriod" id="field_warrantyPeriod"
+                           formControlName="warrantyPeriod"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.stockItemTemp.warrantyPolicy" for="field_warrantyPolicy">Warranty Policy</label>
+                    <input type="text" class="form-control" name="warrantyPolicy" id="field_warrantyPolicy"
+                           formControlName="warrantyPolicy"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.stockItemTemp.warrantyTypeId" for="field_warrantyTypeId">Warranty Type Id</label>
+                    <input type="number" class="form-control" name="warrantyTypeId" id="field_warrantyTypeId"
+                           formControlName="warrantyTypeId"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.stockItemTemp.warrantyTypeName" for="field_warrantyTypeName">Warranty Type Name</label>
+                    <input type="text" class="form-control" name="warrantyTypeName" id="field_warrantyTypeName"
+                           formControlName="warrantyTypeName"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.stockItemTemp.whatInTheBox" for="field_whatInTheBox">What In The Box</label>
+                    <textarea class="form-control" name="whatInTheBox" id="field_whatInTheBox"
+                              formControlName="whatInTheBox"></textarea>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.stockItemTemp.itemLength" for="field_itemLength">Item Length</label>
+                    <input type="number" class="form-control" name="itemLength" id="field_itemLength"
+                           formControlName="itemLength"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.stockItemTemp.itemWidth" for="field_itemWidth">Item Width</label>
+                    <input type="number" class="form-control" name="itemWidth" id="field_itemWidth"
+                           formControlName="itemWidth"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.stockItemTemp.itemHeight" for="field_itemHeight">Item Height</label>
+                    <input type="number" class="form-control" name="itemHeight" id="field_itemHeight"
+                           formControlName="itemHeight"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.stockItemTemp.itemWeight" for="field_itemWeight">Item Weight</label>
+                    <input type="number" class="form-control" name="itemWeight" id="field_itemWeight"
+                           formControlName="itemWeight"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.stockItemTemp.itemPackageLength" for="field_itemPackageLength">Item Package Length</label>
+                    <input type="number" class="form-control" name="itemPackageLength" id="field_itemPackageLength"
+                           formControlName="itemPackageLength"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.stockItemTemp.itemPackageWidth" for="field_itemPackageWidth">Item Package Width</label>
+                    <input type="number" class="form-control" name="itemPackageWidth" id="field_itemPackageWidth"
+                           formControlName="itemPackageWidth"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.stockItemTemp.itemPackageHeight" for="field_itemPackageHeight">Item Package Height</label>
+                    <input type="number" class="form-control" name="itemPackageHeight" id="field_itemPackageHeight"
+                           formControlName="itemPackageHeight"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.stockItemTemp.itemPackageWeight" for="field_itemPackageWeight">Item Package Weight</label>
+                    <input type="number" class="form-control" name="itemPackageWeight" id="field_itemPackageWeight"
+                           formControlName="itemPackageWeight"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.stockItemTemp.itemLengthUnitMeasureId" for="field_itemLengthUnitMeasureId">Item Length Unit Measure Id</label>
+                    <input type="number" class="form-control" name="itemLengthUnitMeasureId" id="field_itemLengthUnitMeasureId"
+                           formControlName="itemLengthUnitMeasureId"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.stockItemTemp.itemLengthUnitMeasureCode" for="field_itemLengthUnitMeasureCode">Item Length Unit Measure Code</label>
+                    <input type="text" class="form-control" name="itemLengthUnitMeasureCode" id="field_itemLengthUnitMeasureCode"
+                           formControlName="itemLengthUnitMeasureCode"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.stockItemTemp.itemWidthUnitMeasureId" for="field_itemWidthUnitMeasureId">Item Width Unit Measure Id</label>
+                    <input type="number" class="form-control" name="itemWidthUnitMeasureId" id="field_itemWidthUnitMeasureId"
+                           formControlName="itemWidthUnitMeasureId"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.stockItemTemp.itemWidthUnitMeasureCode" for="field_itemWidthUnitMeasureCode">Item Width Unit Measure Code</label>
+                    <input type="text" class="form-control" name="itemWidthUnitMeasureCode" id="field_itemWidthUnitMeasureCode"
+                           formControlName="itemWidthUnitMeasureCode"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.stockItemTemp.itemHeightUnitMeasureId" for="field_itemHeightUnitMeasureId">Item Height Unit Measure Id</label>
+                    <input type="number" class="form-control" name="itemHeightUnitMeasureId" id="field_itemHeightUnitMeasureId"
+                           formControlName="itemHeightUnitMeasureId"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.stockItemTemp.itemHeightUnitMeasureCode" for="field_itemHeightUnitMeasureCode">Item Height Unit Measure Code</label>
+                    <input type="text" class="form-control" name="itemHeightUnitMeasureCode" id="field_itemHeightUnitMeasureCode"
+                           formControlName="itemHeightUnitMeasureCode"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.stockItemTemp.itemWeightUnitMeasureId" for="field_itemWeightUnitMeasureId">Item Weight Unit Measure Id</label>
+                    <input type="number" class="form-control" name="itemWeightUnitMeasureId" id="field_itemWeightUnitMeasureId"
+                           formControlName="itemWeightUnitMeasureId"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.stockItemTemp.itemWeightUnitMeasureCode" for="field_itemWeightUnitMeasureCode">Item Weight Unit Measure Code</label>
+                    <input type="text" class="form-control" name="itemWeightUnitMeasureCode" id="field_itemWeightUnitMeasureCode"
+                           formControlName="itemWeightUnitMeasureCode"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.stockItemTemp.itemPackageLengthUnitMeasureId" for="field_itemPackageLengthUnitMeasureId">Item Package Length Unit Measure Id</label>
+                    <input type="number" class="form-control" name="itemPackageLengthUnitMeasureId" id="field_itemPackageLengthUnitMeasureId"
+                           formControlName="itemPackageLengthUnitMeasureId"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.stockItemTemp.itemPackageLengthUnitMeasureCode" for="field_itemPackageLengthUnitMeasureCode">Item Package Length Unit Measure Code</label>
+                    <input type="text" class="form-control" name="itemPackageLengthUnitMeasureCode" id="field_itemPackageLengthUnitMeasureCode"
+                           formControlName="itemPackageLengthUnitMeasureCode"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.stockItemTemp.itemPackageWidthUnitMeasureId" for="field_itemPackageWidthUnitMeasureId">Item Package Width Unit Measure Id</label>
+                    <input type="number" class="form-control" name="itemPackageWidthUnitMeasureId" id="field_itemPackageWidthUnitMeasureId"
+                           formControlName="itemPackageWidthUnitMeasureId"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.stockItemTemp.itemPackageWidthUnitMeasureCode" for="field_itemPackageWidthUnitMeasureCode">Item Package Width Unit Measure Code</label>
+                    <input type="text" class="form-control" name="itemPackageWidthUnitMeasureCode" id="field_itemPackageWidthUnitMeasureCode"
+                           formControlName="itemPackageWidthUnitMeasureCode"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.stockItemTemp.itemPackageHeightUnitMeasureId" for="field_itemPackageHeightUnitMeasureId">Item Package Height Unit Measure Id</label>
+                    <input type="number" class="form-control" name="itemPackageHeightUnitMeasureId" id="field_itemPackageHeightUnitMeasureId"
+                           formControlName="itemPackageHeightUnitMeasureId"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.stockItemTemp.itemPackageHeightUnitMeasureCode" for="field_itemPackageHeightUnitMeasureCode">Item Package Height Unit Measure Code</label>
+                    <input type="text" class="form-control" name="itemPackageHeightUnitMeasureCode" id="field_itemPackageHeightUnitMeasureCode"
+                           formControlName="itemPackageHeightUnitMeasureCode"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.stockItemTemp.itemPackageWeightUnitMeasureId" for="field_itemPackageWeightUnitMeasureId">Item Package Weight Unit Measure Id</label>
+                    <input type="number" class="form-control" name="itemPackageWeightUnitMeasureId" id="field_itemPackageWeightUnitMeasureId"
+                           formControlName="itemPackageWeightUnitMeasureId"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.stockItemTemp.itemPackageWeightUnitMeasureCode" for="field_itemPackageWeightUnitMeasureCode">Item Package Weight Unit Measure Code</label>
+                    <input type="text" class="form-control" name="itemPackageWeightUnitMeasureCode" id="field_itemPackageWeightUnitMeasureCode"
+                           formControlName="itemPackageWeightUnitMeasureCode"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.stockItemTemp.noOfPieces" for="field_noOfPieces">No Of Pieces</label>
+                    <input type="number" class="form-control" name="noOfPieces" id="field_noOfPieces"
+                           formControlName="noOfPieces"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.stockItemTemp.noOfItems" for="field_noOfItems">No Of Items</label>
+                    <input type="number" class="form-control" name="noOfItems" id="field_noOfItems"
+                           formControlName="noOfItems"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.stockItemTemp.manufacture" for="field_manufacture">Manufacture</label>
+                    <input type="text" class="form-control" name="manufacture" id="field_manufacture"
+                           formControlName="manufacture"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.stockItemTemp.specialFeactures" for="field_specialFeactures">Special Feactures</label>
+                    <textarea class="form-control" name="specialFeactures" id="field_specialFeactures"
+                              formControlName="specialFeactures"></textarea>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.stockItemTemp.productComplianceCertificate" for="field_productComplianceCertificate">Product Compliance Certificate</label>
+                    <input type="text" class="form-control" name="productComplianceCertificate" id="field_productComplianceCertificate"
+                           formControlName="productComplianceCertificate"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.stockItemTemp.genuineAndLegal" for="field_genuineAndLegal">Genuine And Legal</label>
+                    <input type="checkbox" class="form-control" name="genuineAndLegal" id="field_genuineAndLegal"
+                           formControlName="genuineAndLegal"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.stockItemTemp.countryOfOrigin" for="field_countryOfOrigin">Country Of Origin</label>
+                    <input type="text" class="form-control" name="countryOfOrigin" id="field_countryOfOrigin"
+                           formControlName="countryOfOrigin"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.stockItemTemp.usageAndSideEffects" for="field_usageAndSideEffects">Usage And Side Effects</label>
+                    <textarea class="form-control" name="usageAndSideEffects" id="field_usageAndSideEffects"
+                              formControlName="usageAndSideEffects"></textarea>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.stockItemTemp.safetyWarnning" for="field_safetyWarnning">Safety Warnning</label>
+                    <textarea class="form-control" name="safetyWarnning" id="field_safetyWarnning"
+                              formControlName="safetyWarnning"></textarea>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.stockItemTemp.sellStartDate" for="field_sellStartDate">Sell Start Date</label>
+                    <div class="d-flex">
+                        <input id="field_sellStartDate" type="datetime-local" class="form-control" name="sellStartDate" formControlName="sellStartDate" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.stockItemTemp.sellEndDate" for="field_sellEndDate">Sell End Date</label>
+                    <div class="d-flex">
+                        <input id="field_sellEndDate" type="datetime-local" class="form-control" name="sellEndDate" formControlName="sellEndDate" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.stockItemTemp.status" for="field_status">Status</label>
+                    <input type="number" class="form-control" name="status" id="field_status"
+                           formControlName="status"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.stockItemTemp.lastEditedBy" for="field_lastEditedBy">Last Edited By</label>
+                    <input type="text" class="form-control" name="lastEditedBy" id="field_lastEditedBy"
+                           formControlName="lastEditedBy"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.stockItemTemp.lastEditedWhen" for="field_lastEditedWhen">Last Edited When</label>
+                    <div class="d-flex">
+                        <input id="field_lastEditedWhen" type="datetime-local" class="form-control" name="lastEditedWhen" formControlName="lastEditedWhen" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.stockItemTemp.uploadTransaction" for="field_uploadTransaction">Upload Transaction</label>
+                    <select class="form-control" id="field_uploadTransaction" name="uploadTransaction" formControlName="uploadTransactionId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="uploadTransactionsOption.id" *ngFor="let uploadTransactionsOption of uploadtransactions; trackBy: trackUploadTransactionsById">{{uploadTransactionsOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

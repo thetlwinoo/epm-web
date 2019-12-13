@@ -1,0 +1,65 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="reviewLines">
+            <h2><span jhiTranslate="epmwebApp.reviewLines.detail.title">Review Lines</span> {{reviewLines.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="epmwebApp.reviewLines.productRating">Product Rating</span></dt>
+                <dd>
+                    <span>{{reviewLines.productRating}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.reviewLines.productReview">Product Review</span></dt>
+                <dd>
+                    <span>{{reviewLines.productReview}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.reviewLines.sellerRating">Seller Rating</span></dt>
+                <dd>
+                    <span>{{reviewLines.sellerRating}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.reviewLines.sellerReview">Seller Review</span></dt>
+                <dd>
+                    <span>{{reviewLines.sellerReview}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.reviewLines.deliveryRating">Delivery Rating</span></dt>
+                <dd>
+                    <span>{{reviewLines.deliveryRating}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.reviewLines.deliveryReview">Delivery Review</span></dt>
+                <dd>
+                    <span>{{reviewLines.deliveryReview}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.reviewLines.thumbnailUrl">Thumbnail Url</span></dt>
+                <dd>
+                    <span>{{reviewLines.thumbnailUrl}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.reviewLines.lastEditedBy">Last Edited By</span></dt>
+                <dd>
+                    <span>{{reviewLines.lastEditedBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.reviewLines.lastEditedWhen">Last Edited When</span></dt>
+                <dd>
+                    <span>{{reviewLines.lastEditedWhen}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.reviewLines.review">Review</span></dt>
+                <dd>
+                    <div *ngIf="reviewLines.reviewId">
+                        <a [routerLink]="['/reviews', reviewLines.reviewId, 'view']">{{reviewLines.reviewId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/review-lines', reviewLines.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

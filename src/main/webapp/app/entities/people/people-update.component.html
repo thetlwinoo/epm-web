@@ -1,0 +1,238 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-people-heading" jhiTranslate="epmwebApp.people.home.createOrEditLabel">Create or edit a People</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.people.fullName" for="field_fullName">Full Name</label>
+                    <input type="text" class="form-control" name="fullName" id="field_fullName"
+                           formControlName="fullName"/>
+                    <div *ngIf="editForm.get('fullName').invalid && (editForm.get('fullName').dirty || editForm.get('fullName').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('fullName').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.people.preferredName" for="field_preferredName">Preferred Name</label>
+                    <input type="text" class="form-control" name="preferredName" id="field_preferredName"
+                           formControlName="preferredName"/>
+                    <div *ngIf="editForm.get('preferredName').invalid && (editForm.get('preferredName').dirty || editForm.get('preferredName').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('preferredName').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.people.searchName" for="field_searchName">Search Name</label>
+                    <input type="text" class="form-control" name="searchName" id="field_searchName"
+                           formControlName="searchName"/>
+                    <div *ngIf="editForm.get('searchName').invalid && (editForm.get('searchName').dirty || editForm.get('searchName').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('searchName').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.people.gender" for="field_gender">Gender</label>
+                    <select class="form-control" name="gender" formControlName="gender" id="field_gender">
+                        <option value="MALE">{{'epmwebApp.Gender.MALE' | translate}}</option>
+                        <option value="FEMALE">{{'epmwebApp.Gender.FEMALE' | translate}}</option>
+                        <option value="OTHER">{{'epmwebApp.Gender.OTHER' | translate}}</option>
+                    </select>
+                    <div *ngIf="editForm.get('gender').invalid && (editForm.get('gender').dirty || editForm.get('gender').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('gender').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.people.isPermittedToLogon" for="field_isPermittedToLogon">Is Permitted To Logon</label>
+                    <input type="checkbox" class="form-control" name="isPermittedToLogon" id="field_isPermittedToLogon"
+                           formControlName="isPermittedToLogon"/>
+                    <div *ngIf="editForm.get('isPermittedToLogon').invalid && (editForm.get('isPermittedToLogon').dirty || editForm.get('isPermittedToLogon').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('isPermittedToLogon').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.people.logonName" for="field_logonName">Logon Name</label>
+                    <input type="text" class="form-control" name="logonName" id="field_logonName"
+                           formControlName="logonName"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.people.isExternalLogonProvider" for="field_isExternalLogonProvider">Is External Logon Provider</label>
+                    <input type="checkbox" class="form-control" name="isExternalLogonProvider" id="field_isExternalLogonProvider"
+                           formControlName="isExternalLogonProvider"/>
+                    <div *ngIf="editForm.get('isExternalLogonProvider').invalid && (editForm.get('isExternalLogonProvider').dirty || editForm.get('isExternalLogonProvider').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('isExternalLogonProvider').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.people.isSystemUser" for="field_isSystemUser">Is System User</label>
+                    <input type="checkbox" class="form-control" name="isSystemUser" id="field_isSystemUser"
+                           formControlName="isSystemUser"/>
+                    <div *ngIf="editForm.get('isSystemUser').invalid && (editForm.get('isSystemUser').dirty || editForm.get('isSystemUser').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('isSystemUser').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.people.isEmployee" for="field_isEmployee">Is Employee</label>
+                    <input type="checkbox" class="form-control" name="isEmployee" id="field_isEmployee"
+                           formControlName="isEmployee"/>
+                    <div *ngIf="editForm.get('isEmployee').invalid && (editForm.get('isEmployee').dirty || editForm.get('isEmployee').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('isEmployee').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.people.isSalesPerson" for="field_isSalesPerson">Is Sales Person</label>
+                    <input type="checkbox" class="form-control" name="isSalesPerson" id="field_isSalesPerson"
+                           formControlName="isSalesPerson"/>
+                    <div *ngIf="editForm.get('isSalesPerson').invalid && (editForm.get('isSalesPerson').dirty || editForm.get('isSalesPerson').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('isSalesPerson').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.people.isGuestUser" for="field_isGuestUser">Is Guest User</label>
+                    <input type="checkbox" class="form-control" name="isGuestUser" id="field_isGuestUser"
+                           formControlName="isGuestUser"/>
+                    <div *ngIf="editForm.get('isGuestUser').invalid && (editForm.get('isGuestUser').dirty || editForm.get('isGuestUser').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('isGuestUser').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.people.emailPromotion" for="field_emailPromotion">Email Promotion</label>
+                    <input type="number" class="form-control" name="emailPromotion" id="field_emailPromotion"
+                           formControlName="emailPromotion"/>
+                    <div *ngIf="editForm.get('emailPromotion').invalid && (editForm.get('emailPromotion').dirty || editForm.get('emailPromotion').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('emailPromotion').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('emailPromotion')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.people.userPreferences" for="field_userPreferences">User Preferences</label>
+                    <input type="text" class="form-control" name="userPreferences" id="field_userPreferences"
+                           formControlName="userPreferences"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.people.phoneNumber" for="field_phoneNumber">Phone Number</label>
+                    <input type="text" class="form-control" name="phoneNumber" id="field_phoneNumber"
+                           formControlName="phoneNumber"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.people.emailAddress" for="field_emailAddress">Email Address</label>
+                    <input type="text" class="form-control" name="emailAddress" id="field_emailAddress"
+                           formControlName="emailAddress"/>
+                    <div *ngIf="editForm.get('emailAddress').invalid && (editForm.get('emailAddress').dirty || editForm.get('emailAddress').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('emailAddress').errors.pattern" jhiTranslate="entity.validation.pattern" [translateValues]="{ pattern: 'Email Address' }">
+                            This field should follow pattern for "Email Address".
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.people.photo" for="field_photo">Photo</label>
+                    <input type="text" class="form-control" name="photo" id="field_photo"
+                           formControlName="photo"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.people.customFields" for="field_customFields">Custom Fields</label>
+                    <input type="text" class="form-control" name="customFields" id="field_customFields"
+                           formControlName="customFields"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.people.otherLanguages" for="field_otherLanguages">Other Languages</label>
+                    <input type="text" class="form-control" name="otherLanguages" id="field_otherLanguages"
+                           formControlName="otherLanguages"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.people.validFrom" for="field_validFrom">Valid From</label>
+                    <div class="d-flex">
+                        <input id="field_validFrom" type="datetime-local" class="form-control" name="validFrom" formControlName="validFrom" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                    <div *ngIf="editForm.get('validFrom').invalid && (editForm.get('validFrom').dirty || editForm.get('validFrom').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('validFrom').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('validFrom').errors?.ZonedDateTimelocal" jhiTranslate="entity.validation.ZonedDateTimelocal">
+                            This field should be a date and time.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.people.validTo" for="field_validTo">Valid To</label>
+                    <div class="d-flex">
+                        <input id="field_validTo" type="datetime-local" class="form-control" name="validTo" formControlName="validTo" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                    <div *ngIf="editForm.get('validTo').invalid && (editForm.get('validTo').dirty || editForm.get('validTo').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('validTo').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('validTo').errors?.ZonedDateTimelocal" jhiTranslate="entity.validation.ZonedDateTimelocal">
+                            This field should be a date and time.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.people.user" for="field_user">User</label>
+                    <select class="form-control" id="field_user" name="user" formControlName="userId">
+                        <option *ngIf="!editForm.get('userId').value" [ngValue]="null" selected></option>
+                        <option [ngValue]="userOption.id" *ngFor="let userOption of users; trackBy: trackUserById">{{userOption.login}}</option>
+                    </select>
+                </div>
+                <div *ngIf="editForm.get('userId').invalid && (editForm.get('userId').dirty || editForm.get('userId').touched)">
+                    <small class="form-text text-danger"
+                           *ngIf="editForm.get('userId').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                    </small>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

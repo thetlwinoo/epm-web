@@ -1,0 +1,35 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="supplierCategories">
+            <h2><span jhiTranslate="epmwebApp.supplierCategories.detail.title">Supplier Categories</span> {{supplierCategories.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="epmwebApp.supplierCategories.name">Name</span></dt>
+                <dd>
+                    <span>{{supplierCategories.name}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.supplierCategories.validFrom">Valid From</span></dt>
+                <dd>
+                    <span>{{supplierCategories.validFrom}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.supplierCategories.validTo">Valid To</span></dt>
+                <dd>
+                    <span>{{supplierCategories.validTo}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/supplier-categories', supplierCategories.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+{
+  "epmwebApp": {
+    "productTags": {
+      "home": {
+        "title": "Product Tags",
+        "createLabel": "Create a new Product Tags",
+        "createOrEditLabel": "Create or edit a Product Tags",
+        "notFound": "No Product Tags found"
+      },
+      "created": "A new Product Tags is created with identifier {{ param }}",
+      "updated": "A Product Tags is updated with identifier {{ param }}",
+      "deleted": "A Product Tags is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Product Tags {{ id }}?"
+      },
+      "detail": {
+        "title": "Product Tags"
+      },
+      "name": "Name",
+      "product": "Product"
+    }
+  }
+}

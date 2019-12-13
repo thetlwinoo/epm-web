@@ -1,0 +1,37 @@
+{
+  "epmwebApp": {
+    "specialDeals": {
+      "home": {
+        "title": "Special Deals",
+        "createLabel": "Special Deals အသစ်ထည့်မည်",
+        "createOrEditLabel": "Special Deals အသစ်ထည့်ခြင်း (သို့) ပြုပြင်ခြင်း",
+        "notFound": "No Special Deals found"
+      },
+      "created": "{{ param }} အိုင်ဒီဖြင့် Special Deals အသစ်တစ်ခုအား ထည့်ပြီးပါပြီ။",
+      "updated": "{{ param }} အိုင်ဒီဖြင့် Special Deals တစ်ခုအား ပြုပြင်ပြီးပါပြီ။",
+      "deleted": "{{ param }} အိုင်ဒီဖြင့် Special Deals တစ်ခုအား ဖျက်ပြီးပါပြီ။",
+      "delete": {
+        "question": "Special Deals {{ id }} အား ဖျက်ပါမည်။ သေချာပါသလား?"
+      },
+      "detail": {
+        "title": "Special Deals"
+      },
+      "dealDescription": "Deal Description",
+      "startDate": "Start Date",
+      "endDate": "End Date",
+      "discountAmount": "Discount Amount",
+      "discountPercentage": "Discount Percentage",
+      "discountCode": "Discount Code",
+      "unitPrice": "Unit Price",
+      "lastEditedBy": "Last Edited By",
+      "lastEditedWhen": "Last Edited When",
+      "cartDiscount": "Cart Discount",
+      "orderDiscount": "Order Discount",
+      "buyingGroup": "Buying Group",
+      "customerCategory": "Customer Category",
+      "customer": "Customer",
+      "productCategory": "Product Category",
+      "stockItem": "Stock Item"
+    }
+  }
+}

@@ -1,0 +1,67 @@
+{
+    "name": "UploadTransactions",
+    "fields": [
+        {
+            "fieldName": "fileName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "templateUrl",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "status",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "generatedCode",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "lastEditedBy",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "lastEditedWhen",
+            "fieldType": "Instant"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "supplierImportedDocument",
+            "otherEntityRelationshipName": "uploadTransaction",
+            "relationshipName": "importDocumentList"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "stockItemTemp",
+            "otherEntityRelationshipName": "uploadTransaction",
+            "relationshipName": "stockItemTempList"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "suppliers",
+            "otherEntityRelationshipName": "uploadTransactions",
+            "relationshipName": "supplier",
+            "otherEntityField": "name"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "uploadActionTypes",
+            "otherEntityRelationshipName": "uploadTransactions",
+            "relationshipName": "actionType",
+            "otherEntityField": "name"
+        }
+    ],
+    "changelogDate": "20191213033134",
+    "entityTableName": "upload_transactions",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": true,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

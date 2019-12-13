@@ -1,0 +1,24 @@
+{
+  "epmwebApp": {
+    "buyingGroups": {
+      "home": {
+        "title": "Buying Groups",
+        "createLabel": "Buying Groups အသစ်ထည့်မည်",
+        "createOrEditLabel": "Buying Groups အသစ်ထည့်ခြင်း (သို့) ပြုပြင်ခြင်း",
+        "notFound": "No Buying Groups found"
+      },
+      "created": "{{ param }} အိုင်ဒီဖြင့် Buying Groups အသစ်တစ်ခုအား ထည့်ပြီးပါပြီ။",
+      "updated": "{{ param }} အိုင်ဒီဖြင့် Buying Groups တစ်ခုအား ပြုပြင်ပြီးပါပြီ။",
+      "deleted": "{{ param }} အိုင်ဒီဖြင့် Buying Groups တစ်ခုအား ဖျက်ပြီးပါပြီ။",
+      "delete": {
+        "question": "Buying Groups {{ id }} အား ဖျက်ပါမည်။ သေချာပါသလား?"
+      },
+      "detail": {
+        "title": "Buying Groups"
+      },
+      "name": "Name",
+      "validFrom": "Valid From",
+      "validTo": "Valid To"
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+    "name": "WishlistProducts",
+    "fields": [],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "products",
+            "otherEntityRelationshipName": "wishlistProducts",
+            "relationshipName": "product",
+            "otherEntityField": "name"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "wishlists",
+            "otherEntityRelationshipName": "wishlistList",
+            "relationshipName": "wishlist",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20191213033159",
+    "entityTableName": "wishlist_products",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": true,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

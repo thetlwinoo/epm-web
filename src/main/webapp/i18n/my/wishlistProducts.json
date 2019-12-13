@@ -1,0 +1,23 @@
+{
+  "epmwebApp": {
+    "wishlistProducts": {
+      "home": {
+        "title": "Wishlist Products",
+        "createLabel": "Wishlist Products အသစ်ထည့်မည်",
+        "createOrEditLabel": "Wishlist Products အသစ်ထည့်ခြင်း (သို့) ပြုပြင်ခြင်း",
+        "notFound": "No Wishlist Products found"
+      },
+      "created": "{{ param }} အိုင်ဒီဖြင့် Wishlist Products အသစ်တစ်ခုအား ထည့်ပြီးပါပြီ။",
+      "updated": "{{ param }} အိုင်ဒီဖြင့် Wishlist Products တစ်ခုအား ပြုပြင်ပြီးပါပြီ။",
+      "deleted": "{{ param }} အိုင်ဒီဖြင့် Wishlist Products တစ်ခုအား ဖျက်ပြီးပါပြီ။",
+      "delete": {
+        "question": "Wishlist Products {{ id }} အား ဖျက်ပါမည်။ သေချာပါသလား?"
+      },
+      "detail": {
+        "title": "Wishlist Products"
+      },
+      "product": "Product",
+      "wishlist": "Wishlist"
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "epmwebApp": {
+    "currencyRate": {
+      "home": {
+        "title": "Currency Rates",
+        "createLabel": "Create a new Currency Rate",
+        "createOrEditLabel": "Create or edit a Currency Rate",
+        "notFound": "No Currency Rates found"
+      },
+      "created": "A new Currency Rate is created with identifier {{ param }}",
+      "updated": "A Currency Rate is updated with identifier {{ param }}",
+      "deleted": "A Currency Rate is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Currency Rate {{ id }}?"
+      },
+      "detail": {
+        "title": "Currency Rate"
+      },
+      "currencyRateDate": "Currency Rate Date",
+      "fromcode": "Fromcode",
+      "tocode": "Tocode",
+      "averageRate": "Average Rate",
+      "endOfDayRate": "End Of Day Rate",
+      "lastEditedBy": "Last Edited By",
+      "lastEditedWhen": "Last Edited When"
+    }
+  }
+}

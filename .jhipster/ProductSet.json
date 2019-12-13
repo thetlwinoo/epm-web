@@ -1,0 +1,34 @@
+{
+    "name": "ProductSet",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "noOfPerson",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "isExclusive",
+            "fieldType": "Boolean"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20191213033144",
+    "entityTableName": "product_set",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": true,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

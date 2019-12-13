@@ -1,0 +1,57 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="shoppingCarts">
+            <h2><span jhiTranslate="epmwebApp.shoppingCarts.detail.title">Shopping Carts</span> {{shoppingCarts.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="epmwebApp.shoppingCarts.totalPrice">Total Price</span></dt>
+                <dd>
+                    <span>{{shoppingCarts.totalPrice}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.shoppingCarts.totalCargoPrice">Total Cargo Price</span></dt>
+                <dd>
+                    <span>{{shoppingCarts.totalCargoPrice}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.shoppingCarts.lastEditedBy">Last Edited By</span></dt>
+                <dd>
+                    <span>{{shoppingCarts.lastEditedBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.shoppingCarts.lastEditedWhen">Last Edited When</span></dt>
+                <dd>
+                    <span>{{shoppingCarts.lastEditedWhen}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.shoppingCarts.cartUser">Cart User</span></dt>
+                <dd>
+                    <div *ngIf="shoppingCarts.cartUserId">
+                        <a [routerLink]="['/people', shoppingCarts.cartUserId, 'view']">{{shoppingCarts.cartUserId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.shoppingCarts.customer">Customer</span></dt>
+                <dd>
+                    <div *ngIf="shoppingCarts.customerId">
+                        <a [routerLink]="['/customers', shoppingCarts.customerId, 'view']">{{shoppingCarts.customerId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.shoppingCarts.specialDeals">Special Deals</span></dt>
+                <dd>
+                    <div *ngIf="shoppingCarts.specialDealsId">
+                        <a [routerLink]="['/special-deals', shoppingCarts.specialDealsId, 'view']">{{shoppingCarts.specialDealsId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/shopping-carts', shoppingCarts.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

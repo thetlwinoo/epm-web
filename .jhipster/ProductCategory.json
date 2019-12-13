@@ -1,0 +1,45 @@
+{
+    "name": "ProductCategory",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "shortLabel",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "thumbnailUrl",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "photos",
+            "otherEntityRelationshipName": "productCategory",
+            "relationshipName": "photoList"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "productCategory",
+            "otherEntityRelationshipName": "productCategory",
+            "relationshipName": "parent",
+            "otherEntityField": "name"
+        }
+    ],
+    "changelogDate": "20191213033150",
+    "entityTableName": "product_category",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": true,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

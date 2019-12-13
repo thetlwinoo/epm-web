@@ -1,0 +1,329 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="stockItemTemp">
+            <h2><span jhiTranslate="epmwebApp.stockItemTemp.detail.title">Stock Item Temp</span> {{stockItemTemp.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="epmwebApp.stockItemTemp.stockItemName">Stock Item Name</span></dt>
+                <dd>
+                    <span>{{stockItemTemp.stockItemName}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItemTemp.vendorCode">Vendor Code</span></dt>
+                <dd>
+                    <span>{{stockItemTemp.vendorCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItemTemp.vendorSKU">Vendor SKU</span></dt>
+                <dd>
+                    <span>{{stockItemTemp.vendorSKU}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItemTemp.barcode">Barcode</span></dt>
+                <dd>
+                    <span>{{stockItemTemp.barcode}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItemTemp.barcodeTypeId">Barcode Type Id</span></dt>
+                <dd>
+                    <span>{{stockItemTemp.barcodeTypeId}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItemTemp.barcodeTypeName">Barcode Type Name</span></dt>
+                <dd>
+                    <span>{{stockItemTemp.barcodeTypeName}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItemTemp.productType">Product Type</span></dt>
+                <dd>
+                    <span>{{stockItemTemp.productType}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItemTemp.productCategoryId">Product Category Id</span></dt>
+                <dd>
+                    <span>{{stockItemTemp.productCategoryId}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItemTemp.productCategoryName">Product Category Name</span></dt>
+                <dd>
+                    <span>{{stockItemTemp.productCategoryName}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItemTemp.productAttributeSetId">Product Attribute Set Id</span></dt>
+                <dd>
+                    <span>{{stockItemTemp.productAttributeSetId}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItemTemp.productAttributeId">Product Attribute Id</span></dt>
+                <dd>
+                    <span>{{stockItemTemp.productAttributeId}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItemTemp.productAttributeValue">Product Attribute Value</span></dt>
+                <dd>
+                    <span>{{stockItemTemp.productAttributeValue}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItemTemp.productOptionSetId">Product Option Set Id</span></dt>
+                <dd>
+                    <span>{{stockItemTemp.productOptionSetId}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItemTemp.productOptionId">Product Option Id</span></dt>
+                <dd>
+                    <span>{{stockItemTemp.productOptionId}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItemTemp.productOptionValue">Product Option Value</span></dt>
+                <dd>
+                    <span>{{stockItemTemp.productOptionValue}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItemTemp.modelName">Model Name</span></dt>
+                <dd>
+                    <span>{{stockItemTemp.modelName}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItemTemp.modelNumber">Model Number</span></dt>
+                <dd>
+                    <span>{{stockItemTemp.modelNumber}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItemTemp.materialId">Material Id</span></dt>
+                <dd>
+                    <span>{{stockItemTemp.materialId}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItemTemp.materialName">Material Name</span></dt>
+                <dd>
+                    <span>{{stockItemTemp.materialName}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItemTemp.shortDescription">Short Description</span></dt>
+                <dd>
+                    <span>{{stockItemTemp.shortDescription}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItemTemp.description">Description</span></dt>
+                <dd>
+                    <span>{{stockItemTemp.description}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItemTemp.productBrandId">Product Brand Id</span></dt>
+                <dd>
+                    <span>{{stockItemTemp.productBrandId}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItemTemp.productBrandName">Product Brand Name</span></dt>
+                <dd>
+                    <span>{{stockItemTemp.productBrandName}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItemTemp.highlights">Highlights</span></dt>
+                <dd>
+                    <span>{{stockItemTemp.highlights}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItemTemp.searchDetails">Search Details</span></dt>
+                <dd>
+                    <span>{{stockItemTemp.searchDetails}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItemTemp.careInstructions">Care Instructions</span></dt>
+                <dd>
+                    <span>{{stockItemTemp.careInstructions}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItemTemp.dangerousGoods">Dangerous Goods</span></dt>
+                <dd>
+                    <span>{{stockItemTemp.dangerousGoods}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItemTemp.videoUrl">Video Url</span></dt>
+                <dd>
+                    <span>{{stockItemTemp.videoUrl}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItemTemp.unitPrice">Unit Price</span></dt>
+                <dd>
+                    <span>{{stockItemTemp.unitPrice}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItemTemp.remommendedRetailPrice">Remommended Retail Price</span></dt>
+                <dd>
+                    <span>{{stockItemTemp.remommendedRetailPrice}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItemTemp.currencyCode">Currency Code</span></dt>
+                <dd>
+                    <span>{{stockItemTemp.currencyCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItemTemp.quantityOnHand">Quantity On Hand</span></dt>
+                <dd>
+                    <span>{{stockItemTemp.quantityOnHand}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItemTemp.warrantyPeriod">Warranty Period</span></dt>
+                <dd>
+                    <span>{{stockItemTemp.warrantyPeriod}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItemTemp.warrantyPolicy">Warranty Policy</span></dt>
+                <dd>
+                    <span>{{stockItemTemp.warrantyPolicy}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItemTemp.warrantyTypeId">Warranty Type Id</span></dt>
+                <dd>
+                    <span>{{stockItemTemp.warrantyTypeId}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItemTemp.warrantyTypeName">Warranty Type Name</span></dt>
+                <dd>
+                    <span>{{stockItemTemp.warrantyTypeName}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItemTemp.whatInTheBox">What In The Box</span></dt>
+                <dd>
+                    <span>{{stockItemTemp.whatInTheBox}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItemTemp.itemLength">Item Length</span></dt>
+                <dd>
+                    <span>{{stockItemTemp.itemLength}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItemTemp.itemWidth">Item Width</span></dt>
+                <dd>
+                    <span>{{stockItemTemp.itemWidth}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItemTemp.itemHeight">Item Height</span></dt>
+                <dd>
+                    <span>{{stockItemTemp.itemHeight}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItemTemp.itemWeight">Item Weight</span></dt>
+                <dd>
+                    <span>{{stockItemTemp.itemWeight}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItemTemp.itemPackageLength">Item Package Length</span></dt>
+                <dd>
+                    <span>{{stockItemTemp.itemPackageLength}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItemTemp.itemPackageWidth">Item Package Width</span></dt>
+                <dd>
+                    <span>{{stockItemTemp.itemPackageWidth}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItemTemp.itemPackageHeight">Item Package Height</span></dt>
+                <dd>
+                    <span>{{stockItemTemp.itemPackageHeight}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItemTemp.itemPackageWeight">Item Package Weight</span></dt>
+                <dd>
+                    <span>{{stockItemTemp.itemPackageWeight}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItemTemp.itemLengthUnitMeasureId">Item Length Unit Measure Id</span></dt>
+                <dd>
+                    <span>{{stockItemTemp.itemLengthUnitMeasureId}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItemTemp.itemLengthUnitMeasureCode">Item Length Unit Measure Code</span></dt>
+                <dd>
+                    <span>{{stockItemTemp.itemLengthUnitMeasureCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItemTemp.itemWidthUnitMeasureId">Item Width Unit Measure Id</span></dt>
+                <dd>
+                    <span>{{stockItemTemp.itemWidthUnitMeasureId}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItemTemp.itemWidthUnitMeasureCode">Item Width Unit Measure Code</span></dt>
+                <dd>
+                    <span>{{stockItemTemp.itemWidthUnitMeasureCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItemTemp.itemHeightUnitMeasureId">Item Height Unit Measure Id</span></dt>
+                <dd>
+                    <span>{{stockItemTemp.itemHeightUnitMeasureId}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItemTemp.itemHeightUnitMeasureCode">Item Height Unit Measure Code</span></dt>
+                <dd>
+                    <span>{{stockItemTemp.itemHeightUnitMeasureCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItemTemp.itemWeightUnitMeasureId">Item Weight Unit Measure Id</span></dt>
+                <dd>
+                    <span>{{stockItemTemp.itemWeightUnitMeasureId}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItemTemp.itemWeightUnitMeasureCode">Item Weight Unit Measure Code</span></dt>
+                <dd>
+                    <span>{{stockItemTemp.itemWeightUnitMeasureCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItemTemp.itemPackageLengthUnitMeasureId">Item Package Length Unit Measure Id</span></dt>
+                <dd>
+                    <span>{{stockItemTemp.itemPackageLengthUnitMeasureId}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItemTemp.itemPackageLengthUnitMeasureCode">Item Package Length Unit Measure Code</span></dt>
+                <dd>
+                    <span>{{stockItemTemp.itemPackageLengthUnitMeasureCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItemTemp.itemPackageWidthUnitMeasureId">Item Package Width Unit Measure Id</span></dt>
+                <dd>
+                    <span>{{stockItemTemp.itemPackageWidthUnitMeasureId}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItemTemp.itemPackageWidthUnitMeasureCode">Item Package Width Unit Measure Code</span></dt>
+                <dd>
+                    <span>{{stockItemTemp.itemPackageWidthUnitMeasureCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItemTemp.itemPackageHeightUnitMeasureId">Item Package Height Unit Measure Id</span></dt>
+                <dd>
+                    <span>{{stockItemTemp.itemPackageHeightUnitMeasureId}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItemTemp.itemPackageHeightUnitMeasureCode">Item Package Height Unit Measure Code</span></dt>
+                <dd>
+                    <span>{{stockItemTemp.itemPackageHeightUnitMeasureCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItemTemp.itemPackageWeightUnitMeasureId">Item Package Weight Unit Measure Id</span></dt>
+                <dd>
+                    <span>{{stockItemTemp.itemPackageWeightUnitMeasureId}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItemTemp.itemPackageWeightUnitMeasureCode">Item Package Weight Unit Measure Code</span></dt>
+                <dd>
+                    <span>{{stockItemTemp.itemPackageWeightUnitMeasureCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItemTemp.noOfPieces">No Of Pieces</span></dt>
+                <dd>
+                    <span>{{stockItemTemp.noOfPieces}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItemTemp.noOfItems">No Of Items</span></dt>
+                <dd>
+                    <span>{{stockItemTemp.noOfItems}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItemTemp.manufacture">Manufacture</span></dt>
+                <dd>
+                    <span>{{stockItemTemp.manufacture}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItemTemp.specialFeactures">Special Feactures</span></dt>
+                <dd>
+                    <span>{{stockItemTemp.specialFeactures}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItemTemp.productComplianceCertificate">Product Compliance Certificate</span></dt>
+                <dd>
+                    <span>{{stockItemTemp.productComplianceCertificate}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItemTemp.genuineAndLegal">Genuine And Legal</span></dt>
+                <dd>
+                    <span>{{stockItemTemp.genuineAndLegal}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItemTemp.countryOfOrigin">Country Of Origin</span></dt>
+                <dd>
+                    <span>{{stockItemTemp.countryOfOrigin}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItemTemp.usageAndSideEffects">Usage And Side Effects</span></dt>
+                <dd>
+                    <span>{{stockItemTemp.usageAndSideEffects}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItemTemp.safetyWarnning">Safety Warnning</span></dt>
+                <dd>
+                    <span>{{stockItemTemp.safetyWarnning}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItemTemp.sellStartDate">Sell Start Date</span></dt>
+                <dd>
+                    <span>{{stockItemTemp.sellStartDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItemTemp.sellEndDate">Sell End Date</span></dt>
+                <dd>
+                    <span>{{stockItemTemp.sellEndDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItemTemp.status">Status</span></dt>
+                <dd>
+                    <span>{{stockItemTemp.status}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItemTemp.lastEditedBy">Last Edited By</span></dt>
+                <dd>
+                    <span>{{stockItemTemp.lastEditedBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItemTemp.lastEditedWhen">Last Edited When</span></dt>
+                <dd>
+                    <span>{{stockItemTemp.lastEditedWhen}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItemTemp.uploadTransaction">Upload Transaction</span></dt>
+                <dd>
+                    <div *ngIf="stockItemTemp.uploadTransactionId">
+                        <a [routerLink]="['/upload-transactions', stockItemTemp.uploadTransactionId, 'view']">{{stockItemTemp.uploadTransactionId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/stock-item-temp', stockItemTemp.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

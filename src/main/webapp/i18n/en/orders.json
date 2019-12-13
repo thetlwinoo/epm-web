@@ -1,0 +1,47 @@
+{
+  "epmwebApp": {
+    "orders": {
+      "home": {
+        "title": "Orders",
+        "createLabel": "Create a new Orders",
+        "createOrEditLabel": "Create or edit a Orders",
+        "notFound": "No Orders found"
+      },
+      "created": "A new Orders is created with identifier {{ param }}",
+      "updated": "A Orders is updated with identifier {{ param }}",
+      "deleted": "A Orders is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Orders {{ id }}?"
+      },
+      "detail": {
+        "title": "Orders"
+      },
+      "orderDate": "Order Date",
+      "dueDate": "Due Date",
+      "shipDate": "Ship Date",
+      "paymentStatus": "Payment Status",
+      "orderFlag": "Order Flag",
+      "orderNumber": "Order Number",
+      "subTotal": "Sub Total",
+      "taxAmount": "Tax Amount",
+      "frieight": "Frieight",
+      "totalDue": "Total Due",
+      "comments": "Comments",
+      "deliveryInstructions": "Delivery Instructions",
+      "internalComments": "Internal Comments",
+      "pickingCompletedWhen": "Picking Completed When",
+      "status": "Status",
+      "lastEditedBy": "Last Edited By",
+      "lastEditedWhen": "Last Edited When",
+      "orderOnReview": "Order On Review",
+      "orderLineList": "Order Line List",
+      "customer": "Customer",
+      "shipToAddress": "Ship To Address",
+      "billToAddress": "Bill To Address",
+      "shipMethod": "Ship Method",
+      "currencyRate": "Currency Rate",
+      "paymentTransaction": "Payment Transaction",
+      "specialDeals": "Special Deals"
+    }
+  }
+}

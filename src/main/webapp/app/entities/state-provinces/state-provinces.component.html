@@ -1,0 +1,73 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="epmwebApp.stateProvinces.home.title">State Provinces</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-state-provinces" [routerLink]="['/state-provinces/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="epmwebApp.stateProvinces.home.createLabel">
+            Create a new State Provinces
+            </span>
+        </button>
+    </h2>
+    <jhi-alert-error></jhi-alert-error>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="stateProvinces?.length === 0">
+        <span jhiTranslate="epmwebApp.stateProvinces.home.notFound">No stateProvinces found</span>
+    </div>
+    <div class="table-responsive" *ngIf="stateProvinces?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+            <tr>
+            <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.stateProvinces.code">Code</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.stateProvinces.name">Name</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.stateProvinces.salesTerritory">Sales Territory</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.stateProvinces.border">Border</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.stateProvinces.latestRecordedPopulation">Latest Recorded Population</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.stateProvinces.validFrom">Valid From</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.stateProvinces.validTo">Valid To</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.stateProvinces.country">Country</span></th>
+            <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let stateProvinces of stateProvinces ;trackBy: trackId">
+                <td><a [routerLink]="['/state-provinces', stateProvinces.id, 'view' ]">{{stateProvinces.id}}</a></td>
+                <td>{{stateProvinces.code}}</td>
+                <td>{{stateProvinces.name}}</td>
+                <td>{{stateProvinces.salesTerritory}}</td>
+                <td>{{stateProvinces.border}}</td>
+                <td>{{stateProvinces.latestRecordedPopulation}}</td>
+                <td>{{stateProvinces.validFrom | date:'medium'}}</td>
+                <td>{{stateProvinces.validTo | date:'medium'}}</td>
+                <td>
+                    <div *ngIf="stateProvinces.countryId">
+                        <a [routerLink]="['/countries', stateProvinces.countryId , 'view' ]" >{{stateProvinces.countryName}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/state-provinces', stateProvinces.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/state-provinces', stateProvinces.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit" (click)="delete(stateProvinces)"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,223 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="stockItems">
+            <h2><span jhiTranslate="epmwebApp.stockItems.detail.title">Stock Items</span> {{stockItems.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="epmwebApp.stockItems.name">Name</span></dt>
+                <dd>
+                    <span>{{stockItems.name}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItems.vendorCode">Vendor Code</span></dt>
+                <dd>
+                    <span>{{stockItems.vendorCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItems.vendorSKU">Vendor SKU</span></dt>
+                <dd>
+                    <span>{{stockItems.vendorSKU}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItems.generatedSKU">Generated SKU</span></dt>
+                <dd>
+                    <span>{{stockItems.generatedSKU}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItems.barcode">Barcode</span></dt>
+                <dd>
+                    <span>{{stockItems.barcode}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItems.unitPrice">Unit Price</span></dt>
+                <dd>
+                    <span>{{stockItems.unitPrice}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItems.recommendedRetailPrice">Recommended Retail Price</span></dt>
+                <dd>
+                    <span>{{stockItems.recommendedRetailPrice}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItems.quantityOnHand">Quantity On Hand</span></dt>
+                <dd>
+                    <span>{{stockItems.quantityOnHand}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItems.itemLength">Item Length</span></dt>
+                <dd>
+                    <span>{{stockItems.itemLength}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItems.itemWidth">Item Width</span></dt>
+                <dd>
+                    <span>{{stockItems.itemWidth}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItems.itemHeight">Item Height</span></dt>
+                <dd>
+                    <span>{{stockItems.itemHeight}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItems.itemWeight">Item Weight</span></dt>
+                <dd>
+                    <span>{{stockItems.itemWeight}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItems.itemPackageLength">Item Package Length</span></dt>
+                <dd>
+                    <span>{{stockItems.itemPackageLength}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItems.itemPackageWidth">Item Package Width</span></dt>
+                <dd>
+                    <span>{{stockItems.itemPackageWidth}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItems.itemPackageHeight">Item Package Height</span></dt>
+                <dd>
+                    <span>{{stockItems.itemPackageHeight}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItems.itemPackageWeight">Item Package Weight</span></dt>
+                <dd>
+                    <span>{{stockItems.itemPackageWeight}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItems.noOfPieces">No Of Pieces</span></dt>
+                <dd>
+                    <span>{{stockItems.noOfPieces}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItems.noOfItems">No Of Items</span></dt>
+                <dd>
+                    <span>{{stockItems.noOfItems}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItems.manufacture">Manufacture</span></dt>
+                <dd>
+                    <span>{{stockItems.manufacture}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItems.marketingComments">Marketing Comments</span></dt>
+                <dd>
+                    <span>{{stockItems.marketingComments}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItems.internalComments">Internal Comments</span></dt>
+                <dd>
+                    <span>{{stockItems.internalComments}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItems.sellStartDate">Sell Start Date</span></dt>
+                <dd>
+                    <span>{{stockItems.sellStartDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItems.sellEndDate">Sell End Date</span></dt>
+                <dd>
+                    <span>{{stockItems.sellEndDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItems.sellCount">Sell Count</span></dt>
+                <dd>
+                    <span>{{stockItems.sellCount}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItems.customFields">Custom Fields</span></dt>
+                <dd>
+                    <span>{{stockItems.customFields}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItems.thumbnailUrl">Thumbnail Url</span></dt>
+                <dd>
+                    <span>{{stockItems.thumbnailUrl}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItems.activeInd">Active Ind</span></dt>
+                <dd>
+                    <span>{{stockItems.activeInd}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItems.lastEditedBy">Last Edited By</span></dt>
+                <dd>
+                    <span>{{stockItems.lastEditedBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItems.lastEditedWhen">Last Edited When</span></dt>
+                <dd>
+                    <span>{{stockItems.lastEditedWhen}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItems.stockItemOnReviewLine">Stock Item On Review Line</span></dt>
+                <dd>
+                    <div *ngIf="stockItems.stockItemOnReviewLineId">
+                        <a [routerLink]="['/review-lines', stockItems.stockItemOnReviewLineId, 'view']">{{stockItems.stockItemOnReviewLineId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItems.itemLengthUnit">Item Length Unit</span></dt>
+                <dd>
+                    <div *ngIf="stockItems.itemLengthUnitId">
+                        <a [routerLink]="['/unit-measure', stockItems.itemLengthUnitId, 'view']">{{stockItems.itemLengthUnitCode}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItems.itemWidthUnit">Item Width Unit</span></dt>
+                <dd>
+                    <div *ngIf="stockItems.itemWidthUnitId">
+                        <a [routerLink]="['/unit-measure', stockItems.itemWidthUnitId, 'view']">{{stockItems.itemWidthUnitCode}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItems.itemHeightUnit">Item Height Unit</span></dt>
+                <dd>
+                    <div *ngIf="stockItems.itemHeightUnitId">
+                        <a [routerLink]="['/unit-measure', stockItems.itemHeightUnitId, 'view']">{{stockItems.itemHeightUnitCode}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItems.packageLengthUnit">Package Length Unit</span></dt>
+                <dd>
+                    <div *ngIf="stockItems.packageLengthUnitId">
+                        <a [routerLink]="['/unit-measure', stockItems.packageLengthUnitId, 'view']">{{stockItems.packageLengthUnitCode}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItems.packageWidthUnit">Package Width Unit</span></dt>
+                <dd>
+                    <div *ngIf="stockItems.packageWidthUnitId">
+                        <a [routerLink]="['/unit-measure', stockItems.packageWidthUnitId, 'view']">{{stockItems.packageWidthUnitCode}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItems.packageHeightUnit">Package Height Unit</span></dt>
+                <dd>
+                    <div *ngIf="stockItems.packageHeightUnitId">
+                        <a [routerLink]="['/unit-measure', stockItems.packageHeightUnitId, 'view']">{{stockItems.packageHeightUnitCode}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItems.itemPackageWeightUnit">Item Package Weight Unit</span></dt>
+                <dd>
+                    <div *ngIf="stockItems.itemPackageWeightUnitId">
+                        <a [routerLink]="['/unit-measure', stockItems.itemPackageWeightUnitId, 'view']">{{stockItems.itemPackageWeightUnitCode}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItems.productAttribute">Product Attribute</span></dt>
+                <dd>
+                    <div *ngIf="stockItems.productAttributeId">
+                        <a [routerLink]="['/product-attribute', stockItems.productAttributeId, 'view']">{{stockItems.productAttributeValue}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItems.productOption">Product Option</span></dt>
+                <dd>
+                    <div *ngIf="stockItems.productOptionId">
+                        <a [routerLink]="['/product-option', stockItems.productOptionId, 'view']">{{stockItems.productOptionValue}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItems.material">Material</span></dt>
+                <dd>
+                    <div *ngIf="stockItems.materialId">
+                        <a [routerLink]="['/materials', stockItems.materialId, 'view']">{{stockItems.materialName}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItems.currency">Currency</span></dt>
+                <dd>
+                    <div *ngIf="stockItems.currencyId">
+                        <a [routerLink]="['/currency', stockItems.currencyId, 'view']">{{stockItems.currencyCode}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItems.barcodeType">Barcode Type</span></dt>
+                <dd>
+                    <div *ngIf="stockItems.barcodeTypeId">
+                        <a [routerLink]="['/barcode-types', stockItems.barcodeTypeId, 'view']">{{stockItems.barcodeTypeName}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItems.product">Product</span></dt>
+                <dd>
+                    <div *ngIf="stockItems.productId">
+                        <a [routerLink]="['/products', stockItems.productId, 'view']">{{stockItems.productId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/stock-items', stockItems.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

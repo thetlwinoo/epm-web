@@ -1,0 +1,224 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-photos-heading" jhiTranslate="epmwebApp.photos.home.createOrEditLabel">Create or edit a Photos</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.photos.thumbnailPhoto" for="field_thumbnailPhoto">Thumbnail Photo</label>
+                    <input type="text" class="form-control" name="thumbnailPhoto" id="field_thumbnailPhoto"
+                           formControlName="thumbnailPhoto"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.photos.originalPhoto" for="field_originalPhoto">Original Photo</label>
+                    <input type="text" class="form-control" name="originalPhoto" id="field_originalPhoto"
+                           formControlName="originalPhoto"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.photos.bannerTallPhoto" for="field_bannerTallPhoto">Banner Tall Photo</label>
+                    <input type="text" class="form-control" name="bannerTallPhoto" id="field_bannerTallPhoto"
+                           formControlName="bannerTallPhoto"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.photos.bannerWidePhoto" for="field_bannerWidePhoto">Banner Wide Photo</label>
+                    <input type="text" class="form-control" name="bannerWidePhoto" id="field_bannerWidePhoto"
+                           formControlName="bannerWidePhoto"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.photos.circlePhoto" for="field_circlePhoto">Circle Photo</label>
+                    <input type="text" class="form-control" name="circlePhoto" id="field_circlePhoto"
+                           formControlName="circlePhoto"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.photos.sharpenedPhoto" for="field_sharpenedPhoto">Sharpened Photo</label>
+                    <input type="text" class="form-control" name="sharpenedPhoto" id="field_sharpenedPhoto"
+                           formControlName="sharpenedPhoto"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.photos.squarePhoto" for="field_squarePhoto">Square Photo</label>
+                    <input type="text" class="form-control" name="squarePhoto" id="field_squarePhoto"
+                           formControlName="squarePhoto"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.photos.watermarkPhoto" for="field_watermarkPhoto">Watermark Photo</label>
+                    <input type="text" class="form-control" name="watermarkPhoto" id="field_watermarkPhoto"
+                           formControlName="watermarkPhoto"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.photos.thumbnailPhotoBlob" for="field_thumbnailPhotoBlob">Thumbnail Photo Blob</label>
+                    <div>
+                        <img [src]="'data:' + editForm.get('thumbnailPhotoBlobContentType').value + ';base64,' + editForm.get('thumbnailPhotoBlob').value" style="max-height: 100px;" *ngIf="editForm.get('thumbnailPhotoBlob').value" alt="photos image"/>
+                        <div *ngIf="editForm.get('thumbnailPhotoBlob').value" class="form-text text-danger clearfix">
+                            <span class="pull-left">{{editForm.get('thumbnailPhotoBlobContentType').value}}, {{byteSize(editForm.get('thumbnailPhotoBlob').value)}}</span>
+                            <button type="button" (click)="clearInputImage('thumbnailPhotoBlob', 'thumbnailPhotoBlobContentType', 'fileImage')" class="btn btn-secondary btn-xs pull-right">
+                                <fa-icon [icon]="'times'"></fa-icon>
+                            </button>
+                        </div>
+                        <input type="file" id="file_thumbnailPhotoBlob" (change)="setFileData($event, 'thumbnailPhotoBlob', true)" accept="image/*" jhiTranslate="entity.action.addimage"/>
+                    </div>
+                    <input type="hidden" class="form-control" name="thumbnailPhotoBlob" id="field_thumbnailPhotoBlob"
+                           formControlName="thumbnailPhotoBlob"/>
+                    <input type="hidden" class="form-control" name="thumbnailPhotoBlobContentType" id="field_thumbnailPhotoBlobContentType"
+                           formControlName="thumbnailPhotoBlobContentType" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.photos.originalPhotoBlob" for="field_originalPhotoBlob">Original Photo Blob</label>
+                    <div>
+                        <img [src]="'data:' + editForm.get('originalPhotoBlobContentType').value + ';base64,' + editForm.get('originalPhotoBlob').value" style="max-height: 100px;" *ngIf="editForm.get('originalPhotoBlob').value" alt="photos image"/>
+                        <div *ngIf="editForm.get('originalPhotoBlob').value" class="form-text text-danger clearfix">
+                            <span class="pull-left">{{editForm.get('originalPhotoBlobContentType').value}}, {{byteSize(editForm.get('originalPhotoBlob').value)}}</span>
+                            <button type="button" (click)="clearInputImage('originalPhotoBlob', 'originalPhotoBlobContentType', 'fileImage')" class="btn btn-secondary btn-xs pull-right">
+                                <fa-icon [icon]="'times'"></fa-icon>
+                            </button>
+                        </div>
+                        <input type="file" id="file_originalPhotoBlob" (change)="setFileData($event, 'originalPhotoBlob', true)" accept="image/*" jhiTranslate="entity.action.addimage"/>
+                    </div>
+                    <input type="hidden" class="form-control" name="originalPhotoBlob" id="field_originalPhotoBlob"
+                           formControlName="originalPhotoBlob"/>
+                    <input type="hidden" class="form-control" name="originalPhotoBlobContentType" id="field_originalPhotoBlobContentType"
+                           formControlName="originalPhotoBlobContentType" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.photos.bannerTallPhotoBlob" for="field_bannerTallPhotoBlob">Banner Tall Photo Blob</label>
+                    <div>
+                        <img [src]="'data:' + editForm.get('bannerTallPhotoBlobContentType').value + ';base64,' + editForm.get('bannerTallPhotoBlob').value" style="max-height: 100px;" *ngIf="editForm.get('bannerTallPhotoBlob').value" alt="photos image"/>
+                        <div *ngIf="editForm.get('bannerTallPhotoBlob').value" class="form-text text-danger clearfix">
+                            <span class="pull-left">{{editForm.get('bannerTallPhotoBlobContentType').value}}, {{byteSize(editForm.get('bannerTallPhotoBlob').value)}}</span>
+                            <button type="button" (click)="clearInputImage('bannerTallPhotoBlob', 'bannerTallPhotoBlobContentType', 'fileImage')" class="btn btn-secondary btn-xs pull-right">
+                                <fa-icon [icon]="'times'"></fa-icon>
+                            </button>
+                        </div>
+                        <input type="file" id="file_bannerTallPhotoBlob" (change)="setFileData($event, 'bannerTallPhotoBlob', true)" accept="image/*" jhiTranslate="entity.action.addimage"/>
+                    </div>
+                    <input type="hidden" class="form-control" name="bannerTallPhotoBlob" id="field_bannerTallPhotoBlob"
+                           formControlName="bannerTallPhotoBlob"/>
+                    <input type="hidden" class="form-control" name="bannerTallPhotoBlobContentType" id="field_bannerTallPhotoBlobContentType"
+                           formControlName="bannerTallPhotoBlobContentType" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.photos.bannerWidePhotoBlob" for="field_bannerWidePhotoBlob">Banner Wide Photo Blob</label>
+                    <div>
+                        <img [src]="'data:' + editForm.get('bannerWidePhotoBlobContentType').value + ';base64,' + editForm.get('bannerWidePhotoBlob').value" style="max-height: 100px;" *ngIf="editForm.get('bannerWidePhotoBlob').value" alt="photos image"/>
+                        <div *ngIf="editForm.get('bannerWidePhotoBlob').value" class="form-text text-danger clearfix">
+                            <span class="pull-left">{{editForm.get('bannerWidePhotoBlobContentType').value}}, {{byteSize(editForm.get('bannerWidePhotoBlob').value)}}</span>
+                            <button type="button" (click)="clearInputImage('bannerWidePhotoBlob', 'bannerWidePhotoBlobContentType', 'fileImage')" class="btn btn-secondary btn-xs pull-right">
+                                <fa-icon [icon]="'times'"></fa-icon>
+                            </button>
+                        </div>
+                        <input type="file" id="file_bannerWidePhotoBlob" (change)="setFileData($event, 'bannerWidePhotoBlob', true)" accept="image/*" jhiTranslate="entity.action.addimage"/>
+                    </div>
+                    <input type="hidden" class="form-control" name="bannerWidePhotoBlob" id="field_bannerWidePhotoBlob"
+                           formControlName="bannerWidePhotoBlob"/>
+                    <input type="hidden" class="form-control" name="bannerWidePhotoBlobContentType" id="field_bannerWidePhotoBlobContentType"
+                           formControlName="bannerWidePhotoBlobContentType" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.photos.circlePhotoBlob" for="field_circlePhotoBlob">Circle Photo Blob</label>
+                    <div>
+                        <img [src]="'data:' + editForm.get('circlePhotoBlobContentType').value + ';base64,' + editForm.get('circlePhotoBlob').value" style="max-height: 100px;" *ngIf="editForm.get('circlePhotoBlob').value" alt="photos image"/>
+                        <div *ngIf="editForm.get('circlePhotoBlob').value" class="form-text text-danger clearfix">
+                            <span class="pull-left">{{editForm.get('circlePhotoBlobContentType').value}}, {{byteSize(editForm.get('circlePhotoBlob').value)}}</span>
+                            <button type="button" (click)="clearInputImage('circlePhotoBlob', 'circlePhotoBlobContentType', 'fileImage')" class="btn btn-secondary btn-xs pull-right">
+                                <fa-icon [icon]="'times'"></fa-icon>
+                            </button>
+                        </div>
+                        <input type="file" id="file_circlePhotoBlob" (change)="setFileData($event, 'circlePhotoBlob', true)" accept="image/*" jhiTranslate="entity.action.addimage"/>
+                    </div>
+                    <input type="hidden" class="form-control" name="circlePhotoBlob" id="field_circlePhotoBlob"
+                           formControlName="circlePhotoBlob"/>
+                    <input type="hidden" class="form-control" name="circlePhotoBlobContentType" id="field_circlePhotoBlobContentType"
+                           formControlName="circlePhotoBlobContentType" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.photos.sharpenedPhotoBlob" for="field_sharpenedPhotoBlob">Sharpened Photo Blob</label>
+                    <div>
+                        <img [src]="'data:' + editForm.get('sharpenedPhotoBlobContentType').value + ';base64,' + editForm.get('sharpenedPhotoBlob').value" style="max-height: 100px;" *ngIf="editForm.get('sharpenedPhotoBlob').value" alt="photos image"/>
+                        <div *ngIf="editForm.get('sharpenedPhotoBlob').value" class="form-text text-danger clearfix">
+                            <span class="pull-left">{{editForm.get('sharpenedPhotoBlobContentType').value}}, {{byteSize(editForm.get('sharpenedPhotoBlob').value)}}</span>
+                            <button type="button" (click)="clearInputImage('sharpenedPhotoBlob', 'sharpenedPhotoBlobContentType', 'fileImage')" class="btn btn-secondary btn-xs pull-right">
+                                <fa-icon [icon]="'times'"></fa-icon>
+                            </button>
+                        </div>
+                        <input type="file" id="file_sharpenedPhotoBlob" (change)="setFileData($event, 'sharpenedPhotoBlob', true)" accept="image/*" jhiTranslate="entity.action.addimage"/>
+                    </div>
+                    <input type="hidden" class="form-control" name="sharpenedPhotoBlob" id="field_sharpenedPhotoBlob"
+                           formControlName="sharpenedPhotoBlob"/>
+                    <input type="hidden" class="form-control" name="sharpenedPhotoBlobContentType" id="field_sharpenedPhotoBlobContentType"
+                           formControlName="sharpenedPhotoBlobContentType" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.photos.squarePhotoBlob" for="field_squarePhotoBlob">Square Photo Blob</label>
+                    <div>
+                        <img [src]="'data:' + editForm.get('squarePhotoBlobContentType').value + ';base64,' + editForm.get('squarePhotoBlob').value" style="max-height: 100px;" *ngIf="editForm.get('squarePhotoBlob').value" alt="photos image"/>
+                        <div *ngIf="editForm.get('squarePhotoBlob').value" class="form-text text-danger clearfix">
+                            <span class="pull-left">{{editForm.get('squarePhotoBlobContentType').value}}, {{byteSize(editForm.get('squarePhotoBlob').value)}}</span>
+                            <button type="button" (click)="clearInputImage('squarePhotoBlob', 'squarePhotoBlobContentType', 'fileImage')" class="btn btn-secondary btn-xs pull-right">
+                                <fa-icon [icon]="'times'"></fa-icon>
+                            </button>
+                        </div>
+                        <input type="file" id="file_squarePhotoBlob" (change)="setFileData($event, 'squarePhotoBlob', true)" accept="image/*" jhiTranslate="entity.action.addimage"/>
+                    </div>
+                    <input type="hidden" class="form-control" name="squarePhotoBlob" id="field_squarePhotoBlob"
+                           formControlName="squarePhotoBlob"/>
+                    <input type="hidden" class="form-control" name="squarePhotoBlobContentType" id="field_squarePhotoBlobContentType"
+                           formControlName="squarePhotoBlobContentType" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.photos.watermarkPhotoBlob" for="field_watermarkPhotoBlob">Watermark Photo Blob</label>
+                    <div>
+                        <img [src]="'data:' + editForm.get('watermarkPhotoBlobContentType').value + ';base64,' + editForm.get('watermarkPhotoBlob').value" style="max-height: 100px;" *ngIf="editForm.get('watermarkPhotoBlob').value" alt="photos image"/>
+                        <div *ngIf="editForm.get('watermarkPhotoBlob').value" class="form-text text-danger clearfix">
+                            <span class="pull-left">{{editForm.get('watermarkPhotoBlobContentType').value}}, {{byteSize(editForm.get('watermarkPhotoBlob').value)}}</span>
+                            <button type="button" (click)="clearInputImage('watermarkPhotoBlob', 'watermarkPhotoBlobContentType', 'fileImage')" class="btn btn-secondary btn-xs pull-right">
+                                <fa-icon [icon]="'times'"></fa-icon>
+                            </button>
+                        </div>
+                        <input type="file" id="file_watermarkPhotoBlob" (change)="setFileData($event, 'watermarkPhotoBlob', true)" accept="image/*" jhiTranslate="entity.action.addimage"/>
+                    </div>
+                    <input type="hidden" class="form-control" name="watermarkPhotoBlob" id="field_watermarkPhotoBlob"
+                           formControlName="watermarkPhotoBlob"/>
+                    <input type="hidden" class="form-control" name="watermarkPhotoBlobContentType" id="field_watermarkPhotoBlobContentType"
+                           formControlName="watermarkPhotoBlobContentType" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.photos.priority" for="field_priority">Priority</label>
+                    <input type="number" class="form-control" name="priority" id="field_priority"
+                           formControlName="priority"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.photos.defaultInd" for="field_defaultInd">Default Ind</label>
+                    <input type="checkbox" class="form-control" name="defaultInd" id="field_defaultInd"
+                           formControlName="defaultInd"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.photos.stockItem" for="field_stockItem">Stock Item</label>
+                    <select class="form-control" id="field_stockItem" name="stockItem" formControlName="stockItemId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="stockItemsOption.id" *ngFor="let stockItemsOption of stockitems; trackBy: trackStockItemsById">{{stockItemsOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.photos.productCategory" for="field_productCategory">Product Category</label>
+                    <select class="form-control" id="field_productCategory" name="productCategory" formControlName="productCategoryId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="productCategoryOption.id" *ngFor="let productCategoryOption of productcategories; trackBy: trackProductCategoryById">{{productCategoryOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

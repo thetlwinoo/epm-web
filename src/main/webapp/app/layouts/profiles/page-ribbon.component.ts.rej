@@ -1,0 +1,4 @@
+diff a/src/main/webapp/app/layouts/profiles/page-ribbon.component.ts b/src/main/webapp/app/layouts/profiles/page-ribbon.component.ts	(rejected hunks)
+@@ -9 +9 @@ import { ProfileService } from './profile.service';
+-    <div class="ribbon" *ngIf="(ribbonEnv$ | async) as ribbonEnv">
++    <div class="ribbon" *ngIf="ribbonEnv$ | async as ribbonEnv">

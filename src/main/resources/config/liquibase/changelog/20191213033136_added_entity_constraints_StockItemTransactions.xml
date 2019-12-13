@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <!--
+        Added the constraints for entity StockItemTransactions.
+    -->
+    <changeSet id="20191213033136-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="stock_item_id"
+                                 baseTableName="stock_item_transactions"
+                                 constraintName="fk_stock_item_transactions_stock_item_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="stock_items"/>
+
+        <addForeignKeyConstraint baseColumnNames="customer_id"
+                                 baseTableName="stock_item_transactions"
+                                 constraintName="fk_stock_item_transactions_customer_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="customers"/>
+
+        <addForeignKeyConstraint baseColumnNames="invoice_id"
+                                 baseTableName="stock_item_transactions"
+                                 constraintName="fk_stock_item_transactions_invoice_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="invoices"/>
+
+        <addForeignKeyConstraint baseColumnNames="supplier_id"
+                                 baseTableName="stock_item_transactions"
+                                 constraintName="fk_stock_item_transactions_supplier_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="suppliers"/>
+
+        <addForeignKeyConstraint baseColumnNames="transaction_type_id"
+                                 baseTableName="stock_item_transactions"
+                                 constraintName="fk_stock_item_transactions_transaction_type_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="transaction_types"/>
+
+        <addForeignKeyConstraint baseColumnNames="purchase_order_id"
+                                 baseTableName="stock_item_transactions"
+                                 constraintName="fk_stock_item_transactions_purchase_order_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="purchase_orders"/>
+
+    </changeSet>
+</databaseChangeLog>

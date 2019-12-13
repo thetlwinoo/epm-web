@@ -1,0 +1,80 @@
+{
+    "name": "Reviews",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "emailAddress",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "pattern"
+            ],
+            "fieldValidateRulesPattern": "^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$"
+        },
+        {
+            "fieldName": "reviewDate",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "overAllSellerRating",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "overAllSellerReview",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "text"
+        },
+        {
+            "fieldName": "overAllDeliveryRating",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "overAllDeliveryReview",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "text"
+        },
+        {
+            "fieldName": "reviewAsAnonymous",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "completedReview",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "lastEditedBy",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "lastEditedWhen",
+            "fieldType": "Instant"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "reviewLines",
+            "otherEntityRelationshipName": "review",
+            "relationshipName": "reviewLineList"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "orders",
+            "otherEntityRelationshipName": "orderOnReview",
+            "relationshipName": "order",
+            "ownerSide": false
+        }
+    ],
+    "changelogDate": "20191213033202",
+    "entityTableName": "reviews",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": true,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

@@ -1,0 +1,47 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="shoppingCartItems">
+            <h2><span jhiTranslate="epmwebApp.shoppingCartItems.detail.title">Shopping Cart Items</span> {{shoppingCartItems.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="epmwebApp.shoppingCartItems.quantity">Quantity</span></dt>
+                <dd>
+                    <span>{{shoppingCartItems.quantity}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.shoppingCartItems.lastEditedBy">Last Edited By</span></dt>
+                <dd>
+                    <span>{{shoppingCartItems.lastEditedBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.shoppingCartItems.lastEditedWhen">Last Edited When</span></dt>
+                <dd>
+                    <span>{{shoppingCartItems.lastEditedWhen}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.shoppingCartItems.stockItem">Stock Item</span></dt>
+                <dd>
+                    <div *ngIf="shoppingCartItems.stockItemId">
+                        <a [routerLink]="['/stock-items', shoppingCartItems.stockItemId, 'view']">{{shoppingCartItems.stockItemName}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.shoppingCartItems.cart">Cart</span></dt>
+                <dd>
+                    <div *ngIf="shoppingCartItems.cartId">
+                        <a [routerLink]="['/shopping-carts', shoppingCartItems.cartId, 'view']">{{shoppingCartItems.cartId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/shopping-cart-items', shoppingCartItems.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,133 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="orders">
+            <h2><span jhiTranslate="epmwebApp.orders.detail.title">Orders</span> {{orders.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="epmwebApp.orders.orderDate">Order Date</span></dt>
+                <dd>
+                    <span>{{orders.orderDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.orders.dueDate">Due Date</span></dt>
+                <dd>
+                    <span>{{orders.dueDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.orders.shipDate">Ship Date</span></dt>
+                <dd>
+                    <span>{{orders.shipDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.orders.paymentStatus">Payment Status</span></dt>
+                <dd>
+                    <span>{{orders.paymentStatus}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.orders.orderFlag">Order Flag</span></dt>
+                <dd>
+                    <span>{{orders.orderFlag}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.orders.orderNumber">Order Number</span></dt>
+                <dd>
+                    <span>{{orders.orderNumber}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.orders.subTotal">Sub Total</span></dt>
+                <dd>
+                    <span>{{orders.subTotal}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.orders.taxAmount">Tax Amount</span></dt>
+                <dd>
+                    <span>{{orders.taxAmount}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.orders.frieight">Frieight</span></dt>
+                <dd>
+                    <span>{{orders.frieight}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.orders.totalDue">Total Due</span></dt>
+                <dd>
+                    <span>{{orders.totalDue}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.orders.comments">Comments</span></dt>
+                <dd>
+                    <span>{{orders.comments}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.orders.deliveryInstructions">Delivery Instructions</span></dt>
+                <dd>
+                    <span>{{orders.deliveryInstructions}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.orders.internalComments">Internal Comments</span></dt>
+                <dd>
+                    <span>{{orders.internalComments}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.orders.pickingCompletedWhen">Picking Completed When</span></dt>
+                <dd>
+                    <span>{{orders.pickingCompletedWhen}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.orders.status">Status</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'epmwebApp.OrderStatus.' + orders.status}}">{{orders.status}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.orders.lastEditedBy">Last Edited By</span></dt>
+                <dd>
+                    <span>{{orders.lastEditedBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.orders.lastEditedWhen">Last Edited When</span></dt>
+                <dd>
+                    <span>{{orders.lastEditedWhen}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.orders.orderOnReview">Order On Review</span></dt>
+                <dd>
+                    <div *ngIf="orders.orderOnReviewId">
+                        <a [routerLink]="['/reviews', orders.orderOnReviewId, 'view']">{{orders.orderOnReviewId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.orders.customer">Customer</span></dt>
+                <dd>
+                    <div *ngIf="orders.customerId">
+                        <a [routerLink]="['/customers', orders.customerId, 'view']">{{orders.customerId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.orders.shipToAddress">Ship To Address</span></dt>
+                <dd>
+                    <div *ngIf="orders.shipToAddressId">
+                        <a [routerLink]="['/addresses', orders.shipToAddressId, 'view']">{{orders.shipToAddressId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.orders.billToAddress">Bill To Address</span></dt>
+                <dd>
+                    <div *ngIf="orders.billToAddressId">
+                        <a [routerLink]="['/addresses', orders.billToAddressId, 'view']">{{orders.billToAddressId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.orders.shipMethod">Ship Method</span></dt>
+                <dd>
+                    <div *ngIf="orders.shipMethodId">
+                        <a [routerLink]="['/ship-method', orders.shipMethodId, 'view']">{{orders.shipMethodName}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.orders.currencyRate">Currency Rate</span></dt>
+                <dd>
+                    <div *ngIf="orders.currencyRateId">
+                        <a [routerLink]="['/currency-rate', orders.currencyRateId, 'view']">{{orders.currencyRateId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.orders.specialDeals">Special Deals</span></dt>
+                <dd>
+                    <div *ngIf="orders.specialDealsId">
+                        <a [routerLink]="['/special-deals', orders.specialDealsId, 'view']">{{orders.specialDealsId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/orders', orders.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

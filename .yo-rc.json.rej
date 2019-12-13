@@ -1,0 +1,13 @@
+diff a/.yo-rc.json b/.yo-rc.json	(rejected hunks)
+@@ -31,4 +31 @@
+-    "testFrameworks": [
+-      "gatling",
+-      "protractor"
+-    ],
++    "testFrameworks": ["gatling", "protractor"],
+@@ -41,4 +38 @@
+-    "languages": [
+-      "en",
+-      "my"
+-    ],
++    "languages": ["en", "my"],

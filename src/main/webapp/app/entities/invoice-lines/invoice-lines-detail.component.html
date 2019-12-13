@@ -1,0 +1,77 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="invoiceLines">
+            <h2><span jhiTranslate="epmwebApp.invoiceLines.detail.title">Invoice Lines</span> {{invoiceLines.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="epmwebApp.invoiceLines.description">Description</span></dt>
+                <dd>
+                    <span>{{invoiceLines.description}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.invoiceLines.quantity">Quantity</span></dt>
+                <dd>
+                    <span>{{invoiceLines.quantity}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.invoiceLines.unitPrice">Unit Price</span></dt>
+                <dd>
+                    <span>{{invoiceLines.unitPrice}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.invoiceLines.taxRate">Tax Rate</span></dt>
+                <dd>
+                    <span>{{invoiceLines.taxRate}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.invoiceLines.taxAmount">Tax Amount</span></dt>
+                <dd>
+                    <span>{{invoiceLines.taxAmount}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.invoiceLines.lineProfit">Line Profit</span></dt>
+                <dd>
+                    <span>{{invoiceLines.lineProfit}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.invoiceLines.extendedPrice">Extended Price</span></dt>
+                <dd>
+                    <span>{{invoiceLines.extendedPrice}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.invoiceLines.lastEditedBy">Last Edited By</span></dt>
+                <dd>
+                    <span>{{invoiceLines.lastEditedBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.invoiceLines.lastEditedWhen">Last Edited When</span></dt>
+                <dd>
+                    <span>{{invoiceLines.lastEditedWhen}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.invoiceLines.packageType">Package Type</span></dt>
+                <dd>
+                    <div *ngIf="invoiceLines.packageTypeId">
+                        <a [routerLink]="['/package-types', invoiceLines.packageTypeId, 'view']">{{invoiceLines.packageTypeName}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.invoiceLines.stockItem">Stock Item</span></dt>
+                <dd>
+                    <div *ngIf="invoiceLines.stockItemId">
+                        <a [routerLink]="['/stock-items', invoiceLines.stockItemId, 'view']">{{invoiceLines.stockItemName}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.invoiceLines.invoice">Invoice</span></dt>
+                <dd>
+                    <div *ngIf="invoiceLines.invoiceId">
+                        <a [routerLink]="['/invoices', invoiceLines.invoiceId, 'view']">{{invoiceLines.invoiceId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/invoice-lines', invoiceLines.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

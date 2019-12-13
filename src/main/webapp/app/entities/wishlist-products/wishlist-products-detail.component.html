@@ -1,0 +1,35 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="wishlistProducts">
+            <h2><span jhiTranslate="epmwebApp.wishlistProducts.detail.title">Wishlist Products</span> {{wishlistProducts.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="epmwebApp.wishlistProducts.product">Product</span></dt>
+                <dd>
+                    <div *ngIf="wishlistProducts.productId">
+                        <a [routerLink]="['/products', wishlistProducts.productId, 'view']">{{wishlistProducts.productName}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.wishlistProducts.wishlist">Wishlist</span></dt>
+                <dd>
+                    <div *ngIf="wishlistProducts.wishlistId">
+                        <a [routerLink]="['/wishlists', wishlistProducts.wishlistId, 'view']">{{wishlistProducts.wishlistId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/wishlist-products', wishlistProducts.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

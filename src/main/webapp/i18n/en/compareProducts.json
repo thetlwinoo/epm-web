@@ -1,0 +1,23 @@
+{
+  "epmwebApp": {
+    "compareProducts": {
+      "home": {
+        "title": "Compare Products",
+        "createLabel": "Create a new Compare Products",
+        "createOrEditLabel": "Create or edit a Compare Products",
+        "notFound": "No Compare Products found"
+      },
+      "created": "A new Compare Products is created with identifier {{ param }}",
+      "updated": "A Compare Products is updated with identifier {{ param }}",
+      "deleted": "A Compare Products is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Compare Products {{ id }}?"
+      },
+      "detail": {
+        "title": "Compare Products"
+      },
+      "product": "Product",
+      "compare": "Compare"
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "epmwebApp": {
+    "currencyRate": {
+      "home": {
+        "title": "Currency Rates",
+        "createLabel": "Currency Rate အသစ်ထည့်မည်",
+        "createOrEditLabel": "Currency Rate အသစ်ထည့်ခြင်း (သို့) ပြုပြင်ခြင်း",
+        "notFound": "No Currency Rates found"
+      },
+      "created": "{{ param }} အိုင်ဒီဖြင့် Currency Rate အသစ်တစ်ခုအား ထည့်ပြီးပါပြီ။",
+      "updated": "{{ param }} အိုင်ဒီဖြင့် Currency Rate တစ်ခုအား ပြုပြင်ပြီးပါပြီ။",
+      "deleted": "{{ param }} အိုင်ဒီဖြင့် Currency Rate တစ်ခုအား ဖျက်ပြီးပါပြီ။",
+      "delete": {
+        "question": "Currency Rate {{ id }} အား ဖျက်ပါမည်။ သေချာပါသလား?"
+      },
+      "detail": {
+        "title": "Currency Rate"
+      },
+      "currencyRateDate": "Currency Rate Date",
+      "fromcode": "Fromcode",
+      "tocode": "Tocode",
+      "averageRate": "Average Rate",
+      "endOfDayRate": "End Of Day Rate",
+      "lastEditedBy": "Last Edited By",
+      "lastEditedWhen": "Last Edited When"
+    }
+  }
+}

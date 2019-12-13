@@ -1,0 +1,137 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="epmwebApp.invoices.home.title">Invoices</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-invoices" [routerLink]="['/invoices/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="epmwebApp.invoices.home.createLabel">
+            Create a new Invoices
+            </span>
+        </button>
+    </h2>
+    <jhi-alert-error></jhi-alert-error>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="invoices?.length === 0">
+        <span jhiTranslate="epmwebApp.invoices.home.notFound">No invoices found</span>
+    </div>
+    <div class="table-responsive" *ngIf="invoices?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+            <tr>
+            <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.invoices.invoiceDate">Invoice Date</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.invoices.customerPurchaseOrderNumber">Customer Purchase Order Number</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.invoices.isCreditNote">Is Credit Note</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.invoices.creditNoteReason">Credit Note Reason</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.invoices.comments">Comments</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.invoices.deliveryInstructions">Delivery Instructions</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.invoices.internalComments">Internal Comments</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.invoices.totalDryItems">Total Dry Items</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.invoices.totalChillerItems">Total Chiller Items</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.invoices.deliveryRun">Delivery Run</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.invoices.runPosition">Run Position</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.invoices.returnedDeliveryData">Returned Delivery Data</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.invoices.confirmedDeliveryTime">Confirmed Delivery Time</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.invoices.confirmedReceivedBy">Confirmed Received By</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.invoices.paymentMethod">Payment Method</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.invoices.status">Status</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.invoices.lastEditedBy">Last Edited By</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.invoices.lastEditedWhen">Last Edited When</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.invoices.contactPerson">Contact Person</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.invoices.salespersonPerson">Salesperson Person</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.invoices.packedByPerson">Packed By Person</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.invoices.accountsPerson">Accounts Person</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.invoices.customer">Customer</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.invoices.billToCustomer">Bill To Customer</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.invoices.deliveryMethod">Delivery Method</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.invoices.order">Order</span></th>
+            <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let invoices of invoices ;trackBy: trackId">
+                <td><a [routerLink]="['/invoices', invoices.id, 'view' ]">{{invoices.id}}</a></td>
+                <td>{{invoices.invoiceDate | date:'medium'}}</td>
+                <td>{{invoices.customerPurchaseOrderNumber}}</td>
+                <td>{{invoices.isCreditNote}}</td>
+                <td>{{invoices.creditNoteReason}}</td>
+                <td>{{invoices.comments}}</td>
+                <td>{{invoices.deliveryInstructions}}</td>
+                <td>{{invoices.internalComments}}</td>
+                <td>{{invoices.totalDryItems}}</td>
+                <td>{{invoices.totalChillerItems}}</td>
+                <td>{{invoices.deliveryRun}}</td>
+                <td>{{invoices.runPosition}}</td>
+                <td>{{invoices.returnedDeliveryData}}</td>
+                <td>{{invoices.confirmedDeliveryTime | date:'medium'}}</td>
+                <td>{{invoices.confirmedReceivedBy}}</td>
+                <td jhiTranslate="{{'epmwebApp.PaymentMethod.' + invoices.paymentMethod}}">{{invoices.paymentMethod}}</td>
+                <td jhiTranslate="{{'epmwebApp.InvoiceStatus.' + invoices.status}}">{{invoices.status}}</td>
+                <td>{{invoices.lastEditedBy}}</td>
+                <td>{{invoices.lastEditedWhen | date:'medium'}}</td>
+                <td>
+                    <div *ngIf="invoices.contactPersonId">
+                        <a [routerLink]="['/people', invoices.contactPersonId , 'view' ]" >{{invoices.contactPersonFullName}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="invoices.salespersonPersonId">
+                        <a [routerLink]="['/people', invoices.salespersonPersonId , 'view' ]" >{{invoices.salespersonPersonFullName}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="invoices.packedByPersonId">
+                        <a [routerLink]="['/people', invoices.packedByPersonId , 'view' ]" >{{invoices.packedByPersonFullName}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="invoices.accountsPersonId">
+                        <a [routerLink]="['/people', invoices.accountsPersonId , 'view' ]" >{{invoices.accountsPersonFullName}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="invoices.customerId">
+                        <a [routerLink]="['/customers', invoices.customerId , 'view' ]" >{{invoices.customerId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="invoices.billToCustomerId">
+                        <a [routerLink]="['/customers', invoices.billToCustomerId , 'view' ]" >{{invoices.billToCustomerId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="invoices.deliveryMethodId">
+                        <a [routerLink]="['/delivery-methods', invoices.deliveryMethodId , 'view' ]" >{{invoices.deliveryMethodName}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="invoices.orderId">
+                        <a [routerLink]="['/orders', invoices.orderId , 'view' ]" >{{invoices.orderId}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/invoices', invoices.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/invoices', invoices.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit" (click)="delete(invoices)"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

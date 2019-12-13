@@ -1,0 +1,67 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="reviews">
+            <h2><span jhiTranslate="epmwebApp.reviews.detail.title">Reviews</span> {{reviews.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="epmwebApp.reviews.name">Name</span></dt>
+                <dd>
+                    <span>{{reviews.name}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.reviews.emailAddress">Email Address</span></dt>
+                <dd>
+                    <span>{{reviews.emailAddress}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.reviews.reviewDate">Review Date</span></dt>
+                <dd>
+                    <span>{{reviews.reviewDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.reviews.overAllSellerRating">Over All Seller Rating</span></dt>
+                <dd>
+                    <span>{{reviews.overAllSellerRating}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.reviews.overAllSellerReview">Over All Seller Review</span></dt>
+                <dd>
+                    <span>{{reviews.overAllSellerReview}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.reviews.overAllDeliveryRating">Over All Delivery Rating</span></dt>
+                <dd>
+                    <span>{{reviews.overAllDeliveryRating}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.reviews.overAllDeliveryReview">Over All Delivery Review</span></dt>
+                <dd>
+                    <span>{{reviews.overAllDeliveryReview}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.reviews.reviewAsAnonymous">Review As Anonymous</span></dt>
+                <dd>
+                    <span>{{reviews.reviewAsAnonymous}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.reviews.completedReview">Completed Review</span></dt>
+                <dd>
+                    <span>{{reviews.completedReview}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.reviews.lastEditedBy">Last Edited By</span></dt>
+                <dd>
+                    <span>{{reviews.lastEditedBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.reviews.lastEditedWhen">Last Edited When</span></dt>
+                <dd>
+                    <span>{{reviews.lastEditedWhen}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/reviews', reviews.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

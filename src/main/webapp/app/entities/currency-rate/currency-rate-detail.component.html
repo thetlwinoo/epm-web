@@ -1,0 +1,51 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="currencyRate">
+            <h2><span jhiTranslate="epmwebApp.currencyRate.detail.title">Currency Rate</span> {{currencyRate.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="epmwebApp.currencyRate.currencyRateDate">Currency Rate Date</span></dt>
+                <dd>
+                    <span>{{currencyRate.currencyRateDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.currencyRate.fromcode">Fromcode</span></dt>
+                <dd>
+                    <span>{{currencyRate.fromcode}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.currencyRate.tocode">Tocode</span></dt>
+                <dd>
+                    <span>{{currencyRate.tocode}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.currencyRate.averageRate">Average Rate</span></dt>
+                <dd>
+                    <span>{{currencyRate.averageRate}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.currencyRate.endOfDayRate">End Of Day Rate</span></dt>
+                <dd>
+                    <span>{{currencyRate.endOfDayRate}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.currencyRate.lastEditedBy">Last Edited By</span></dt>
+                <dd>
+                    <span>{{currencyRate.lastEditedBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.currencyRate.lastEditedWhen">Last Edited When</span></dt>
+                <dd>
+                    <span>{{currencyRate.lastEditedWhen}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/currency-rate', currencyRate.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+{
+  "epmwebApp": {
+    "productAttribute": {
+      "home": {
+        "title": "Product Attributes",
+        "createLabel": "Product Attribute အသစ်ထည့်မည်",
+        "createOrEditLabel": "Product Attribute အသစ်ထည့်ခြင်း (သို့) ပြုပြင်ခြင်း",
+        "notFound": "No Product Attributes found"
+      },
+      "created": "{{ param }} အိုင်ဒီဖြင့် Product Attribute အသစ်တစ်ခုအား ထည့်ပြီးပါပြီ။",
+      "updated": "{{ param }} အိုင်ဒီဖြင့် Product Attribute တစ်ခုအား ပြုပြင်ပြီးပါပြီ။",
+      "deleted": "{{ param }} အိုင်ဒီဖြင့် Product Attribute တစ်ခုအား ဖျက်ပြီးပါပြီ။",
+      "delete": {
+        "question": "Product Attribute {{ id }} အား ဖျက်ပါမည်။ သေချာပါသလား?"
+      },
+      "detail": {
+        "title": "Product Attribute"
+      },
+      "value": "Value",
+      "productAttributeSet": "Product Attribute Set",
+      "supplier": "Supplier"
+    }
+  }
+}

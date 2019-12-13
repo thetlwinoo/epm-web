@@ -1,0 +1,53 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="stockItemHoldings">
+            <h2><span jhiTranslate="epmwebApp.stockItemHoldings.detail.title">Stock Item Holdings</span> {{stockItemHoldings.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="epmwebApp.stockItemHoldings.quantityOnHand">Quantity On Hand</span></dt>
+                <dd>
+                    <span>{{stockItemHoldings.quantityOnHand}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItemHoldings.binLocation">Bin Location</span></dt>
+                <dd>
+                    <span>{{stockItemHoldings.binLocation}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItemHoldings.lastStocktakeQuantity">Last Stocktake Quantity</span></dt>
+                <dd>
+                    <span>{{stockItemHoldings.lastStocktakeQuantity}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItemHoldings.lastCostPrice">Last Cost Price</span></dt>
+                <dd>
+                    <span>{{stockItemHoldings.lastCostPrice}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItemHoldings.reorderLevel">Reorder Level</span></dt>
+                <dd>
+                    <span>{{stockItemHoldings.reorderLevel}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItemHoldings.targerStockLevel">Targer Stock Level</span></dt>
+                <dd>
+                    <span>{{stockItemHoldings.targerStockLevel}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stockItemHoldings.stockItemHoldingOnStockItem">Stock Item Holding On Stock Item</span></dt>
+                <dd>
+                    <div *ngIf="stockItemHoldings.stockItemHoldingOnStockItemId">
+                        <a [routerLink]="['/stock-items', stockItemHoldings.stockItemHoldingOnStockItemId, 'view']">{{stockItemHoldings.stockItemHoldingOnStockItemId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/stock-item-holdings', stockItemHoldings.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

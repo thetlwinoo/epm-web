@@ -1,0 +1,147 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="photos">
+            <h2><span jhiTranslate="epmwebApp.photos.detail.title">Photos</span> {{photos.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="epmwebApp.photos.thumbnailPhoto">Thumbnail Photo</span></dt>
+                <dd>
+                    <span>{{photos.thumbnailPhoto}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.photos.originalPhoto">Original Photo</span></dt>
+                <dd>
+                    <span>{{photos.originalPhoto}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.photos.bannerTallPhoto">Banner Tall Photo</span></dt>
+                <dd>
+                    <span>{{photos.bannerTallPhoto}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.photos.bannerWidePhoto">Banner Wide Photo</span></dt>
+                <dd>
+                    <span>{{photos.bannerWidePhoto}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.photos.circlePhoto">Circle Photo</span></dt>
+                <dd>
+                    <span>{{photos.circlePhoto}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.photos.sharpenedPhoto">Sharpened Photo</span></dt>
+                <dd>
+                    <span>{{photos.sharpenedPhoto}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.photos.squarePhoto">Square Photo</span></dt>
+                <dd>
+                    <span>{{photos.squarePhoto}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.photos.watermarkPhoto">Watermark Photo</span></dt>
+                <dd>
+                    <span>{{photos.watermarkPhoto}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.photos.thumbnailPhotoBlob">Thumbnail Photo Blob</span></dt>
+                <dd>
+                    <div *ngIf="photos.thumbnailPhotoBlob">
+                        <a (click)="openFile(photos.thumbnailPhotoBlobContentType, photos.thumbnailPhotoBlob)">
+                            <img [src]="'data:' + photos.thumbnailPhotoBlobContentType + ';base64,' + photos.thumbnailPhotoBlob" style="max-width: 100%;" alt="photos image"/>
+                        </a>
+                        {{photos.thumbnailPhotoBlobContentType}}, {{byteSize(photos.thumbnailPhotoBlob)}}
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.photos.originalPhotoBlob">Original Photo Blob</span></dt>
+                <dd>
+                    <div *ngIf="photos.originalPhotoBlob">
+                        <a (click)="openFile(photos.originalPhotoBlobContentType, photos.originalPhotoBlob)">
+                            <img [src]="'data:' + photos.originalPhotoBlobContentType + ';base64,' + photos.originalPhotoBlob" style="max-width: 100%;" alt="photos image"/>
+                        </a>
+                        {{photos.originalPhotoBlobContentType}}, {{byteSize(photos.originalPhotoBlob)}}
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.photos.bannerTallPhotoBlob">Banner Tall Photo Blob</span></dt>
+                <dd>
+                    <div *ngIf="photos.bannerTallPhotoBlob">
+                        <a (click)="openFile(photos.bannerTallPhotoBlobContentType, photos.bannerTallPhotoBlob)">
+                            <img [src]="'data:' + photos.bannerTallPhotoBlobContentType + ';base64,' + photos.bannerTallPhotoBlob" style="max-width: 100%;" alt="photos image"/>
+                        </a>
+                        {{photos.bannerTallPhotoBlobContentType}}, {{byteSize(photos.bannerTallPhotoBlob)}}
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.photos.bannerWidePhotoBlob">Banner Wide Photo Blob</span></dt>
+                <dd>
+                    <div *ngIf="photos.bannerWidePhotoBlob">
+                        <a (click)="openFile(photos.bannerWidePhotoBlobContentType, photos.bannerWidePhotoBlob)">
+                            <img [src]="'data:' + photos.bannerWidePhotoBlobContentType + ';base64,' + photos.bannerWidePhotoBlob" style="max-width: 100%;" alt="photos image"/>
+                        </a>
+                        {{photos.bannerWidePhotoBlobContentType}}, {{byteSize(photos.bannerWidePhotoBlob)}}
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.photos.circlePhotoBlob">Circle Photo Blob</span></dt>
+                <dd>
+                    <div *ngIf="photos.circlePhotoBlob">
+                        <a (click)="openFile(photos.circlePhotoBlobContentType, photos.circlePhotoBlob)">
+                            <img [src]="'data:' + photos.circlePhotoBlobContentType + ';base64,' + photos.circlePhotoBlob" style="max-width: 100%;" alt="photos image"/>
+                        </a>
+                        {{photos.circlePhotoBlobContentType}}, {{byteSize(photos.circlePhotoBlob)}}
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.photos.sharpenedPhotoBlob">Sharpened Photo Blob</span></dt>
+                <dd>
+                    <div *ngIf="photos.sharpenedPhotoBlob">
+                        <a (click)="openFile(photos.sharpenedPhotoBlobContentType, photos.sharpenedPhotoBlob)">
+                            <img [src]="'data:' + photos.sharpenedPhotoBlobContentType + ';base64,' + photos.sharpenedPhotoBlob" style="max-width: 100%;" alt="photos image"/>
+                        </a>
+                        {{photos.sharpenedPhotoBlobContentType}}, {{byteSize(photos.sharpenedPhotoBlob)}}
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.photos.squarePhotoBlob">Square Photo Blob</span></dt>
+                <dd>
+                    <div *ngIf="photos.squarePhotoBlob">
+                        <a (click)="openFile(photos.squarePhotoBlobContentType, photos.squarePhotoBlob)">
+                            <img [src]="'data:' + photos.squarePhotoBlobContentType + ';base64,' + photos.squarePhotoBlob" style="max-width: 100%;" alt="photos image"/>
+                        </a>
+                        {{photos.squarePhotoBlobContentType}}, {{byteSize(photos.squarePhotoBlob)}}
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.photos.watermarkPhotoBlob">Watermark Photo Blob</span></dt>
+                <dd>
+                    <div *ngIf="photos.watermarkPhotoBlob">
+                        <a (click)="openFile(photos.watermarkPhotoBlobContentType, photos.watermarkPhotoBlob)">
+                            <img [src]="'data:' + photos.watermarkPhotoBlobContentType + ';base64,' + photos.watermarkPhotoBlob" style="max-width: 100%;" alt="photos image"/>
+                        </a>
+                        {{photos.watermarkPhotoBlobContentType}}, {{byteSize(photos.watermarkPhotoBlob)}}
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.photos.priority">Priority</span></dt>
+                <dd>
+                    <span>{{photos.priority}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.photos.defaultInd">Default Ind</span></dt>
+                <dd>
+                    <span>{{photos.defaultInd}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.photos.stockItem">Stock Item</span></dt>
+                <dd>
+                    <div *ngIf="photos.stockItemId">
+                        <a [routerLink]="['/stock-items', photos.stockItemId, 'view']">{{photos.stockItemId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.photos.productCategory">Product Category</span></dt>
+                <dd>
+                    <div *ngIf="photos.productCategoryId">
+                        <a [routerLink]="['/product-category', photos.productCategoryId, 'view']">{{photos.productCategoryId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/photos', photos.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

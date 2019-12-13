@@ -1,0 +1,51 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="vehicleTemperatures">
+            <h2><span jhiTranslate="epmwebApp.vehicleTemperatures.detail.title">Vehicle Temperatures</span> {{vehicleTemperatures.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="epmwebApp.vehicleTemperatures.vehicleRegistration">Vehicle Registration</span></dt>
+                <dd>
+                    <span>{{vehicleTemperatures.vehicleRegistration}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.vehicleTemperatures.chillerSensorNumber">Chiller Sensor Number</span></dt>
+                <dd>
+                    <span>{{vehicleTemperatures.chillerSensorNumber}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.vehicleTemperatures.recordedWhen">Recorded When</span></dt>
+                <dd>
+                    <span>{{vehicleTemperatures.recordedWhen}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.vehicleTemperatures.temperature">Temperature</span></dt>
+                <dd>
+                    <span>{{vehicleTemperatures.temperature}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.vehicleTemperatures.isCompressed">Is Compressed</span></dt>
+                <dd>
+                    <span>{{vehicleTemperatures.isCompressed}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.vehicleTemperatures.fullSensorData">Full Sensor Data</span></dt>
+                <dd>
+                    <span>{{vehicleTemperatures.fullSensorData}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.vehicleTemperatures.compressedSensorData">Compressed Sensor Data</span></dt>
+                <dd>
+                    <span>{{vehicleTemperatures.compressedSensorData}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/vehicle-temperatures', vehicleTemperatures.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

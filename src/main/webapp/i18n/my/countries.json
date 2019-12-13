@@ -1,0 +1,33 @@
+{
+  "epmwebApp": {
+    "countries": {
+      "home": {
+        "title": "Countries",
+        "createLabel": "Countries အသစ်ထည့်မည်",
+        "createOrEditLabel": "Countries အသစ်ထည့်ခြင်း (သို့) ပြုပြင်ခြင်း",
+        "notFound": "No Countries found"
+      },
+      "created": "{{ param }} အိုင်ဒီဖြင့် Countries အသစ်တစ်ခုအား ထည့်ပြီးပါပြီ။",
+      "updated": "{{ param }} အိုင်ဒီဖြင့် Countries တစ်ခုအား ပြုပြင်ပြီးပါပြီ။",
+      "deleted": "{{ param }} အိုင်ဒီဖြင့် Countries တစ်ခုအား ဖျက်ပြီးပါပြီ။",
+      "delete": {
+        "question": "Countries {{ id }} အား ဖျက်ပါမည်။ သေချာပါသလား?"
+      },
+      "detail": {
+        "title": "Countries"
+      },
+      "name": "Name",
+      "formalName": "Formal Name",
+      "isoAplha3Code": "Iso Aplha 3 Code",
+      "isoNumericCode": "Iso Numeric Code",
+      "countryType": "Country Type",
+      "latestRecordedPopulation": "Latest Recorded Population",
+      "continent": "Continent",
+      "region": "Region",
+      "subregion": "Subregion",
+      "border": "Border",
+      "validFrom": "Valid From",
+      "validTo": "Valid To"
+    }
+  }
+}

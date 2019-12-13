@@ -1,0 +1,123 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="suppliers">
+            <h2><span jhiTranslate="epmwebApp.suppliers.detail.title">Suppliers</span> {{suppliers.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="epmwebApp.suppliers.name">Name</span></dt>
+                <dd>
+                    <span>{{suppliers.name}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.suppliers.supplierReference">Supplier Reference</span></dt>
+                <dd>
+                    <span>{{suppliers.supplierReference}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.suppliers.bankAccountName">Bank Account Name</span></dt>
+                <dd>
+                    <span>{{suppliers.bankAccountName}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.suppliers.bankAccountBranch">Bank Account Branch</span></dt>
+                <dd>
+                    <span>{{suppliers.bankAccountBranch}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.suppliers.bankAccountCode">Bank Account Code</span></dt>
+                <dd>
+                    <span>{{suppliers.bankAccountCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.suppliers.bankAccountNumber">Bank Account Number</span></dt>
+                <dd>
+                    <span>{{suppliers.bankAccountNumber}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.suppliers.bankInternationalCode">Bank International Code</span></dt>
+                <dd>
+                    <span>{{suppliers.bankInternationalCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.suppliers.paymentDays">Payment Days</span></dt>
+                <dd>
+                    <span>{{suppliers.paymentDays}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.suppliers.internalComments">Internal Comments</span></dt>
+                <dd>
+                    <span>{{suppliers.internalComments}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.suppliers.phoneNumber">Phone Number</span></dt>
+                <dd>
+                    <span>{{suppliers.phoneNumber}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.suppliers.faxNumber">Fax Number</span></dt>
+                <dd>
+                    <span>{{suppliers.faxNumber}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.suppliers.websiteURL">Website URL</span></dt>
+                <dd>
+                    <span>{{suppliers.websiteURL}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.suppliers.webServiceUrl">Web Service Url</span></dt>
+                <dd>
+                    <span>{{suppliers.webServiceUrl}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.suppliers.creditRating">Credit Rating</span></dt>
+                <dd>
+                    <span>{{suppliers.creditRating}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.suppliers.activeFlag">Active Flag</span></dt>
+                <dd>
+                    <span>{{suppliers.activeFlag}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.suppliers.thumbnailUrl">Thumbnail Url</span></dt>
+                <dd>
+                    <span>{{suppliers.thumbnailUrl}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.suppliers.validFrom">Valid From</span></dt>
+                <dd>
+                    <span>{{suppliers.validFrom}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.suppliers.validTo">Valid To</span></dt>
+                <dd>
+                    <span>{{suppliers.validTo}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.suppliers.user">User</span></dt>
+                <dd>
+                    {{suppliers.userLogin}}
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.suppliers.supplierCategory">Supplier Category</span></dt>
+                <dd>
+                    <div *ngIf="suppliers.supplierCategoryId">
+                        <a [routerLink]="['/supplier-categories', suppliers.supplierCategoryId, 'view']">{{suppliers.supplierCategoryName}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.suppliers.deliveryMethod">Delivery Method</span></dt>
+                <dd>
+                    <div *ngIf="suppliers.deliveryMethodId">
+                        <a [routerLink]="['/delivery-methods', suppliers.deliveryMethodId, 'view']">{{suppliers.deliveryMethodName}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.suppliers.deliveryCity">Delivery City</span></dt>
+                <dd>
+                    <div *ngIf="suppliers.deliveryCityId">
+                        <a [routerLink]="['/cities', suppliers.deliveryCityId, 'view']">{{suppliers.deliveryCityName}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.suppliers.postalCity">Postal City</span></dt>
+                <dd>
+                    <div *ngIf="suppliers.postalCityId">
+                        <a [routerLink]="['/cities', suppliers.postalCityId, 'view']">{{suppliers.postalCityName}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/suppliers', suppliers.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+{
+  "epmwebApp": {
+    "productOption": {
+      "home": {
+        "title": "Product Options",
+        "createLabel": "Product Option အသစ်ထည့်မည်",
+        "createOrEditLabel": "Product Option အသစ်ထည့်ခြင်း (သို့) ပြုပြင်ခြင်း",
+        "notFound": "No Product Options found"
+      },
+      "created": "{{ param }} အိုင်ဒီဖြင့် Product Option အသစ်တစ်ခုအား ထည့်ပြီးပါပြီ။",
+      "updated": "{{ param }} အိုင်ဒီဖြင့် Product Option တစ်ခုအား ပြုပြင်ပြီးပါပြီ။",
+      "deleted": "{{ param }} အိုင်ဒီဖြင့် Product Option တစ်ခုအား ဖျက်ပြီးပါပြီ။",
+      "delete": {
+        "question": "Product Option {{ id }} အား ဖျက်ပါမည်။ သေချာပါသလား?"
+      },
+      "detail": {
+        "title": "Product Option"
+      },
+      "value": "Value",
+      "productOptionSet": "Product Option Set",
+      "supplier": "Supplier"
+    }
+  }
+}

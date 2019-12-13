@@ -1,0 +1,31 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="productBrand">
+            <h2><span jhiTranslate="epmwebApp.productBrand.detail.title">Product Brand</span> {{productBrand.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="epmwebApp.productBrand.name">Name</span></dt>
+                <dd>
+                    <span>{{productBrand.name}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.productBrand.thumbnailUrl">Thumbnail Url</span></dt>
+                <dd>
+                    <span>{{productBrand.thumbnailUrl}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/product-brand', productBrand.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

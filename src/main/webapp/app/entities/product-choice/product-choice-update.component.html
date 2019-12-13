@@ -1,0 +1,56 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-product-choice-heading" jhiTranslate="epmwebApp.productChoice.home.createOrEditLabel">Create or edit a Product Choice</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.productChoice.isMultiply" for="field_isMultiply">Is Multiply</label>
+                    <input type="checkbox" class="form-control" name="isMultiply" id="field_isMultiply"
+                           formControlName="isMultiply"/>
+                    <div *ngIf="editForm.get('isMultiply').invalid && (editForm.get('isMultiply').dirty || editForm.get('isMultiply').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('isMultiply').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.productChoice.productCategory" for="field_productCategory">Product Category</label>
+                    <select class="form-control" id="field_productCategory" name="productCategory" formControlName="productCategoryId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="productCategoryOption.id" *ngFor="let productCategoryOption of productcategories; trackBy: trackProductCategoryById">{{productCategoryOption.name}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.productChoice.productAttributeSet" for="field_productAttributeSet">Product Attribute Set</label>
+                    <select class="form-control" id="field_productAttributeSet" name="productAttributeSet" formControlName="productAttributeSetId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="productAttributeSetOption.id" *ngFor="let productAttributeSetOption of productattributesets; trackBy: trackProductAttributeSetById">{{productAttributeSetOption.name}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.productChoice.productOptionSet" for="field_productOptionSet">Product Option Set</label>
+                    <select class="form-control" id="field_productOptionSet" name="productOptionSet" formControlName="productOptionSetId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="productOptionSetOption.id" *ngFor="let productOptionSetOption of productoptionsets; trackBy: trackProductOptionSetById">{{productOptionSetOption.value}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

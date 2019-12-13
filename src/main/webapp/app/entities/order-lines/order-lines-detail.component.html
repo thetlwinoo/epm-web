@@ -1,0 +1,85 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="orderLines">
+            <h2><span jhiTranslate="epmwebApp.orderLines.detail.title">Order Lines</span> {{orderLines.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="epmwebApp.orderLines.carrierTrackingNumber">Carrier Tracking Number</span></dt>
+                <dd>
+                    <span>{{orderLines.carrierTrackingNumber}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.orderLines.quantity">Quantity</span></dt>
+                <dd>
+                    <span>{{orderLines.quantity}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.orderLines.unitPrice">Unit Price</span></dt>
+                <dd>
+                    <span>{{orderLines.unitPrice}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.orderLines.unitPriceDiscount">Unit Price Discount</span></dt>
+                <dd>
+                    <span>{{orderLines.unitPriceDiscount}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.orderLines.lineTotal">Line Total</span></dt>
+                <dd>
+                    <span>{{orderLines.lineTotal}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.orderLines.taxRate">Tax Rate</span></dt>
+                <dd>
+                    <span>{{orderLines.taxRate}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.orderLines.pickedQuantity">Picked Quantity</span></dt>
+                <dd>
+                    <span>{{orderLines.pickedQuantity}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.orderLines.pickingCompletedWhen">Picking Completed When</span></dt>
+                <dd>
+                    <span>{{orderLines.pickingCompletedWhen}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.orderLines.status">Status</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'epmwebApp.OrderLineStatus.' + orderLines.status}}">{{orderLines.status}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.orderLines.lastEditedBy">Last Edited By</span></dt>
+                <dd>
+                    <span>{{orderLines.lastEditedBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.orderLines.lastEditedWhen">Last Edited When</span></dt>
+                <dd>
+                    <span>{{orderLines.lastEditedWhen}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.orderLines.stockItem">Stock Item</span></dt>
+                <dd>
+                    <div *ngIf="orderLines.stockItemId">
+                        <a [routerLink]="['/stock-items', orderLines.stockItemId, 'view']">{{orderLines.stockItemName}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.orderLines.packageType">Package Type</span></dt>
+                <dd>
+                    <div *ngIf="orderLines.packageTypeId">
+                        <a [routerLink]="['/package-types', orderLines.packageTypeId, 'view']">{{orderLines.packageTypeName}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.orderLines.order">Order</span></dt>
+                <dd>
+                    <div *ngIf="orderLines.orderId">
+                        <a [routerLink]="['/orders', orderLines.orderId, 'view']">{{orderLines.orderId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/order-lines', orderLines.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

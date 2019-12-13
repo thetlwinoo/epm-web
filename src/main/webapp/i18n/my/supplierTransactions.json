@@ -1,0 +1,34 @@
+{
+  "epmwebApp": {
+    "supplierTransactions": {
+      "home": {
+        "title": "Supplier Transactions",
+        "createLabel": "Supplier Transactions အသစ်ထည့်မည်",
+        "createOrEditLabel": "Supplier Transactions အသစ်ထည့်ခြင်း (သို့) ပြုပြင်ခြင်း",
+        "notFound": "No Supplier Transactions found"
+      },
+      "created": "{{ param }} အိုင်ဒီဖြင့် Supplier Transactions အသစ်တစ်ခုအား ထည့်ပြီးပါပြီ။",
+      "updated": "{{ param }} အိုင်ဒီဖြင့် Supplier Transactions တစ်ခုအား ပြုပြင်ပြီးပါပြီ။",
+      "deleted": "{{ param }} အိုင်ဒီဖြင့် Supplier Transactions တစ်ခုအား ဖျက်ပြီးပါပြီ။",
+      "delete": {
+        "question": "Supplier Transactions {{ id }} အား ဖျက်ပါမည်။ သေချာပါသလား?"
+      },
+      "detail": {
+        "title": "Supplier Transactions"
+      },
+      "supplierInvoiceNumber": "Supplier Invoice Number",
+      "transactionDate": "Transaction Date",
+      "amountExcludingTax": "Amount Excluding Tax",
+      "taxAmount": "Tax Amount",
+      "transactionAmount": "Transaction Amount",
+      "outstandingBalance": "Outstanding Balance",
+      "finalizationDate": "Finalization Date",
+      "isFinalized": "Is Finalized",
+      "lastEditedBy": "Last Edited By",
+      "lastEditedWhen": "Last Edited When",
+      "supplier": "Supplier",
+      "transactionType": "Transaction Type",
+      "purchaseOrder": "Purchase Order"
+    }
+  }
+}

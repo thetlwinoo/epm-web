@@ -1,0 +1,22 @@
+{
+  "epmwebApp": {
+    "productOptionSet": {
+      "home": {
+        "title": "Product Option Sets",
+        "createLabel": "Product Option Set အသစ်ထည့်မည်",
+        "createOrEditLabel": "Product Option Set အသစ်ထည့်ခြင်း (သို့) ပြုပြင်ခြင်း",
+        "notFound": "No Product Option Sets found"
+      },
+      "created": "{{ param }} အိုင်ဒီဖြင့် Product Option Set အသစ်တစ်ခုအား ထည့်ပြီးပါပြီ။",
+      "updated": "{{ param }} အိုင်ဒီဖြင့် Product Option Set တစ်ခုအား ပြုပြင်ပြီးပါပြီ။",
+      "deleted": "{{ param }} အိုင်ဒီဖြင့် Product Option Set တစ်ခုအား ဖျက်ပြီးပါပြီ။",
+      "delete": {
+        "question": "Product Option Set {{ id }} အား ဖျက်ပါမည်။ သေချာပါသလား?"
+      },
+      "detail": {
+        "title": "Product Option Set"
+      },
+      "value": "Value"
+    }
+  }
+}

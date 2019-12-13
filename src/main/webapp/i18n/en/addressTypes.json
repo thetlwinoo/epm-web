@@ -1,0 +1,23 @@
+{
+  "epmwebApp": {
+    "addressTypes": {
+      "home": {
+        "title": "Address Types",
+        "createLabel": "Create a new Address Types",
+        "createOrEditLabel": "Create or edit a Address Types",
+        "notFound": "No Address Types found"
+      },
+      "created": "A new Address Types is created with identifier {{ param }}",
+      "updated": "A Address Types is updated with identifier {{ param }}",
+      "deleted": "A Address Types is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Address Types {{ id }}?"
+      },
+      "detail": {
+        "title": "Address Types"
+      },
+      "name": "Name",
+      "refer": "Refer"
+    }
+  }
+}

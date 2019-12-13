@@ -1,0 +1,83 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="customerTransactions">
+            <h2><span jhiTranslate="epmwebApp.customerTransactions.detail.title">Customer Transactions</span> {{customerTransactions.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="epmwebApp.customerTransactions.transactionDate">Transaction Date</span></dt>
+                <dd>
+                    <span>{{customerTransactions.transactionDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.customerTransactions.amountExcludingTax">Amount Excluding Tax</span></dt>
+                <dd>
+                    <span>{{customerTransactions.amountExcludingTax}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.customerTransactions.taxAmount">Tax Amount</span></dt>
+                <dd>
+                    <span>{{customerTransactions.taxAmount}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.customerTransactions.transactionAmount">Transaction Amount</span></dt>
+                <dd>
+                    <span>{{customerTransactions.transactionAmount}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.customerTransactions.outstandingBalance">Outstanding Balance</span></dt>
+                <dd>
+                    <span>{{customerTransactions.outstandingBalance}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.customerTransactions.finalizationDate">Finalization Date</span></dt>
+                <dd>
+                    <span>{{customerTransactions.finalizationDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.customerTransactions.isFinalized">Is Finalized</span></dt>
+                <dd>
+                    <span>{{customerTransactions.isFinalized}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.customerTransactions.lastEditedBy">Last Edited By</span></dt>
+                <dd>
+                    <span>{{customerTransactions.lastEditedBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.customerTransactions.lastEditedWhen">Last Edited When</span></dt>
+                <dd>
+                    <span>{{customerTransactions.lastEditedWhen}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.customerTransactions.customer">Customer</span></dt>
+                <dd>
+                    <div *ngIf="customerTransactions.customerId">
+                        <a [routerLink]="['/customers', customerTransactions.customerId, 'view']">{{customerTransactions.customerId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.customerTransactions.paymentTransaction">Payment Transaction</span></dt>
+                <dd>
+                    <div *ngIf="customerTransactions.paymentTransactionId">
+                        <a [routerLink]="['/payment-transactions', customerTransactions.paymentTransactionId, 'view']">{{customerTransactions.paymentTransactionId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.customerTransactions.transactionType">Transaction Type</span></dt>
+                <dd>
+                    <div *ngIf="customerTransactions.transactionTypeId">
+                        <a [routerLink]="['/transaction-types', customerTransactions.transactionTypeId, 'view']">{{customerTransactions.transactionTypeName}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.customerTransactions.invoice">Invoice</span></dt>
+                <dd>
+                    <div *ngIf="customerTransactions.invoiceId">
+                        <a [routerLink]="['/invoices', customerTransactions.invoiceId, 'view']">{{customerTransactions.invoiceId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/customer-transactions', customerTransactions.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+{
+  "epmwebApp": {
+    "productOption": {
+      "home": {
+        "title": "Product Options",
+        "createLabel": "Create a new Product Option",
+        "createOrEditLabel": "Create or edit a Product Option",
+        "notFound": "No Product Options found"
+      },
+      "created": "A new Product Option is created with identifier {{ param }}",
+      "updated": "A Product Option is updated with identifier {{ param }}",
+      "deleted": "A Product Option is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Product Option {{ id }}?"
+      },
+      "detail": {
+        "title": "Product Option"
+      },
+      "value": "Value",
+      "productOptionSet": "Product Option Set",
+      "supplier": "Supplier"
+    }
+  }
+}

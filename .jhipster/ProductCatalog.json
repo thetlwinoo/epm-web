@@ -1,0 +1,30 @@
+{
+    "name": "ProductCatalog",
+    "fields": [],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "productCategory",
+            "otherEntityRelationshipName": "productCatalog",
+            "relationshipName": "productCategory",
+            "otherEntityField": "name"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "products",
+            "otherEntityRelationshipName": "productCatalog",
+            "relationshipName": "product",
+            "otherEntityField": "name"
+        }
+    ],
+    "changelogDate": "20191213033151",
+    "entityTableName": "product_catalog",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": true,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

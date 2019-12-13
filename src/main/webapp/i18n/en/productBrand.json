@@ -1,0 +1,23 @@
+{
+  "epmwebApp": {
+    "productBrand": {
+      "home": {
+        "title": "Product Brands",
+        "createLabel": "Create a new Product Brand",
+        "createOrEditLabel": "Create or edit a Product Brand",
+        "notFound": "No Product Brands found"
+      },
+      "created": "A new Product Brand is created with identifier {{ param }}",
+      "updated": "A Product Brand is updated with identifier {{ param }}",
+      "deleted": "A Product Brand is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Product Brand {{ id }}?"
+      },
+      "detail": {
+        "title": "Product Brand"
+      },
+      "name": "Name",
+      "thumbnailUrl": "Thumbnail Url"
+    }
+  }
+}

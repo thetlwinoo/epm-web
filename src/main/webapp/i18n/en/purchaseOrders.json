@@ -1,0 +1,33 @@
+{
+  "epmwebApp": {
+    "purchaseOrders": {
+      "home": {
+        "title": "Purchase Orders",
+        "createLabel": "Create a new Purchase Orders",
+        "createOrEditLabel": "Create or edit a Purchase Orders",
+        "notFound": "No Purchase Orders found"
+      },
+      "created": "A new Purchase Orders is created with identifier {{ param }}",
+      "updated": "A Purchase Orders is updated with identifier {{ param }}",
+      "deleted": "A Purchase Orders is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Purchase Orders {{ id }}?"
+      },
+      "detail": {
+        "title": "Purchase Orders"
+      },
+      "orderDate": "Order Date",
+      "expectedDeliveryDate": "Expected Delivery Date",
+      "supplierReference": "Supplier Reference",
+      "isOrderFinalized": "Is Order Finalized",
+      "comments": "Comments",
+      "internalComments": "Internal Comments",
+      "lastEditedBy": "Last Edited By",
+      "lastEditedWhen": "Last Edited When",
+      "purchaseOrderLineList": "Purchase Order Line List",
+      "contactPerson": "Contact Person",
+      "supplier": "Supplier",
+      "deliveryMethod": "Delivery Method"
+    }
+  }
+}

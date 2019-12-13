@@ -1,0 +1,96 @@
+{
+    "name": "CustomerTransactions",
+    "fields": [
+        {
+            "fieldName": "transactionDate",
+            "fieldType": "Instant",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "amountExcludingTax",
+            "fieldType": "BigDecimal",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "taxAmount",
+            "fieldType": "BigDecimal",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "transactionAmount",
+            "fieldType": "BigDecimal",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "outstandingBalance",
+            "fieldType": "BigDecimal",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "finalizationDate",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "isFinalized",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "lastEditedBy",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "lastEditedWhen",
+            "fieldType": "Instant"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "customers",
+            "otherEntityRelationshipName": "customerTransactions",
+            "relationshipName": "customer",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "paymentTransactions",
+            "otherEntityRelationshipName": "customerTransactions",
+            "relationshipName": "paymentTransaction",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "transactionTypes",
+            "otherEntityRelationshipName": "customerTransactions",
+            "relationshipName": "transactionType",
+            "otherEntityField": "name"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "invoices",
+            "otherEntityRelationshipName": "customerTransactions",
+            "relationshipName": "invoice",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20191213033121",
+    "entityTableName": "customer_transactions",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": true,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

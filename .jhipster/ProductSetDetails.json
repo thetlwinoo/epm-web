@@ -1,0 +1,43 @@
+{
+    "name": "ProductSetDetails",
+    "fields": [
+        {
+            "fieldName": "subGroupNo",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "subGroupMinCount",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "subGroupMinTotal",
+            "fieldType": "BigDecimal",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "minCount",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "maxCount",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "isOptional",
+            "fieldType": "Boolean"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20191213033145",
+    "entityTableName": "product_set_details",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": true,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

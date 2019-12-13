@@ -1,0 +1,25 @@
+{
+  "epmwebApp": {
+    "productChoice": {
+      "home": {
+        "title": "Product Choices",
+        "createLabel": "Product Choice အသစ်ထည့်မည်",
+        "createOrEditLabel": "Product Choice အသစ်ထည့်ခြင်း (သို့) ပြုပြင်ခြင်း",
+        "notFound": "No Product Choices found"
+      },
+      "created": "{{ param }} အိုင်ဒီဖြင့် Product Choice အသစ်တစ်ခုအား ထည့်ပြီးပါပြီ။",
+      "updated": "{{ param }} အိုင်ဒီဖြင့် Product Choice တစ်ခုအား ပြုပြင်ပြီးပါပြီ။",
+      "deleted": "{{ param }} အိုင်ဒီဖြင့် Product Choice တစ်ခုအား ဖျက်ပြီးပါပြီ။",
+      "delete": {
+        "question": "Product Choice {{ id }} အား ဖျက်ပါမည်။ သေချာပါသလား?"
+      },
+      "detail": {
+        "title": "Product Choice"
+      },
+      "isMultiply": "Is Multiply",
+      "productCategory": "Product Category",
+      "productAttributeSet": "Product Attribute Set",
+      "productOptionSet": "Product Option Set"
+    }
+  }
+}

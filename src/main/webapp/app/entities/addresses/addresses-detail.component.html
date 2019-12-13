@@ -1,0 +1,77 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="addresses">
+            <h2><span jhiTranslate="epmwebApp.addresses.detail.title">Addresses</span> {{addresses.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="epmwebApp.addresses.contactPerson">Contact Person</span></dt>
+                <dd>
+                    <span>{{addresses.contactPerson}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.addresses.contactNumber">Contact Number</span></dt>
+                <dd>
+                    <span>{{addresses.contactNumber}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.addresses.contactEmailAddress">Contact Email Address</span></dt>
+                <dd>
+                    <span>{{addresses.contactEmailAddress}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.addresses.addressLine1">Address Line 1</span></dt>
+                <dd>
+                    <span>{{addresses.addressLine1}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.addresses.addressLine2">Address Line 2</span></dt>
+                <dd>
+                    <span>{{addresses.addressLine2}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.addresses.city">City</span></dt>
+                <dd>
+                    <span>{{addresses.city}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.addresses.postalCode">Postal Code</span></dt>
+                <dd>
+                    <span>{{addresses.postalCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.addresses.defaultInd">Default Ind</span></dt>
+                <dd>
+                    <span>{{addresses.defaultInd}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.addresses.activeInd">Active Ind</span></dt>
+                <dd>
+                    <span>{{addresses.activeInd}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.addresses.stateProvince">State Province</span></dt>
+                <dd>
+                    <div *ngIf="addresses.stateProvinceId">
+                        <a [routerLink]="['/state-provinces', addresses.stateProvinceId, 'view']">{{addresses.stateProvinceName}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.addresses.addressType">Address Type</span></dt>
+                <dd>
+                    <div *ngIf="addresses.addressTypeId">
+                        <a [routerLink]="['/address-types', addresses.addressTypeId, 'view']">{{addresses.addressTypeName}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.addresses.person">Person</span></dt>
+                <dd>
+                    <div *ngIf="addresses.personId">
+                        <a [routerLink]="['/people', addresses.personId, 'view']">{{addresses.personId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/addresses', addresses.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

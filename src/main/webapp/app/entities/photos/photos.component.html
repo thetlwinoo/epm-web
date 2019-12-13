@@ -1,0 +1,141 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="epmwebApp.photos.home.title">Photos</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-photos" [routerLink]="['/photos/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="epmwebApp.photos.home.createLabel">
+            Create a new Photos
+            </span>
+        </button>
+    </h2>
+    <jhi-alert-error></jhi-alert-error>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="photos?.length === 0">
+        <span jhiTranslate="epmwebApp.photos.home.notFound">No photos found</span>
+    </div>
+    <div class="table-responsive" *ngIf="photos?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+            <tr>
+            <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.photos.thumbnailPhoto">Thumbnail Photo</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.photos.originalPhoto">Original Photo</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.photos.bannerTallPhoto">Banner Tall Photo</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.photos.bannerWidePhoto">Banner Wide Photo</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.photos.circlePhoto">Circle Photo</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.photos.sharpenedPhoto">Sharpened Photo</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.photos.squarePhoto">Square Photo</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.photos.watermarkPhoto">Watermark Photo</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.photos.thumbnailPhotoBlob">Thumbnail Photo Blob</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.photos.originalPhotoBlob">Original Photo Blob</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.photos.bannerTallPhotoBlob">Banner Tall Photo Blob</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.photos.bannerWidePhotoBlob">Banner Wide Photo Blob</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.photos.circlePhotoBlob">Circle Photo Blob</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.photos.sharpenedPhotoBlob">Sharpened Photo Blob</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.photos.squarePhotoBlob">Square Photo Blob</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.photos.watermarkPhotoBlob">Watermark Photo Blob</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.photos.priority">Priority</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.photos.defaultInd">Default Ind</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.photos.stockItem">Stock Item</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.photos.productCategory">Product Category</span></th>
+            <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let photos of photos ;trackBy: trackId">
+                <td><a [routerLink]="['/photos', photos.id, 'view' ]">{{photos.id}}</a></td>
+                <td>{{photos.thumbnailPhoto}}</td>
+                <td>{{photos.originalPhoto}}</td>
+                <td>{{photos.bannerTallPhoto}}</td>
+                <td>{{photos.bannerWidePhoto}}</td>
+                <td>{{photos.circlePhoto}}</td>
+                <td>{{photos.sharpenedPhoto}}</td>
+                <td>{{photos.squarePhoto}}</td>
+                <td>{{photos.watermarkPhoto}}</td>
+                <td>
+                    <a *ngIf="photos.thumbnailPhotoBlob" (click)="openFile(photos.thumbnailPhotoBlobContentType, photos.thumbnailPhotoBlob)">
+                        <img [src]="'data:' + photos.thumbnailPhotoBlobContentType + ';base64,' + photos.thumbnailPhotoBlob" style="max-height: 30px;" alt="photos image"/>
+                    </a>
+                    <span *ngIf="photos.thumbnailPhotoBlob">{{photos.thumbnailPhotoBlobContentType}}, {{byteSize(photos.thumbnailPhotoBlob)}}</span>
+                </td>
+                <td>
+                    <a *ngIf="photos.originalPhotoBlob" (click)="openFile(photos.originalPhotoBlobContentType, photos.originalPhotoBlob)">
+                        <img [src]="'data:' + photos.originalPhotoBlobContentType + ';base64,' + photos.originalPhotoBlob" style="max-height: 30px;" alt="photos image"/>
+                    </a>
+                    <span *ngIf="photos.originalPhotoBlob">{{photos.originalPhotoBlobContentType}}, {{byteSize(photos.originalPhotoBlob)}}</span>
+                </td>
+                <td>
+                    <a *ngIf="photos.bannerTallPhotoBlob" (click)="openFile(photos.bannerTallPhotoBlobContentType, photos.bannerTallPhotoBlob)">
+                        <img [src]="'data:' + photos.bannerTallPhotoBlobContentType + ';base64,' + photos.bannerTallPhotoBlob" style="max-height: 30px;" alt="photos image"/>
+                    </a>
+                    <span *ngIf="photos.bannerTallPhotoBlob">{{photos.bannerTallPhotoBlobContentType}}, {{byteSize(photos.bannerTallPhotoBlob)}}</span>
+                </td>
+                <td>
+                    <a *ngIf="photos.bannerWidePhotoBlob" (click)="openFile(photos.bannerWidePhotoBlobContentType, photos.bannerWidePhotoBlob)">
+                        <img [src]="'data:' + photos.bannerWidePhotoBlobContentType + ';base64,' + photos.bannerWidePhotoBlob" style="max-height: 30px;" alt="photos image"/>
+                    </a>
+                    <span *ngIf="photos.bannerWidePhotoBlob">{{photos.bannerWidePhotoBlobContentType}}, {{byteSize(photos.bannerWidePhotoBlob)}}</span>
+                </td>
+                <td>
+                    <a *ngIf="photos.circlePhotoBlob" (click)="openFile(photos.circlePhotoBlobContentType, photos.circlePhotoBlob)">
+                        <img [src]="'data:' + photos.circlePhotoBlobContentType + ';base64,' + photos.circlePhotoBlob" style="max-height: 30px;" alt="photos image"/>
+                    </a>
+                    <span *ngIf="photos.circlePhotoBlob">{{photos.circlePhotoBlobContentType}}, {{byteSize(photos.circlePhotoBlob)}}</span>
+                </td>
+                <td>
+                    <a *ngIf="photos.sharpenedPhotoBlob" (click)="openFile(photos.sharpenedPhotoBlobContentType, photos.sharpenedPhotoBlob)">
+                        <img [src]="'data:' + photos.sharpenedPhotoBlobContentType + ';base64,' + photos.sharpenedPhotoBlob" style="max-height: 30px;" alt="photos image"/>
+                    </a>
+                    <span *ngIf="photos.sharpenedPhotoBlob">{{photos.sharpenedPhotoBlobContentType}}, {{byteSize(photos.sharpenedPhotoBlob)}}</span>
+                </td>
+                <td>
+                    <a *ngIf="photos.squarePhotoBlob" (click)="openFile(photos.squarePhotoBlobContentType, photos.squarePhotoBlob)">
+                        <img [src]="'data:' + photos.squarePhotoBlobContentType + ';base64,' + photos.squarePhotoBlob" style="max-height: 30px;" alt="photos image"/>
+                    </a>
+                    <span *ngIf="photos.squarePhotoBlob">{{photos.squarePhotoBlobContentType}}, {{byteSize(photos.squarePhotoBlob)}}</span>
+                </td>
+                <td>
+                    <a *ngIf="photos.watermarkPhotoBlob" (click)="openFile(photos.watermarkPhotoBlobContentType, photos.watermarkPhotoBlob)">
+                        <img [src]="'data:' + photos.watermarkPhotoBlobContentType + ';base64,' + photos.watermarkPhotoBlob" style="max-height: 30px;" alt="photos image"/>
+                    </a>
+                    <span *ngIf="photos.watermarkPhotoBlob">{{photos.watermarkPhotoBlobContentType}}, {{byteSize(photos.watermarkPhotoBlob)}}</span>
+                </td>
+                <td>{{photos.priority}}</td>
+                <td>{{photos.defaultInd}}</td>
+                <td>
+                    <div *ngIf="photos.stockItemId">
+                        <a [routerLink]="['/stock-items', photos.stockItemId , 'view' ]" >{{photos.stockItemId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="photos.productCategoryId">
+                        <a [routerLink]="['/product-category', photos.productCategoryId , 'view' ]" >{{photos.productCategoryId}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/photos', photos.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/photos', photos.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit" (click)="delete(photos)"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

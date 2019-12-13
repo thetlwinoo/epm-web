@@ -1,0 +1,193 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-suppliers-heading" jhiTranslate="epmwebApp.suppliers.home.createOrEditLabel">Create or edit a Suppliers</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.suppliers.name" for="field_name">Name</label>
+                    <input type="text" class="form-control" name="name" id="field_name"
+                           formControlName="name"/>
+                    <div *ngIf="editForm.get('name').invalid && (editForm.get('name').dirty || editForm.get('name').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('name').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.suppliers.supplierReference" for="field_supplierReference">Supplier Reference</label>
+                    <input type="text" class="form-control" name="supplierReference" id="field_supplierReference"
+                           formControlName="supplierReference"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.suppliers.bankAccountName" for="field_bankAccountName">Bank Account Name</label>
+                    <input type="text" class="form-control" name="bankAccountName" id="field_bankAccountName"
+                           formControlName="bankAccountName"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.suppliers.bankAccountBranch" for="field_bankAccountBranch">Bank Account Branch</label>
+                    <input type="text" class="form-control" name="bankAccountBranch" id="field_bankAccountBranch"
+                           formControlName="bankAccountBranch"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.suppliers.bankAccountCode" for="field_bankAccountCode">Bank Account Code</label>
+                    <input type="text" class="form-control" name="bankAccountCode" id="field_bankAccountCode"
+                           formControlName="bankAccountCode"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.suppliers.bankAccountNumber" for="field_bankAccountNumber">Bank Account Number</label>
+                    <input type="text" class="form-control" name="bankAccountNumber" id="field_bankAccountNumber"
+                           formControlName="bankAccountNumber"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.suppliers.bankInternationalCode" for="field_bankInternationalCode">Bank International Code</label>
+                    <input type="text" class="form-control" name="bankInternationalCode" id="field_bankInternationalCode"
+                           formControlName="bankInternationalCode"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.suppliers.paymentDays" for="field_paymentDays">Payment Days</label>
+                    <input type="number" class="form-control" name="paymentDays" id="field_paymentDays"
+                           formControlName="paymentDays"/>
+                    <div *ngIf="editForm.get('paymentDays').invalid && (editForm.get('paymentDays').dirty || editForm.get('paymentDays').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('paymentDays').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('paymentDays')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.suppliers.internalComments" for="field_internalComments">Internal Comments</label>
+                    <input type="text" class="form-control" name="internalComments" id="field_internalComments"
+                           formControlName="internalComments"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.suppliers.phoneNumber" for="field_phoneNumber">Phone Number</label>
+                    <input type="text" class="form-control" name="phoneNumber" id="field_phoneNumber"
+                           formControlName="phoneNumber"/>
+                    <div *ngIf="editForm.get('phoneNumber').invalid && (editForm.get('phoneNumber').dirty || editForm.get('phoneNumber').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('phoneNumber').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.suppliers.faxNumber" for="field_faxNumber">Fax Number</label>
+                    <input type="text" class="form-control" name="faxNumber" id="field_faxNumber"
+                           formControlName="faxNumber"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.suppliers.websiteURL" for="field_websiteURL">Website URL</label>
+                    <input type="text" class="form-control" name="websiteURL" id="field_websiteURL"
+                           formControlName="websiteURL"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.suppliers.webServiceUrl" for="field_webServiceUrl">Web Service Url</label>
+                    <input type="text" class="form-control" name="webServiceUrl" id="field_webServiceUrl"
+                           formControlName="webServiceUrl"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.suppliers.creditRating" for="field_creditRating">Credit Rating</label>
+                    <input type="number" class="form-control" name="creditRating" id="field_creditRating"
+                           formControlName="creditRating"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.suppliers.activeFlag" for="field_activeFlag">Active Flag</label>
+                    <input type="checkbox" class="form-control" name="activeFlag" id="field_activeFlag"
+                           formControlName="activeFlag"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.suppliers.thumbnailUrl" for="field_thumbnailUrl">Thumbnail Url</label>
+                    <input type="text" class="form-control" name="thumbnailUrl" id="field_thumbnailUrl"
+                           formControlName="thumbnailUrl"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.suppliers.validFrom" for="field_validFrom">Valid From</label>
+                    <div class="d-flex">
+                        <input id="field_validFrom" type="datetime-local" class="form-control" name="validFrom" formControlName="validFrom" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                    <div *ngIf="editForm.get('validFrom').invalid && (editForm.get('validFrom').dirty || editForm.get('validFrom').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('validFrom').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('validFrom').errors?.ZonedDateTimelocal" jhiTranslate="entity.validation.ZonedDateTimelocal">
+                            This field should be a date and time.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.suppliers.validTo" for="field_validTo">Valid To</label>
+                    <div class="d-flex">
+                        <input id="field_validTo" type="datetime-local" class="form-control" name="validTo" formControlName="validTo" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                    <div *ngIf="editForm.get('validTo').invalid && (editForm.get('validTo').dirty || editForm.get('validTo').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('validTo').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('validTo').errors?.ZonedDateTimelocal" jhiTranslate="entity.validation.ZonedDateTimelocal">
+                            This field should be a date and time.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.suppliers.user" for="field_user">User</label>
+                    <select class="form-control" id="field_user" name="user" formControlName="userId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="userOption.id" *ngFor="let userOption of users; trackBy: trackUserById">{{userOption.login}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.suppliers.supplierCategory" for="field_supplierCategory">Supplier Category</label>
+                    <select class="form-control" id="field_supplierCategory" name="supplierCategory" formControlName="supplierCategoryId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="supplierCategoriesOption.id" *ngFor="let supplierCategoriesOption of suppliercategories; trackBy: trackSupplierCategoriesById">{{supplierCategoriesOption.name}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.suppliers.deliveryMethod" for="field_deliveryMethod">Delivery Method</label>
+                    <select class="form-control" id="field_deliveryMethod" name="deliveryMethod" formControlName="deliveryMethodId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="deliveryMethodsOption.id" *ngFor="let deliveryMethodsOption of deliverymethods; trackBy: trackDeliveryMethodsById">{{deliveryMethodsOption.name}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.suppliers.deliveryCity" for="field_deliveryCity">Delivery City</label>
+                    <select class="form-control" id="field_deliveryCity" name="deliveryCity" formControlName="deliveryCityId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="citiesOption.id" *ngFor="let citiesOption of cities; trackBy: trackCitiesById">{{citiesOption.name}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.suppliers.postalCity" for="field_postalCity">Postal City</label>
+                    <select class="form-control" id="field_postalCity" name="postalCity" formControlName="postalCityId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="citiesOption.id" *ngFor="let citiesOption of cities; trackBy: trackCitiesById">{{citiesOption.name}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

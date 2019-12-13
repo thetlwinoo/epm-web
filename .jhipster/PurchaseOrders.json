@@ -1,0 +1,82 @@
+{
+    "name": "PurchaseOrders",
+    "fields": [
+        {
+            "fieldName": "orderDate",
+            "fieldType": "Instant",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "expectedDeliveryDate",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "supplierReference",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "isOrderFinalized",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "comments",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "internalComments",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "lastEditedBy",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "lastEditedWhen",
+            "fieldType": "Instant"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "purchaseOrderLines",
+            "otherEntityRelationshipName": "purchaseOrder",
+            "relationshipName": "purchaseOrderLineList"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "people",
+            "otherEntityRelationshipName": "purchaseOrders",
+            "relationshipName": "contactPerson",
+            "otherEntityField": "fullName"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "suppliers",
+            "otherEntityRelationshipName": "purchaseOrders",
+            "relationshipName": "supplier",
+            "otherEntityField": "name"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "deliveryMethods",
+            "otherEntityRelationshipName": "purchaseOrders",
+            "relationshipName": "deliveryMethod",
+            "otherEntityField": "name"
+        }
+    ],
+    "changelogDate": "20191213033116",
+    "entityTableName": "purchase_orders",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": true,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

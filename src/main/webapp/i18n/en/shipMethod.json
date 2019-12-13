@@ -1,0 +1,22 @@
+{
+  "epmwebApp": {
+    "shipMethod": {
+      "home": {
+        "title": "Ship Methods",
+        "createLabel": "Create a new Ship Method",
+        "createOrEditLabel": "Create or edit a Ship Method",
+        "notFound": "No Ship Methods found"
+      },
+      "created": "A new Ship Method is created with identifier {{ param }}",
+      "updated": "A Ship Method is updated with identifier {{ param }}",
+      "deleted": "A Ship Method is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Ship Method {{ id }}?"
+      },
+      "detail": {
+        "title": "Ship Method"
+      },
+      "name": "Name"
+    }
+  }
+}

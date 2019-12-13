@@ -1,0 +1,25 @@
+{
+  "epmwebApp": {
+    "personEmailAddress": {
+      "home": {
+        "title": "Person Email Addresses",
+        "createLabel": "Person Email Address အသစ်ထည့်မည်",
+        "createOrEditLabel": "Person Email Address အသစ်ထည့်ခြင်း (သို့) ပြုပြင်ခြင်း",
+        "notFound": "No Person Email Addresses found"
+      },
+      "created": "{{ param }} အိုင်ဒီဖြင့် Person Email Address အသစ်တစ်ခုအား ထည့်ပြီးပါပြီ။",
+      "updated": "{{ param }} အိုင်ဒီဖြင့် Person Email Address တစ်ခုအား ပြုပြင်ပြီးပါပြီ။",
+      "deleted": "{{ param }} အိုင်ဒီဖြင့် Person Email Address တစ်ခုအား ဖျက်ပြီးပါပြီ။",
+      "delete": {
+        "question": "Person Email Address {{ id }} အား ဖျက်ပါမည်။ သေချာပါသလား?"
+      },
+      "detail": {
+        "title": "Person Email Address"
+      },
+      "emailAddress": "Email Address",
+      "defaultInd": "Default Ind",
+      "activeInd": "Active Ind",
+      "person": "Person"
+    }
+  }
+}

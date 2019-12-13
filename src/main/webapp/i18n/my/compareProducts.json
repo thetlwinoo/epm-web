@@ -1,0 +1,23 @@
+{
+  "epmwebApp": {
+    "compareProducts": {
+      "home": {
+        "title": "Compare Products",
+        "createLabel": "Compare Products အသစ်ထည့်မည်",
+        "createOrEditLabel": "Compare Products အသစ်ထည့်ခြင်း (သို့) ပြုပြင်ခြင်း",
+        "notFound": "No Compare Products found"
+      },
+      "created": "{{ param }} အိုင်ဒီဖြင့် Compare Products အသစ်တစ်ခုအား ထည့်ပြီးပါပြီ။",
+      "updated": "{{ param }} အိုင်ဒီဖြင့် Compare Products တစ်ခုအား ပြုပြင်ပြီးပါပြီ။",
+      "deleted": "{{ param }} အိုင်ဒီဖြင့် Compare Products တစ်ခုအား ဖျက်ပြီးပါပြီ။",
+      "delete": {
+        "question": "Compare Products {{ id }} အား ဖျက်ပါမည်။ သေချာပါသလား?"
+      },
+      "detail": {
+        "title": "Compare Products"
+      },
+      "product": "Product",
+      "compare": "Compare"
+    }
+  }
+}

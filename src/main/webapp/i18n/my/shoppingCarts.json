@@ -1,0 +1,29 @@
+{
+  "epmwebApp": {
+    "shoppingCarts": {
+      "home": {
+        "title": "Shopping Carts",
+        "createLabel": "Shopping Carts အသစ်ထည့်မည်",
+        "createOrEditLabel": "Shopping Carts အသစ်ထည့်ခြင်း (သို့) ပြုပြင်ခြင်း",
+        "notFound": "No Shopping Carts found"
+      },
+      "created": "{{ param }} အိုင်ဒီဖြင့် Shopping Carts အသစ်တစ်ခုအား ထည့်ပြီးပါပြီ။",
+      "updated": "{{ param }} အိုင်ဒီဖြင့် Shopping Carts တစ်ခုအား ပြုပြင်ပြီးပါပြီ။",
+      "deleted": "{{ param }} အိုင်ဒီဖြင့် Shopping Carts တစ်ခုအား ဖျက်ပြီးပါပြီ။",
+      "delete": {
+        "question": "Shopping Carts {{ id }} အား ဖျက်ပါမည်။ သေချာပါသလား?"
+      },
+      "detail": {
+        "title": "Shopping Carts"
+      },
+      "totalPrice": "Total Price",
+      "totalCargoPrice": "Total Cargo Price",
+      "lastEditedBy": "Last Edited By",
+      "lastEditedWhen": "Last Edited When",
+      "cartUser": "Cart User",
+      "cartItemList": "Cart Item List",
+      "customer": "Customer",
+      "specialDeals": "Special Deals"
+    }
+  }
+}

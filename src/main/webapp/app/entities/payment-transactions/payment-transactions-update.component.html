@@ -1,0 +1,53 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-payment-transactions-heading" jhiTranslate="epmwebApp.paymentTransactions.home.createOrEditLabel">Create or edit a Payment Transactions</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.paymentTransactions.returnedCompletedPaymentData" for="field_returnedCompletedPaymentData">Returned Completed Payment Data</label>
+                    <textarea class="form-control" name="returnedCompletedPaymentData" id="field_returnedCompletedPaymentData"
+                              formControlName="returnedCompletedPaymentData"></textarea>
+                    <div *ngIf="editForm.get('returnedCompletedPaymentData').invalid && (editForm.get('returnedCompletedPaymentData').dirty || editForm.get('returnedCompletedPaymentData').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('returnedCompletedPaymentData').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.paymentTransactions.lastEditedBy" for="field_lastEditedBy">Last Edited By</label>
+                    <input type="text" class="form-control" name="lastEditedBy" id="field_lastEditedBy"
+                           formControlName="lastEditedBy"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.paymentTransactions.lastEditedWhen" for="field_lastEditedWhen">Last Edited When</label>
+                    <div class="d-flex">
+                        <input id="field_lastEditedWhen" type="datetime-local" class="form-control" name="lastEditedWhen" formControlName="lastEditedWhen" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.paymentTransactions.paymentOnOrder" for="field_paymentOnOrder">Payment On Order</label>
+                    <select class="form-control" id="field_paymentOnOrder" name="paymentOnOrder" formControlName="paymentOnOrderId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="ordersOption.id" *ngFor="let ordersOption of paymentonorders; trackBy: trackOrdersById">{{ordersOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,22 @@
+{
+  "epmwebApp": {
+    "materials": {
+      "home": {
+        "title": "Materials",
+        "createLabel": "Materials အသစ်ထည့်မည်",
+        "createOrEditLabel": "Materials အသစ်ထည့်ခြင်း (သို့) ပြုပြင်ခြင်း",
+        "notFound": "No Materials found"
+      },
+      "created": "{{ param }} အိုင်ဒီဖြင့် Materials အသစ်တစ်ခုအား ထည့်ပြီးပါပြီ။",
+      "updated": "{{ param }} အိုင်ဒီဖြင့် Materials တစ်ခုအား ပြုပြင်ပြီးပါပြီ။",
+      "deleted": "{{ param }} အိုင်ဒီဖြင့် Materials တစ်ခုအား ဖျက်ပြီးပါပြီ။",
+      "delete": {
+        "question": "Materials {{ id }} အား ဖျက်ပါမည်။ သေချာပါသလား?"
+      },
+      "detail": {
+        "title": "Materials"
+      },
+      "name": "Name"
+    }
+  }
+}

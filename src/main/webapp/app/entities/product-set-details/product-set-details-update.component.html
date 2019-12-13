@@ -1,0 +1,64 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-product-set-details-heading" jhiTranslate="epmwebApp.productSetDetails.home.createOrEditLabel">Create or edit a Product Set Details</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.productSetDetails.subGroupNo" for="field_subGroupNo">Sub Group No</label>
+                    <input type="number" class="form-control" name="subGroupNo" id="field_subGroupNo"
+                           formControlName="subGroupNo"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.productSetDetails.subGroupMinCount" for="field_subGroupMinCount">Sub Group Min Count</label>
+                    <input type="number" class="form-control" name="subGroupMinCount" id="field_subGroupMinCount"
+                           formControlName="subGroupMinCount"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.productSetDetails.subGroupMinTotal" for="field_subGroupMinTotal">Sub Group Min Total</label>
+                    <input type="number" class="form-control" name="subGroupMinTotal" id="field_subGroupMinTotal"
+                           formControlName="subGroupMinTotal"/>
+                    <div *ngIf="editForm.get('subGroupMinTotal').invalid && (editForm.get('subGroupMinTotal').dirty || editForm.get('subGroupMinTotal').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('subGroupMinTotal').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('subGroupMinTotal')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.productSetDetails.minCount" for="field_minCount">Min Count</label>
+                    <input type="number" class="form-control" name="minCount" id="field_minCount"
+                           formControlName="minCount"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.productSetDetails.maxCount" for="field_maxCount">Max Count</label>
+                    <input type="number" class="form-control" name="maxCount" id="field_maxCount"
+                           formControlName="maxCount"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.productSetDetails.isOptional" for="field_isOptional">Is Optional</label>
+                    <input type="checkbox" class="form-control" name="isOptional" id="field_isOptional"
+                           formControlName="isOptional"/>
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

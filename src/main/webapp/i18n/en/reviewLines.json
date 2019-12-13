@@ -1,0 +1,32 @@
+{
+  "epmwebApp": {
+    "reviewLines": {
+      "home": {
+        "title": "Review Lines",
+        "createLabel": "Create a new Review Lines",
+        "createOrEditLabel": "Create or edit a Review Lines",
+        "notFound": "No Review Lines found"
+      },
+      "created": "A new Review Lines is created with identifier {{ param }}",
+      "updated": "A Review Lines is updated with identifier {{ param }}",
+      "deleted": "A Review Lines is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Review Lines {{ id }}?"
+      },
+      "detail": {
+        "title": "Review Lines"
+      },
+      "productRating": "Product Rating",
+      "productReview": "Product Review",
+      "sellerRating": "Seller Rating",
+      "sellerReview": "Seller Review",
+      "deliveryRating": "Delivery Rating",
+      "deliveryReview": "Delivery Review",
+      "thumbnailUrl": "Thumbnail Url",
+      "lastEditedBy": "Last Edited By",
+      "lastEditedWhen": "Last Edited When",
+      "stockItem": "Stock Item",
+      "review": "Review"
+    }
+  }
+}

@@ -1,0 +1,83 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="products">
+            <h2><span jhiTranslate="epmwebApp.products.detail.title">Products</span> {{products.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="epmwebApp.products.name">Name</span></dt>
+                <dd>
+                    <span>{{products.name}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.products.handle">Handle</span></dt>
+                <dd>
+                    <span>{{products.handle}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.products.productNumber">Product Number</span></dt>
+                <dd>
+                    <span>{{products.productNumber}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.products.searchDetails">Search Details</span></dt>
+                <dd>
+                    <span>{{products.searchDetails}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.products.sellCount">Sell Count</span></dt>
+                <dd>
+                    <span>{{products.sellCount}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.products.thumbnailList">Thumbnail List</span></dt>
+                <dd>
+                    <span>{{products.thumbnailList}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.products.activeInd">Active Ind</span></dt>
+                <dd>
+                    <span>{{products.activeInd}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.products.lastEditedBy">Last Edited By</span></dt>
+                <dd>
+                    <span>{{products.lastEditedBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.products.lastEditedWhen">Last Edited When</span></dt>
+                <dd>
+                    <span>{{products.lastEditedWhen}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.products.productDocument">Product Document</span></dt>
+                <dd>
+                    <div *ngIf="products.productDocumentId">
+                        <a [routerLink]="['/product-document', products.productDocumentId, 'view']">{{products.productDocumentId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.products.supplier">Supplier</span></dt>
+                <dd>
+                    <div *ngIf="products.supplierId">
+                        <a [routerLink]="['/suppliers', products.supplierId, 'view']">{{products.supplierName}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.products.productCategory">Product Category</span></dt>
+                <dd>
+                    <div *ngIf="products.productCategoryId">
+                        <a [routerLink]="['/product-category', products.productCategoryId, 'view']">{{products.productCategoryName}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.products.productBrand">Product Brand</span></dt>
+                <dd>
+                    <div *ngIf="products.productBrandId">
+                        <a [routerLink]="['/product-brand', products.productBrandId, 'view']">{{products.productBrandName}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/products', products.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

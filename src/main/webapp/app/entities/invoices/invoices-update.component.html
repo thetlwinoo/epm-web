@@ -1,0 +1,227 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-invoices-heading" jhiTranslate="epmwebApp.invoices.home.createOrEditLabel">Create or edit a Invoices</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.invoices.invoiceDate" for="field_invoiceDate">Invoice Date</label>
+                    <div class="d-flex">
+                        <input id="field_invoiceDate" type="datetime-local" class="form-control" name="invoiceDate" formControlName="invoiceDate" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                    <div *ngIf="editForm.get('invoiceDate').invalid && (editForm.get('invoiceDate').dirty || editForm.get('invoiceDate').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('invoiceDate').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('invoiceDate').errors?.ZonedDateTimelocal" jhiTranslate="entity.validation.ZonedDateTimelocal">
+                            This field should be a date and time.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.invoices.customerPurchaseOrderNumber" for="field_customerPurchaseOrderNumber">Customer Purchase Order Number</label>
+                    <input type="text" class="form-control" name="customerPurchaseOrderNumber" id="field_customerPurchaseOrderNumber"
+                           formControlName="customerPurchaseOrderNumber"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.invoices.isCreditNote" for="field_isCreditNote">Is Credit Note</label>
+                    <input type="checkbox" class="form-control" name="isCreditNote" id="field_isCreditNote"
+                           formControlName="isCreditNote"/>
+                    <div *ngIf="editForm.get('isCreditNote').invalid && (editForm.get('isCreditNote').dirty || editForm.get('isCreditNote').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('isCreditNote').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.invoices.creditNoteReason" for="field_creditNoteReason">Credit Note Reason</label>
+                    <input type="text" class="form-control" name="creditNoteReason" id="field_creditNoteReason"
+                           formControlName="creditNoteReason"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.invoices.comments" for="field_comments">Comments</label>
+                    <input type="text" class="form-control" name="comments" id="field_comments"
+                           formControlName="comments"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.invoices.deliveryInstructions" for="field_deliveryInstructions">Delivery Instructions</label>
+                    <input type="text" class="form-control" name="deliveryInstructions" id="field_deliveryInstructions"
+                           formControlName="deliveryInstructions"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.invoices.internalComments" for="field_internalComments">Internal Comments</label>
+                    <input type="text" class="form-control" name="internalComments" id="field_internalComments"
+                           formControlName="internalComments"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.invoices.totalDryItems" for="field_totalDryItems">Total Dry Items</label>
+                    <input type="number" class="form-control" name="totalDryItems" id="field_totalDryItems"
+                           formControlName="totalDryItems"/>
+                    <div *ngIf="editForm.get('totalDryItems').invalid && (editForm.get('totalDryItems').dirty || editForm.get('totalDryItems').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('totalDryItems').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('totalDryItems')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.invoices.totalChillerItems" for="field_totalChillerItems">Total Chiller Items</label>
+                    <input type="number" class="form-control" name="totalChillerItems" id="field_totalChillerItems"
+                           formControlName="totalChillerItems"/>
+                    <div *ngIf="editForm.get('totalChillerItems').invalid && (editForm.get('totalChillerItems').dirty || editForm.get('totalChillerItems').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('totalChillerItems').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('totalChillerItems')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.invoices.deliveryRun" for="field_deliveryRun">Delivery Run</label>
+                    <input type="text" class="form-control" name="deliveryRun" id="field_deliveryRun"
+                           formControlName="deliveryRun"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.invoices.runPosition" for="field_runPosition">Run Position</label>
+                    <input type="text" class="form-control" name="runPosition" id="field_runPosition"
+                           formControlName="runPosition"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.invoices.returnedDeliveryData" for="field_returnedDeliveryData">Returned Delivery Data</label>
+                    <input type="text" class="form-control" name="returnedDeliveryData" id="field_returnedDeliveryData"
+                           formControlName="returnedDeliveryData"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.invoices.confirmedDeliveryTime" for="field_confirmedDeliveryTime">Confirmed Delivery Time</label>
+                    <div class="d-flex">
+                        <input id="field_confirmedDeliveryTime" type="datetime-local" class="form-control" name="confirmedDeliveryTime" formControlName="confirmedDeliveryTime" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.invoices.confirmedReceivedBy" for="field_confirmedReceivedBy">Confirmed Received By</label>
+                    <input type="text" class="form-control" name="confirmedReceivedBy" id="field_confirmedReceivedBy"
+                           formControlName="confirmedReceivedBy"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.invoices.paymentMethod" for="field_paymentMethod">Payment Method</label>
+                    <select class="form-control" name="paymentMethod" formControlName="paymentMethod" id="field_paymentMethod">
+                        <option value="CREDIT_CARD">{{'epmwebApp.PaymentMethod.CREDIT_CARD' | translate}}</option>
+                        <option value="CASH_ON_DELIVERY">{{'epmwebApp.PaymentMethod.CASH_ON_DELIVERY' | translate}}</option>
+                        <option value="PAYPAL">{{'epmwebApp.PaymentMethod.PAYPAL' | translate}}</option>
+                    </select>
+                    <div *ngIf="editForm.get('paymentMethod').invalid && (editForm.get('paymentMethod').dirty || editForm.get('paymentMethod').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('paymentMethod').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.invoices.status" for="field_status">Status</label>
+                    <select class="form-control" name="status" formControlName="status" id="field_status">
+                        <option value="PAID">{{'epmwebApp.InvoiceStatus.PAID' | translate}}</option>
+                        <option value="ISSUED">{{'epmwebApp.InvoiceStatus.ISSUED' | translate}}</option>
+                        <option value="CANCELLED">{{'epmwebApp.InvoiceStatus.CANCELLED' | translate}}</option>
+                    </select>
+                    <div *ngIf="editForm.get('status').invalid && (editForm.get('status').dirty || editForm.get('status').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('status').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.invoices.lastEditedBy" for="field_lastEditedBy">Last Edited By</label>
+                    <input type="text" class="form-control" name="lastEditedBy" id="field_lastEditedBy"
+                           formControlName="lastEditedBy"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.invoices.lastEditedWhen" for="field_lastEditedWhen">Last Edited When</label>
+                    <div class="d-flex">
+                        <input id="field_lastEditedWhen" type="datetime-local" class="form-control" name="lastEditedWhen" formControlName="lastEditedWhen" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.invoices.contactPerson" for="field_contactPerson">Contact Person</label>
+                    <select class="form-control" id="field_contactPerson" name="contactPerson" formControlName="contactPersonId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="peopleOption.id" *ngFor="let peopleOption of people; trackBy: trackPeopleById">{{peopleOption.fullName}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.invoices.salespersonPerson" for="field_salespersonPerson">Salesperson Person</label>
+                    <select class="form-control" id="field_salespersonPerson" name="salespersonPerson" formControlName="salespersonPersonId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="peopleOption.id" *ngFor="let peopleOption of people; trackBy: trackPeopleById">{{peopleOption.fullName}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.invoices.packedByPerson" for="field_packedByPerson">Packed By Person</label>
+                    <select class="form-control" id="field_packedByPerson" name="packedByPerson" formControlName="packedByPersonId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="peopleOption.id" *ngFor="let peopleOption of people; trackBy: trackPeopleById">{{peopleOption.fullName}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.invoices.accountsPerson" for="field_accountsPerson">Accounts Person</label>
+                    <select class="form-control" id="field_accountsPerson" name="accountsPerson" formControlName="accountsPersonId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="peopleOption.id" *ngFor="let peopleOption of people; trackBy: trackPeopleById">{{peopleOption.fullName}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.invoices.customer" for="field_customer">Customer</label>
+                    <select class="form-control" id="field_customer" name="customer" formControlName="customerId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="customersOption.id" *ngFor="let customersOption of customers; trackBy: trackCustomersById">{{customersOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.invoices.billToCustomer" for="field_billToCustomer">Bill To Customer</label>
+                    <select class="form-control" id="field_billToCustomer" name="billToCustomer" formControlName="billToCustomerId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="customersOption.id" *ngFor="let customersOption of customers; trackBy: trackCustomersById">{{customersOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.invoices.deliveryMethod" for="field_deliveryMethod">Delivery Method</label>
+                    <select class="form-control" id="field_deliveryMethod" name="deliveryMethod" formControlName="deliveryMethodId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="deliveryMethodsOption.id" *ngFor="let deliveryMethodsOption of deliverymethods; trackBy: trackDeliveryMethodsById">{{deliveryMethodsOption.name}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.invoices.order" for="field_order">Order</label>
+                    <select class="form-control" id="field_order" name="order" formControlName="orderId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="ordersOption.id" *ngFor="let ordersOption of orders; trackBy: trackOrdersById">{{ordersOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+{
+    "name": "ProductOptionSet",
+    "fields": [
+        {
+            "fieldName": "value",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20191213033142",
+    "entityTableName": "product_option_set",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": true,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

@@ -1,0 +1,31 @@
+{
+  "epmwebApp": {
+    "stockItemTransactions": {
+      "home": {
+        "title": "Stock Item Transactions",
+        "createLabel": "Create a new Stock Item Transactions",
+        "createOrEditLabel": "Create or edit a Stock Item Transactions",
+        "notFound": "No Stock Item Transactions found"
+      },
+      "created": "A new Stock Item Transactions is created with identifier {{ param }}",
+      "updated": "A Stock Item Transactions is updated with identifier {{ param }}",
+      "deleted": "A Stock Item Transactions is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Stock Item Transactions {{ id }}?"
+      },
+      "detail": {
+        "title": "Stock Item Transactions"
+      },
+      "transactionOccuredWhen": "Transaction Occured When",
+      "quantity": "Quantity",
+      "lastEditedBy": "Last Edited By",
+      "lastEditedWhen": "Last Edited When",
+      "stockItem": "Stock Item",
+      "customer": "Customer",
+      "invoice": "Invoice",
+      "supplier": "Supplier",
+      "transactionType": "Transaction Type",
+      "purchaseOrder": "Purchase Order"
+    }
+  }
+}

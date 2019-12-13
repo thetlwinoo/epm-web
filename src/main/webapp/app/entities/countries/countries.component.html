@@ -1,0 +1,77 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="epmwebApp.countries.home.title">Countries</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-countries" [routerLink]="['/countries/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="epmwebApp.countries.home.createLabel">
+            Create a new Countries
+            </span>
+        </button>
+    </h2>
+    <jhi-alert-error></jhi-alert-error>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="countries?.length === 0">
+        <span jhiTranslate="epmwebApp.countries.home.notFound">No countries found</span>
+    </div>
+    <div class="table-responsive" *ngIf="countries?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+            <tr>
+            <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.countries.name">Name</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.countries.formalName">Formal Name</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.countries.isoAplha3Code">Iso Aplha 3 Code</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.countries.isoNumericCode">Iso Numeric Code</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.countries.countryType">Country Type</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.countries.latestRecordedPopulation">Latest Recorded Population</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.countries.continent">Continent</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.countries.region">Region</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.countries.subregion">Subregion</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.countries.border">Border</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.countries.validFrom">Valid From</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.countries.validTo">Valid To</span></th>
+            <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let countries of countries ;trackBy: trackId">
+                <td><a [routerLink]="['/countries', countries.id, 'view' ]">{{countries.id}}</a></td>
+                <td>{{countries.name}}</td>
+                <td>{{countries.formalName}}</td>
+                <td>{{countries.isoAplha3Code}}</td>
+                <td>{{countries.isoNumericCode}}</td>
+                <td>{{countries.countryType}}</td>
+                <td>{{countries.latestRecordedPopulation}}</td>
+                <td>{{countries.continent}}</td>
+                <td>{{countries.region}}</td>
+                <td>{{countries.subregion}}</td>
+                <td>{{countries.border}}</td>
+                <td>{{countries.validFrom | date:'medium'}}</td>
+                <td>{{countries.validTo | date:'medium'}}</td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/countries', countries.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/countries', countries.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit" (click)="delete(countries)"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

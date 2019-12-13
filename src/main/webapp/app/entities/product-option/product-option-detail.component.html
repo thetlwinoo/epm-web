@@ -1,0 +1,39 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="productOption">
+            <h2><span jhiTranslate="epmwebApp.productOption.detail.title">Product Option</span> {{productOption.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="epmwebApp.productOption.value">Value</span></dt>
+                <dd>
+                    <span>{{productOption.value}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.productOption.productOptionSet">Product Option Set</span></dt>
+                <dd>
+                    <div *ngIf="productOption.productOptionSetId">
+                        <a [routerLink]="['/product-option-set', productOption.productOptionSetId, 'view']">{{productOption.productOptionSetValue}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.productOption.supplier">Supplier</span></dt>
+                <dd>
+                    <div *ngIf="productOption.supplierId">
+                        <a [routerLink]="['/suppliers', productOption.supplierId, 'view']">{{productOption.supplierName}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/product-option', productOption.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

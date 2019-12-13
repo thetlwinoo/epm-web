@@ -1,0 +1,41 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="personEmailAddress">
+            <h2><span jhiTranslate="epmwebApp.personEmailAddress.detail.title">Person Email Address</span> {{personEmailAddress.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="epmwebApp.personEmailAddress.emailAddress">Email Address</span></dt>
+                <dd>
+                    <span>{{personEmailAddress.emailAddress}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.personEmailAddress.defaultInd">Default Ind</span></dt>
+                <dd>
+                    <span>{{personEmailAddress.defaultInd}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.personEmailAddress.activeInd">Active Ind</span></dt>
+                <dd>
+                    <span>{{personEmailAddress.activeInd}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.personEmailAddress.person">Person</span></dt>
+                <dd>
+                    <div *ngIf="personEmailAddress.personId">
+                        <a [routerLink]="['/people', personEmailAddress.personId, 'view']">{{personEmailAddress.personFullName}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/person-email-address', personEmailAddress.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

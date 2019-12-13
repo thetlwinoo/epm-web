@@ -1,0 +1,44 @@
+{
+  "epmwebApp": {
+    "suppliers": {
+      "home": {
+        "title": "Suppliers",
+        "createLabel": "Create a new Suppliers",
+        "createOrEditLabel": "Create or edit a Suppliers",
+        "notFound": "No Suppliers found"
+      },
+      "created": "A new Suppliers is created with identifier {{ param }}",
+      "updated": "A Suppliers is updated with identifier {{ param }}",
+      "deleted": "A Suppliers is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Suppliers {{ id }}?"
+      },
+      "detail": {
+        "title": "Suppliers"
+      },
+      "name": "Name",
+      "supplierReference": "Supplier Reference",
+      "bankAccountName": "Bank Account Name",
+      "bankAccountBranch": "Bank Account Branch",
+      "bankAccountCode": "Bank Account Code",
+      "bankAccountNumber": "Bank Account Number",
+      "bankInternationalCode": "Bank International Code",
+      "paymentDays": "Payment Days",
+      "internalComments": "Internal Comments",
+      "phoneNumber": "Phone Number",
+      "faxNumber": "Fax Number",
+      "websiteURL": "Website URL",
+      "webServiceUrl": "Web Service Url",
+      "creditRating": "Credit Rating",
+      "activeFlag": "Active Flag",
+      "thumbnailUrl": "Thumbnail Url",
+      "validFrom": "Valid From",
+      "validTo": "Valid To",
+      "user": "User",
+      "supplierCategory": "Supplier Category",
+      "deliveryMethod": "Delivery Method",
+      "deliveryCity": "Delivery City",
+      "postalCity": "Postal City"
+    }
+  }
+}

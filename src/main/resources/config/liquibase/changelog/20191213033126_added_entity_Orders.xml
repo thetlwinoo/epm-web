@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    
+    <!--
+        Added the entity Orders.
+    -->
+    <changeSet id="20191213033126-1" author="jhipster">
+        <createTable tableName="orders">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="order_date" type="datetime">
+                <constraints nullable="false" />
+            </column>
+            <column name="due_date" type="datetime">
+                <constraints nullable="true" />
+            </column>
+            <column name="ship_date" type="datetime">
+                <constraints nullable="true" />
+            </column>
+            <column name="payment_status" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="order_flag" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="order_number" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="sub_total" type="decimal(21,2)">
+                <constraints nullable="true" />
+            </column>
+            <column name="tax_amount" type="decimal(21,2)">
+                <constraints nullable="true" />
+            </column>
+            <column name="frieight" type="decimal(21,2)">
+                <constraints nullable="true" />
+            </column>
+            <column name="total_due" type="decimal(21,2)">
+                <constraints nullable="true" />
+            </column>
+            <column name="comments" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="delivery_instructions" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="internal_comments" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="picking_completed_when" type="datetime">
+                <constraints nullable="true" />
+            </column>
+            <column name="status" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="last_edited_by" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="last_edited_when" type="datetime">
+                <constraints nullable="true" />
+            </column>
+            <column name="order_on_review_id" type="bigint">
+                <constraints unique="true" nullable="true" uniqueConstraintName="ux_orders_order_on_review_id" />
+            </column>
+            <column name="customer_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="ship_to_address_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="bill_to_address_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="ship_method_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="currency_rate_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="special_deals_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
+        </createTable>
+        <dropDefaultValue tableName="orders" columnName="order_date" columnDataType="datetime"/>
+        <dropDefaultValue tableName="orders" columnName="due_date" columnDataType="datetime"/>
+        <dropDefaultValue tableName="orders" columnName="ship_date" columnDataType="datetime"/>
+        <dropDefaultValue tableName="orders" columnName="picking_completed_when" columnDataType="datetime"/>
+        <dropDefaultValue tableName="orders" columnName="last_edited_when" columnDataType="datetime"/>
+    </changeSet>
+
+    <changeSet id="20191213033126-1-relations" author="jhipster">
+
+    </changeSet>
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here, do not remove-->
+
+    <!--
+        Load sample data generated with Faker.js
+        - This data can be easily edited using a CSV editor (or even MS Excel) and
+          is located in the 'src/main/resources/config/liquibase/fake-data' directory
+        - By default this data is applied when running with the JHipster 'dev' profile.
+          This can be customized by adding or removing 'faker' in the 'spring.liquibase.contexts'
+          Spring Boot configuration key.
+    -->
+    <changeSet id="20191213033126-1-data" author="jhipster" context="faker">
+        <loadData
+                  file="config/liquibase/fake-data/orders.csv"
+                  separator=";"
+                  tableName="orders">
+            <column name="id" type="numeric"/>
+            <column name="order_date" type="datetime"/>
+            <column name="due_date" type="datetime"/>
+            <column name="ship_date" type="datetime"/>
+            <column name="payment_status" type="numeric"/>
+            <column name="order_flag" type="numeric"/>
+            <column name="order_number" type="string"/>
+            <column name="sub_total" type="numeric"/>
+            <column name="tax_amount" type="numeric"/>
+            <column name="frieight" type="numeric"/>
+            <column name="total_due" type="numeric"/>
+            <column name="comments" type="string"/>
+            <column name="delivery_instructions" type="string"/>
+            <column name="internal_comments" type="string"/>
+            <column name="picking_completed_when" type="datetime"/>
+            <column name="status" type="string"/>
+            <column name="last_edited_by" type="string"/>
+            <column name="last_edited_when" type="datetime"/>
+            <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here, do not remove-->
+        </loadData>
+    </changeSet>
+
+</databaseChangeLog>

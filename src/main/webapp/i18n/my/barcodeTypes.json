@@ -1,0 +1,22 @@
+{
+  "epmwebApp": {
+    "barcodeTypes": {
+      "home": {
+        "title": "Barcode Types",
+        "createLabel": "Barcode Types အသစ်ထည့်မည်",
+        "createOrEditLabel": "Barcode Types အသစ်ထည့်ခြင်း (သို့) ပြုပြင်ခြင်း",
+        "notFound": "No Barcode Types found"
+      },
+      "created": "{{ param }} အိုင်ဒီဖြင့် Barcode Types အသစ်တစ်ခုအား ထည့်ပြီးပါပြီ။",
+      "updated": "{{ param }} အိုင်ဒီဖြင့် Barcode Types တစ်ခုအား ပြုပြင်ပြီးပါပြီ။",
+      "deleted": "{{ param }} အိုင်ဒီဖြင့် Barcode Types တစ်ခုအား ဖျက်ပြီးပါပြီ။",
+      "delete": {
+        "question": "Barcode Types {{ id }} အား ဖျက်ပါမည်။ သေချာပါသလား?"
+      },
+      "detail": {
+        "title": "Barcode Types"
+      },
+      "name": "Name"
+    }
+  }
+}

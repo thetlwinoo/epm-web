@@ -1,0 +1,345 @@
+{
+    "name": "StockItemTemp",
+    "fields": [
+        {
+            "fieldName": "stockItemName",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "vendorCode",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "vendorSKU",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "barcode",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "barcodeTypeId",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "barcodeTypeName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "productType",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "productCategoryId",
+            "fieldType": "Long",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "productCategoryName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "productAttributeSetId",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "productAttributeId",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "productAttributeValue",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "productOptionSetId",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "productOptionId",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "productOptionValue",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "modelName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "modelNumber",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "materialId",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "materialName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "shortDescription",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "text"
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "text"
+        },
+        {
+            "fieldName": "productBrandId",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "productBrandName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "highlights",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "text"
+        },
+        {
+            "fieldName": "searchDetails",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "text"
+        },
+        {
+            "fieldName": "careInstructions",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "text"
+        },
+        {
+            "fieldName": "dangerousGoods",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "videoUrl",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "unitPrice",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "remommendedRetailPrice",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "currencyCode",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "quantityOnHand",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "warrantyPeriod",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "warrantyPolicy",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "warrantyTypeId",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "warrantyTypeName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "whatInTheBox",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "text"
+        },
+        {
+            "fieldName": "itemLength",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "itemWidth",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "itemHeight",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "itemWeight",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "itemPackageLength",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "itemPackageWidth",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "itemPackageHeight",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "itemPackageWeight",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "itemLengthUnitMeasureId",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "itemLengthUnitMeasureCode",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "itemWidthUnitMeasureId",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "itemWidthUnitMeasureCode",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "itemHeightUnitMeasureId",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "itemHeightUnitMeasureCode",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "itemWeightUnitMeasureId",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "itemWeightUnitMeasureCode",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "itemPackageLengthUnitMeasureId",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "itemPackageLengthUnitMeasureCode",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "itemPackageWidthUnitMeasureId",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "itemPackageWidthUnitMeasureCode",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "itemPackageHeightUnitMeasureId",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "itemPackageHeightUnitMeasureCode",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "itemPackageWeightUnitMeasureId",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "itemPackageWeightUnitMeasureCode",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "noOfPieces",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "noOfItems",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "manufacture",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "specialFeactures",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "text"
+        },
+        {
+            "fieldName": "productComplianceCertificate",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "genuineAndLegal",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "countryOfOrigin",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "usageAndSideEffects",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "text"
+        },
+        {
+            "fieldName": "safetyWarnning",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "text"
+        },
+        {
+            "fieldName": "sellStartDate",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "sellEndDate",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "status",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "lastEditedBy",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "lastEditedWhen",
+            "fieldType": "Instant"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "uploadTransactions",
+            "otherEntityRelationshipName": "stockItemTempList",
+            "relationshipName": "uploadTransaction",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20191213033133",
+    "entityTableName": "stock_item_temp",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": true,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

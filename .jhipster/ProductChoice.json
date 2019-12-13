@@ -1,0 +1,45 @@
+{
+    "name": "ProductChoice",
+    "fields": [
+        {
+            "fieldName": "isMultiply",
+            "fieldType": "Boolean",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "productCategory",
+            "otherEntityRelationshipName": "productChoice",
+            "relationshipName": "productCategory",
+            "otherEntityField": "name"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "productAttributeSet",
+            "otherEntityRelationshipName": "productChoice",
+            "relationshipName": "productAttributeSet",
+            "otherEntityField": "name"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "productOptionSet",
+            "otherEntityRelationshipName": "productChoice",
+            "relationshipName": "productOptionSet",
+            "otherEntityField": "value"
+        }
+    ],
+    "changelogDate": "20191213033143",
+    "entityTableName": "product_choice",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": true,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

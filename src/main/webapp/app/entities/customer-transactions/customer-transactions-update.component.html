@@ -1,0 +1,150 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-customer-transactions-heading" jhiTranslate="epmwebApp.customerTransactions.home.createOrEditLabel">Create or edit a Customer Transactions</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.customerTransactions.transactionDate" for="field_transactionDate">Transaction Date</label>
+                    <div class="d-flex">
+                        <input id="field_transactionDate" type="datetime-local" class="form-control" name="transactionDate" formControlName="transactionDate" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                    <div *ngIf="editForm.get('transactionDate').invalid && (editForm.get('transactionDate').dirty || editForm.get('transactionDate').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('transactionDate').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('transactionDate').errors?.ZonedDateTimelocal" jhiTranslate="entity.validation.ZonedDateTimelocal">
+                            This field should be a date and time.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.customerTransactions.amountExcludingTax" for="field_amountExcludingTax">Amount Excluding Tax</label>
+                    <input type="number" class="form-control" name="amountExcludingTax" id="field_amountExcludingTax"
+                           formControlName="amountExcludingTax"/>
+                    <div *ngIf="editForm.get('amountExcludingTax').invalid && (editForm.get('amountExcludingTax').dirty || editForm.get('amountExcludingTax').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('amountExcludingTax').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('amountExcludingTax')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.customerTransactions.taxAmount" for="field_taxAmount">Tax Amount</label>
+                    <input type="number" class="form-control" name="taxAmount" id="field_taxAmount"
+                           formControlName="taxAmount"/>
+                    <div *ngIf="editForm.get('taxAmount').invalid && (editForm.get('taxAmount').dirty || editForm.get('taxAmount').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('taxAmount').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('taxAmount')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.customerTransactions.transactionAmount" for="field_transactionAmount">Transaction Amount</label>
+                    <input type="number" class="form-control" name="transactionAmount" id="field_transactionAmount"
+                           formControlName="transactionAmount"/>
+                    <div *ngIf="editForm.get('transactionAmount').invalid && (editForm.get('transactionAmount').dirty || editForm.get('transactionAmount').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('transactionAmount').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('transactionAmount')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.customerTransactions.outstandingBalance" for="field_outstandingBalance">Outstanding Balance</label>
+                    <input type="number" class="form-control" name="outstandingBalance" id="field_outstandingBalance"
+                           formControlName="outstandingBalance"/>
+                    <div *ngIf="editForm.get('outstandingBalance').invalid && (editForm.get('outstandingBalance').dirty || editForm.get('outstandingBalance').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('outstandingBalance').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('outstandingBalance')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.customerTransactions.finalizationDate" for="field_finalizationDate">Finalization Date</label>
+                    <div class="d-flex">
+                        <input id="field_finalizationDate" type="datetime-local" class="form-control" name="finalizationDate" formControlName="finalizationDate" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.customerTransactions.isFinalized" for="field_isFinalized">Is Finalized</label>
+                    <input type="checkbox" class="form-control" name="isFinalized" id="field_isFinalized"
+                           formControlName="isFinalized"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.customerTransactions.lastEditedBy" for="field_lastEditedBy">Last Edited By</label>
+                    <input type="text" class="form-control" name="lastEditedBy" id="field_lastEditedBy"
+                           formControlName="lastEditedBy"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.customerTransactions.lastEditedWhen" for="field_lastEditedWhen">Last Edited When</label>
+                    <div class="d-flex">
+                        <input id="field_lastEditedWhen" type="datetime-local" class="form-control" name="lastEditedWhen" formControlName="lastEditedWhen" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.customerTransactions.customer" for="field_customer">Customer</label>
+                    <select class="form-control" id="field_customer" name="customer" formControlName="customerId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="customersOption.id" *ngFor="let customersOption of customers; trackBy: trackCustomersById">{{customersOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.customerTransactions.paymentTransaction" for="field_paymentTransaction">Payment Transaction</label>
+                    <select class="form-control" id="field_paymentTransaction" name="paymentTransaction" formControlName="paymentTransactionId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="paymentTransactionsOption.id" *ngFor="let paymentTransactionsOption of paymenttransactions; trackBy: trackPaymentTransactionsById">{{paymentTransactionsOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.customerTransactions.transactionType" for="field_transactionType">Transaction Type</label>
+                    <select class="form-control" id="field_transactionType" name="transactionType" formControlName="transactionTypeId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="transactionTypesOption.id" *ngFor="let transactionTypesOption of transactiontypes; trackBy: trackTransactionTypesById">{{transactionTypesOption.name}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.customerTransactions.invoice" for="field_invoice">Invoice</label>
+                    <select class="form-control" id="field_invoice" name="invoice" formControlName="invoiceId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="invoicesOption.id" *ngFor="let invoicesOption of invoices; trackBy: trackInvoicesById">{{invoicesOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

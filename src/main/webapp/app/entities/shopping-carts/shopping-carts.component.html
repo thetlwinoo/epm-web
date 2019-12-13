@@ -1,0 +1,79 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="epmwebApp.shoppingCarts.home.title">Shopping Carts</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-shopping-carts" [routerLink]="['/shopping-carts/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="epmwebApp.shoppingCarts.home.createLabel">
+            Create a new Shopping Carts
+            </span>
+        </button>
+    </h2>
+    <jhi-alert-error></jhi-alert-error>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="shoppingCarts?.length === 0">
+        <span jhiTranslate="epmwebApp.shoppingCarts.home.notFound">No shoppingCarts found</span>
+    </div>
+    <div class="table-responsive" *ngIf="shoppingCarts?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+            <tr>
+            <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.shoppingCarts.totalPrice">Total Price</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.shoppingCarts.totalCargoPrice">Total Cargo Price</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.shoppingCarts.lastEditedBy">Last Edited By</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.shoppingCarts.lastEditedWhen">Last Edited When</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.shoppingCarts.cartUser">Cart User</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.shoppingCarts.customer">Customer</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.shoppingCarts.specialDeals">Special Deals</span></th>
+            <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let shoppingCarts of shoppingCarts ;trackBy: trackId">
+                <td><a [routerLink]="['/shopping-carts', shoppingCarts.id, 'view' ]">{{shoppingCarts.id}}</a></td>
+                <td>{{shoppingCarts.totalPrice}}</td>
+                <td>{{shoppingCarts.totalCargoPrice}}</td>
+                <td>{{shoppingCarts.lastEditedBy}}</td>
+                <td>{{shoppingCarts.lastEditedWhen | date:'medium'}}</td>
+                <td>
+                    <div *ngIf="shoppingCarts.cartUserId">
+                        <a [routerLink]="['/people', shoppingCarts.cartUserId , 'view' ]" >{{shoppingCarts.cartUserId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="shoppingCarts.customerId">
+                        <a [routerLink]="['/customers', shoppingCarts.customerId , 'view' ]" >{{shoppingCarts.customerId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="shoppingCarts.specialDealsId">
+                        <a [routerLink]="['/special-deals', shoppingCarts.specialDealsId , 'view' ]" >{{shoppingCarts.specialDealsId}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/shopping-carts', shoppingCarts.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/shopping-carts', shoppingCarts.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit" (click)="delete(shoppingCarts)"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

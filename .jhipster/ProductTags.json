@@ -1,0 +1,31 @@
+{
+    "name": "ProductTags",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "products",
+            "otherEntityRelationshipName": "productTags",
+            "relationshipName": "product",
+            "otherEntityField": "name"
+        }
+    ],
+    "changelogDate": "20191213033204",
+    "entityTableName": "product_tags",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": true,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

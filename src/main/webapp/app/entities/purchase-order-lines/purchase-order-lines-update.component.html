@@ -1,0 +1,119 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-purchase-order-lines-heading" jhiTranslate="epmwebApp.purchaseOrderLines.home.createOrEditLabel">Create or edit a Purchase Order Lines</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.purchaseOrderLines.orderedOuters" for="field_orderedOuters">Ordered Outers</label>
+                    <input type="number" class="form-control" name="orderedOuters" id="field_orderedOuters"
+                           formControlName="orderedOuters"/>
+                    <div *ngIf="editForm.get('orderedOuters').invalid && (editForm.get('orderedOuters').dirty || editForm.get('orderedOuters').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('orderedOuters').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('orderedOuters')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.purchaseOrderLines.description" for="field_description">Description</label>
+                    <input type="text" class="form-control" name="description" id="field_description"
+                           formControlName="description"/>
+                    <div *ngIf="editForm.get('description').invalid && (editForm.get('description').dirty || editForm.get('description').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('description').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.purchaseOrderLines.receivedOuters" for="field_receivedOuters">Received Outers</label>
+                    <input type="number" class="form-control" name="receivedOuters" id="field_receivedOuters"
+                           formControlName="receivedOuters"/>
+                    <div *ngIf="editForm.get('receivedOuters').invalid && (editForm.get('receivedOuters').dirty || editForm.get('receivedOuters').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('receivedOuters').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('receivedOuters')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.purchaseOrderLines.expectedUnitPricePerOuter" for="field_expectedUnitPricePerOuter">Expected Unit Price Per Outer</label>
+                    <input type="number" class="form-control" name="expectedUnitPricePerOuter" id="field_expectedUnitPricePerOuter"
+                           formControlName="expectedUnitPricePerOuter"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.purchaseOrderLines.lastReceiptDate" for="field_lastReceiptDate">Last Receipt Date</label>
+                    <div class="d-flex">
+                        <input id="field_lastReceiptDate" type="datetime-local" class="form-control" name="lastReceiptDate" formControlName="lastReceiptDate" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.purchaseOrderLines.isOrderLineFinalized" for="field_isOrderLineFinalized">Is Order Line Finalized</label>
+                    <input type="checkbox" class="form-control" name="isOrderLineFinalized" id="field_isOrderLineFinalized"
+                           formControlName="isOrderLineFinalized"/>
+                    <div *ngIf="editForm.get('isOrderLineFinalized').invalid && (editForm.get('isOrderLineFinalized').dirty || editForm.get('isOrderLineFinalized').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('isOrderLineFinalized').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.purchaseOrderLines.lastEditedBy" for="field_lastEditedBy">Last Edited By</label>
+                    <input type="text" class="form-control" name="lastEditedBy" id="field_lastEditedBy"
+                           formControlName="lastEditedBy"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.purchaseOrderLines.lastEditedWhen" for="field_lastEditedWhen">Last Edited When</label>
+                    <div class="d-flex">
+                        <input id="field_lastEditedWhen" type="datetime-local" class="form-control" name="lastEditedWhen" formControlName="lastEditedWhen" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.purchaseOrderLines.packageType" for="field_packageType">Package Type</label>
+                    <select class="form-control" id="field_packageType" name="packageType" formControlName="packageTypeId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="packageTypesOption.id" *ngFor="let packageTypesOption of packagetypes; trackBy: trackPackageTypesById">{{packageTypesOption.name}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.purchaseOrderLines.stockItem" for="field_stockItem">Stock Item</label>
+                    <select class="form-control" id="field_stockItem" name="stockItem" formControlName="stockItemId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="stockItemsOption.id" *ngFor="let stockItemsOption of stockitems; trackBy: trackStockItemsById">{{stockItemsOption.name}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.purchaseOrderLines.purchaseOrder" for="field_purchaseOrder">Purchase Order</label>
+                    <select class="form-control" id="field_purchaseOrder" name="purchaseOrder" formControlName="purchaseOrderId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="purchaseOrdersOption.id" *ngFor="let purchaseOrdersOption of purchaseorders; trackBy: trackPurchaseOrdersById">{{purchaseOrdersOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

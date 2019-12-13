@@ -1,0 +1,30 @@
+{
+    "name": "BusinessEntityContact",
+    "fields": [],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "people",
+            "otherEntityRelationshipName": "businessEntityContact",
+            "relationshipName": "person",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "contactType",
+            "otherEntityRelationshipName": "businessEntityContact",
+            "relationshipName": "contactType",
+            "otherEntityField": "name"
+        }
+    ],
+    "changelogDate": "20191213033059",
+    "entityTableName": "business_entity_contact",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": true,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

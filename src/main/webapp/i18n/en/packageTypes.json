@@ -1,0 +1,24 @@
+{
+  "epmwebApp": {
+    "packageTypes": {
+      "home": {
+        "title": "Package Types",
+        "createLabel": "Create a new Package Types",
+        "createOrEditLabel": "Create or edit a Package Types",
+        "notFound": "No Package Types found"
+      },
+      "created": "A new Package Types is created with identifier {{ param }}",
+      "updated": "A Package Types is updated with identifier {{ param }}",
+      "deleted": "A Package Types is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Package Types {{ id }}?"
+      },
+      "detail": {
+        "title": "Package Types"
+      },
+      "name": "Name",
+      "validFrom": "Valid From",
+      "validTo": "Valid To"
+    }
+  }
+}

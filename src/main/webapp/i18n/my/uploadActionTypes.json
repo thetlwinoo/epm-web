@@ -1,0 +1,22 @@
+{
+  "epmwebApp": {
+    "uploadActionTypes": {
+      "home": {
+        "title": "Upload Action Types",
+        "createLabel": "Upload Action Types အသစ်ထည့်မည်",
+        "createOrEditLabel": "Upload Action Types အသစ်ထည့်ခြင်း (သို့) ပြုပြင်ခြင်း",
+        "notFound": "No Upload Action Types found"
+      },
+      "created": "{{ param }} အိုင်ဒီဖြင့် Upload Action Types အသစ်တစ်ခုအား ထည့်ပြီးပါပြီ။",
+      "updated": "{{ param }} အိုင်ဒီဖြင့် Upload Action Types တစ်ခုအား ပြုပြင်ပြီးပါပြီ။",
+      "deleted": "{{ param }} အိုင်ဒီဖြင့် Upload Action Types တစ်ခုအား ဖျက်ပြီးပါပြီ။",
+      "delete": {
+        "question": "Upload Action Types {{ id }} အား ဖျက်ပါမည်။ သေချာပါသလား?"
+      },
+      "detail": {
+        "title": "Upload Action Types"
+      },
+      "name": "Name"
+    }
+  }
+}

@@ -1,0 +1,35 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="businessEntityContact">
+            <h2><span jhiTranslate="epmwebApp.businessEntityContact.detail.title">Business Entity Contact</span> {{businessEntityContact.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="epmwebApp.businessEntityContact.person">Person</span></dt>
+                <dd>
+                    <div *ngIf="businessEntityContact.personId">
+                        <a [routerLink]="['/people', businessEntityContact.personId, 'view']">{{businessEntityContact.personId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.businessEntityContact.contactType">Contact Type</span></dt>
+                <dd>
+                    <div *ngIf="businessEntityContact.contactTypeId">
+                        <a [routerLink]="['/contact-type', businessEntityContact.contactTypeId, 'view']">{{businessEntityContact.contactTypeName}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/business-entity-contact', businessEntityContact.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

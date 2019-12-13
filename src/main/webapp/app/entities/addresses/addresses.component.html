@@ -1,0 +1,89 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="epmwebApp.addresses.home.title">Addresses</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-addresses" [routerLink]="['/addresses/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="epmwebApp.addresses.home.createLabel">
+            Create a new Addresses
+            </span>
+        </button>
+    </h2>
+    <jhi-alert-error></jhi-alert-error>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="addresses?.length === 0">
+        <span jhiTranslate="epmwebApp.addresses.home.notFound">No addresses found</span>
+    </div>
+    <div class="table-responsive" *ngIf="addresses?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+            <tr>
+            <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.addresses.contactPerson">Contact Person</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.addresses.contactNumber">Contact Number</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.addresses.contactEmailAddress">Contact Email Address</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.addresses.addressLine1">Address Line 1</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.addresses.addressLine2">Address Line 2</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.addresses.city">City</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.addresses.postalCode">Postal Code</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.addresses.defaultInd">Default Ind</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.addresses.activeInd">Active Ind</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.addresses.stateProvince">State Province</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.addresses.addressType">Address Type</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.addresses.person">Person</span></th>
+            <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let addresses of addresses ;trackBy: trackId">
+                <td><a [routerLink]="['/addresses', addresses.id, 'view' ]">{{addresses.id}}</a></td>
+                <td>{{addresses.contactPerson}}</td>
+                <td>{{addresses.contactNumber}}</td>
+                <td>{{addresses.contactEmailAddress}}</td>
+                <td>{{addresses.addressLine1}}</td>
+                <td>{{addresses.addressLine2}}</td>
+                <td>{{addresses.city}}</td>
+                <td>{{addresses.postalCode}}</td>
+                <td>{{addresses.defaultInd}}</td>
+                <td>{{addresses.activeInd}}</td>
+                <td>
+                    <div *ngIf="addresses.stateProvinceId">
+                        <a [routerLink]="['/state-provinces', addresses.stateProvinceId , 'view' ]" >{{addresses.stateProvinceName}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="addresses.addressTypeId">
+                        <a [routerLink]="['/address-types', addresses.addressTypeId , 'view' ]" >{{addresses.addressTypeName}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="addresses.personId">
+                        <a [routerLink]="['/people', addresses.personId , 'view' ]" >{{addresses.personId}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/addresses', addresses.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/addresses', addresses.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit" (click)="delete(addresses)"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

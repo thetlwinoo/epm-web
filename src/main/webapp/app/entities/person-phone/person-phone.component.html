@@ -1,0 +1,71 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="epmwebApp.personPhone.home.title">Person Phones</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-person-phone" [routerLink]="['/person-phone/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="epmwebApp.personPhone.home.createLabel">
+            Create a new Person Phone
+            </span>
+        </button>
+    </h2>
+    <jhi-alert-error></jhi-alert-error>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="personPhones?.length === 0">
+        <span jhiTranslate="epmwebApp.personPhone.home.notFound">No personPhones found</span>
+    </div>
+    <div class="table-responsive" *ngIf="personPhones?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+            <tr>
+            <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.personPhone.phoneNumber">Phone Number</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.personPhone.defaultInd">Default Ind</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.personPhone.activeInd">Active Ind</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.personPhone.person">Person</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.personPhone.phoneNumberType">Phone Number Type</span></th>
+            <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let personPhone of personPhones ;trackBy: trackId">
+                <td><a [routerLink]="['/person-phone', personPhone.id, 'view' ]">{{personPhone.id}}</a></td>
+                <td>{{personPhone.phoneNumber}}</td>
+                <td>{{personPhone.defaultInd}}</td>
+                <td>{{personPhone.activeInd}}</td>
+                <td>
+                    <div *ngIf="personPhone.personId">
+                        <a [routerLink]="['/people', personPhone.personId , 'view' ]" >{{personPhone.personFullName}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="personPhone.phoneNumberTypeId">
+                        <a [routerLink]="['/phone-number-type', personPhone.phoneNumberTypeId , 'view' ]" >{{personPhone.phoneNumberTypeName}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/person-phone', personPhone.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/person-phone', personPhone.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit" (click)="delete(personPhone)"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

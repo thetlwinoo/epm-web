@@ -1,0 +1,28 @@
+{
+  "epmwebApp": {
+    "vehicleTemperatures": {
+      "home": {
+        "title": "Vehicle Temperatures",
+        "createLabel": "Vehicle Temperatures အသစ်ထည့်မည်",
+        "createOrEditLabel": "Vehicle Temperatures အသစ်ထည့်ခြင်း (သို့) ပြုပြင်ခြင်း",
+        "notFound": "No Vehicle Temperatures found"
+      },
+      "created": "{{ param }} အိုင်ဒီဖြင့် Vehicle Temperatures အသစ်တစ်ခုအား ထည့်ပြီးပါပြီ။",
+      "updated": "{{ param }} အိုင်ဒီဖြင့် Vehicle Temperatures တစ်ခုအား ပြုပြင်ပြီးပါပြီ။",
+      "deleted": "{{ param }} အိုင်ဒီဖြင့် Vehicle Temperatures တစ်ခုအား ဖျက်ပြီးပါပြီ။",
+      "delete": {
+        "question": "Vehicle Temperatures {{ id }} အား ဖျက်ပါမည်။ သေချာပါသလား?"
+      },
+      "detail": {
+        "title": "Vehicle Temperatures"
+      },
+      "vehicleRegistration": "Vehicle Registration",
+      "chillerSensorNumber": "Chiller Sensor Number",
+      "recordedWhen": "Recorded When",
+      "temperature": "Temperature",
+      "isCompressed": "Is Compressed",
+      "fullSensorData": "Full Sensor Data",
+      "compressedSensorData": "Compressed Sensor Data"
+    }
+  }
+}

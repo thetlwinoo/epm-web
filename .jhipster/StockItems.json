@@ -1,0 +1,266 @@
+{
+    "name": "StockItems",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "vendorCode",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "vendorSKU",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "generatedSKU",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "barcode",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "unitPrice",
+            "fieldType": "BigDecimal",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "recommendedRetailPrice",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "quantityOnHand",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "itemLength",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "itemWidth",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "itemHeight",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "itemWeight",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "itemPackageLength",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "itemPackageWidth",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "itemPackageHeight",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "itemPackageWeight",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "noOfPieces",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "noOfItems",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "manufacture",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "marketingComments",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "internalComments",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "sellStartDate",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "sellEndDate",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "sellCount",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "customFields",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "thumbnailUrl",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "activeInd",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "lastEditedBy",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "lastEditedWhen",
+            "fieldType": "Instant"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "reviewLines",
+            "otherEntityRelationshipName": "stockItem",
+            "relationshipName": "stockItemOnReviewLine",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "photos",
+            "otherEntityRelationshipName": "stockItem",
+            "relationshipName": "photoList"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "dangerousGoods",
+            "otherEntityRelationshipName": "stockItem",
+            "relationshipName": "dangerousGoodList"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "specialDeals",
+            "otherEntityRelationshipName": "stockItem",
+            "relationshipName": "specialDiscount"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "unitMeasure",
+            "otherEntityRelationshipName": "stockItems",
+            "relationshipName": "itemLengthUnit",
+            "otherEntityField": "code"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "unitMeasure",
+            "otherEntityRelationshipName": "stockItems",
+            "relationshipName": "itemWidthUnit",
+            "otherEntityField": "code"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "unitMeasure",
+            "otherEntityRelationshipName": "stockItems",
+            "relationshipName": "itemHeightUnit",
+            "otherEntityField": "code"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "unitMeasure",
+            "otherEntityRelationshipName": "stockItems",
+            "relationshipName": "packageLengthUnit",
+            "otherEntityField": "code"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "unitMeasure",
+            "otherEntityRelationshipName": "stockItems",
+            "relationshipName": "packageWidthUnit",
+            "otherEntityField": "code"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "unitMeasure",
+            "otherEntityRelationshipName": "stockItems",
+            "relationshipName": "packageHeightUnit",
+            "otherEntityField": "code"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "unitMeasure",
+            "otherEntityRelationshipName": "stockItems",
+            "relationshipName": "itemPackageWeightUnit",
+            "otherEntityField": "code"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "productAttribute",
+            "otherEntityRelationshipName": "stockItems",
+            "relationshipName": "productAttribute",
+            "otherEntityField": "value"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "productOption",
+            "otherEntityRelationshipName": "stockItems",
+            "relationshipName": "productOption",
+            "otherEntityField": "value"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "materials",
+            "otherEntityRelationshipName": "stockItems",
+            "relationshipName": "material",
+            "otherEntityField": "name"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "currency",
+            "otherEntityRelationshipName": "stockItems",
+            "relationshipName": "currency",
+            "otherEntityField": "code"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "barcodeTypes",
+            "otherEntityRelationshipName": "stockItems",
+            "relationshipName": "barcodeType",
+            "otherEntityField": "name"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "stockItemHoldings",
+            "otherEntityRelationshipName": "stockItemHoldingOnStockItem",
+            "relationshipName": "stockItemHolding",
+            "ownerSide": false
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "products",
+            "otherEntityRelationshipName": "stockItemList",
+            "relationshipName": "product",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20191213033132",
+    "entityTableName": "stock_items",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": true,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

@@ -1,0 +1,29 @@
+{
+  "epmwebApp": {
+    "stateProvinces": {
+      "home": {
+        "title": "State Provinces",
+        "createLabel": "State Provinces အသစ်ထည့်မည်",
+        "createOrEditLabel": "State Provinces အသစ်ထည့်ခြင်း (သို့) ပြုပြင်ခြင်း",
+        "notFound": "No State Provinces found"
+      },
+      "created": "{{ param }} အိုင်ဒီဖြင့် State Provinces အသစ်တစ်ခုအား ထည့်ပြီးပါပြီ။",
+      "updated": "{{ param }} အိုင်ဒီဖြင့် State Provinces တစ်ခုအား ပြုပြင်ပြီးပါပြီ။",
+      "deleted": "{{ param }} အိုင်ဒီဖြင့် State Provinces တစ်ခုအား ဖျက်ပြီးပါပြီ။",
+      "delete": {
+        "question": "State Provinces {{ id }} အား ဖျက်ပါမည်။ သေချာပါသလား?"
+      },
+      "detail": {
+        "title": "State Provinces"
+      },
+      "code": "Code",
+      "name": "Name",
+      "salesTerritory": "Sales Territory",
+      "border": "Border",
+      "latestRecordedPopulation": "Latest Recorded Population",
+      "validFrom": "Valid From",
+      "validTo": "Valid To",
+      "country": "Country"
+    }
+  }
+}

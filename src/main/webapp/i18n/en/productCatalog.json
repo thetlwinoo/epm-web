@@ -1,0 +1,23 @@
+{
+  "epmwebApp": {
+    "productCatalog": {
+      "home": {
+        "title": "Product Catalogs",
+        "createLabel": "Create a new Product Catalog",
+        "createOrEditLabel": "Create or edit a Product Catalog",
+        "notFound": "No Product Catalogs found"
+      },
+      "created": "A new Product Catalog is created with identifier {{ param }}",
+      "updated": "A Product Catalog is updated with identifier {{ param }}",
+      "deleted": "A Product Catalog is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Product Catalog {{ id }}?"
+      },
+      "detail": {
+        "title": "Product Catalog"
+      },
+      "productCategory": "Product Category",
+      "product": "Product"
+    }
+  }
+}

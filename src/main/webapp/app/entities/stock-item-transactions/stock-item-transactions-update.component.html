@@ -1,0 +1,98 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-stock-item-transactions-heading" jhiTranslate="epmwebApp.stockItemTransactions.home.createOrEditLabel">Create or edit a Stock Item Transactions</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.stockItemTransactions.transactionOccuredWhen" for="field_transactionOccuredWhen">Transaction Occured When</label>
+                    <div class="d-flex">
+                        <input id="field_transactionOccuredWhen" type="datetime-local" class="form-control" name="transactionOccuredWhen" formControlName="transactionOccuredWhen" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                    <div *ngIf="editForm.get('transactionOccuredWhen').invalid && (editForm.get('transactionOccuredWhen').dirty || editForm.get('transactionOccuredWhen').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('transactionOccuredWhen').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('transactionOccuredWhen').errors?.ZonedDateTimelocal" jhiTranslate="entity.validation.ZonedDateTimelocal">
+                            This field should be a date and time.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.stockItemTransactions.quantity" for="field_quantity">Quantity</label>
+                    <input type="number" class="form-control" name="quantity" id="field_quantity"
+                           formControlName="quantity"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.stockItemTransactions.lastEditedBy" for="field_lastEditedBy">Last Edited By</label>
+                    <input type="text" class="form-control" name="lastEditedBy" id="field_lastEditedBy"
+                           formControlName="lastEditedBy"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.stockItemTransactions.lastEditedWhen" for="field_lastEditedWhen">Last Edited When</label>
+                    <div class="d-flex">
+                        <input id="field_lastEditedWhen" type="datetime-local" class="form-control" name="lastEditedWhen" formControlName="lastEditedWhen" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.stockItemTransactions.stockItem" for="field_stockItem">Stock Item</label>
+                    <select class="form-control" id="field_stockItem" name="stockItem" formControlName="stockItemId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="stockItemsOption.id" *ngFor="let stockItemsOption of stockitems; trackBy: trackStockItemsById">{{stockItemsOption.name}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.stockItemTransactions.customer" for="field_customer">Customer</label>
+                    <select class="form-control" id="field_customer" name="customer" formControlName="customerId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="customersOption.id" *ngFor="let customersOption of customers; trackBy: trackCustomersById">{{customersOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.stockItemTransactions.invoice" for="field_invoice">Invoice</label>
+                    <select class="form-control" id="field_invoice" name="invoice" formControlName="invoiceId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="invoicesOption.id" *ngFor="let invoicesOption of invoices; trackBy: trackInvoicesById">{{invoicesOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.stockItemTransactions.supplier" for="field_supplier">Supplier</label>
+                    <select class="form-control" id="field_supplier" name="supplier" formControlName="supplierId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="suppliersOption.id" *ngFor="let suppliersOption of suppliers; trackBy: trackSuppliersById">{{suppliersOption.name}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.stockItemTransactions.transactionType" for="field_transactionType">Transaction Type</label>
+                    <select class="form-control" id="field_transactionType" name="transactionType" formControlName="transactionTypeId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="transactionTypesOption.id" *ngFor="let transactionTypesOption of transactiontypes; trackBy: trackTransactionTypesById">{{transactionTypesOption.name}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.stockItemTransactions.purchaseOrder" for="field_purchaseOrder">Purchase Order</label>
+                    <select class="form-control" id="field_purchaseOrder" name="purchaseOrder" formControlName="purchaseOrderId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="purchaseOrdersOption.id" *ngFor="let purchaseOrdersOption of purchaseorders; trackBy: trackPurchaseOrdersById">{{purchaseOrdersOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

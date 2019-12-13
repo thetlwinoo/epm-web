@@ -1,0 +1,81 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="supplierTransactions">
+            <h2><span jhiTranslate="epmwebApp.supplierTransactions.detail.title">Supplier Transactions</span> {{supplierTransactions.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="epmwebApp.supplierTransactions.supplierInvoiceNumber">Supplier Invoice Number</span></dt>
+                <dd>
+                    <span>{{supplierTransactions.supplierInvoiceNumber}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.supplierTransactions.transactionDate">Transaction Date</span></dt>
+                <dd>
+                    <span>{{supplierTransactions.transactionDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.supplierTransactions.amountExcludingTax">Amount Excluding Tax</span></dt>
+                <dd>
+                    <span>{{supplierTransactions.amountExcludingTax}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.supplierTransactions.taxAmount">Tax Amount</span></dt>
+                <dd>
+                    <span>{{supplierTransactions.taxAmount}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.supplierTransactions.transactionAmount">Transaction Amount</span></dt>
+                <dd>
+                    <span>{{supplierTransactions.transactionAmount}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.supplierTransactions.outstandingBalance">Outstanding Balance</span></dt>
+                <dd>
+                    <span>{{supplierTransactions.outstandingBalance}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.supplierTransactions.finalizationDate">Finalization Date</span></dt>
+                <dd>
+                    <span>{{supplierTransactions.finalizationDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.supplierTransactions.isFinalized">Is Finalized</span></dt>
+                <dd>
+                    <span>{{supplierTransactions.isFinalized}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.supplierTransactions.lastEditedBy">Last Edited By</span></dt>
+                <dd>
+                    <span>{{supplierTransactions.lastEditedBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.supplierTransactions.lastEditedWhen">Last Edited When</span></dt>
+                <dd>
+                    <span>{{supplierTransactions.lastEditedWhen}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.supplierTransactions.supplier">Supplier</span></dt>
+                <dd>
+                    <div *ngIf="supplierTransactions.supplierId">
+                        <a [routerLink]="['/suppliers', supplierTransactions.supplierId, 'view']">{{supplierTransactions.supplierName}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.supplierTransactions.transactionType">Transaction Type</span></dt>
+                <dd>
+                    <div *ngIf="supplierTransactions.transactionTypeId">
+                        <a [routerLink]="['/transaction-types', supplierTransactions.transactionTypeId, 'view']">{{supplierTransactions.transactionTypeName}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.supplierTransactions.purchaseOrder">Purchase Order</span></dt>
+                <dd>
+                    <div *ngIf="supplierTransactions.purchaseOrderId">
+                        <a [routerLink]="['/purchase-orders', supplierTransactions.purchaseOrderId, 'view']">{{supplierTransactions.purchaseOrderId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/supplier-transactions', supplierTransactions.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

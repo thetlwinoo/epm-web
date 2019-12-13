@@ -1,0 +1,73 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="purchaseOrders">
+            <h2><span jhiTranslate="epmwebApp.purchaseOrders.detail.title">Purchase Orders</span> {{purchaseOrders.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="epmwebApp.purchaseOrders.orderDate">Order Date</span></dt>
+                <dd>
+                    <span>{{purchaseOrders.orderDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.purchaseOrders.expectedDeliveryDate">Expected Delivery Date</span></dt>
+                <dd>
+                    <span>{{purchaseOrders.expectedDeliveryDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.purchaseOrders.supplierReference">Supplier Reference</span></dt>
+                <dd>
+                    <span>{{purchaseOrders.supplierReference}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.purchaseOrders.isOrderFinalized">Is Order Finalized</span></dt>
+                <dd>
+                    <span>{{purchaseOrders.isOrderFinalized}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.purchaseOrders.comments">Comments</span></dt>
+                <dd>
+                    <span>{{purchaseOrders.comments}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.purchaseOrders.internalComments">Internal Comments</span></dt>
+                <dd>
+                    <span>{{purchaseOrders.internalComments}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.purchaseOrders.lastEditedBy">Last Edited By</span></dt>
+                <dd>
+                    <span>{{purchaseOrders.lastEditedBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.purchaseOrders.lastEditedWhen">Last Edited When</span></dt>
+                <dd>
+                    <span>{{purchaseOrders.lastEditedWhen}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.purchaseOrders.contactPerson">Contact Person</span></dt>
+                <dd>
+                    <div *ngIf="purchaseOrders.contactPersonId">
+                        <a [routerLink]="['/people', purchaseOrders.contactPersonId, 'view']">{{purchaseOrders.contactPersonFullName}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.purchaseOrders.supplier">Supplier</span></dt>
+                <dd>
+                    <div *ngIf="purchaseOrders.supplierId">
+                        <a [routerLink]="['/suppliers', purchaseOrders.supplierId, 'view']">{{purchaseOrders.supplierName}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.purchaseOrders.deliveryMethod">Delivery Method</span></dt>
+                <dd>
+                    <div *ngIf="purchaseOrders.deliveryMethodId">
+                        <a [routerLink]="['/delivery-methods', purchaseOrders.deliveryMethodId, 'view']">{{purchaseOrders.deliveryMethodName}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/purchase-orders', purchaseOrders.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

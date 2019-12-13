@@ -1,0 +1,27 @@
+{
+  "epmwebApp": {
+    "cities": {
+      "home": {
+        "title": "Cities",
+        "createLabel": "Cities အသစ်ထည့်မည်",
+        "createOrEditLabel": "Cities အသစ်ထည့်ခြင်း (သို့) ပြုပြင်ခြင်း",
+        "notFound": "No Cities found"
+      },
+      "created": "{{ param }} အိုင်ဒီဖြင့် Cities အသစ်တစ်ခုအား ထည့်ပြီးပါပြီ။",
+      "updated": "{{ param }} အိုင်ဒီဖြင့် Cities တစ်ခုအား ပြုပြင်ပြီးပါပြီ။",
+      "deleted": "{{ param }} အိုင်ဒီဖြင့် Cities တစ်ခုအား ဖျက်ပြီးပါပြီ။",
+      "delete": {
+        "question": "Cities {{ id }} အား ဖျက်ပါမည်။ သေချာပါသလား?"
+      },
+      "detail": {
+        "title": "Cities"
+      },
+      "name": "Name",
+      "location": "Location",
+      "latestRecordedPopulation": "Latest Recorded Population",
+      "validFrom": "Valid From",
+      "validTo": "Valid To",
+      "stateProvince": "State Province"
+    }
+  }
+}

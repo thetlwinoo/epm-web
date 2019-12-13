@@ -1,0 +1,29 @@
+{
+  "epmwebApp": {
+    "shoppingCarts": {
+      "home": {
+        "title": "Shopping Carts",
+        "createLabel": "Create a new Shopping Carts",
+        "createOrEditLabel": "Create or edit a Shopping Carts",
+        "notFound": "No Shopping Carts found"
+      },
+      "created": "A new Shopping Carts is created with identifier {{ param }}",
+      "updated": "A Shopping Carts is updated with identifier {{ param }}",
+      "deleted": "A Shopping Carts is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Shopping Carts {{ id }}?"
+      },
+      "detail": {
+        "title": "Shopping Carts"
+      },
+      "totalPrice": "Total Price",
+      "totalCargoPrice": "Total Cargo Price",
+      "lastEditedBy": "Last Edited By",
+      "lastEditedWhen": "Last Edited When",
+      "cartUser": "Cart User",
+      "cartItemList": "Cart Item List",
+      "customer": "Customer",
+      "specialDeals": "Special Deals"
+    }
+  }
+}

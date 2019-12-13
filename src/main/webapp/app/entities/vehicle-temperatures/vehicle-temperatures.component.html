@@ -1,0 +1,67 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="epmwebApp.vehicleTemperatures.home.title">Vehicle Temperatures</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-vehicle-temperatures" [routerLink]="['/vehicle-temperatures/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="epmwebApp.vehicleTemperatures.home.createLabel">
+            Create a new Vehicle Temperatures
+            </span>
+        </button>
+    </h2>
+    <jhi-alert-error></jhi-alert-error>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="vehicleTemperatures?.length === 0">
+        <span jhiTranslate="epmwebApp.vehicleTemperatures.home.notFound">No vehicleTemperatures found</span>
+    </div>
+    <div class="table-responsive" *ngIf="vehicleTemperatures?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+            <tr>
+            <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.vehicleTemperatures.vehicleRegistration">Vehicle Registration</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.vehicleTemperatures.chillerSensorNumber">Chiller Sensor Number</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.vehicleTemperatures.recordedWhen">Recorded When</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.vehicleTemperatures.temperature">Temperature</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.vehicleTemperatures.isCompressed">Is Compressed</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.vehicleTemperatures.fullSensorData">Full Sensor Data</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.vehicleTemperatures.compressedSensorData">Compressed Sensor Data</span></th>
+            <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let vehicleTemperatures of vehicleTemperatures ;trackBy: trackId">
+                <td><a [routerLink]="['/vehicle-temperatures', vehicleTemperatures.id, 'view' ]">{{vehicleTemperatures.id}}</a></td>
+                <td>{{vehicleTemperatures.vehicleRegistration}}</td>
+                <td>{{vehicleTemperatures.chillerSensorNumber}}</td>
+                <td>{{vehicleTemperatures.recordedWhen}}</td>
+                <td>{{vehicleTemperatures.temperature}}</td>
+                <td>{{vehicleTemperatures.isCompressed}}</td>
+                <td>{{vehicleTemperatures.fullSensorData}}</td>
+                <td>{{vehicleTemperatures.compressedSensorData}}</td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/vehicle-temperatures', vehicleTemperatures.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/vehicle-temperatures', vehicleTemperatures.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit" (click)="delete(vehicleTemperatures)"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

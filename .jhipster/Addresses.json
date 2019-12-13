@@ -1,0 +1,87 @@
+{
+    "name": "Addresses",
+    "fields": [
+        {
+            "fieldName": "contactPerson",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "contactNumber",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "contactEmailAddress",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "pattern"
+            ],
+            "fieldValidateRulesPattern": "^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$"
+        },
+        {
+            "fieldName": "addressLine1",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "addressLine2",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "city",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "postalCode",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "defaultInd",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "activeInd",
+            "fieldType": "Boolean"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "stateProvinces",
+            "otherEntityRelationshipName": "addresses",
+            "relationshipName": "stateProvince",
+            "otherEntityField": "name"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "addressTypes",
+            "otherEntityRelationshipName": "addresses",
+            "relationshipName": "addressType",
+            "otherEntityField": "name"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "people",
+            "otherEntityRelationshipName": "addresses",
+            "relationshipName": "person",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20191213033057",
+    "entityTableName": "addresses",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": true,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

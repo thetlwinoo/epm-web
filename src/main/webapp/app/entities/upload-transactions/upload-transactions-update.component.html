@@ -1,0 +1,69 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-upload-transactions-heading" jhiTranslate="epmwebApp.uploadTransactions.home.createOrEditLabel">Create or edit a Upload Transactions</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.uploadTransactions.fileName" for="field_fileName">File Name</label>
+                    <input type="text" class="form-control" name="fileName" id="field_fileName"
+                           formControlName="fileName"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.uploadTransactions.templateUrl" for="field_templateUrl">Template Url</label>
+                    <input type="text" class="form-control" name="templateUrl" id="field_templateUrl"
+                           formControlName="templateUrl"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.uploadTransactions.status" for="field_status">Status</label>
+                    <input type="number" class="form-control" name="status" id="field_status"
+                           formControlName="status"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.uploadTransactions.generatedCode" for="field_generatedCode">Generated Code</label>
+                    <input type="text" class="form-control" name="generatedCode" id="field_generatedCode"
+                           formControlName="generatedCode"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.uploadTransactions.lastEditedBy" for="field_lastEditedBy">Last Edited By</label>
+                    <input type="text" class="form-control" name="lastEditedBy" id="field_lastEditedBy"
+                           formControlName="lastEditedBy"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.uploadTransactions.lastEditedWhen" for="field_lastEditedWhen">Last Edited When</label>
+                    <div class="d-flex">
+                        <input id="field_lastEditedWhen" type="datetime-local" class="form-control" name="lastEditedWhen" formControlName="lastEditedWhen" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.uploadTransactions.supplier" for="field_supplier">Supplier</label>
+                    <select class="form-control" id="field_supplier" name="supplier" formControlName="supplierId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="suppliersOption.id" *ngFor="let suppliersOption of suppliers; trackBy: trackSuppliersById">{{suppliersOption.name}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.uploadTransactions.actionType" for="field_actionType">Action Type</label>
+                    <select class="form-control" id="field_actionType" name="actionType" formControlName="actionTypeId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="uploadActionTypesOption.id" *ngFor="let uploadActionTypesOption of uploadactiontypes; trackBy: trackUploadActionTypesById">{{uploadActionTypesOption.name}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

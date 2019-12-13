@@ -1,0 +1,63 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="epmwebApp.coldRoomTemperatures.home.title">Cold Room Temperatures</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-cold-room-temperatures" [routerLink]="['/cold-room-temperatures/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="epmwebApp.coldRoomTemperatures.home.createLabel">
+            Create a new Cold Room Temperatures
+            </span>
+        </button>
+    </h2>
+    <jhi-alert-error></jhi-alert-error>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="coldRoomTemperatures?.length === 0">
+        <span jhiTranslate="epmwebApp.coldRoomTemperatures.home.notFound">No coldRoomTemperatures found</span>
+    </div>
+    <div class="table-responsive" *ngIf="coldRoomTemperatures?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+            <tr>
+            <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.coldRoomTemperatures.coldRoomSensorNumber">Cold Room Sensor Number</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.coldRoomTemperatures.recordedWhen">Recorded When</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.coldRoomTemperatures.temperature">Temperature</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.coldRoomTemperatures.validFrom">Valid From</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.coldRoomTemperatures.validTo">Valid To</span></th>
+            <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let coldRoomTemperatures of coldRoomTemperatures ;trackBy: trackId">
+                <td><a [routerLink]="['/cold-room-temperatures', coldRoomTemperatures.id, 'view' ]">{{coldRoomTemperatures.id}}</a></td>
+                <td>{{coldRoomTemperatures.coldRoomSensorNumber}}</td>
+                <td>{{coldRoomTemperatures.recordedWhen | date:'medium'}}</td>
+                <td>{{coldRoomTemperatures.temperature}}</td>
+                <td>{{coldRoomTemperatures.validFrom | date:'medium'}}</td>
+                <td>{{coldRoomTemperatures.validTo | date:'medium'}}</td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/cold-room-temperatures', coldRoomTemperatures.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/cold-room-temperatures', coldRoomTemperatures.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit" (click)="delete(coldRoomTemperatures)"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

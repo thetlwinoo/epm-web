@@ -1,0 +1,22 @@
+{
+  "epmwebApp": {
+    "uploadActionTypes": {
+      "home": {
+        "title": "Upload Action Types",
+        "createLabel": "Create a new Upload Action Types",
+        "createOrEditLabel": "Create or edit a Upload Action Types",
+        "notFound": "No Upload Action Types found"
+      },
+      "created": "A new Upload Action Types is created with identifier {{ param }}",
+      "updated": "A Upload Action Types is updated with identifier {{ param }}",
+      "deleted": "A Upload Action Types is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Upload Action Types {{ id }}?"
+      },
+      "detail": {
+        "title": "Upload Action Types"
+      },
+      "name": "Name"
+    }
+  }
+}

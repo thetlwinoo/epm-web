@@ -1,0 +1,24 @@
+{
+  "epmwebApp": {
+    "businessEntityAddress": {
+      "home": {
+        "title": "Business Entity Addresses",
+        "createLabel": "Create a new Business Entity Address",
+        "createOrEditLabel": "Create or edit a Business Entity Address",
+        "notFound": "No Business Entity Addresses found"
+      },
+      "created": "A new Business Entity Address is created with identifier {{ param }}",
+      "updated": "A Business Entity Address is updated with identifier {{ param }}",
+      "deleted": "A Business Entity Address is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Business Entity Address {{ id }}?"
+      },
+      "detail": {
+        "title": "Business Entity Address"
+      },
+      "address": "Address",
+      "person": "Person",
+      "addressType": "Address Type"
+    }
+  }
+}

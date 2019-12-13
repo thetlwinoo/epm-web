@@ -1,0 +1,171 @@
+{
+    "name": "People",
+    "fields": [
+        {
+            "fieldName": "fullName",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "preferredName",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "searchName",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "gender",
+            "fieldType": "Gender",
+            "fieldValues": "MALE,FEMALE,OTHER",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "isPermittedToLogon",
+            "fieldType": "Boolean",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "logonName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "isExternalLogonProvider",
+            "fieldType": "Boolean",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "isSystemUser",
+            "fieldType": "Boolean",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "isEmployee",
+            "fieldType": "Boolean",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "isSalesPerson",
+            "fieldType": "Boolean",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "isGuestUser",
+            "fieldType": "Boolean",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "emailPromotion",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "userPreferences",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "phoneNumber",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "emailAddress",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "pattern"
+            ],
+            "fieldValidateRulesPattern": "^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$"
+        },
+        {
+            "fieldName": "photo",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "customFields",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "otherLanguages",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "validFrom",
+            "fieldType": "Instant",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "validTo",
+            "fieldType": "Instant",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "user",
+            "otherEntityRelationshipName": "people",
+            "relationshipValidateRules": "required",
+            "relationshipName": "user",
+            "otherEntityField": "login",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "shoppingCarts",
+            "otherEntityRelationshipName": "cartUser",
+            "relationshipName": "cart",
+            "ownerSide": false
+        },
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "wishlists",
+            "otherEntityRelationshipName": "wishlistUser",
+            "relationshipName": "wishlist",
+            "ownerSide": false
+        },
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "compares",
+            "otherEntityRelationshipName": "compareUser",
+            "relationshipName": "compare",
+            "ownerSide": false
+        }
+    ],
+    "changelogDate": "20191213033110",
+    "entityTableName": "people",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": true,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

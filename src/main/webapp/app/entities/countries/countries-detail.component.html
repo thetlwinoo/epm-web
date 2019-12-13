@@ -1,0 +1,71 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="countries">
+            <h2><span jhiTranslate="epmwebApp.countries.detail.title">Countries</span> {{countries.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="epmwebApp.countries.name">Name</span></dt>
+                <dd>
+                    <span>{{countries.name}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.countries.formalName">Formal Name</span></dt>
+                <dd>
+                    <span>{{countries.formalName}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.countries.isoAplha3Code">Iso Aplha 3 Code</span></dt>
+                <dd>
+                    <span>{{countries.isoAplha3Code}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.countries.isoNumericCode">Iso Numeric Code</span></dt>
+                <dd>
+                    <span>{{countries.isoNumericCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.countries.countryType">Country Type</span></dt>
+                <dd>
+                    <span>{{countries.countryType}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.countries.latestRecordedPopulation">Latest Recorded Population</span></dt>
+                <dd>
+                    <span>{{countries.latestRecordedPopulation}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.countries.continent">Continent</span></dt>
+                <dd>
+                    <span>{{countries.continent}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.countries.region">Region</span></dt>
+                <dd>
+                    <span>{{countries.region}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.countries.subregion">Subregion</span></dt>
+                <dd>
+                    <span>{{countries.subregion}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.countries.border">Border</span></dt>
+                <dd>
+                    <span>{{countries.border}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.countries.validFrom">Valid From</span></dt>
+                <dd>
+                    <span>{{countries.validFrom}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.countries.validTo">Valid To</span></dt>
+                <dd>
+                    <span>{{countries.validTo}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/countries', countries.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,133 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-special-deals-heading" jhiTranslate="epmwebApp.specialDeals.home.createOrEditLabel">Create or edit a Special Deals</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.specialDeals.dealDescription" for="field_dealDescription">Deal Description</label>
+                    <input type="text" class="form-control" name="dealDescription" id="field_dealDescription"
+                           formControlName="dealDescription"/>
+                    <div *ngIf="editForm.get('dealDescription').invalid && (editForm.get('dealDescription').dirty || editForm.get('dealDescription').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('dealDescription').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.specialDeals.startDate" for="field_startDate">Start Date</label>
+                    <div class="d-flex">
+                        <input id="field_startDate" type="datetime-local" class="form-control" name="startDate" formControlName="startDate" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                    <div *ngIf="editForm.get('startDate').invalid && (editForm.get('startDate').dirty || editForm.get('startDate').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('startDate').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('startDate').errors?.ZonedDateTimelocal" jhiTranslate="entity.validation.ZonedDateTimelocal">
+                            This field should be a date and time.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.specialDeals.endDate" for="field_endDate">End Date</label>
+                    <div class="d-flex">
+                        <input id="field_endDate" type="datetime-local" class="form-control" name="endDate" formControlName="endDate" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                    <div *ngIf="editForm.get('endDate').invalid && (editForm.get('endDate').dirty || editForm.get('endDate').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('endDate').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('endDate').errors?.ZonedDateTimelocal" jhiTranslate="entity.validation.ZonedDateTimelocal">
+                            This field should be a date and time.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.specialDeals.discountAmount" for="field_discountAmount">Discount Amount</label>
+                    <input type="number" class="form-control" name="discountAmount" id="field_discountAmount"
+                           formControlName="discountAmount"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.specialDeals.discountPercentage" for="field_discountPercentage">Discount Percentage</label>
+                    <input type="number" class="form-control" name="discountPercentage" id="field_discountPercentage"
+                           formControlName="discountPercentage"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.specialDeals.discountCode" for="field_discountCode">Discount Code</label>
+                    <input type="text" class="form-control" name="discountCode" id="field_discountCode"
+                           formControlName="discountCode"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.specialDeals.unitPrice" for="field_unitPrice">Unit Price</label>
+                    <input type="number" class="form-control" name="unitPrice" id="field_unitPrice"
+                           formControlName="unitPrice"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.specialDeals.lastEditedBy" for="field_lastEditedBy">Last Edited By</label>
+                    <input type="text" class="form-control" name="lastEditedBy" id="field_lastEditedBy"
+                           formControlName="lastEditedBy"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.specialDeals.lastEditedWhen" for="field_lastEditedWhen">Last Edited When</label>
+                    <div class="d-flex">
+                        <input id="field_lastEditedWhen" type="datetime-local" class="form-control" name="lastEditedWhen" formControlName="lastEditedWhen" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.specialDeals.buyingGroup" for="field_buyingGroup">Buying Group</label>
+                    <select class="form-control" id="field_buyingGroup" name="buyingGroup" formControlName="buyingGroupId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="buyingGroupsOption.id" *ngFor="let buyingGroupsOption of buyinggroups; trackBy: trackBuyingGroupsById">{{buyingGroupsOption.name}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.specialDeals.customerCategory" for="field_customerCategory">Customer Category</label>
+                    <select class="form-control" id="field_customerCategory" name="customerCategory" formControlName="customerCategoryId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="customerCategoriesOption.id" *ngFor="let customerCategoriesOption of customercategories; trackBy: trackCustomerCategoriesById">{{customerCategoriesOption.name}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.specialDeals.customer" for="field_customer">Customer</label>
+                    <select class="form-control" id="field_customer" name="customer" formControlName="customerId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="customersOption.id" *ngFor="let customersOption of customers; trackBy: trackCustomersById">{{customersOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.specialDeals.productCategory" for="field_productCategory">Product Category</label>
+                    <select class="form-control" id="field_productCategory" name="productCategory" formControlName="productCategoryId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="productCategoryOption.id" *ngFor="let productCategoryOption of productcategories; trackBy: trackProductCategoryById">{{productCategoryOption.name}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.specialDeals.stockItem" for="field_stockItem">Stock Item</label>
+                    <select class="form-control" id="field_stockItem" name="stockItem" formControlName="stockItemId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="stockItemsOption.id" *ngFor="let stockItemsOption of stockitems; trackBy: trackStockItemsById">{{stockItemsOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

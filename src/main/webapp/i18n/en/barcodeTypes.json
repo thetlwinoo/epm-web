@@ -1,0 +1,22 @@
+{
+  "epmwebApp": {
+    "barcodeTypes": {
+      "home": {
+        "title": "Barcode Types",
+        "createLabel": "Create a new Barcode Types",
+        "createOrEditLabel": "Create or edit a Barcode Types",
+        "notFound": "No Barcode Types found"
+      },
+      "created": "A new Barcode Types is created with identifier {{ param }}",
+      "updated": "A Barcode Types is updated with identifier {{ param }}",
+      "deleted": "A Barcode Types is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Barcode Types {{ id }}?"
+      },
+      "detail": {
+        "title": "Barcode Types"
+      },
+      "name": "Name"
+    }
+  }
+}

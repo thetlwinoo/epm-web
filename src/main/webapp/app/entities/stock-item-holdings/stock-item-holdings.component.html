@@ -1,0 +1,71 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="epmwebApp.stockItemHoldings.home.title">Stock Item Holdings</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-stock-item-holdings" [routerLink]="['/stock-item-holdings/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="epmwebApp.stockItemHoldings.home.createLabel">
+            Create a new Stock Item Holdings
+            </span>
+        </button>
+    </h2>
+    <jhi-alert-error></jhi-alert-error>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="stockItemHoldings?.length === 0">
+        <span jhiTranslate="epmwebApp.stockItemHoldings.home.notFound">No stockItemHoldings found</span>
+    </div>
+    <div class="table-responsive" *ngIf="stockItemHoldings?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+            <tr>
+            <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.stockItemHoldings.quantityOnHand">Quantity On Hand</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.stockItemHoldings.binLocation">Bin Location</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.stockItemHoldings.lastStocktakeQuantity">Last Stocktake Quantity</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.stockItemHoldings.lastCostPrice">Last Cost Price</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.stockItemHoldings.reorderLevel">Reorder Level</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.stockItemHoldings.targerStockLevel">Targer Stock Level</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.stockItemHoldings.stockItemHoldingOnStockItem">Stock Item Holding On Stock Item</span></th>
+            <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let stockItemHoldings of stockItemHoldings ;trackBy: trackId">
+                <td><a [routerLink]="['/stock-item-holdings', stockItemHoldings.id, 'view' ]">{{stockItemHoldings.id}}</a></td>
+                <td>{{stockItemHoldings.quantityOnHand}}</td>
+                <td>{{stockItemHoldings.binLocation}}</td>
+                <td>{{stockItemHoldings.lastStocktakeQuantity}}</td>
+                <td>{{stockItemHoldings.lastCostPrice}}</td>
+                <td>{{stockItemHoldings.reorderLevel}}</td>
+                <td>{{stockItemHoldings.targerStockLevel}}</td>
+                <td>
+                    <div *ngIf="stockItemHoldings.stockItemHoldingOnStockItemId">
+                        <a [routerLink]="['/stock-items', stockItemHoldings.stockItemHoldingOnStockItemId , 'view' ]" >{{stockItemHoldings.stockItemHoldingOnStockItemId}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/stock-item-holdings', stockItemHoldings.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/stock-item-holdings', stockItemHoldings.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit" (click)="delete(stockItemHoldings)"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

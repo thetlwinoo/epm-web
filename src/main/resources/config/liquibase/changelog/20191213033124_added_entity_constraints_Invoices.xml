@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <!--
+        Added the constraints for entity Invoices.
+    -->
+    <changeSet id="20191213033124-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="contact_person_id"
+                                 baseTableName="invoices"
+                                 constraintName="fk_invoices_contact_person_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="people"/>
+
+        <addForeignKeyConstraint baseColumnNames="salesperson_person_id"
+                                 baseTableName="invoices"
+                                 constraintName="fk_invoices_salesperson_person_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="people"/>
+
+        <addForeignKeyConstraint baseColumnNames="packed_by_person_id"
+                                 baseTableName="invoices"
+                                 constraintName="fk_invoices_packed_by_person_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="people"/>
+
+        <addForeignKeyConstraint baseColumnNames="accounts_person_id"
+                                 baseTableName="invoices"
+                                 constraintName="fk_invoices_accounts_person_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="people"/>
+
+        <addForeignKeyConstraint baseColumnNames="customer_id"
+                                 baseTableName="invoices"
+                                 constraintName="fk_invoices_customer_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="customers"/>
+
+        <addForeignKeyConstraint baseColumnNames="bill_to_customer_id"
+                                 baseTableName="invoices"
+                                 constraintName="fk_invoices_bill_to_customer_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="customers"/>
+
+        <addForeignKeyConstraint baseColumnNames="delivery_method_id"
+                                 baseTableName="invoices"
+                                 constraintName="fk_invoices_delivery_method_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="delivery_methods"/>
+
+        <addForeignKeyConstraint baseColumnNames="order_id"
+                                 baseTableName="invoices"
+                                 constraintName="fk_invoices_order_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="orders"/>
+
+    </changeSet>
+</databaseChangeLog>

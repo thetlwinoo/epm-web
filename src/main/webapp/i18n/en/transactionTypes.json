@@ -1,0 +1,24 @@
+{
+  "epmwebApp": {
+    "transactionTypes": {
+      "home": {
+        "title": "Transaction Types",
+        "createLabel": "Create a new Transaction Types",
+        "createOrEditLabel": "Create or edit a Transaction Types",
+        "notFound": "No Transaction Types found"
+      },
+      "created": "A new Transaction Types is created with identifier {{ param }}",
+      "updated": "A Transaction Types is updated with identifier {{ param }}",
+      "deleted": "A Transaction Types is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Transaction Types {{ id }}?"
+      },
+      "detail": {
+        "title": "Transaction Types"
+      },
+      "name": "Name",
+      "validFrom": "Valid From",
+      "validTo": "Valid To"
+    }
+  }
+}

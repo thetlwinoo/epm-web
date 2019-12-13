@@ -1,0 +1,23 @@
+{
+  "epmwebApp": {
+    "addressTypes": {
+      "home": {
+        "title": "Address Types",
+        "createLabel": "Address Types အသစ်ထည့်မည်",
+        "createOrEditLabel": "Address Types အသစ်ထည့်ခြင်း (သို့) ပြုပြင်ခြင်း",
+        "notFound": "No Address Types found"
+      },
+      "created": "{{ param }} အိုင်ဒီဖြင့် Address Types အသစ်တစ်ခုအား ထည့်ပြီးပါပြီ။",
+      "updated": "{{ param }} အိုင်ဒီဖြင့် Address Types တစ်ခုအား ပြုပြင်ပြီးပါပြီ။",
+      "deleted": "{{ param }} အိုင်ဒီဖြင့် Address Types တစ်ခုအား ဖျက်ပြီးပါပြီ။",
+      "delete": {
+        "question": "Address Types {{ id }} အား ဖျက်ပါမည်။ သေချာပါသလား?"
+      },
+      "detail": {
+        "title": "Address Types"
+      },
+      "name": "Name",
+      "refer": "Refer"
+    }
+  }
+}

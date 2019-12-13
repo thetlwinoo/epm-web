@@ -1,0 +1,20 @@
+{
+    "name": "ShipMethod",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20191213033100",
+    "entityTableName": "ship_method",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": true,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

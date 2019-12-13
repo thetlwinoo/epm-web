@@ -1,0 +1,69 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="epmwebApp.cities.home.title">Cities</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-cities" [routerLink]="['/cities/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="epmwebApp.cities.home.createLabel">
+            Create a new Cities
+            </span>
+        </button>
+    </h2>
+    <jhi-alert-error></jhi-alert-error>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="cities?.length === 0">
+        <span jhiTranslate="epmwebApp.cities.home.notFound">No cities found</span>
+    </div>
+    <div class="table-responsive" *ngIf="cities?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+            <tr>
+            <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.cities.name">Name</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.cities.location">Location</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.cities.latestRecordedPopulation">Latest Recorded Population</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.cities.validFrom">Valid From</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.cities.validTo">Valid To</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.cities.stateProvince">State Province</span></th>
+            <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let cities of cities ;trackBy: trackId">
+                <td><a [routerLink]="['/cities', cities.id, 'view' ]">{{cities.id}}</a></td>
+                <td>{{cities.name}}</td>
+                <td>{{cities.location}}</td>
+                <td>{{cities.latestRecordedPopulation}}</td>
+                <td>{{cities.validFrom | date:'medium'}}</td>
+                <td>{{cities.validTo | date:'medium'}}</td>
+                <td>
+                    <div *ngIf="cities.stateProvinceId">
+                        <a [routerLink]="['/state-provinces', cities.stateProvinceId , 'view' ]" >{{cities.stateProvinceName}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/cities', cities.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/cities', cities.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit" (click)="delete(cities)"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

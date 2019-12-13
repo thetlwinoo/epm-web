@@ -1,0 +1,67 @@
+{
+    "name": "StockItemHoldings",
+    "fields": [
+        {
+            "fieldName": "quantityOnHand",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "binLocation",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "lastStocktakeQuantity",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "lastCostPrice",
+            "fieldType": "BigDecimal",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "reorderLevel",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "targerStockLevel",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "stockItems",
+            "otherEntityRelationshipName": "stockItemHolding",
+            "relationshipName": "stockItemHoldingOnStockItem",
+            "otherEntityField": "id",
+            "ownerSide": true
+        }
+    ],
+    "changelogDate": "20191213033137",
+    "entityTableName": "stock_item_holdings",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": true,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

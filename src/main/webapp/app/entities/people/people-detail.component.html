@@ -1,0 +1,107 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="people">
+            <h2><span jhiTranslate="epmwebApp.people.detail.title">People</span> {{people.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="epmwebApp.people.fullName">Full Name</span></dt>
+                <dd>
+                    <span>{{people.fullName}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.people.preferredName">Preferred Name</span></dt>
+                <dd>
+                    <span>{{people.preferredName}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.people.searchName">Search Name</span></dt>
+                <dd>
+                    <span>{{people.searchName}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.people.gender">Gender</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'epmwebApp.Gender.' + people.gender}}">{{people.gender}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.people.isPermittedToLogon">Is Permitted To Logon</span></dt>
+                <dd>
+                    <span>{{people.isPermittedToLogon}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.people.logonName">Logon Name</span></dt>
+                <dd>
+                    <span>{{people.logonName}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.people.isExternalLogonProvider">Is External Logon Provider</span></dt>
+                <dd>
+                    <span>{{people.isExternalLogonProvider}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.people.isSystemUser">Is System User</span></dt>
+                <dd>
+                    <span>{{people.isSystemUser}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.people.isEmployee">Is Employee</span></dt>
+                <dd>
+                    <span>{{people.isEmployee}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.people.isSalesPerson">Is Sales Person</span></dt>
+                <dd>
+                    <span>{{people.isSalesPerson}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.people.isGuestUser">Is Guest User</span></dt>
+                <dd>
+                    <span>{{people.isGuestUser}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.people.emailPromotion">Email Promotion</span></dt>
+                <dd>
+                    <span>{{people.emailPromotion}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.people.userPreferences">User Preferences</span></dt>
+                <dd>
+                    <span>{{people.userPreferences}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.people.phoneNumber">Phone Number</span></dt>
+                <dd>
+                    <span>{{people.phoneNumber}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.people.emailAddress">Email Address</span></dt>
+                <dd>
+                    <span>{{people.emailAddress}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.people.photo">Photo</span></dt>
+                <dd>
+                    <span>{{people.photo}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.people.customFields">Custom Fields</span></dt>
+                <dd>
+                    <span>{{people.customFields}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.people.otherLanguages">Other Languages</span></dt>
+                <dd>
+                    <span>{{people.otherLanguages}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.people.validFrom">Valid From</span></dt>
+                <dd>
+                    <span>{{people.validFrom}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.people.validTo">Valid To</span></dt>
+                <dd>
+                    <span>{{people.validTo}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.people.user">User</span></dt>
+                <dd>
+                    {{people.userLogin}}
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/people', people.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

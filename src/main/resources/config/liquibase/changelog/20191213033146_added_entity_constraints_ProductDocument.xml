@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <!--
+        Added the constraints for entity ProductDocument.
+    -->
+    <changeSet id="20191213033146-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="warranty_type_id"
+                                 baseTableName="product_document"
+                                 constraintName="fk_product_document_warranty_type_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="warranty_types"/>
+
+        <addForeignKeyConstraint baseColumnNames="culture_id"
+                                 baseTableName="product_document"
+                                 constraintName="fk_product_document_culture_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="culture"/>
+
+    </changeSet>
+</databaseChangeLog>

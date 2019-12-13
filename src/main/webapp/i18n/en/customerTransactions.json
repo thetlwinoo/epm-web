@@ -1,0 +1,34 @@
+{
+  "epmwebApp": {
+    "customerTransactions": {
+      "home": {
+        "title": "Customer Transactions",
+        "createLabel": "Create a new Customer Transactions",
+        "createOrEditLabel": "Create or edit a Customer Transactions",
+        "notFound": "No Customer Transactions found"
+      },
+      "created": "A new Customer Transactions is created with identifier {{ param }}",
+      "updated": "A Customer Transactions is updated with identifier {{ param }}",
+      "deleted": "A Customer Transactions is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Customer Transactions {{ id }}?"
+      },
+      "detail": {
+        "title": "Customer Transactions"
+      },
+      "transactionDate": "Transaction Date",
+      "amountExcludingTax": "Amount Excluding Tax",
+      "taxAmount": "Tax Amount",
+      "transactionAmount": "Transaction Amount",
+      "outstandingBalance": "Outstanding Balance",
+      "finalizationDate": "Finalization Date",
+      "isFinalized": "Is Finalized",
+      "lastEditedBy": "Last Edited By",
+      "lastEditedWhen": "Last Edited When",
+      "customer": "Customer",
+      "paymentTransaction": "Payment Transaction",
+      "transactionType": "Transaction Type",
+      "invoice": "Invoice"
+    }
+  }
+}

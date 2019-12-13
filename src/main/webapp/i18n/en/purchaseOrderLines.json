@@ -1,0 +1,32 @@
+{
+  "epmwebApp": {
+    "purchaseOrderLines": {
+      "home": {
+        "title": "Purchase Order Lines",
+        "createLabel": "Create a new Purchase Order Lines",
+        "createOrEditLabel": "Create or edit a Purchase Order Lines",
+        "notFound": "No Purchase Order Lines found"
+      },
+      "created": "A new Purchase Order Lines is created with identifier {{ param }}",
+      "updated": "A Purchase Order Lines is updated with identifier {{ param }}",
+      "deleted": "A Purchase Order Lines is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Purchase Order Lines {{ id }}?"
+      },
+      "detail": {
+        "title": "Purchase Order Lines"
+      },
+      "orderedOuters": "Ordered Outers",
+      "description": "Description",
+      "receivedOuters": "Received Outers",
+      "expectedUnitPricePerOuter": "Expected Unit Price Per Outer",
+      "lastReceiptDate": "Last Receipt Date",
+      "isOrderLineFinalized": "Is Order Line Finalized",
+      "lastEditedBy": "Last Edited By",
+      "lastEditedWhen": "Last Edited When",
+      "packageType": "Package Type",
+      "stockItem": "Stock Item",
+      "purchaseOrder": "Purchase Order"
+    }
+  }
+}

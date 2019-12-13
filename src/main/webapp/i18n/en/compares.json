@@ -1,0 +1,23 @@
+{
+  "epmwebApp": {
+    "compares": {
+      "home": {
+        "title": "Compares",
+        "createLabel": "Create a new Compares",
+        "createOrEditLabel": "Create or edit a Compares",
+        "notFound": "No Compares found"
+      },
+      "created": "A new Compares is created with identifier {{ param }}",
+      "updated": "A Compares is updated with identifier {{ param }}",
+      "deleted": "A Compares is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Compares {{ id }}?"
+      },
+      "detail": {
+        "title": "Compares"
+      },
+      "compareUser": "Compare User",
+      "compareList": "Compare List"
+    }
+  }
+}

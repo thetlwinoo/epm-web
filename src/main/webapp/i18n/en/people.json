@@ -1,0 +1,45 @@
+{
+  "epmwebApp": {
+    "people": {
+      "home": {
+        "title": "People",
+        "createLabel": "Create a new People",
+        "createOrEditLabel": "Create or edit a People",
+        "notFound": "No People found"
+      },
+      "created": "A new People is created with identifier {{ param }}",
+      "updated": "A People is updated with identifier {{ param }}",
+      "deleted": "A People is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete People {{ id }}?"
+      },
+      "detail": {
+        "title": "People"
+      },
+      "fullName": "Full Name",
+      "preferredName": "Preferred Name",
+      "searchName": "Search Name",
+      "gender": "Gender",
+      "isPermittedToLogon": "Is Permitted To Logon",
+      "logonName": "Logon Name",
+      "isExternalLogonProvider": "Is External Logon Provider",
+      "isSystemUser": "Is System User",
+      "isEmployee": "Is Employee",
+      "isSalesPerson": "Is Sales Person",
+      "isGuestUser": "Is Guest User",
+      "emailPromotion": "Email Promotion",
+      "userPreferences": "User Preferences",
+      "phoneNumber": "Phone Number",
+      "emailAddress": "Email Address",
+      "photo": "Photo",
+      "customFields": "Custom Fields",
+      "otherLanguages": "Other Languages",
+      "validFrom": "Valid From",
+      "validTo": "Valid To",
+      "user": "User",
+      "cart": "Cart",
+      "wishlist": "Wishlist",
+      "compare": "Compare"
+    }
+  }
+}

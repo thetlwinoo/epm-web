@@ -1,0 +1,32 @@
+{
+  "epmwebApp": {
+    "purchaseOrderLines": {
+      "home": {
+        "title": "Purchase Order Lines",
+        "createLabel": "Purchase Order Lines အသစ်ထည့်မည်",
+        "createOrEditLabel": "Purchase Order Lines အသစ်ထည့်ခြင်း (သို့) ပြုပြင်ခြင်း",
+        "notFound": "No Purchase Order Lines found"
+      },
+      "created": "{{ param }} အိုင်ဒီဖြင့် Purchase Order Lines အသစ်တစ်ခုအား ထည့်ပြီးပါပြီ။",
+      "updated": "{{ param }} အိုင်ဒီဖြင့် Purchase Order Lines တစ်ခုအား ပြုပြင်ပြီးပါပြီ။",
+      "deleted": "{{ param }} အိုင်ဒီဖြင့် Purchase Order Lines တစ်ခုအား ဖျက်ပြီးပါပြီ။",
+      "delete": {
+        "question": "Purchase Order Lines {{ id }} အား ဖျက်ပါမည်။ သေချာပါသလား?"
+      },
+      "detail": {
+        "title": "Purchase Order Lines"
+      },
+      "orderedOuters": "Ordered Outers",
+      "description": "Description",
+      "receivedOuters": "Received Outers",
+      "expectedUnitPricePerOuter": "Expected Unit Price Per Outer",
+      "lastReceiptDate": "Last Receipt Date",
+      "isOrderLineFinalized": "Is Order Line Finalized",
+      "lastEditedBy": "Last Edited By",
+      "lastEditedWhen": "Last Edited When",
+      "packageType": "Package Type",
+      "stockItem": "Stock Item",
+      "purchaseOrder": "Purchase Order"
+    }
+  }
+}

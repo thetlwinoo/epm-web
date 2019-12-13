@@ -1,0 +1,103 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="epmwebApp.products.home.title">Products</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-products" [routerLink]="['/products/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="epmwebApp.products.home.createLabel">
+            Create a new Products
+            </span>
+        </button>
+    </h2>
+    <jhi-alert-error></jhi-alert-error>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="products?.length === 0">
+        <span jhiTranslate="epmwebApp.products.home.notFound">No products found</span>
+    </div>
+    <div class="table-responsive" *ngIf="products?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="name"><span jhiTranslate="epmwebApp.products.name">Name</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="handle"><span jhiTranslate="epmwebApp.products.handle">Handle</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="productNumber"><span jhiTranslate="epmwebApp.products.productNumber">Product Number</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="searchDetails"><span jhiTranslate="epmwebApp.products.searchDetails">Search Details</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="sellCount"><span jhiTranslate="epmwebApp.products.sellCount">Sell Count</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="thumbnailList"><span jhiTranslate="epmwebApp.products.thumbnailList">Thumbnail List</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="activeInd"><span jhiTranslate="epmwebApp.products.activeInd">Active Ind</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="lastEditedBy"><span jhiTranslate="epmwebApp.products.lastEditedBy">Last Edited By</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="lastEditedWhen"><span jhiTranslate="epmwebApp.products.lastEditedWhen">Last Edited When</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="productDocumentId"><span jhiTranslate="epmwebApp.products.productDocument">Product Document</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="supplierName"><span jhiTranslate="epmwebApp.products.supplier">Supplier</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="productCategoryName"><span jhiTranslate="epmwebApp.products.productCategory">Product Category</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="productBrandName"><span jhiTranslate="epmwebApp.products.productBrand">Product Brand</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let products of products ;trackBy: trackId">
+                <td><a [routerLink]="['/products', products.id, 'view' ]">{{products.id}}</a></td>
+                <td>{{products.name}}</td>
+                <td>{{products.handle}}</td>
+                <td>{{products.productNumber}}</td>
+                <td>{{products.searchDetails}}</td>
+                <td>{{products.sellCount}}</td>
+                <td>{{products.thumbnailList}}</td>
+                <td>{{products.activeInd}}</td>
+                <td>{{products.lastEditedBy}}</td>
+                <td>{{products.lastEditedWhen | date:'medium'}}</td>
+                <td>
+                    <div *ngIf="products.productDocumentId">
+                        <a [routerLink]="['/product-document', products.productDocumentId , 'view' ]" >{{products.productDocumentId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="products.supplierId">
+                        <a [routerLink]="['/suppliers', products.supplierId , 'view' ]" >{{products.supplierName}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="products.productCategoryId">
+                        <a [routerLink]="['/product-category', products.productCategoryId , 'view' ]" >{{products.productCategoryName}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="products.productBrandId">
+                        <a [routerLink]="['/product-brand', products.productBrandId , 'view' ]" >{{products.productBrandName}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/products', products.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/products', products.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit" (click)="delete(products)"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div [hidden]="products?.length === 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,155 @@
+{
+    "name": "Orders",
+    "fields": [
+        {
+            "fieldName": "orderDate",
+            "fieldType": "Instant",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "dueDate",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "shipDate",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "paymentStatus",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "orderFlag",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "orderNumber",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "subTotal",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "taxAmount",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "frieight",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "totalDue",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "comments",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "deliveryInstructions",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "internalComments",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "pickingCompletedWhen",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "status",
+            "fieldType": "OrderStatus",
+            "fieldValues": "COMPLETED,PENDING,CANCELLED",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "lastEditedBy",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "lastEditedWhen",
+            "fieldType": "Instant"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "reviews",
+            "otherEntityRelationshipName": "order",
+            "relationshipName": "orderOnReview",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "orderLines",
+            "otherEntityRelationshipName": "order",
+            "relationshipName": "orderLineList"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "customers",
+            "otherEntityRelationshipName": "orders",
+            "relationshipName": "customer",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "addresses",
+            "otherEntityRelationshipName": "orders",
+            "relationshipName": "shipToAddress",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "addresses",
+            "otherEntityRelationshipName": "orders",
+            "relationshipName": "billToAddress",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "shipMethod",
+            "otherEntityRelationshipName": "orders",
+            "relationshipName": "shipMethod",
+            "otherEntityField": "name"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "currencyRate",
+            "otherEntityRelationshipName": "orders",
+            "relationshipName": "currencyRate",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "paymentTransactions",
+            "otherEntityRelationshipName": "paymentOnOrder",
+            "relationshipName": "paymentTransaction",
+            "ownerSide": false
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "specialDeals",
+            "otherEntityRelationshipName": "orderDiscount",
+            "relationshipName": "specialDeals",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20191213033126",
+    "entityTableName": "orders",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": true,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

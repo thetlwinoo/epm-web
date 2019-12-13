@@ -1,0 +1,91 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="epmwebApp.supplierTransactions.home.title">Supplier Transactions</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-supplier-transactions" [routerLink]="['/supplier-transactions/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="epmwebApp.supplierTransactions.home.createLabel">
+            Create a new Supplier Transactions
+            </span>
+        </button>
+    </h2>
+    <jhi-alert-error></jhi-alert-error>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="supplierTransactions?.length === 0">
+        <span jhiTranslate="epmwebApp.supplierTransactions.home.notFound">No supplierTransactions found</span>
+    </div>
+    <div class="table-responsive" *ngIf="supplierTransactions?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+            <tr>
+            <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.supplierTransactions.supplierInvoiceNumber">Supplier Invoice Number</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.supplierTransactions.transactionDate">Transaction Date</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.supplierTransactions.amountExcludingTax">Amount Excluding Tax</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.supplierTransactions.taxAmount">Tax Amount</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.supplierTransactions.transactionAmount">Transaction Amount</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.supplierTransactions.outstandingBalance">Outstanding Balance</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.supplierTransactions.finalizationDate">Finalization Date</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.supplierTransactions.isFinalized">Is Finalized</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.supplierTransactions.lastEditedBy">Last Edited By</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.supplierTransactions.lastEditedWhen">Last Edited When</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.supplierTransactions.supplier">Supplier</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.supplierTransactions.transactionType">Transaction Type</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.supplierTransactions.purchaseOrder">Purchase Order</span></th>
+            <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let supplierTransactions of supplierTransactions ;trackBy: trackId">
+                <td><a [routerLink]="['/supplier-transactions', supplierTransactions.id, 'view' ]">{{supplierTransactions.id}}</a></td>
+                <td>{{supplierTransactions.supplierInvoiceNumber}}</td>
+                <td>{{supplierTransactions.transactionDate | date:'medium'}}</td>
+                <td>{{supplierTransactions.amountExcludingTax}}</td>
+                <td>{{supplierTransactions.taxAmount}}</td>
+                <td>{{supplierTransactions.transactionAmount}}</td>
+                <td>{{supplierTransactions.outstandingBalance}}</td>
+                <td>{{supplierTransactions.finalizationDate | date:'medium'}}</td>
+                <td>{{supplierTransactions.isFinalized}}</td>
+                <td>{{supplierTransactions.lastEditedBy}}</td>
+                <td>{{supplierTransactions.lastEditedWhen | date:'medium'}}</td>
+                <td>
+                    <div *ngIf="supplierTransactions.supplierId">
+                        <a [routerLink]="['/suppliers', supplierTransactions.supplierId , 'view' ]" >{{supplierTransactions.supplierName}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="supplierTransactions.transactionTypeId">
+                        <a [routerLink]="['/transaction-types', supplierTransactions.transactionTypeId , 'view' ]" >{{supplierTransactions.transactionTypeName}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="supplierTransactions.purchaseOrderId">
+                        <a [routerLink]="['/purchase-orders', supplierTransactions.purchaseOrderId , 'view' ]" >{{supplierTransactions.purchaseOrderId}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/supplier-transactions', supplierTransactions.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/supplier-transactions', supplierTransactions.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit" (click)="delete(supplierTransactions)"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+{
+  "epmwebApp": {
+    "supplierCategories": {
+      "home": {
+        "title": "Supplier Categories",
+        "createLabel": "Create a new Supplier Categories",
+        "createOrEditLabel": "Create or edit a Supplier Categories",
+        "notFound": "No Supplier Categories found"
+      },
+      "created": "A new Supplier Categories is created with identifier {{ param }}",
+      "updated": "A Supplier Categories is updated with identifier {{ param }}",
+      "deleted": "A Supplier Categories is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Supplier Categories {{ id }}?"
+      },
+      "detail": {
+        "title": "Supplier Categories"
+      },
+      "name": "Name",
+      "validFrom": "Valid From",
+      "validTo": "Valid To"
+    }
+  }
+}

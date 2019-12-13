@@ -1,0 +1,136 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-countries-heading" jhiTranslate="epmwebApp.countries.home.createOrEditLabel">Create or edit a Countries</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.countries.name" for="field_name">Name</label>
+                    <input type="text" class="form-control" name="name" id="field_name"
+                           formControlName="name"/>
+                    <div *ngIf="editForm.get('name').invalid && (editForm.get('name').dirty || editForm.get('name').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('name').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.countries.formalName" for="field_formalName">Formal Name</label>
+                    <input type="text" class="form-control" name="formalName" id="field_formalName"
+                           formControlName="formalName"/>
+                    <div *ngIf="editForm.get('formalName').invalid && (editForm.get('formalName').dirty || editForm.get('formalName').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('formalName').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.countries.isoAplha3Code" for="field_isoAplha3Code">Iso Aplha 3 Code</label>
+                    <input type="text" class="form-control" name="isoAplha3Code" id="field_isoAplha3Code"
+                           formControlName="isoAplha3Code"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.countries.isoNumericCode" for="field_isoNumericCode">Iso Numeric Code</label>
+                    <input type="number" class="form-control" name="isoNumericCode" id="field_isoNumericCode"
+                           formControlName="isoNumericCode"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.countries.countryType" for="field_countryType">Country Type</label>
+                    <input type="text" class="form-control" name="countryType" id="field_countryType"
+                           formControlName="countryType"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.countries.latestRecordedPopulation" for="field_latestRecordedPopulation">Latest Recorded Population</label>
+                    <input type="number" class="form-control" name="latestRecordedPopulation" id="field_latestRecordedPopulation"
+                           formControlName="latestRecordedPopulation"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.countries.continent" for="field_continent">Continent</label>
+                    <input type="text" class="form-control" name="continent" id="field_continent"
+                           formControlName="continent"/>
+                    <div *ngIf="editForm.get('continent').invalid && (editForm.get('continent').dirty || editForm.get('continent').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('continent').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.countries.region" for="field_region">Region</label>
+                    <input type="text" class="form-control" name="region" id="field_region"
+                           formControlName="region"/>
+                    <div *ngIf="editForm.get('region').invalid && (editForm.get('region').dirty || editForm.get('region').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('region').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.countries.subregion" for="field_subregion">Subregion</label>
+                    <input type="text" class="form-control" name="subregion" id="field_subregion"
+                           formControlName="subregion"/>
+                    <div *ngIf="editForm.get('subregion').invalid && (editForm.get('subregion').dirty || editForm.get('subregion').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('subregion').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.countries.border" for="field_border">Border</label>
+                    <input type="text" class="form-control" name="border" id="field_border"
+                           formControlName="border"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.countries.validFrom" for="field_validFrom">Valid From</label>
+                    <div class="d-flex">
+                        <input id="field_validFrom" type="datetime-local" class="form-control" name="validFrom" formControlName="validFrom" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                    <div *ngIf="editForm.get('validFrom').invalid && (editForm.get('validFrom').dirty || editForm.get('validFrom').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('validFrom').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('validFrom').errors?.ZonedDateTimelocal" jhiTranslate="entity.validation.ZonedDateTimelocal">
+                            This field should be a date and time.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.countries.validTo" for="field_validTo">Valid To</label>
+                    <div class="d-flex">
+                        <input id="field_validTo" type="datetime-local" class="form-control" name="validTo" formControlName="validTo" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                    <div *ngIf="editForm.get('validTo').invalid && (editForm.get('validTo').dirty || editForm.get('validTo').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('validTo').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('validTo').errors?.ZonedDateTimelocal" jhiTranslate="entity.validation.ZonedDateTimelocal">
+                            This field should be a date and time.
+                        </small>
+                    </div>
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

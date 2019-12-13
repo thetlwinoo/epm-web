@@ -1,0 +1,217 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="epmwebApp.stockItemTemp.home.title">Stock Item Temps</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-stock-item-temp" [routerLink]="['/stock-item-temp/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="epmwebApp.stockItemTemp.home.createLabel">
+            Create a new Stock Item Temp
+            </span>
+        </button>
+    </h2>
+    <jhi-alert-error></jhi-alert-error>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="stockItemTemps?.length === 0">
+        <span jhiTranslate="epmwebApp.stockItemTemp.home.notFound">No stockItemTemps found</span>
+    </div>
+    <div class="table-responsive" *ngIf="stockItemTemps?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="stockItemName"><span jhiTranslate="epmwebApp.stockItemTemp.stockItemName">Stock Item Name</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="vendorCode"><span jhiTranslate="epmwebApp.stockItemTemp.vendorCode">Vendor Code</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="vendorSKU"><span jhiTranslate="epmwebApp.stockItemTemp.vendorSKU">Vendor SKU</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="barcode"><span jhiTranslate="epmwebApp.stockItemTemp.barcode">Barcode</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="barcodeTypeId"><span jhiTranslate="epmwebApp.stockItemTemp.barcodeTypeId">Barcode Type Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="barcodeTypeName"><span jhiTranslate="epmwebApp.stockItemTemp.barcodeTypeName">Barcode Type Name</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="productType"><span jhiTranslate="epmwebApp.stockItemTemp.productType">Product Type</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="productCategoryId"><span jhiTranslate="epmwebApp.stockItemTemp.productCategoryId">Product Category Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="productCategoryName"><span jhiTranslate="epmwebApp.stockItemTemp.productCategoryName">Product Category Name</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="productAttributeSetId"><span jhiTranslate="epmwebApp.stockItemTemp.productAttributeSetId">Product Attribute Set Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="productAttributeId"><span jhiTranslate="epmwebApp.stockItemTemp.productAttributeId">Product Attribute Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="productAttributeValue"><span jhiTranslate="epmwebApp.stockItemTemp.productAttributeValue">Product Attribute Value</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="productOptionSetId"><span jhiTranslate="epmwebApp.stockItemTemp.productOptionSetId">Product Option Set Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="productOptionId"><span jhiTranslate="epmwebApp.stockItemTemp.productOptionId">Product Option Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="productOptionValue"><span jhiTranslate="epmwebApp.stockItemTemp.productOptionValue">Product Option Value</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="modelName"><span jhiTranslate="epmwebApp.stockItemTemp.modelName">Model Name</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="modelNumber"><span jhiTranslate="epmwebApp.stockItemTemp.modelNumber">Model Number</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="materialId"><span jhiTranslate="epmwebApp.stockItemTemp.materialId">Material Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="materialName"><span jhiTranslate="epmwebApp.stockItemTemp.materialName">Material Name</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="shortDescription"><span jhiTranslate="epmwebApp.stockItemTemp.shortDescription">Short Description</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="description"><span jhiTranslate="epmwebApp.stockItemTemp.description">Description</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="productBrandId"><span jhiTranslate="epmwebApp.stockItemTemp.productBrandId">Product Brand Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="productBrandName"><span jhiTranslate="epmwebApp.stockItemTemp.productBrandName">Product Brand Name</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="highlights"><span jhiTranslate="epmwebApp.stockItemTemp.highlights">Highlights</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="searchDetails"><span jhiTranslate="epmwebApp.stockItemTemp.searchDetails">Search Details</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="careInstructions"><span jhiTranslate="epmwebApp.stockItemTemp.careInstructions">Care Instructions</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="dangerousGoods"><span jhiTranslate="epmwebApp.stockItemTemp.dangerousGoods">Dangerous Goods</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="videoUrl"><span jhiTranslate="epmwebApp.stockItemTemp.videoUrl">Video Url</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="unitPrice"><span jhiTranslate="epmwebApp.stockItemTemp.unitPrice">Unit Price</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="remommendedRetailPrice"><span jhiTranslate="epmwebApp.stockItemTemp.remommendedRetailPrice">Remommended Retail Price</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="currencyCode"><span jhiTranslate="epmwebApp.stockItemTemp.currencyCode">Currency Code</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="quantityOnHand"><span jhiTranslate="epmwebApp.stockItemTemp.quantityOnHand">Quantity On Hand</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="warrantyPeriod"><span jhiTranslate="epmwebApp.stockItemTemp.warrantyPeriod">Warranty Period</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="warrantyPolicy"><span jhiTranslate="epmwebApp.stockItemTemp.warrantyPolicy">Warranty Policy</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="warrantyTypeId"><span jhiTranslate="epmwebApp.stockItemTemp.warrantyTypeId">Warranty Type Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="warrantyTypeName"><span jhiTranslate="epmwebApp.stockItemTemp.warrantyTypeName">Warranty Type Name</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="whatInTheBox"><span jhiTranslate="epmwebApp.stockItemTemp.whatInTheBox">What In The Box</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="itemLength"><span jhiTranslate="epmwebApp.stockItemTemp.itemLength">Item Length</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="itemWidth"><span jhiTranslate="epmwebApp.stockItemTemp.itemWidth">Item Width</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="itemHeight"><span jhiTranslate="epmwebApp.stockItemTemp.itemHeight">Item Height</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="itemWeight"><span jhiTranslate="epmwebApp.stockItemTemp.itemWeight">Item Weight</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="itemPackageLength"><span jhiTranslate="epmwebApp.stockItemTemp.itemPackageLength">Item Package Length</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="itemPackageWidth"><span jhiTranslate="epmwebApp.stockItemTemp.itemPackageWidth">Item Package Width</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="itemPackageHeight"><span jhiTranslate="epmwebApp.stockItemTemp.itemPackageHeight">Item Package Height</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="itemPackageWeight"><span jhiTranslate="epmwebApp.stockItemTemp.itemPackageWeight">Item Package Weight</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="itemLengthUnitMeasureId"><span jhiTranslate="epmwebApp.stockItemTemp.itemLengthUnitMeasureId">Item Length Unit Measure Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="itemLengthUnitMeasureCode"><span jhiTranslate="epmwebApp.stockItemTemp.itemLengthUnitMeasureCode">Item Length Unit Measure Code</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="itemWidthUnitMeasureId"><span jhiTranslate="epmwebApp.stockItemTemp.itemWidthUnitMeasureId">Item Width Unit Measure Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="itemWidthUnitMeasureCode"><span jhiTranslate="epmwebApp.stockItemTemp.itemWidthUnitMeasureCode">Item Width Unit Measure Code</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="itemHeightUnitMeasureId"><span jhiTranslate="epmwebApp.stockItemTemp.itemHeightUnitMeasureId">Item Height Unit Measure Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="itemHeightUnitMeasureCode"><span jhiTranslate="epmwebApp.stockItemTemp.itemHeightUnitMeasureCode">Item Height Unit Measure Code</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="itemWeightUnitMeasureId"><span jhiTranslate="epmwebApp.stockItemTemp.itemWeightUnitMeasureId">Item Weight Unit Measure Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="itemWeightUnitMeasureCode"><span jhiTranslate="epmwebApp.stockItemTemp.itemWeightUnitMeasureCode">Item Weight Unit Measure Code</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="itemPackageLengthUnitMeasureId"><span jhiTranslate="epmwebApp.stockItemTemp.itemPackageLengthUnitMeasureId">Item Package Length Unit Measure Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="itemPackageLengthUnitMeasureCode"><span jhiTranslate="epmwebApp.stockItemTemp.itemPackageLengthUnitMeasureCode">Item Package Length Unit Measure Code</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="itemPackageWidthUnitMeasureId"><span jhiTranslate="epmwebApp.stockItemTemp.itemPackageWidthUnitMeasureId">Item Package Width Unit Measure Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="itemPackageWidthUnitMeasureCode"><span jhiTranslate="epmwebApp.stockItemTemp.itemPackageWidthUnitMeasureCode">Item Package Width Unit Measure Code</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="itemPackageHeightUnitMeasureId"><span jhiTranslate="epmwebApp.stockItemTemp.itemPackageHeightUnitMeasureId">Item Package Height Unit Measure Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="itemPackageHeightUnitMeasureCode"><span jhiTranslate="epmwebApp.stockItemTemp.itemPackageHeightUnitMeasureCode">Item Package Height Unit Measure Code</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="itemPackageWeightUnitMeasureId"><span jhiTranslate="epmwebApp.stockItemTemp.itemPackageWeightUnitMeasureId">Item Package Weight Unit Measure Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="itemPackageWeightUnitMeasureCode"><span jhiTranslate="epmwebApp.stockItemTemp.itemPackageWeightUnitMeasureCode">Item Package Weight Unit Measure Code</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="noOfPieces"><span jhiTranslate="epmwebApp.stockItemTemp.noOfPieces">No Of Pieces</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="noOfItems"><span jhiTranslate="epmwebApp.stockItemTemp.noOfItems">No Of Items</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="manufacture"><span jhiTranslate="epmwebApp.stockItemTemp.manufacture">Manufacture</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="specialFeactures"><span jhiTranslate="epmwebApp.stockItemTemp.specialFeactures">Special Feactures</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="productComplianceCertificate"><span jhiTranslate="epmwebApp.stockItemTemp.productComplianceCertificate">Product Compliance Certificate</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="genuineAndLegal"><span jhiTranslate="epmwebApp.stockItemTemp.genuineAndLegal">Genuine And Legal</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="countryOfOrigin"><span jhiTranslate="epmwebApp.stockItemTemp.countryOfOrigin">Country Of Origin</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="usageAndSideEffects"><span jhiTranslate="epmwebApp.stockItemTemp.usageAndSideEffects">Usage And Side Effects</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="safetyWarnning"><span jhiTranslate="epmwebApp.stockItemTemp.safetyWarnning">Safety Warnning</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="sellStartDate"><span jhiTranslate="epmwebApp.stockItemTemp.sellStartDate">Sell Start Date</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="sellEndDate"><span jhiTranslate="epmwebApp.stockItemTemp.sellEndDate">Sell End Date</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="status"><span jhiTranslate="epmwebApp.stockItemTemp.status">Status</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="lastEditedBy"><span jhiTranslate="epmwebApp.stockItemTemp.lastEditedBy">Last Edited By</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="lastEditedWhen"><span jhiTranslate="epmwebApp.stockItemTemp.lastEditedWhen">Last Edited When</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="uploadTransactionId"><span jhiTranslate="epmwebApp.stockItemTemp.uploadTransaction">Upload Transaction</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let stockItemTemp of stockItemTemps ;trackBy: trackId">
+                <td><a [routerLink]="['/stock-item-temp', stockItemTemp.id, 'view' ]">{{stockItemTemp.id}}</a></td>
+                <td>{{stockItemTemp.stockItemName}}</td>
+                <td>{{stockItemTemp.vendorCode}}</td>
+                <td>{{stockItemTemp.vendorSKU}}</td>
+                <td>{{stockItemTemp.barcode}}</td>
+                <td>{{stockItemTemp.barcodeTypeId}}</td>
+                <td>{{stockItemTemp.barcodeTypeName}}</td>
+                <td>{{stockItemTemp.productType}}</td>
+                <td>{{stockItemTemp.productCategoryId}}</td>
+                <td>{{stockItemTemp.productCategoryName}}</td>
+                <td>{{stockItemTemp.productAttributeSetId}}</td>
+                <td>{{stockItemTemp.productAttributeId}}</td>
+                <td>{{stockItemTemp.productAttributeValue}}</td>
+                <td>{{stockItemTemp.productOptionSetId}}</td>
+                <td>{{stockItemTemp.productOptionId}}</td>
+                <td>{{stockItemTemp.productOptionValue}}</td>
+                <td>{{stockItemTemp.modelName}}</td>
+                <td>{{stockItemTemp.modelNumber}}</td>
+                <td>{{stockItemTemp.materialId}}</td>
+                <td>{{stockItemTemp.materialName}}</td>
+                <td>{{stockItemTemp.shortDescription}}</td>
+                <td>{{stockItemTemp.description}}</td>
+                <td>{{stockItemTemp.productBrandId}}</td>
+                <td>{{stockItemTemp.productBrandName}}</td>
+                <td>{{stockItemTemp.highlights}}</td>
+                <td>{{stockItemTemp.searchDetails}}</td>
+                <td>{{stockItemTemp.careInstructions}}</td>
+                <td>{{stockItemTemp.dangerousGoods}}</td>
+                <td>{{stockItemTemp.videoUrl}}</td>
+                <td>{{stockItemTemp.unitPrice}}</td>
+                <td>{{stockItemTemp.remommendedRetailPrice}}</td>
+                <td>{{stockItemTemp.currencyCode}}</td>
+                <td>{{stockItemTemp.quantityOnHand}}</td>
+                <td>{{stockItemTemp.warrantyPeriod}}</td>
+                <td>{{stockItemTemp.warrantyPolicy}}</td>
+                <td>{{stockItemTemp.warrantyTypeId}}</td>
+                <td>{{stockItemTemp.warrantyTypeName}}</td>
+                <td>{{stockItemTemp.whatInTheBox}}</td>
+                <td>{{stockItemTemp.itemLength}}</td>
+                <td>{{stockItemTemp.itemWidth}}</td>
+                <td>{{stockItemTemp.itemHeight}}</td>
+                <td>{{stockItemTemp.itemWeight}}</td>
+                <td>{{stockItemTemp.itemPackageLength}}</td>
+                <td>{{stockItemTemp.itemPackageWidth}}</td>
+                <td>{{stockItemTemp.itemPackageHeight}}</td>
+                <td>{{stockItemTemp.itemPackageWeight}}</td>
+                <td>{{stockItemTemp.itemLengthUnitMeasureId}}</td>
+                <td>{{stockItemTemp.itemLengthUnitMeasureCode}}</td>
+                <td>{{stockItemTemp.itemWidthUnitMeasureId}}</td>
+                <td>{{stockItemTemp.itemWidthUnitMeasureCode}}</td>
+                <td>{{stockItemTemp.itemHeightUnitMeasureId}}</td>
+                <td>{{stockItemTemp.itemHeightUnitMeasureCode}}</td>
+                <td>{{stockItemTemp.itemWeightUnitMeasureId}}</td>
+                <td>{{stockItemTemp.itemWeightUnitMeasureCode}}</td>
+                <td>{{stockItemTemp.itemPackageLengthUnitMeasureId}}</td>
+                <td>{{stockItemTemp.itemPackageLengthUnitMeasureCode}}</td>
+                <td>{{stockItemTemp.itemPackageWidthUnitMeasureId}}</td>
+                <td>{{stockItemTemp.itemPackageWidthUnitMeasureCode}}</td>
+                <td>{{stockItemTemp.itemPackageHeightUnitMeasureId}}</td>
+                <td>{{stockItemTemp.itemPackageHeightUnitMeasureCode}}</td>
+                <td>{{stockItemTemp.itemPackageWeightUnitMeasureId}}</td>
+                <td>{{stockItemTemp.itemPackageWeightUnitMeasureCode}}</td>
+                <td>{{stockItemTemp.noOfPieces}}</td>
+                <td>{{stockItemTemp.noOfItems}}</td>
+                <td>{{stockItemTemp.manufacture}}</td>
+                <td>{{stockItemTemp.specialFeactures}}</td>
+                <td>{{stockItemTemp.productComplianceCertificate}}</td>
+                <td>{{stockItemTemp.genuineAndLegal}}</td>
+                <td>{{stockItemTemp.countryOfOrigin}}</td>
+                <td>{{stockItemTemp.usageAndSideEffects}}</td>
+                <td>{{stockItemTemp.safetyWarnning}}</td>
+                <td>{{stockItemTemp.sellStartDate | date:'medium'}}</td>
+                <td>{{stockItemTemp.sellEndDate | date:'medium'}}</td>
+                <td>{{stockItemTemp.status}}</td>
+                <td>{{stockItemTemp.lastEditedBy}}</td>
+                <td>{{stockItemTemp.lastEditedWhen | date:'medium'}}</td>
+                <td>
+                    <div *ngIf="stockItemTemp.uploadTransactionId">
+                        <a [routerLink]="['/upload-transactions', stockItemTemp.uploadTransactionId , 'view' ]" >{{stockItemTemp.uploadTransactionId}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/stock-item-temp', stockItemTemp.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/stock-item-temp', stockItemTemp.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit" (click)="delete(stockItemTemp)"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div [hidden]="stockItemTemps?.length === 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

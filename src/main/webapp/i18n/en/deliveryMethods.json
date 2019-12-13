@@ -1,0 +1,24 @@
+{
+  "epmwebApp": {
+    "deliveryMethods": {
+      "home": {
+        "title": "Delivery Methods",
+        "createLabel": "Create a new Delivery Methods",
+        "createOrEditLabel": "Create or edit a Delivery Methods",
+        "notFound": "No Delivery Methods found"
+      },
+      "created": "A new Delivery Methods is created with identifier {{ param }}",
+      "updated": "A Delivery Methods is updated with identifier {{ param }}",
+      "deleted": "A Delivery Methods is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Delivery Methods {{ id }}?"
+      },
+      "detail": {
+        "title": "Delivery Methods"
+      },
+      "name": "Name",
+      "validFrom": "Valid From",
+      "validTo": "Valid To"
+    }
+  }
+}

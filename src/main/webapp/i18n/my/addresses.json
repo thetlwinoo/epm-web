@@ -1,0 +1,33 @@
+{
+  "epmwebApp": {
+    "addresses": {
+      "home": {
+        "title": "Addresses",
+        "createLabel": "Addresses အသစ်ထည့်မည်",
+        "createOrEditLabel": "Addresses အသစ်ထည့်ခြင်း (သို့) ပြုပြင်ခြင်း",
+        "notFound": "No Addresses found"
+      },
+      "created": "{{ param }} အိုင်ဒီဖြင့် Addresses အသစ်တစ်ခုအား ထည့်ပြီးပါပြီ။",
+      "updated": "{{ param }} အိုင်ဒီဖြင့် Addresses တစ်ခုအား ပြုပြင်ပြီးပါပြီ။",
+      "deleted": "{{ param }} အိုင်ဒီဖြင့် Addresses တစ်ခုအား ဖျက်ပြီးပါပြီ။",
+      "delete": {
+        "question": "Addresses {{ id }} အား ဖျက်ပါမည်။ သေချာပါသလား?"
+      },
+      "detail": {
+        "title": "Addresses"
+      },
+      "contactPerson": "Contact Person",
+      "contactNumber": "Contact Number",
+      "contactEmailAddress": "Contact Email Address",
+      "addressLine1": "Address Line 1",
+      "addressLine2": "Address Line 2",
+      "city": "City",
+      "postalCode": "Postal Code",
+      "defaultInd": "Default Ind",
+      "activeInd": "Active Ind",
+      "stateProvince": "State Province",
+      "addressType": "Address Type",
+      "person": "Person"
+    }
+  }
+}

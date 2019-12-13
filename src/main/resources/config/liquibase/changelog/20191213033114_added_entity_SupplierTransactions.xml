@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    
+    <!--
+        Added the entity SupplierTransactions.
+    -->
+    <changeSet id="20191213033114-1" author="jhipster">
+        <createTable tableName="supplier_transactions">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="supplier_invoice_number" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="transaction_date" type="datetime">
+                <constraints nullable="false" />
+            </column>
+            <column name="amount_excluding_tax" type="decimal(21,2)">
+                <constraints nullable="false" />
+            </column>
+            <column name="tax_amount" type="decimal(21,2)">
+                <constraints nullable="false" />
+            </column>
+            <column name="transaction_amount" type="decimal(21,2)">
+                <constraints nullable="false" />
+            </column>
+            <column name="outstanding_balance" type="decimal(21,2)">
+                <constraints nullable="false" />
+            </column>
+            <column name="finalization_date" type="datetime">
+                <constraints nullable="true" />
+            </column>
+            <column name="is_finalized" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="last_edited_by" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="last_edited_when" type="datetime">
+                <constraints nullable="true" />
+            </column>
+            <column name="supplier_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="transaction_type_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="purchase_order_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
+        </createTable>
+        <dropDefaultValue tableName="supplier_transactions" columnName="transaction_date" columnDataType="datetime"/>
+        <dropDefaultValue tableName="supplier_transactions" columnName="finalization_date" columnDataType="datetime"/>
+        <dropDefaultValue tableName="supplier_transactions" columnName="last_edited_when" columnDataType="datetime"/>
+    </changeSet>
+
+    <changeSet id="20191213033114-1-relations" author="jhipster">
+
+    </changeSet>
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here, do not remove-->
+
+    <!--
+        Load sample data generated with Faker.js
+        - This data can be easily edited using a CSV editor (or even MS Excel) and
+          is located in the 'src/main/resources/config/liquibase/fake-data' directory
+        - By default this data is applied when running with the JHipster 'dev' profile.
+          This can be customized by adding or removing 'faker' in the 'spring.liquibase.contexts'
+          Spring Boot configuration key.
+    -->
+    <changeSet id="20191213033114-1-data" author="jhipster" context="faker">
+        <loadData
+                  file="config/liquibase/fake-data/supplier_transactions.csv"
+                  separator=";"
+                  tableName="supplier_transactions">
+            <column name="id" type="numeric"/>
+            <column name="supplier_invoice_number" type="string"/>
+            <column name="transaction_date" type="datetime"/>
+            <column name="amount_excluding_tax" type="numeric"/>
+            <column name="tax_amount" type="numeric"/>
+            <column name="transaction_amount" type="numeric"/>
+            <column name="outstanding_balance" type="numeric"/>
+            <column name="finalization_date" type="datetime"/>
+            <column name="is_finalized" type="boolean"/>
+            <column name="last_edited_by" type="string"/>
+            <column name="last_edited_when" type="datetime"/>
+            <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here, do not remove-->
+        </loadData>
+    </changeSet>
+
+</databaseChangeLog>

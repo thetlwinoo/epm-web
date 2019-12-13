@@ -1,0 +1,78 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-supplier-imported-document-heading" jhiTranslate="epmwebApp.supplierImportedDocument.home.createOrEditLabel">Create or edit a Supplier Imported Document</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.supplierImportedDocument.importedTemplate" for="field_importedTemplate">Imported Template</label>
+                    <div>
+                        <div *ngIf="editForm.get('importedTemplate').value" class="form-text text-danger clearfix">
+                            <a class="pull-left" (click)="openFile(editForm.get('importedTemplateContentType').value, editForm.get('importedTemplate').value)" jhiTranslate="entity.action.open">open</a><br>
+                            <span class="pull-left">{{editForm.get('importedTemplateContentType').value}}, {{byteSize(editForm.get('importedTemplate').value)}}</span>
+                            <button type="button" (click)="editForm.patchValue({importedTemplate: null});editForm.patchValue({importedTemplateContentType: null});"
+                                    class="btn btn-secondary btn-xs pull-right">
+                                <fa-icon [icon]="'times'"></fa-icon>
+                            </button>
+                        </div>
+                        <input type="file" id="file_importedTemplate" (change)="setFileData($event, 'importedTemplate', false)" jhiTranslate="entity.action.addblob"/>
+                    </div>
+                    <input type="hidden" class="form-control" name="importedTemplate" id="field_importedTemplate"
+                           formControlName="importedTemplate"/>
+                    <input type="hidden" class="form-control" name="importedTemplateContentType" id="field_importedTemplateContentType"
+                           formControlName="importedTemplateContentType" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.supplierImportedDocument.importedFailedTemplate" for="field_importedFailedTemplate">Imported Failed Template</label>
+                    <div>
+                        <div *ngIf="editForm.get('importedFailedTemplate').value" class="form-text text-danger clearfix">
+                            <a class="pull-left" (click)="openFile(editForm.get('importedFailedTemplateContentType').value, editForm.get('importedFailedTemplate').value)" jhiTranslate="entity.action.open">open</a><br>
+                            <span class="pull-left">{{editForm.get('importedFailedTemplateContentType').value}}, {{byteSize(editForm.get('importedFailedTemplate').value)}}</span>
+                            <button type="button" (click)="editForm.patchValue({importedFailedTemplate: null});editForm.patchValue({importedFailedTemplateContentType: null});"
+                                    class="btn btn-secondary btn-xs pull-right">
+                                <fa-icon [icon]="'times'"></fa-icon>
+                            </button>
+                        </div>
+                        <input type="file" id="file_importedFailedTemplate" (change)="setFileData($event, 'importedFailedTemplate', false)" jhiTranslate="entity.action.addblob"/>
+                    </div>
+                    <input type="hidden" class="form-control" name="importedFailedTemplate" id="field_importedFailedTemplate"
+                           formControlName="importedFailedTemplate"/>
+                    <input type="hidden" class="form-control" name="importedFailedTemplateContentType" id="field_importedFailedTemplateContentType"
+                           formControlName="importedFailedTemplateContentType" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.supplierImportedDocument.lastEditedBy" for="field_lastEditedBy">Last Edited By</label>
+                    <input type="text" class="form-control" name="lastEditedBy" id="field_lastEditedBy"
+                           formControlName="lastEditedBy"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.supplierImportedDocument.lastEditedWhen" for="field_lastEditedWhen">Last Edited When</label>
+                    <div class="d-flex">
+                        <input id="field_lastEditedWhen" type="datetime-local" class="form-control" name="lastEditedWhen" formControlName="lastEditedWhen" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.supplierImportedDocument.uploadTransaction" for="field_uploadTransaction">Upload Transaction</label>
+                    <select class="form-control" id="field_uploadTransaction" name="uploadTransaction" formControlName="uploadTransactionId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="uploadTransactionsOption.id" *ngFor="let uploadTransactionsOption of uploadtransactions; trackBy: trackUploadTransactionsById">{{uploadTransactionsOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

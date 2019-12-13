@@ -1,0 +1,44 @@
+{
+  "epmwebApp": {
+    "suppliers": {
+      "home": {
+        "title": "Suppliers",
+        "createLabel": "Suppliers အသစ်ထည့်မည်",
+        "createOrEditLabel": "Suppliers အသစ်ထည့်ခြင်း (သို့) ပြုပြင်ခြင်း",
+        "notFound": "No Suppliers found"
+      },
+      "created": "{{ param }} အိုင်ဒီဖြင့် Suppliers အသစ်တစ်ခုအား ထည့်ပြီးပါပြီ။",
+      "updated": "{{ param }} အိုင်ဒီဖြင့် Suppliers တစ်ခုအား ပြုပြင်ပြီးပါပြီ။",
+      "deleted": "{{ param }} အိုင်ဒီဖြင့် Suppliers တစ်ခုအား ဖျက်ပြီးပါပြီ။",
+      "delete": {
+        "question": "Suppliers {{ id }} အား ဖျက်ပါမည်။ သေချာပါသလား?"
+      },
+      "detail": {
+        "title": "Suppliers"
+      },
+      "name": "Name",
+      "supplierReference": "Supplier Reference",
+      "bankAccountName": "Bank Account Name",
+      "bankAccountBranch": "Bank Account Branch",
+      "bankAccountCode": "Bank Account Code",
+      "bankAccountNumber": "Bank Account Number",
+      "bankInternationalCode": "Bank International Code",
+      "paymentDays": "Payment Days",
+      "internalComments": "Internal Comments",
+      "phoneNumber": "Phone Number",
+      "faxNumber": "Fax Number",
+      "websiteURL": "Website URL",
+      "webServiceUrl": "Web Service Url",
+      "creditRating": "Credit Rating",
+      "activeFlag": "Active Flag",
+      "thumbnailUrl": "Thumbnail Url",
+      "validFrom": "Valid From",
+      "validTo": "Valid To",
+      "user": "User",
+      "supplierCategory": "Supplier Category",
+      "deliveryMethod": "Delivery Method",
+      "deliveryCity": "Delivery City",
+      "postalCity": "Postal City"
+    }
+  }
+}

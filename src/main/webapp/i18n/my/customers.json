@@ -1,0 +1,23 @@
+{
+  "epmwebApp": {
+    "customers": {
+      "home": {
+        "title": "Customers",
+        "createLabel": "Customers အသစ်ထည့်မည်",
+        "createOrEditLabel": "Customers အသစ်ထည့်ခြင်း (သို့) ပြုပြင်ခြင်း",
+        "notFound": "No Customers found"
+      },
+      "created": "{{ param }} အိုင်ဒီဖြင့် Customers အသစ်တစ်ခုအား ထည့်ပြီးပါပြီ။",
+      "updated": "{{ param }} အိုင်ဒီဖြင့် Customers တစ်ခုအား ပြုပြင်ပြီးပါပြီ။",
+      "deleted": "{{ param }} အိုင်ဒီဖြင့် Customers တစ်ခုအား ဖျက်ပြီးပါပြီ။",
+      "delete": {
+        "question": "Customers {{ id }} အား ဖျက်ပါမည်။ သေချာပါသလား?"
+      },
+      "detail": {
+        "title": "Customers"
+      },
+      "accountNumber": "Account Number",
+      "user": "User"
+    }
+  }
+}

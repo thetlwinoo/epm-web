@@ -1,0 +1,32 @@
+{
+  "epmwebApp": {
+    "reviewLines": {
+      "home": {
+        "title": "Review Lines",
+        "createLabel": "Review Lines အသစ်ထည့်မည်",
+        "createOrEditLabel": "Review Lines အသစ်ထည့်ခြင်း (သို့) ပြုပြင်ခြင်း",
+        "notFound": "No Review Lines found"
+      },
+      "created": "{{ param }} အိုင်ဒီဖြင့် Review Lines အသစ်တစ်ခုအား ထည့်ပြီးပါပြီ။",
+      "updated": "{{ param }} အိုင်ဒီဖြင့် Review Lines တစ်ခုအား ပြုပြင်ပြီးပါပြီ။",
+      "deleted": "{{ param }} အိုင်ဒီဖြင့် Review Lines တစ်ခုအား ဖျက်ပြီးပါပြီ။",
+      "delete": {
+        "question": "Review Lines {{ id }} အား ဖျက်ပါမည်။ သေချာပါသလား?"
+      },
+      "detail": {
+        "title": "Review Lines"
+      },
+      "productRating": "Product Rating",
+      "productReview": "Product Review",
+      "sellerRating": "Seller Rating",
+      "sellerReview": "Seller Review",
+      "deliveryRating": "Delivery Rating",
+      "deliveryReview": "Delivery Review",
+      "thumbnailUrl": "Thumbnail Url",
+      "lastEditedBy": "Last Edited By",
+      "lastEditedWhen": "Last Edited When",
+      "stockItem": "Stock Item",
+      "review": "Review"
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "epmwebApp": {
+    "products": {
+      "home": {
+        "title": "Products",
+        "createLabel": "Products အသစ်ထည့်မည်",
+        "createOrEditLabel": "Products အသစ်ထည့်ခြင်း (သို့) ပြုပြင်ခြင်း",
+        "notFound": "No Products found"
+      },
+      "created": "{{ param }} အိုင်ဒီဖြင့် Products အသစ်တစ်ခုအား ထည့်ပြီးပါပြီ။",
+      "updated": "{{ param }} အိုင်ဒီဖြင့် Products တစ်ခုအား ပြုပြင်ပြီးပါပြီ။",
+      "deleted": "{{ param }} အိုင်ဒီဖြင့် Products တစ်ခုအား ဖျက်ပြီးပါပြီ။",
+      "delete": {
+        "question": "Products {{ id }} အား ဖျက်ပါမည်။ သေချာပါသလား?"
+      },
+      "detail": {
+        "title": "Products"
+      },
+      "name": "Name",
+      "handle": "Handle",
+      "productNumber": "Product Number",
+      "searchDetails": "Search Details",
+      "sellCount": "Sell Count",
+      "thumbnailList": "Thumbnail List",
+      "activeInd": "Active Ind",
+      "lastEditedBy": "Last Edited By",
+      "lastEditedWhen": "Last Edited When",
+      "productDocument": "Product Document",
+      "stockItemList": "Stock Item List",
+      "supplier": "Supplier",
+      "productCategory": "Product Category",
+      "productBrand": "Product Brand"
+    }
+  }
+}

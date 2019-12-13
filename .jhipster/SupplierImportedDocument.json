@@ -1,0 +1,42 @@
+{
+    "name": "SupplierImportedDocument",
+    "fields": [
+        {
+            "fieldName": "importedTemplate",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "any"
+        },
+        {
+            "fieldName": "importedFailedTemplate",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "any"
+        },
+        {
+            "fieldName": "lastEditedBy",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "lastEditedWhen",
+            "fieldType": "Instant"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "uploadTransactions",
+            "otherEntityRelationshipName": "importDocumentList",
+            "relationshipName": "uploadTransaction",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20191213033205",
+    "entityTableName": "supplier_imported_document",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": true,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

@@ -1,0 +1,51 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="supplierImportedDocument">
+            <h2><span jhiTranslate="epmwebApp.supplierImportedDocument.detail.title">Supplier Imported Document</span> {{supplierImportedDocument.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="epmwebApp.supplierImportedDocument.importedTemplate">Imported Template</span></dt>
+                <dd>
+                    <div *ngIf="supplierImportedDocument.importedTemplate">
+                        <a (click)="openFile(supplierImportedDocument.importedTemplateContentType, supplierImportedDocument.importedTemplate)" jhiTranslate="entity.action.open">open</a>
+                        {{supplierImportedDocument.importedTemplateContentType}}, {{byteSize(supplierImportedDocument.importedTemplate)}}
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.supplierImportedDocument.importedFailedTemplate">Imported Failed Template</span></dt>
+                <dd>
+                    <div *ngIf="supplierImportedDocument.importedFailedTemplate">
+                        <a (click)="openFile(supplierImportedDocument.importedFailedTemplateContentType, supplierImportedDocument.importedFailedTemplate)" jhiTranslate="entity.action.open">open</a>
+                        {{supplierImportedDocument.importedFailedTemplateContentType}}, {{byteSize(supplierImportedDocument.importedFailedTemplate)}}
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.supplierImportedDocument.lastEditedBy">Last Edited By</span></dt>
+                <dd>
+                    <span>{{supplierImportedDocument.lastEditedBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.supplierImportedDocument.lastEditedWhen">Last Edited When</span></dt>
+                <dd>
+                    <span>{{supplierImportedDocument.lastEditedWhen}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.supplierImportedDocument.uploadTransaction">Upload Transaction</span></dt>
+                <dd>
+                    <div *ngIf="supplierImportedDocument.uploadTransactionId">
+                        <a [routerLink]="['/upload-transactions', supplierImportedDocument.uploadTransactionId, 'view']">{{supplierImportedDocument.uploadTransactionId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/supplier-imported-document', supplierImportedDocument.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

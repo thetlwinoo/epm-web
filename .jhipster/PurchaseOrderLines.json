@@ -1,0 +1,82 @@
+{
+    "name": "PurchaseOrderLines",
+    "fields": [
+        {
+            "fieldName": "orderedOuters",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "receivedOuters",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "expectedUnitPricePerOuter",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "lastReceiptDate",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "isOrderLineFinalized",
+            "fieldType": "Boolean",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "lastEditedBy",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "lastEditedWhen",
+            "fieldType": "Instant"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "packageTypes",
+            "otherEntityRelationshipName": "purchaseOrderLines",
+            "relationshipName": "packageType",
+            "otherEntityField": "name"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "stockItems",
+            "otherEntityRelationshipName": "purchaseOrderLines",
+            "relationshipName": "stockItem",
+            "otherEntityField": "name"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "purchaseOrders",
+            "otherEntityRelationshipName": "purchaseOrderLineList",
+            "relationshipName": "purchaseOrder",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20191213033117",
+    "entityTableName": "purchase_order_lines",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": true,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

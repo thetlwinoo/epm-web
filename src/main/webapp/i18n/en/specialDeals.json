@@ -1,0 +1,37 @@
+{
+  "epmwebApp": {
+    "specialDeals": {
+      "home": {
+        "title": "Special Deals",
+        "createLabel": "Create a new Special Deals",
+        "createOrEditLabel": "Create or edit a Special Deals",
+        "notFound": "No Special Deals found"
+      },
+      "created": "A new Special Deals is created with identifier {{ param }}",
+      "updated": "A Special Deals is updated with identifier {{ param }}",
+      "deleted": "A Special Deals is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Special Deals {{ id }}?"
+      },
+      "detail": {
+        "title": "Special Deals"
+      },
+      "dealDescription": "Deal Description",
+      "startDate": "Start Date",
+      "endDate": "End Date",
+      "discountAmount": "Discount Amount",
+      "discountPercentage": "Discount Percentage",
+      "discountCode": "Discount Code",
+      "unitPrice": "Unit Price",
+      "lastEditedBy": "Last Edited By",
+      "lastEditedWhen": "Last Edited When",
+      "cartDiscount": "Cart Discount",
+      "orderDiscount": "Order Discount",
+      "buyingGroup": "Buying Group",
+      "customerCategory": "Customer Category",
+      "customer": "Customer",
+      "productCategory": "Product Category",
+      "stockItem": "Stock Item"
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "epmwebApp": {
+    "culture": {
+      "home": {
+        "title": "Cultures",
+        "createLabel": "Create a new Culture",
+        "createOrEditLabel": "Create or edit a Culture",
+        "notFound": "No Cultures found"
+      },
+      "created": "A new Culture is created with identifier {{ param }}",
+      "updated": "A Culture is updated with identifier {{ param }}",
+      "deleted": "A Culture is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Culture {{ id }}?"
+      },
+      "detail": {
+        "title": "Culture"
+      },
+      "code": "Code",
+      "name": "Name"
+    }
+  }
+}

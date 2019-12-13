@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <!--
+        Added the constraints for entity BusinessEntityAddress.
+    -->
+    <changeSet id="20191213033058-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="address_id"
+                                 baseTableName="business_entity_address"
+                                 constraintName="fk_business_entity_address_address_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="addresses"/>
+
+        <addForeignKeyConstraint baseColumnNames="person_id"
+                                 baseTableName="business_entity_address"
+                                 constraintName="fk_business_entity_address_person_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="people"/>
+
+        <addForeignKeyConstraint baseColumnNames="address_type_id"
+                                 baseTableName="business_entity_address"
+                                 constraintName="fk_business_entity_address_address_type_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="address_types"/>
+
+    </changeSet>
+</databaseChangeLog>

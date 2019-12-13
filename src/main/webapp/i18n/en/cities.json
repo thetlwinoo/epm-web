@@ -1,0 +1,27 @@
+{
+  "epmwebApp": {
+    "cities": {
+      "home": {
+        "title": "Cities",
+        "createLabel": "Create a new Cities",
+        "createOrEditLabel": "Create or edit a Cities",
+        "notFound": "No Cities found"
+      },
+      "created": "A new Cities is created with identifier {{ param }}",
+      "updated": "A Cities is updated with identifier {{ param }}",
+      "deleted": "A Cities is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Cities {{ id }}?"
+      },
+      "detail": {
+        "title": "Cities"
+      },
+      "name": "Name",
+      "location": "Location",
+      "latestRecordedPopulation": "Latest Recorded Population",
+      "validFrom": "Valid From",
+      "validTo": "Valid To",
+      "stateProvince": "State Province"
+    }
+  }
+}

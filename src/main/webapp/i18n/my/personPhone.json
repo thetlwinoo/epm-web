@@ -1,0 +1,26 @@
+{
+  "epmwebApp": {
+    "personPhone": {
+      "home": {
+        "title": "Person Phones",
+        "createLabel": "Person Phone အသစ်ထည့်မည်",
+        "createOrEditLabel": "Person Phone အသစ်ထည့်ခြင်း (သို့) ပြုပြင်ခြင်း",
+        "notFound": "No Person Phones found"
+      },
+      "created": "{{ param }} အိုင်ဒီဖြင့် Person Phone အသစ်တစ်ခုအား ထည့်ပြီးပါပြီ။",
+      "updated": "{{ param }} အိုင်ဒီဖြင့် Person Phone တစ်ခုအား ပြုပြင်ပြီးပါပြီ။",
+      "deleted": "{{ param }} အိုင်ဒီဖြင့် Person Phone တစ်ခုအား ဖျက်ပြီးပါပြီ။",
+      "delete": {
+        "question": "Person Phone {{ id }} အား ဖျက်ပါမည်။ သေချာပါသလား?"
+      },
+      "detail": {
+        "title": "Person Phone"
+      },
+      "phoneNumber": "Phone Number",
+      "defaultInd": "Default Ind",
+      "activeInd": "Active Ind",
+      "person": "Person",
+      "phoneNumberType": "Phone Number Type"
+    }
+  }
+}

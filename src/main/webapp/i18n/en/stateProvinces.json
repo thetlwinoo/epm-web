@@ -1,0 +1,29 @@
+{
+  "epmwebApp": {
+    "stateProvinces": {
+      "home": {
+        "title": "State Provinces",
+        "createLabel": "Create a new State Provinces",
+        "createOrEditLabel": "Create or edit a State Provinces",
+        "notFound": "No State Provinces found"
+      },
+      "created": "A new State Provinces is created with identifier {{ param }}",
+      "updated": "A State Provinces is updated with identifier {{ param }}",
+      "deleted": "A State Provinces is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete State Provinces {{ id }}?"
+      },
+      "detail": {
+        "title": "State Provinces"
+      },
+      "code": "Code",
+      "name": "Name",
+      "salesTerritory": "Sales Territory",
+      "border": "Border",
+      "latestRecordedPopulation": "Latest Recorded Population",
+      "validFrom": "Valid From",
+      "validTo": "Valid To",
+      "country": "Country"
+    }
+  }
+}

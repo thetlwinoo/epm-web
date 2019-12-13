@@ -1,0 +1,111 @@
+{
+    "name": "Photos",
+    "fields": [
+        {
+            "fieldName": "thumbnailPhoto",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "originalPhoto",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "bannerTallPhoto",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "bannerWidePhoto",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "circlePhoto",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "sharpenedPhoto",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "squarePhoto",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "watermarkPhoto",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "thumbnailPhotoBlob",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "image"
+        },
+        {
+            "fieldName": "originalPhotoBlob",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "image"
+        },
+        {
+            "fieldName": "bannerTallPhotoBlob",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "image"
+        },
+        {
+            "fieldName": "bannerWidePhotoBlob",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "image"
+        },
+        {
+            "fieldName": "circlePhotoBlob",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "image"
+        },
+        {
+            "fieldName": "sharpenedPhotoBlob",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "image"
+        },
+        {
+            "fieldName": "squarePhotoBlob",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "image"
+        },
+        {
+            "fieldName": "watermarkPhotoBlob",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "image"
+        },
+        {
+            "fieldName": "priority",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "defaultInd",
+            "fieldType": "Boolean"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "stockItems",
+            "otherEntityRelationshipName": "photoList",
+            "relationshipName": "stockItem",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "productCategory",
+            "otherEntityRelationshipName": "photoList",
+            "relationshipName": "productCategory",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20191213033153",
+    "entityTableName": "photos",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": true,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

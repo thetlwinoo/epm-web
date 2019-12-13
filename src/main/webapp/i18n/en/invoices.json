@@ -1,0 +1,48 @@
+{
+  "epmwebApp": {
+    "invoices": {
+      "home": {
+        "title": "Invoices",
+        "createLabel": "Create a new Invoices",
+        "createOrEditLabel": "Create or edit a Invoices",
+        "notFound": "No Invoices found"
+      },
+      "created": "A new Invoices is created with identifier {{ param }}",
+      "updated": "A Invoices is updated with identifier {{ param }}",
+      "deleted": "A Invoices is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Invoices {{ id }}?"
+      },
+      "detail": {
+        "title": "Invoices"
+      },
+      "invoiceDate": "Invoice Date",
+      "customerPurchaseOrderNumber": "Customer Purchase Order Number",
+      "isCreditNote": "Is Credit Note",
+      "creditNoteReason": "Credit Note Reason",
+      "comments": "Comments",
+      "deliveryInstructions": "Delivery Instructions",
+      "internalComments": "Internal Comments",
+      "totalDryItems": "Total Dry Items",
+      "totalChillerItems": "Total Chiller Items",
+      "deliveryRun": "Delivery Run",
+      "runPosition": "Run Position",
+      "returnedDeliveryData": "Returned Delivery Data",
+      "confirmedDeliveryTime": "Confirmed Delivery Time",
+      "confirmedReceivedBy": "Confirmed Received By",
+      "paymentMethod": "Payment Method",
+      "status": "Status",
+      "lastEditedBy": "Last Edited By",
+      "lastEditedWhen": "Last Edited When",
+      "invoiceLineList": "Invoice Line List",
+      "contactPerson": "Contact Person",
+      "salespersonPerson": "Salesperson Person",
+      "packedByPerson": "Packed By Person",
+      "accountsPerson": "Accounts Person",
+      "customer": "Customer",
+      "billToCustomer": "Bill To Customer",
+      "deliveryMethod": "Delivery Method",
+      "order": "Order"
+    }
+  }
+}

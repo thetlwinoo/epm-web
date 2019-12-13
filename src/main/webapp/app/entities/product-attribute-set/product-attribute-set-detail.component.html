@@ -1,0 +1,33 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="productAttributeSet">
+            <h2><span jhiTranslate="epmwebApp.productAttributeSet.detail.title">Product Attribute Set</span> {{productAttributeSet.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="epmwebApp.productAttributeSet.name">Name</span></dt>
+                <dd>
+                    <span>{{productAttributeSet.name}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.productAttributeSet.productOptionSet">Product Option Set</span></dt>
+                <dd>
+                    <div *ngIf="productAttributeSet.productOptionSetId">
+                        <a [routerLink]="['/product-option-set', productAttributeSet.productOptionSetId, 'view']">{{productAttributeSet.productOptionSetValue}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/product-attribute-set', productAttributeSet.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

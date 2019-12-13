@@ -1,0 +1,23 @@
+{
+  "epmwebApp": {
+    "compares": {
+      "home": {
+        "title": "Compares",
+        "createLabel": "Compares အသစ်ထည့်မည်",
+        "createOrEditLabel": "Compares အသစ်ထည့်ခြင်း (သို့) ပြုပြင်ခြင်း",
+        "notFound": "No Compares found"
+      },
+      "created": "{{ param }} အိုင်ဒီဖြင့် Compares အသစ်တစ်ခုအား ထည့်ပြီးပါပြီ။",
+      "updated": "{{ param }} အိုင်ဒီဖြင့် Compares တစ်ခုအား ပြုပြင်ပြီးပါပြီ။",
+      "deleted": "{{ param }} အိုင်ဒီဖြင့် Compares တစ်ခုအား ဖျက်ပြီးပါပြီ။",
+      "delete": {
+        "question": "Compares {{ id }} အား ဖျက်ပါမည်။ သေချာပါသလား?"
+      },
+      "detail": {
+        "title": "Compares"
+      },
+      "compareUser": "Compare User",
+      "compareList": "Compare List"
+    }
+  }
+}

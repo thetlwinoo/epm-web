@@ -1,0 +1,24 @@
+{
+  "epmwebApp": {
+    "deliveryMethods": {
+      "home": {
+        "title": "Delivery Methods",
+        "createLabel": "Delivery Methods အသစ်ထည့်မည်",
+        "createOrEditLabel": "Delivery Methods အသစ်ထည့်ခြင်း (သို့) ပြုပြင်ခြင်း",
+        "notFound": "No Delivery Methods found"
+      },
+      "created": "{{ param }} အိုင်ဒီဖြင့် Delivery Methods အသစ်တစ်ခုအား ထည့်ပြီးပါပြီ။",
+      "updated": "{{ param }} အိုင်ဒီဖြင့် Delivery Methods တစ်ခုအား ပြုပြင်ပြီးပါပြီ။",
+      "deleted": "{{ param }} အိုင်ဒီဖြင့် Delivery Methods တစ်ခုအား ဖျက်ပြီးပါပြီ။",
+      "delete": {
+        "question": "Delivery Methods {{ id }} အား ဖျက်ပါမည်။ သေချာပါသလား?"
+      },
+      "detail": {
+        "title": "Delivery Methods"
+      },
+      "name": "Name",
+      "validFrom": "Valid From",
+      "validTo": "Valid To"
+    }
+  }
+}

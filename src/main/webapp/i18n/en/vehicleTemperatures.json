@@ -1,0 +1,28 @@
+{
+  "epmwebApp": {
+    "vehicleTemperatures": {
+      "home": {
+        "title": "Vehicle Temperatures",
+        "createLabel": "Create a new Vehicle Temperatures",
+        "createOrEditLabel": "Create or edit a Vehicle Temperatures",
+        "notFound": "No Vehicle Temperatures found"
+      },
+      "created": "A new Vehicle Temperatures is created with identifier {{ param }}",
+      "updated": "A Vehicle Temperatures is updated with identifier {{ param }}",
+      "deleted": "A Vehicle Temperatures is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Vehicle Temperatures {{ id }}?"
+      },
+      "detail": {
+        "title": "Vehicle Temperatures"
+      },
+      "vehicleRegistration": "Vehicle Registration",
+      "chillerSensorNumber": "Chiller Sensor Number",
+      "recordedWhen": "Recorded When",
+      "temperature": "Temperature",
+      "isCompressed": "Is Compressed",
+      "fullSensorData": "Full Sensor Data",
+      "compressedSensorData": "Compressed Sensor Data"
+    }
+  }
+}

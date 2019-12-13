@@ -1,0 +1,23 @@
+{
+  "epmwebApp": {
+    "customers": {
+      "home": {
+        "title": "Customers",
+        "createLabel": "Create a new Customers",
+        "createOrEditLabel": "Create or edit a Customers",
+        "notFound": "No Customers found"
+      },
+      "created": "A new Customers is created with identifier {{ param }}",
+      "updated": "A Customers is updated with identifier {{ param }}",
+      "deleted": "A Customers is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Customers {{ id }}?"
+      },
+      "detail": {
+        "title": "Customers"
+      },
+      "accountNumber": "Account Number",
+      "user": "User"
+    }
+  }
+}

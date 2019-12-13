@@ -1,0 +1,24 @@
+{
+  "epmwebApp": {
+    "productSet": {
+      "home": {
+        "title": "Product Sets",
+        "createLabel": "Create a new Product Set",
+        "createOrEditLabel": "Create or edit a Product Set",
+        "notFound": "No Product Sets found"
+      },
+      "created": "A new Product Set is created with identifier {{ param }}",
+      "updated": "A Product Set is updated with identifier {{ param }}",
+      "deleted": "A Product Set is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Product Set {{ id }}?"
+      },
+      "detail": {
+        "title": "Product Set"
+      },
+      "name": "Name",
+      "noOfPerson": "No Of Person",
+      "isExclusive": "Is Exclusive"
+    }
+  }
+}

@@ -1,0 +1,109 @@
+{
+    "name": "SpecialDeals",
+    "fields": [
+        {
+            "fieldName": "dealDescription",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "startDate",
+            "fieldType": "Instant",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "endDate",
+            "fieldType": "Instant",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "discountAmount",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "discountPercentage",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "discountCode",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "unitPrice",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "lastEditedBy",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "lastEditedWhen",
+            "fieldType": "Instant"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "shoppingCarts",
+            "otherEntityRelationshipName": "specialDeals",
+            "relationshipName": "cartDiscount"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "orders",
+            "otherEntityRelationshipName": "specialDeals",
+            "relationshipName": "orderDiscount"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "buyingGroups",
+            "otherEntityRelationshipName": "specialDeals",
+            "relationshipName": "buyingGroup",
+            "otherEntityField": "name"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "customerCategories",
+            "otherEntityRelationshipName": "specialDeals",
+            "relationshipName": "customerCategory",
+            "otherEntityField": "name"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "customers",
+            "otherEntityRelationshipName": "specialDeals",
+            "relationshipName": "customer",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "productCategory",
+            "otherEntityRelationshipName": "specialDeals",
+            "relationshipName": "productCategory",
+            "otherEntityField": "name"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "stockItems",
+            "otherEntityRelationshipName": "specialDiscount",
+            "relationshipName": "stockItem",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20191213033127",
+    "entityTableName": "special_deals",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": true,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

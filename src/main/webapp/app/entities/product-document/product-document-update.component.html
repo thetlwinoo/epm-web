@@ -1,0 +1,128 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-product-document-heading" jhiTranslate="epmwebApp.productDocument.home.createOrEditLabel">Create or edit a Product Document</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.productDocument.videoUrl" for="field_videoUrl">Video Url</label>
+                    <input type="text" class="form-control" name="videoUrl" id="field_videoUrl"
+                           formControlName="videoUrl"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.productDocument.highlights" for="field_highlights">Highlights</label>
+                    <textarea class="form-control" name="highlights" id="field_highlights"
+                              formControlName="highlights"></textarea>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.productDocument.longDescription" for="field_longDescription">Long Description</label>
+                    <textarea class="form-control" name="longDescription" id="field_longDescription"
+                              formControlName="longDescription"></textarea>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.productDocument.shortDescription" for="field_shortDescription">Short Description</label>
+                    <textarea class="form-control" name="shortDescription" id="field_shortDescription"
+                              formControlName="shortDescription"></textarea>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.productDocument.description" for="field_description">Description</label>
+                    <textarea class="form-control" name="description" id="field_description"
+                              formControlName="description"></textarea>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.productDocument.careInstructions" for="field_careInstructions">Care Instructions</label>
+                    <textarea class="form-control" name="careInstructions" id="field_careInstructions"
+                              formControlName="careInstructions"></textarea>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.productDocument.productType" for="field_productType">Product Type</label>
+                    <input type="text" class="form-control" name="productType" id="field_productType"
+                           formControlName="productType"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.productDocument.modelName" for="field_modelName">Model Name</label>
+                    <input type="text" class="form-control" name="modelName" id="field_modelName"
+                           formControlName="modelName"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.productDocument.modelNumber" for="field_modelNumber">Model Number</label>
+                    <input type="text" class="form-control" name="modelNumber" id="field_modelNumber"
+                           formControlName="modelNumber"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.productDocument.fabricType" for="field_fabricType">Fabric Type</label>
+                    <input type="text" class="form-control" name="fabricType" id="field_fabricType"
+                           formControlName="fabricType"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.productDocument.specialFeatures" for="field_specialFeatures">Special Features</label>
+                    <textarea class="form-control" name="specialFeatures" id="field_specialFeatures"
+                              formControlName="specialFeatures"></textarea>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.productDocument.productComplianceCertificate" for="field_productComplianceCertificate">Product Compliance Certificate</label>
+                    <input type="text" class="form-control" name="productComplianceCertificate" id="field_productComplianceCertificate"
+                           formControlName="productComplianceCertificate"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.productDocument.genuineAndLegal" for="field_genuineAndLegal">Genuine And Legal</label>
+                    <input type="checkbox" class="form-control" name="genuineAndLegal" id="field_genuineAndLegal"
+                           formControlName="genuineAndLegal"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.productDocument.countryOfOrigin" for="field_countryOfOrigin">Country Of Origin</label>
+                    <input type="text" class="form-control" name="countryOfOrigin" id="field_countryOfOrigin"
+                           formControlName="countryOfOrigin"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.productDocument.usageAndSideEffects" for="field_usageAndSideEffects">Usage And Side Effects</label>
+                    <textarea class="form-control" name="usageAndSideEffects" id="field_usageAndSideEffects"
+                              formControlName="usageAndSideEffects"></textarea>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.productDocument.safetyWarnning" for="field_safetyWarnning">Safety Warnning</label>
+                    <textarea class="form-control" name="safetyWarnning" id="field_safetyWarnning"
+                              formControlName="safetyWarnning"></textarea>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.productDocument.warrantyPeriod" for="field_warrantyPeriod">Warranty Period</label>
+                    <input type="text" class="form-control" name="warrantyPeriod" id="field_warrantyPeriod"
+                           formControlName="warrantyPeriod"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.productDocument.warrantyPolicy" for="field_warrantyPolicy">Warranty Policy</label>
+                    <input type="text" class="form-control" name="warrantyPolicy" id="field_warrantyPolicy"
+                           formControlName="warrantyPolicy"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.productDocument.warrantyType" for="field_warrantyType">Warranty Type</label>
+                    <select class="form-control" id="field_warrantyType" name="warrantyType" formControlName="warrantyTypeId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="warrantyTypesOption.id" *ngFor="let warrantyTypesOption of warrantytypes; trackBy: trackWarrantyTypesById">{{warrantyTypesOption.name}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.productDocument.culture" for="field_culture">Culture</label>
+                    <select class="form-control" id="field_culture" name="culture" formControlName="cultureId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="cultureOption.id" *ngFor="let cultureOption of cultures; trackBy: trackCultureById">{{cultureOption.name}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

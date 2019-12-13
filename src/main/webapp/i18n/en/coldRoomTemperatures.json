@@ -1,0 +1,26 @@
+{
+  "epmwebApp": {
+    "coldRoomTemperatures": {
+      "home": {
+        "title": "Cold Room Temperatures",
+        "createLabel": "Create a new Cold Room Temperatures",
+        "createOrEditLabel": "Create or edit a Cold Room Temperatures",
+        "notFound": "No Cold Room Temperatures found"
+      },
+      "created": "A new Cold Room Temperatures is created with identifier {{ param }}",
+      "updated": "A Cold Room Temperatures is updated with identifier {{ param }}",
+      "deleted": "A Cold Room Temperatures is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Cold Room Temperatures {{ id }}?"
+      },
+      "detail": {
+        "title": "Cold Room Temperatures"
+      },
+      "coldRoomSensorNumber": "Cold Room Sensor Number",
+      "recordedWhen": "Recorded When",
+      "temperature": "Temperature",
+      "validFrom": "Valid From",
+      "validTo": "Valid To"
+    }
+  }
+}

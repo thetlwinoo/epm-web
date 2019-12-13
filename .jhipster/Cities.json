@@ -1,0 +1,53 @@
+{
+    "name": "Cities",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "location",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "latestRecordedPopulation",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "validFrom",
+            "fieldType": "Instant",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "validTo",
+            "fieldType": "Instant",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "stateProvinces",
+            "otherEntityRelationshipName": "cities",
+            "relationshipName": "stateProvince",
+            "otherEntityField": "name"
+        }
+    ],
+    "changelogDate": "20191213033107",
+    "entityTableName": "cities",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": true,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

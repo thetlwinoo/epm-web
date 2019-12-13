@@ -1,0 +1,22 @@
+{
+  "epmwebApp": {
+    "phoneNumberType": {
+      "home": {
+        "title": "Phone Number Types",
+        "createLabel": "Phone Number Type အသစ်ထည့်မည်",
+        "createOrEditLabel": "Phone Number Type အသစ်ထည့်ခြင်း (သို့) ပြုပြင်ခြင်း",
+        "notFound": "No Phone Number Types found"
+      },
+      "created": "{{ param }} အိုင်ဒီဖြင့် Phone Number Type အသစ်တစ်ခုအား ထည့်ပြီးပါပြီ။",
+      "updated": "{{ param }} အိုင်ဒီဖြင့် Phone Number Type တစ်ခုအား ပြုပြင်ပြီးပါပြီ။",
+      "deleted": "{{ param }} အိုင်ဒီဖြင့် Phone Number Type တစ်ခုအား ဖျက်ပြီးပါပြီ။",
+      "delete": {
+        "question": "Phone Number Type {{ id }} အား ဖျက်ပါမည်။ သေချာပါသလား?"
+      },
+      "detail": {
+        "title": "Phone Number Type"
+      },
+      "name": "Name"
+    }
+  }
+}

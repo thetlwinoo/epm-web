@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    
+    <!--
+        Added the entity StockItemTemp.
+    -->
+    <changeSet id="20191213033133-1" author="jhipster">
+        <createTable tableName="stock_item_temp">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="stock_item_name" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="vendor_code" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="vendor_sku" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="barcode" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="barcode_type_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="barcode_type_name" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="product_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="product_category_id" type="bigint">
+                <constraints nullable="false" />
+            </column>
+            <column name="product_category_name" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="product_attribute_set_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="product_attribute_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="product_attribute_value" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="product_option_set_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="product_option_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="product_option_value" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="model_name" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="model_number" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="material_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="material_name" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="short_description" type="${clobType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="description" type="${clobType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="product_brand_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="product_brand_name" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="highlights" type="${clobType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="search_details" type="${clobType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="care_instructions" type="${clobType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="dangerous_goods" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="video_url" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="unit_price" type="decimal(21,2)">
+                <constraints nullable="true" />
+            </column>
+            <column name="remommended_retail_price" type="decimal(21,2)">
+                <constraints nullable="true" />
+            </column>
+            <column name="currency_code" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="quantity_on_hand" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="warranty_period" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="warranty_policy" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="warranty_type_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="warranty_type_name" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="what_in_the_box" type="${clobType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="item_length" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="item_width" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="item_height" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="item_weight" type="decimal(21,2)">
+                <constraints nullable="true" />
+            </column>
+            <column name="item_package_length" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="item_package_width" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="item_package_height" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="item_package_weight" type="decimal(21,2)">
+                <constraints nullable="true" />
+            </column>
+            <column name="item_length_unit_measure_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="item_length_unit_measure_code" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="item_width_unit_measure_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="item_width_unit_measure_code" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="item_height_unit_measure_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="item_height_unit_measure_code" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="item_weight_unit_measure_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="item_weight_unit_measure_code" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="item_package_length_unit_measure_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="item_package_length_unit_measure_code" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="item_package_width_unit_measure_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="item_package_width_unit_measure_code" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="item_package_height_unit_measure_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="item_package_height_unit_measure_code" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="item_package_weight_unit_measure_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="item_package_weight_unit_measure_code" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="no_of_pieces" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="no_of_items" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="manufacture" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="special_feactures" type="${clobType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="product_compliance_certificate" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="genuine_and_legal" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="country_of_origin" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="usage_and_side_effects" type="${clobType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="safety_warnning" type="${clobType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="sell_start_date" type="datetime">
+                <constraints nullable="true" />
+            </column>
+            <column name="sell_end_date" type="datetime">
+                <constraints nullable="true" />
+            </column>
+            <column name="status" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="last_edited_by" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="last_edited_when" type="datetime">
+                <constraints nullable="true" />
+            </column>
+            <column name="upload_transaction_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
+        </createTable>
+        <dropDefaultValue tableName="stock_item_temp" columnName="sell_start_date" columnDataType="datetime"/>
+        <dropDefaultValue tableName="stock_item_temp" columnName="sell_end_date" columnDataType="datetime"/>
+        <dropDefaultValue tableName="stock_item_temp" columnName="last_edited_when" columnDataType="datetime"/>
+    </changeSet>
+
+    <changeSet id="20191213033133-1-relations" author="jhipster">
+
+    </changeSet>
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here, do not remove-->
+
+    <!--
+        Load sample data generated with Faker.js
+        - This data can be easily edited using a CSV editor (or even MS Excel) and
+          is located in the 'src/main/resources/config/liquibase/fake-data' directory
+        - By default this data is applied when running with the JHipster 'dev' profile.
+          This can be customized by adding or removing 'faker' in the 'spring.liquibase.contexts'
+          Spring Boot configuration key.
+    -->
+    <changeSet id="20191213033133-1-data" author="jhipster" context="faker">
+        <loadData
+                  file="config/liquibase/fake-data/stock_item_temp.csv"
+                  separator=";"
+                  tableName="stock_item_temp">
+            <column name="id" type="numeric"/>
+            <column name="stock_item_name" type="string"/>
+            <column name="vendor_code" type="string"/>
+            <column name="vendor_sku" type="string"/>
+            <column name="barcode" type="string"/>
+            <column name="barcode_type_id" type="numeric"/>
+            <column name="barcode_type_name" type="string"/>
+            <column name="product_type" type="string"/>
+            <column name="product_category_id" type="numeric"/>
+            <column name="product_category_name" type="string"/>
+            <column name="product_attribute_set_id" type="numeric"/>
+            <column name="product_attribute_id" type="numeric"/>
+            <column name="product_attribute_value" type="string"/>
+            <column name="product_option_set_id" type="numeric"/>
+            <column name="product_option_id" type="numeric"/>
+            <column name="product_option_value" type="string"/>
+            <column name="model_name" type="string"/>
+            <column name="model_number" type="string"/>
+            <column name="material_id" type="numeric"/>
+            <column name="material_name" type="string"/>
+            <column name="short_description" type="clob"/>
+            <column name="description" type="clob"/>
+            <column name="product_brand_id" type="numeric"/>
+            <column name="product_brand_name" type="string"/>
+            <column name="highlights" type="clob"/>
+            <column name="search_details" type="clob"/>
+            <column name="care_instructions" type="clob"/>
+            <column name="dangerous_goods" type="string"/>
+            <column name="video_url" type="string"/>
+            <column name="unit_price" type="numeric"/>
+            <column name="remommended_retail_price" type="numeric"/>
+            <column name="currency_code" type="string"/>
+            <column name="quantity_on_hand" type="numeric"/>
+            <column name="warranty_period" type="string"/>
+            <column name="warranty_policy" type="string"/>
+            <column name="warranty_type_id" type="numeric"/>
+            <column name="warranty_type_name" type="string"/>
+            <column name="what_in_the_box" type="clob"/>
+            <column name="item_length" type="numeric"/>
+            <column name="item_width" type="numeric"/>
+            <column name="item_height" type="numeric"/>
+            <column name="item_weight" type="numeric"/>
+            <column name="item_package_length" type="numeric"/>
+            <column name="item_package_width" type="numeric"/>
+            <column name="item_package_height" type="numeric"/>
+            <column name="item_package_weight" type="numeric"/>
+            <column name="item_length_unit_measure_id" type="numeric"/>
+            <column name="item_length_unit_measure_code" type="string"/>
+            <column name="item_width_unit_measure_id" type="numeric"/>
+            <column name="item_width_unit_measure_code" type="string"/>
+            <column name="item_height_unit_measure_id" type="numeric"/>
+            <column name="item_height_unit_measure_code" type="string"/>
+            <column name="item_weight_unit_measure_id" type="numeric"/>
+            <column name="item_weight_unit_measure_code" type="string"/>
+            <column name="item_package_length_unit_measure_id" type="numeric"/>
+            <column name="item_package_length_unit_measure_code" type="string"/>
+            <column name="item_package_width_unit_measure_id" type="numeric"/>
+            <column name="item_package_width_unit_measure_code" type="string"/>
+            <column name="item_package_height_unit_measure_id" type="numeric"/>
+            <column name="item_package_height_unit_measure_code" type="string"/>
+            <column name="item_package_weight_unit_measure_id" type="numeric"/>
+            <column name="item_package_weight_unit_measure_code" type="string"/>
+            <column name="no_of_pieces" type="numeric"/>
+            <column name="no_of_items" type="numeric"/>
+            <column name="manufacture" type="string"/>
+            <column name="special_feactures" type="clob"/>
+            <column name="product_compliance_certificate" type="string"/>
+            <column name="genuine_and_legal" type="boolean"/>
+            <column name="country_of_origin" type="string"/>
+            <column name="usage_and_side_effects" type="clob"/>
+            <column name="safety_warnning" type="clob"/>
+            <column name="sell_start_date" type="datetime"/>
+            <column name="sell_end_date" type="datetime"/>
+            <column name="status" type="numeric"/>
+            <column name="last_edited_by" type="string"/>
+            <column name="last_edited_when" type="datetime"/>
+            <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here, do not remove-->
+        </loadData>
+    </changeSet>
+
+</databaseChangeLog>

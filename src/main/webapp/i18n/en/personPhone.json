@@ -1,0 +1,26 @@
+{
+  "epmwebApp": {
+    "personPhone": {
+      "home": {
+        "title": "Person Phones",
+        "createLabel": "Create a new Person Phone",
+        "createOrEditLabel": "Create or edit a Person Phone",
+        "notFound": "No Person Phones found"
+      },
+      "created": "A new Person Phone is created with identifier {{ param }}",
+      "updated": "A Person Phone is updated with identifier {{ param }}",
+      "deleted": "A Person Phone is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Person Phone {{ id }}?"
+      },
+      "detail": {
+        "title": "Person Phone"
+      },
+      "phoneNumber": "Phone Number",
+      "defaultInd": "Default Ind",
+      "activeInd": "Active Ind",
+      "person": "Person",
+      "phoneNumberType": "Phone Number Type"
+    }
+  }
+}

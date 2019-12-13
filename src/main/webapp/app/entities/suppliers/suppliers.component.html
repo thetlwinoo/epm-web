@@ -1,0 +1,117 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="epmwebApp.suppliers.home.title">Suppliers</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-suppliers" [routerLink]="['/suppliers/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="epmwebApp.suppliers.home.createLabel">
+            Create a new Suppliers
+            </span>
+        </button>
+    </h2>
+    <jhi-alert-error></jhi-alert-error>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="suppliers?.length === 0">
+        <span jhiTranslate="epmwebApp.suppliers.home.notFound">No suppliers found</span>
+    </div>
+    <div class="table-responsive" *ngIf="suppliers?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+            <tr>
+            <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.suppliers.name">Name</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.suppliers.supplierReference">Supplier Reference</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.suppliers.bankAccountName">Bank Account Name</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.suppliers.bankAccountBranch">Bank Account Branch</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.suppliers.bankAccountCode">Bank Account Code</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.suppliers.bankAccountNumber">Bank Account Number</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.suppliers.bankInternationalCode">Bank International Code</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.suppliers.paymentDays">Payment Days</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.suppliers.internalComments">Internal Comments</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.suppliers.phoneNumber">Phone Number</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.suppliers.faxNumber">Fax Number</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.suppliers.websiteURL">Website URL</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.suppliers.webServiceUrl">Web Service Url</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.suppliers.creditRating">Credit Rating</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.suppliers.activeFlag">Active Flag</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.suppliers.thumbnailUrl">Thumbnail Url</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.suppliers.validFrom">Valid From</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.suppliers.validTo">Valid To</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.suppliers.user">User</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.suppliers.supplierCategory">Supplier Category</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.suppliers.deliveryMethod">Delivery Method</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.suppliers.deliveryCity">Delivery City</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.suppliers.postalCity">Postal City</span></th>
+            <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let suppliers of suppliers ;trackBy: trackId">
+                <td><a [routerLink]="['/suppliers', suppliers.id, 'view' ]">{{suppliers.id}}</a></td>
+                <td>{{suppliers.name}}</td>
+                <td>{{suppliers.supplierReference}}</td>
+                <td>{{suppliers.bankAccountName}}</td>
+                <td>{{suppliers.bankAccountBranch}}</td>
+                <td>{{suppliers.bankAccountCode}}</td>
+                <td>{{suppliers.bankAccountNumber}}</td>
+                <td>{{suppliers.bankInternationalCode}}</td>
+                <td>{{suppliers.paymentDays}}</td>
+                <td>{{suppliers.internalComments}}</td>
+                <td>{{suppliers.phoneNumber}}</td>
+                <td>{{suppliers.faxNumber}}</td>
+                <td>{{suppliers.websiteURL}}</td>
+                <td>{{suppliers.webServiceUrl}}</td>
+                <td>{{suppliers.creditRating}}</td>
+                <td>{{suppliers.activeFlag}}</td>
+                <td>{{suppliers.thumbnailUrl}}</td>
+                <td>{{suppliers.validFrom | date:'medium'}}</td>
+                <td>{{suppliers.validTo | date:'medium'}}</td>
+                <td>
+                    {{suppliers.userLogin}}
+                </td>
+                <td>
+                    <div *ngIf="suppliers.supplierCategoryId">
+                        <a [routerLink]="['/supplier-categories', suppliers.supplierCategoryId , 'view' ]" >{{suppliers.supplierCategoryName}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="suppliers.deliveryMethodId">
+                        <a [routerLink]="['/delivery-methods', suppliers.deliveryMethodId , 'view' ]" >{{suppliers.deliveryMethodName}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="suppliers.deliveryCityId">
+                        <a [routerLink]="['/cities', suppliers.deliveryCityId , 'view' ]" >{{suppliers.deliveryCityName}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="suppliers.postalCityId">
+                        <a [routerLink]="['/cities', suppliers.postalCityId , 'view' ]" >{{suppliers.postalCityName}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/suppliers', suppliers.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/suppliers', suppliers.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit" (click)="delete(suppliers)"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

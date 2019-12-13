@@ -1,0 +1,47 @@
+{
+  "epmwebApp": {
+    "orders": {
+      "home": {
+        "title": "Orders",
+        "createLabel": "Orders အသစ်ထည့်မည်",
+        "createOrEditLabel": "Orders အသစ်ထည့်ခြင်း (သို့) ပြုပြင်ခြင်း",
+        "notFound": "No Orders found"
+      },
+      "created": "{{ param }} အိုင်ဒီဖြင့် Orders အသစ်တစ်ခုအား ထည့်ပြီးပါပြီ။",
+      "updated": "{{ param }} အိုင်ဒီဖြင့် Orders တစ်ခုအား ပြုပြင်ပြီးပါပြီ။",
+      "deleted": "{{ param }} အိုင်ဒီဖြင့် Orders တစ်ခုအား ဖျက်ပြီးပါပြီ။",
+      "delete": {
+        "question": "Orders {{ id }} အား ဖျက်ပါမည်။ သေချာပါသလား?"
+      },
+      "detail": {
+        "title": "Orders"
+      },
+      "orderDate": "Order Date",
+      "dueDate": "Due Date",
+      "shipDate": "Ship Date",
+      "paymentStatus": "Payment Status",
+      "orderFlag": "Order Flag",
+      "orderNumber": "Order Number",
+      "subTotal": "Sub Total",
+      "taxAmount": "Tax Amount",
+      "frieight": "Frieight",
+      "totalDue": "Total Due",
+      "comments": "Comments",
+      "deliveryInstructions": "Delivery Instructions",
+      "internalComments": "Internal Comments",
+      "pickingCompletedWhen": "Picking Completed When",
+      "status": "Status",
+      "lastEditedBy": "Last Edited By",
+      "lastEditedWhen": "Last Edited When",
+      "orderOnReview": "Order On Review",
+      "orderLineList": "Order Line List",
+      "customer": "Customer",
+      "shipToAddress": "Ship To Address",
+      "billToAddress": "Bill To Address",
+      "shipMethod": "Ship Method",
+      "currencyRate": "Currency Rate",
+      "paymentTransaction": "Payment Transaction",
+      "specialDeals": "Special Deals"
+    }
+  }
+}

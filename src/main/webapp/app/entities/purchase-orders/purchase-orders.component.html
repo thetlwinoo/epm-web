@@ -1,0 +1,87 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="epmwebApp.purchaseOrders.home.title">Purchase Orders</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-purchase-orders" [routerLink]="['/purchase-orders/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="epmwebApp.purchaseOrders.home.createLabel">
+            Create a new Purchase Orders
+            </span>
+        </button>
+    </h2>
+    <jhi-alert-error></jhi-alert-error>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="purchaseOrders?.length === 0">
+        <span jhiTranslate="epmwebApp.purchaseOrders.home.notFound">No purchaseOrders found</span>
+    </div>
+    <div class="table-responsive" *ngIf="purchaseOrders?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+            <tr>
+            <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.purchaseOrders.orderDate">Order Date</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.purchaseOrders.expectedDeliveryDate">Expected Delivery Date</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.purchaseOrders.supplierReference">Supplier Reference</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.purchaseOrders.isOrderFinalized">Is Order Finalized</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.purchaseOrders.comments">Comments</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.purchaseOrders.internalComments">Internal Comments</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.purchaseOrders.lastEditedBy">Last Edited By</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.purchaseOrders.lastEditedWhen">Last Edited When</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.purchaseOrders.contactPerson">Contact Person</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.purchaseOrders.supplier">Supplier</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.purchaseOrders.deliveryMethod">Delivery Method</span></th>
+            <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let purchaseOrders of purchaseOrders ;trackBy: trackId">
+                <td><a [routerLink]="['/purchase-orders', purchaseOrders.id, 'view' ]">{{purchaseOrders.id}}</a></td>
+                <td>{{purchaseOrders.orderDate | date:'medium'}}</td>
+                <td>{{purchaseOrders.expectedDeliveryDate | date:'medium'}}</td>
+                <td>{{purchaseOrders.supplierReference}}</td>
+                <td>{{purchaseOrders.isOrderFinalized}}</td>
+                <td>{{purchaseOrders.comments}}</td>
+                <td>{{purchaseOrders.internalComments}}</td>
+                <td>{{purchaseOrders.lastEditedBy}}</td>
+                <td>{{purchaseOrders.lastEditedWhen | date:'medium'}}</td>
+                <td>
+                    <div *ngIf="purchaseOrders.contactPersonId">
+                        <a [routerLink]="['/people', purchaseOrders.contactPersonId , 'view' ]" >{{purchaseOrders.contactPersonFullName}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="purchaseOrders.supplierId">
+                        <a [routerLink]="['/suppliers', purchaseOrders.supplierId , 'view' ]" >{{purchaseOrders.supplierName}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="purchaseOrders.deliveryMethodId">
+                        <a [routerLink]="['/delivery-methods', purchaseOrders.deliveryMethodId , 'view' ]" >{{purchaseOrders.deliveryMethodName}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/purchase-orders', purchaseOrders.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/purchase-orders', purchaseOrders.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit" (click)="delete(purchaseOrders)"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

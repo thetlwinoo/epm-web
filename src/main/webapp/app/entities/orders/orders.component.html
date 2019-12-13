@@ -1,0 +1,137 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="epmwebApp.orders.home.title">Orders</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-orders" [routerLink]="['/orders/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="epmwebApp.orders.home.createLabel">
+            Create a new Orders
+            </span>
+        </button>
+    </h2>
+    <jhi-alert-error></jhi-alert-error>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="orders?.length === 0">
+        <span jhiTranslate="epmwebApp.orders.home.notFound">No orders found</span>
+    </div>
+    <div class="table-responsive" *ngIf="orders?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="orderDate"><span jhiTranslate="epmwebApp.orders.orderDate">Order Date</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="dueDate"><span jhiTranslate="epmwebApp.orders.dueDate">Due Date</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="shipDate"><span jhiTranslate="epmwebApp.orders.shipDate">Ship Date</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="paymentStatus"><span jhiTranslate="epmwebApp.orders.paymentStatus">Payment Status</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="orderFlag"><span jhiTranslate="epmwebApp.orders.orderFlag">Order Flag</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="orderNumber"><span jhiTranslate="epmwebApp.orders.orderNumber">Order Number</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="subTotal"><span jhiTranslate="epmwebApp.orders.subTotal">Sub Total</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="taxAmount"><span jhiTranslate="epmwebApp.orders.taxAmount">Tax Amount</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="frieight"><span jhiTranslate="epmwebApp.orders.frieight">Frieight</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="totalDue"><span jhiTranslate="epmwebApp.orders.totalDue">Total Due</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="comments"><span jhiTranslate="epmwebApp.orders.comments">Comments</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="deliveryInstructions"><span jhiTranslate="epmwebApp.orders.deliveryInstructions">Delivery Instructions</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="internalComments"><span jhiTranslate="epmwebApp.orders.internalComments">Internal Comments</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="pickingCompletedWhen"><span jhiTranslate="epmwebApp.orders.pickingCompletedWhen">Picking Completed When</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="status"><span jhiTranslate="epmwebApp.orders.status">Status</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="lastEditedBy"><span jhiTranslate="epmwebApp.orders.lastEditedBy">Last Edited By</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="lastEditedWhen"><span jhiTranslate="epmwebApp.orders.lastEditedWhen">Last Edited When</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="orderOnReviewId"><span jhiTranslate="epmwebApp.orders.orderOnReview">Order On Review</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="customerId"><span jhiTranslate="epmwebApp.orders.customer">Customer</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="shipToAddressId"><span jhiTranslate="epmwebApp.orders.shipToAddress">Ship To Address</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="billToAddressId"><span jhiTranslate="epmwebApp.orders.billToAddress">Bill To Address</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="shipMethodName"><span jhiTranslate="epmwebApp.orders.shipMethod">Ship Method</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="currencyRateId"><span jhiTranslate="epmwebApp.orders.currencyRate">Currency Rate</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="specialDealsId"><span jhiTranslate="epmwebApp.orders.specialDeals">Special Deals</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let orders of orders ;trackBy: trackId">
+                <td><a [routerLink]="['/orders', orders.id, 'view' ]">{{orders.id}}</a></td>
+                <td>{{orders.orderDate | date:'medium'}}</td>
+                <td>{{orders.dueDate | date:'medium'}}</td>
+                <td>{{orders.shipDate | date:'medium'}}</td>
+                <td>{{orders.paymentStatus}}</td>
+                <td>{{orders.orderFlag}}</td>
+                <td>{{orders.orderNumber}}</td>
+                <td>{{orders.subTotal}}</td>
+                <td>{{orders.taxAmount}}</td>
+                <td>{{orders.frieight}}</td>
+                <td>{{orders.totalDue}}</td>
+                <td>{{orders.comments}}</td>
+                <td>{{orders.deliveryInstructions}}</td>
+                <td>{{orders.internalComments}}</td>
+                <td>{{orders.pickingCompletedWhen | date:'medium'}}</td>
+                <td jhiTranslate="{{'epmwebApp.OrderStatus.' + orders.status}}">{{orders.status}}</td>
+                <td>{{orders.lastEditedBy}}</td>
+                <td>{{orders.lastEditedWhen | date:'medium'}}</td>
+                <td>
+                    <div *ngIf="orders.orderOnReviewId">
+                        <a [routerLink]="['/reviews', orders.orderOnReviewId , 'view' ]" >{{orders.orderOnReviewId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="orders.customerId">
+                        <a [routerLink]="['/customers', orders.customerId , 'view' ]" >{{orders.customerId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="orders.shipToAddressId">
+                        <a [routerLink]="['/addresses', orders.shipToAddressId , 'view' ]" >{{orders.shipToAddressId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="orders.billToAddressId">
+                        <a [routerLink]="['/addresses', orders.billToAddressId , 'view' ]" >{{orders.billToAddressId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="orders.shipMethodId">
+                        <a [routerLink]="['/ship-method', orders.shipMethodId , 'view' ]" >{{orders.shipMethodName}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="orders.currencyRateId">
+                        <a [routerLink]="['/currency-rate', orders.currencyRateId , 'view' ]" >{{orders.currencyRateId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="orders.specialDealsId">
+                        <a [routerLink]="['/special-deals', orders.specialDealsId , 'view' ]" >{{orders.specialDealsId}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/orders', orders.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/orders', orders.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit" (click)="delete(orders)"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div [hidden]="orders?.length === 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

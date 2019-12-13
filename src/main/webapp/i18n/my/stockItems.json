@@ -1,0 +1,68 @@
+{
+  "epmwebApp": {
+    "stockItems": {
+      "home": {
+        "title": "Stock Items",
+        "createLabel": "Stock Items အသစ်ထည့်မည်",
+        "createOrEditLabel": "Stock Items အသစ်ထည့်ခြင်း (သို့) ပြုပြင်ခြင်း",
+        "notFound": "No Stock Items found"
+      },
+      "created": "{{ param }} အိုင်ဒီဖြင့် Stock Items အသစ်တစ်ခုအား ထည့်ပြီးပါပြီ။",
+      "updated": "{{ param }} အိုင်ဒီဖြင့် Stock Items တစ်ခုအား ပြုပြင်ပြီးပါပြီ။",
+      "deleted": "{{ param }} အိုင်ဒီဖြင့် Stock Items တစ်ခုအား ဖျက်ပြီးပါပြီ။",
+      "delete": {
+        "question": "Stock Items {{ id }} အား ဖျက်ပါမည်။ သေချာပါသလား?"
+      },
+      "detail": {
+        "title": "Stock Items"
+      },
+      "name": "Name",
+      "vendorCode": "Vendor Code",
+      "vendorSKU": "Vendor SKU",
+      "generatedSKU": "Generated SKU",
+      "barcode": "Barcode",
+      "unitPrice": "Unit Price",
+      "recommendedRetailPrice": "Recommended Retail Price",
+      "quantityOnHand": "Quantity On Hand",
+      "itemLength": "Item Length",
+      "itemWidth": "Item Width",
+      "itemHeight": "Item Height",
+      "itemWeight": "Item Weight",
+      "itemPackageLength": "Item Package Length",
+      "itemPackageWidth": "Item Package Width",
+      "itemPackageHeight": "Item Package Height",
+      "itemPackageWeight": "Item Package Weight",
+      "noOfPieces": "No Of Pieces",
+      "noOfItems": "No Of Items",
+      "manufacture": "Manufacture",
+      "marketingComments": "Marketing Comments",
+      "internalComments": "Internal Comments",
+      "sellStartDate": "Sell Start Date",
+      "sellEndDate": "Sell End Date",
+      "sellCount": "Sell Count",
+      "customFields": "Custom Fields",
+      "thumbnailUrl": "Thumbnail Url",
+      "activeInd": "Active Ind",
+      "lastEditedBy": "Last Edited By",
+      "lastEditedWhen": "Last Edited When",
+      "stockItemOnReviewLine": "Stock Item On Review Line",
+      "photoList": "Photo List",
+      "dangerousGoodList": "Dangerous Good List",
+      "specialDiscount": "Special Discount",
+      "itemLengthUnit": "Item Length Unit",
+      "itemWidthUnit": "Item Width Unit",
+      "itemHeightUnit": "Item Height Unit",
+      "packageLengthUnit": "Package Length Unit",
+      "packageWidthUnit": "Package Width Unit",
+      "packageHeightUnit": "Package Height Unit",
+      "itemPackageWeightUnit": "Item Package Weight Unit",
+      "productAttribute": "Product Attribute",
+      "productOption": "Product Option",
+      "material": "Material",
+      "currency": "Currency",
+      "barcodeType": "Barcode Type",
+      "stockItemHolding": "Stock Item Holding",
+      "product": "Product"
+    }
+  }
+}

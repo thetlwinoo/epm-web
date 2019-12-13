@@ -1,0 +1,22 @@
+{
+  "epmwebApp": {
+    "phoneNumberType": {
+      "home": {
+        "title": "Phone Number Types",
+        "createLabel": "Create a new Phone Number Type",
+        "createOrEditLabel": "Create or edit a Phone Number Type",
+        "notFound": "No Phone Number Types found"
+      },
+      "created": "A new Phone Number Type is created with identifier {{ param }}",
+      "updated": "A Phone Number Type is updated with identifier {{ param }}",
+      "deleted": "A Phone Number Type is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Phone Number Type {{ id }}?"
+      },
+      "detail": {
+        "title": "Phone Number Type"
+      },
+      "name": "Name"
+    }
+  }
+}

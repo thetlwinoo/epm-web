@@ -1,0 +1,47 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="personPhone">
+            <h2><span jhiTranslate="epmwebApp.personPhone.detail.title">Person Phone</span> {{personPhone.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="epmwebApp.personPhone.phoneNumber">Phone Number</span></dt>
+                <dd>
+                    <span>{{personPhone.phoneNumber}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.personPhone.defaultInd">Default Ind</span></dt>
+                <dd>
+                    <span>{{personPhone.defaultInd}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.personPhone.activeInd">Active Ind</span></dt>
+                <dd>
+                    <span>{{personPhone.activeInd}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.personPhone.person">Person</span></dt>
+                <dd>
+                    <div *ngIf="personPhone.personId">
+                        <a [routerLink]="['/people', personPhone.personId, 'view']">{{personPhone.personFullName}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.personPhone.phoneNumberType">Phone Number Type</span></dt>
+                <dd>
+                    <div *ngIf="personPhone.phoneNumberTypeId">
+                        <a [routerLink]="['/phone-number-type', personPhone.phoneNumberTypeId, 'view']">{{personPhone.phoneNumberTypeName}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/person-phone', personPhone.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

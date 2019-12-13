@@ -1,0 +1,24 @@
+{
+  "epmwebApp": {
+    "productAttribute": {
+      "home": {
+        "title": "Product Attributes",
+        "createLabel": "Create a new Product Attribute",
+        "createOrEditLabel": "Create or edit a Product Attribute",
+        "notFound": "No Product Attributes found"
+      },
+      "created": "A new Product Attribute is created with identifier {{ param }}",
+      "updated": "A Product Attribute is updated with identifier {{ param }}",
+      "deleted": "A Product Attribute is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Product Attribute {{ id }}?"
+      },
+      "detail": {
+        "title": "Product Attribute"
+      },
+      "value": "Value",
+      "productAttributeSet": "Product Attribute Set",
+      "supplier": "Supplier"
+    }
+  }
+}

@@ -1,0 +1,73 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="purchaseOrderLines">
+            <h2><span jhiTranslate="epmwebApp.purchaseOrderLines.detail.title">Purchase Order Lines</span> {{purchaseOrderLines.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="epmwebApp.purchaseOrderLines.orderedOuters">Ordered Outers</span></dt>
+                <dd>
+                    <span>{{purchaseOrderLines.orderedOuters}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.purchaseOrderLines.description">Description</span></dt>
+                <dd>
+                    <span>{{purchaseOrderLines.description}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.purchaseOrderLines.receivedOuters">Received Outers</span></dt>
+                <dd>
+                    <span>{{purchaseOrderLines.receivedOuters}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.purchaseOrderLines.expectedUnitPricePerOuter">Expected Unit Price Per Outer</span></dt>
+                <dd>
+                    <span>{{purchaseOrderLines.expectedUnitPricePerOuter}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.purchaseOrderLines.lastReceiptDate">Last Receipt Date</span></dt>
+                <dd>
+                    <span>{{purchaseOrderLines.lastReceiptDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.purchaseOrderLines.isOrderLineFinalized">Is Order Line Finalized</span></dt>
+                <dd>
+                    <span>{{purchaseOrderLines.isOrderLineFinalized}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.purchaseOrderLines.lastEditedBy">Last Edited By</span></dt>
+                <dd>
+                    <span>{{purchaseOrderLines.lastEditedBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.purchaseOrderLines.lastEditedWhen">Last Edited When</span></dt>
+                <dd>
+                    <span>{{purchaseOrderLines.lastEditedWhen}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.purchaseOrderLines.packageType">Package Type</span></dt>
+                <dd>
+                    <div *ngIf="purchaseOrderLines.packageTypeId">
+                        <a [routerLink]="['/package-types', purchaseOrderLines.packageTypeId, 'view']">{{purchaseOrderLines.packageTypeName}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.purchaseOrderLines.stockItem">Stock Item</span></dt>
+                <dd>
+                    <div *ngIf="purchaseOrderLines.stockItemId">
+                        <a [routerLink]="['/stock-items', purchaseOrderLines.stockItemId, 'view']">{{purchaseOrderLines.stockItemName}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.purchaseOrderLines.purchaseOrder">Purchase Order</span></dt>
+                <dd>
+                    <div *ngIf="purchaseOrderLines.purchaseOrderId">
+                        <a [routerLink]="['/purchase-orders', purchaseOrderLines.purchaseOrderId, 'view']">{{purchaseOrderLines.purchaseOrderId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/purchase-order-lines', purchaseOrderLines.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,46 @@
+{
+    "name": "PersonPhone",
+    "fields": [
+        {
+            "fieldName": "phoneNumber",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "defaultInd",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "activeInd",
+            "fieldType": "Boolean"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "people",
+            "otherEntityRelationshipName": "personPhone",
+            "relationshipName": "person",
+            "otherEntityField": "fullName"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "phoneNumberType",
+            "otherEntityRelationshipName": "personPhone",
+            "relationshipName": "phoneNumberType",
+            "otherEntityField": "name"
+        }
+    ],
+    "changelogDate": "20191213033102",
+    "entityTableName": "person_phone",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": true,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

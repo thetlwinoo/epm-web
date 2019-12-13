@@ -1,0 +1,70 @@
+{
+    "name": "ReviewLines",
+    "fields": [
+        {
+            "fieldName": "productRating",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "productReview",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "text"
+        },
+        {
+            "fieldName": "sellerRating",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "sellerReview",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "text"
+        },
+        {
+            "fieldName": "deliveryRating",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "deliveryReview",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "text"
+        },
+        {
+            "fieldName": "thumbnailUrl",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "lastEditedBy",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "lastEditedWhen",
+            "fieldType": "Instant"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "stockItems",
+            "otherEntityRelationshipName": "stockItemOnReviewLine",
+            "relationshipName": "stockItem",
+            "ownerSide": false
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "reviews",
+            "otherEntityRelationshipName": "reviewLineList",
+            "relationshipName": "review",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20191213033203",
+    "entityTableName": "review_lines",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": true,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

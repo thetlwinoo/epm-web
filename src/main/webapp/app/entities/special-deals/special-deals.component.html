@@ -1,0 +1,101 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="epmwebApp.specialDeals.home.title">Special Deals</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-special-deals" [routerLink]="['/special-deals/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="epmwebApp.specialDeals.home.createLabel">
+            Create a new Special Deals
+            </span>
+        </button>
+    </h2>
+    <jhi-alert-error></jhi-alert-error>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="specialDeals?.length === 0">
+        <span jhiTranslate="epmwebApp.specialDeals.home.notFound">No specialDeals found</span>
+    </div>
+    <div class="table-responsive" *ngIf="specialDeals?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+            <tr>
+            <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.specialDeals.dealDescription">Deal Description</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.specialDeals.startDate">Start Date</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.specialDeals.endDate">End Date</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.specialDeals.discountAmount">Discount Amount</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.specialDeals.discountPercentage">Discount Percentage</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.specialDeals.discountCode">Discount Code</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.specialDeals.unitPrice">Unit Price</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.specialDeals.lastEditedBy">Last Edited By</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.specialDeals.lastEditedWhen">Last Edited When</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.specialDeals.buyingGroup">Buying Group</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.specialDeals.customerCategory">Customer Category</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.specialDeals.customer">Customer</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.specialDeals.productCategory">Product Category</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.specialDeals.stockItem">Stock Item</span></th>
+            <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let specialDeals of specialDeals ;trackBy: trackId">
+                <td><a [routerLink]="['/special-deals', specialDeals.id, 'view' ]">{{specialDeals.id}}</a></td>
+                <td>{{specialDeals.dealDescription}}</td>
+                <td>{{specialDeals.startDate | date:'medium'}}</td>
+                <td>{{specialDeals.endDate | date:'medium'}}</td>
+                <td>{{specialDeals.discountAmount}}</td>
+                <td>{{specialDeals.discountPercentage}}</td>
+                <td>{{specialDeals.discountCode}}</td>
+                <td>{{specialDeals.unitPrice}}</td>
+                <td>{{specialDeals.lastEditedBy}}</td>
+                <td>{{specialDeals.lastEditedWhen | date:'medium'}}</td>
+                <td>
+                    <div *ngIf="specialDeals.buyingGroupId">
+                        <a [routerLink]="['/buying-groups', specialDeals.buyingGroupId , 'view' ]" >{{specialDeals.buyingGroupName}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="specialDeals.customerCategoryId">
+                        <a [routerLink]="['/customer-categories', specialDeals.customerCategoryId , 'view' ]" >{{specialDeals.customerCategoryName}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="specialDeals.customerId">
+                        <a [routerLink]="['/customers', specialDeals.customerId , 'view' ]" >{{specialDeals.customerId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="specialDeals.productCategoryId">
+                        <a [routerLink]="['/product-category', specialDeals.productCategoryId , 'view' ]" >{{specialDeals.productCategoryName}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="specialDeals.stockItemId">
+                        <a [routerLink]="['/stock-items', specialDeals.stockItemId , 'view' ]" >{{specialDeals.stockItemId}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/special-deals', specialDeals.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/special-deals', specialDeals.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit" (click)="delete(specialDeals)"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

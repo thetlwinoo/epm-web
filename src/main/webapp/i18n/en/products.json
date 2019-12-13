@@ -1,0 +1,35 @@
+{
+  "epmwebApp": {
+    "products": {
+      "home": {
+        "title": "Products",
+        "createLabel": "Create a new Products",
+        "createOrEditLabel": "Create or edit a Products",
+        "notFound": "No Products found"
+      },
+      "created": "A new Products is created with identifier {{ param }}",
+      "updated": "A Products is updated with identifier {{ param }}",
+      "deleted": "A Products is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Products {{ id }}?"
+      },
+      "detail": {
+        "title": "Products"
+      },
+      "name": "Name",
+      "handle": "Handle",
+      "productNumber": "Product Number",
+      "searchDetails": "Search Details",
+      "sellCount": "Sell Count",
+      "thumbnailList": "Thumbnail List",
+      "activeInd": "Active Ind",
+      "lastEditedBy": "Last Edited By",
+      "lastEditedWhen": "Last Edited When",
+      "productDocument": "Product Document",
+      "stockItemList": "Stock Item List",
+      "supplier": "Supplier",
+      "productCategory": "Product Category",
+      "productBrand": "Product Brand"
+    }
+  }
+}

@@ -1,0 +1,47 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="productSetDetails">
+            <h2><span jhiTranslate="epmwebApp.productSetDetails.detail.title">Product Set Details</span> {{productSetDetails.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="epmwebApp.productSetDetails.subGroupNo">Sub Group No</span></dt>
+                <dd>
+                    <span>{{productSetDetails.subGroupNo}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.productSetDetails.subGroupMinCount">Sub Group Min Count</span></dt>
+                <dd>
+                    <span>{{productSetDetails.subGroupMinCount}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.productSetDetails.subGroupMinTotal">Sub Group Min Total</span></dt>
+                <dd>
+                    <span>{{productSetDetails.subGroupMinTotal}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.productSetDetails.minCount">Min Count</span></dt>
+                <dd>
+                    <span>{{productSetDetails.minCount}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.productSetDetails.maxCount">Max Count</span></dt>
+                <dd>
+                    <span>{{productSetDetails.maxCount}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.productSetDetails.isOptional">Is Optional</span></dt>
+                <dd>
+                    <span>{{productSetDetails.isOptional}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/product-set-details', productSetDetails.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

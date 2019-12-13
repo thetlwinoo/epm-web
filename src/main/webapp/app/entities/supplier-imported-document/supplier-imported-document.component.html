@@ -1,0 +1,73 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="epmwebApp.supplierImportedDocument.home.title">Supplier Imported Documents</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-supplier-imported-document" [routerLink]="['/supplier-imported-document/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="epmwebApp.supplierImportedDocument.home.createLabel">
+            Create a new Supplier Imported Document
+            </span>
+        </button>
+    </h2>
+    <jhi-alert-error></jhi-alert-error>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="supplierImportedDocuments?.length === 0">
+        <span jhiTranslate="epmwebApp.supplierImportedDocument.home.notFound">No supplierImportedDocuments found</span>
+    </div>
+    <div class="table-responsive" *ngIf="supplierImportedDocuments?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+            <tr>
+            <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.supplierImportedDocument.importedTemplate">Imported Template</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.supplierImportedDocument.importedFailedTemplate">Imported Failed Template</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.supplierImportedDocument.lastEditedBy">Last Edited By</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.supplierImportedDocument.lastEditedWhen">Last Edited When</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.supplierImportedDocument.uploadTransaction">Upload Transaction</span></th>
+            <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let supplierImportedDocument of supplierImportedDocuments ;trackBy: trackId">
+                <td><a [routerLink]="['/supplier-imported-document', supplierImportedDocument.id, 'view' ]">{{supplierImportedDocument.id}}</a></td>
+                <td>
+                    <a *ngIf="supplierImportedDocument.importedTemplate" (click)="openFile(supplierImportedDocument.importedTemplateContentType, supplierImportedDocument.importedTemplate)" jhiTranslate="entity.action.open">open</a>
+                    <span *ngIf="supplierImportedDocument.importedTemplate">{{supplierImportedDocument.importedTemplateContentType}}, {{byteSize(supplierImportedDocument.importedTemplate)}}</span>
+                </td>
+                <td>
+                    <a *ngIf="supplierImportedDocument.importedFailedTemplate" (click)="openFile(supplierImportedDocument.importedFailedTemplateContentType, supplierImportedDocument.importedFailedTemplate)" jhiTranslate="entity.action.open">open</a>
+                    <span *ngIf="supplierImportedDocument.importedFailedTemplate">{{supplierImportedDocument.importedFailedTemplateContentType}}, {{byteSize(supplierImportedDocument.importedFailedTemplate)}}</span>
+                </td>
+                <td>{{supplierImportedDocument.lastEditedBy}}</td>
+                <td>{{supplierImportedDocument.lastEditedWhen | date:'medium'}}</td>
+                <td>
+                    <div *ngIf="supplierImportedDocument.uploadTransactionId">
+                        <a [routerLink]="['/upload-transactions', supplierImportedDocument.uploadTransactionId , 'view' ]" >{{supplierImportedDocument.uploadTransactionId}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/supplier-imported-document', supplierImportedDocument.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/supplier-imported-document', supplierImportedDocument.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit" (click)="delete(supplierImportedDocument)"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

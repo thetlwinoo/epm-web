@@ -1,0 +1,31 @@
+{
+  "epmwebApp": {
+    "uploadTransactions": {
+      "home": {
+        "title": "Upload Transactions",
+        "createLabel": "Upload Transactions အသစ်ထည့်မည်",
+        "createOrEditLabel": "Upload Transactions အသစ်ထည့်ခြင်း (သို့) ပြုပြင်ခြင်း",
+        "notFound": "No Upload Transactions found"
+      },
+      "created": "{{ param }} အိုင်ဒီဖြင့် Upload Transactions အသစ်တစ်ခုအား ထည့်ပြီးပါပြီ။",
+      "updated": "{{ param }} အိုင်ဒီဖြင့် Upload Transactions တစ်ခုအား ပြုပြင်ပြီးပါပြီ။",
+      "deleted": "{{ param }} အိုင်ဒီဖြင့် Upload Transactions တစ်ခုအား ဖျက်ပြီးပါပြီ။",
+      "delete": {
+        "question": "Upload Transactions {{ id }} အား ဖျက်ပါမည်။ သေချာပါသလား?"
+      },
+      "detail": {
+        "title": "Upload Transactions"
+      },
+      "fileName": "File Name",
+      "templateUrl": "Template Url",
+      "status": "Status",
+      "generatedCode": "Generated Code",
+      "lastEditedBy": "Last Edited By",
+      "lastEditedWhen": "Last Edited When",
+      "importDocumentList": "Import Document List",
+      "stockItemTempList": "Stock Item Temp List",
+      "supplier": "Supplier",
+      "actionType": "Action Type"
+    }
+  }
+}

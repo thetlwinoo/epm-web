@@ -1,0 +1,65 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="epmwebApp.personEmailAddress.home.title">Person Email Addresses</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-person-email-address" [routerLink]="['/person-email-address/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="epmwebApp.personEmailAddress.home.createLabel">
+            Create a new Person Email Address
+            </span>
+        </button>
+    </h2>
+    <jhi-alert-error></jhi-alert-error>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="personEmailAddresses?.length === 0">
+        <span jhiTranslate="epmwebApp.personEmailAddress.home.notFound">No personEmailAddresses found</span>
+    </div>
+    <div class="table-responsive" *ngIf="personEmailAddresses?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+            <tr>
+            <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.personEmailAddress.emailAddress">Email Address</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.personEmailAddress.defaultInd">Default Ind</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.personEmailAddress.activeInd">Active Ind</span></th>
+            <th scope="col" ><span jhiTranslate="epmwebApp.personEmailAddress.person">Person</span></th>
+            <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let personEmailAddress of personEmailAddresses ;trackBy: trackId">
+                <td><a [routerLink]="['/person-email-address', personEmailAddress.id, 'view' ]">{{personEmailAddress.id}}</a></td>
+                <td>{{personEmailAddress.emailAddress}}</td>
+                <td>{{personEmailAddress.defaultInd}}</td>
+                <td>{{personEmailAddress.activeInd}}</td>
+                <td>
+                    <div *ngIf="personEmailAddress.personId">
+                        <a [routerLink]="['/people', personEmailAddress.personId , 'view' ]" >{{personEmailAddress.personFullName}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/person-email-address', personEmailAddress.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/person-email-address', personEmailAddress.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit" (click)="delete(personEmailAddress)"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

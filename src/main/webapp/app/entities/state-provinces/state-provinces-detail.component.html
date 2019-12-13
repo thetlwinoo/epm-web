@@ -1,0 +1,57 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="stateProvinces">
+            <h2><span jhiTranslate="epmwebApp.stateProvinces.detail.title">State Provinces</span> {{stateProvinces.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="epmwebApp.stateProvinces.code">Code</span></dt>
+                <dd>
+                    <span>{{stateProvinces.code}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stateProvinces.name">Name</span></dt>
+                <dd>
+                    <span>{{stateProvinces.name}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stateProvinces.salesTerritory">Sales Territory</span></dt>
+                <dd>
+                    <span>{{stateProvinces.salesTerritory}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stateProvinces.border">Border</span></dt>
+                <dd>
+                    <span>{{stateProvinces.border}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stateProvinces.latestRecordedPopulation">Latest Recorded Population</span></dt>
+                <dd>
+                    <span>{{stateProvinces.latestRecordedPopulation}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stateProvinces.validFrom">Valid From</span></dt>
+                <dd>
+                    <span>{{stateProvinces.validFrom}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stateProvinces.validTo">Valid To</span></dt>
+                <dd>
+                    <span>{{stateProvinces.validTo}}</span>
+                </dd>
+                <dt><span jhiTranslate="epmwebApp.stateProvinces.country">Country</span></dt>
+                <dd>
+                    <div *ngIf="stateProvinces.countryId">
+                        <a [routerLink]="['/countries', stateProvinces.countryId, 'view']">{{stateProvinces.countryName}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/state-provinces', stateProvinces.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

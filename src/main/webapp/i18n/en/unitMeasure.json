@@ -1,0 +1,23 @@
+{
+  "epmwebApp": {
+    "unitMeasure": {
+      "home": {
+        "title": "Unit Measures",
+        "createLabel": "Create a new Unit Measure",
+        "createOrEditLabel": "Create or edit a Unit Measure",
+        "notFound": "No Unit Measures found"
+      },
+      "created": "A new Unit Measure is created with identifier {{ param }}",
+      "updated": "A Unit Measure is updated with identifier {{ param }}",
+      "deleted": "A Unit Measure is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Unit Measure {{ id }}?"
+      },
+      "detail": {
+        "title": "Unit Measure"
+      },
+      "code": "Code",
+      "name": "Name"
+    }
+  }
+}

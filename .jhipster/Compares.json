@@ -1,0 +1,30 @@
+{
+    "name": "Compares",
+    "fields": [],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "people",
+            "otherEntityRelationshipName": "compare",
+            "relationshipName": "compareUser",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "compareProducts",
+            "otherEntityRelationshipName": "compare",
+            "relationshipName": "compareList"
+        }
+    ],
+    "changelogDate": "20191213033200",
+    "entityTableName": "compares",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": true,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

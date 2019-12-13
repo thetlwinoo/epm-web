@@ -1,0 +1,117 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-stock-item-holdings-heading" jhiTranslate="epmwebApp.stockItemHoldings.home.createOrEditLabel">Create or edit a Stock Item Holdings</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.stockItemHoldings.quantityOnHand" for="field_quantityOnHand">Quantity On Hand</label>
+                    <input type="number" class="form-control" name="quantityOnHand" id="field_quantityOnHand"
+                           formControlName="quantityOnHand"/>
+                    <div *ngIf="editForm.get('quantityOnHand').invalid && (editForm.get('quantityOnHand').dirty || editForm.get('quantityOnHand').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('quantityOnHand').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('quantityOnHand')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.stockItemHoldings.binLocation" for="field_binLocation">Bin Location</label>
+                    <input type="text" class="form-control" name="binLocation" id="field_binLocation"
+                           formControlName="binLocation"/>
+                    <div *ngIf="editForm.get('binLocation').invalid && (editForm.get('binLocation').dirty || editForm.get('binLocation').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('binLocation').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.stockItemHoldings.lastStocktakeQuantity" for="field_lastStocktakeQuantity">Last Stocktake Quantity</label>
+                    <input type="number" class="form-control" name="lastStocktakeQuantity" id="field_lastStocktakeQuantity"
+                           formControlName="lastStocktakeQuantity"/>
+                    <div *ngIf="editForm.get('lastStocktakeQuantity').invalid && (editForm.get('lastStocktakeQuantity').dirty || editForm.get('lastStocktakeQuantity').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('lastStocktakeQuantity').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('lastStocktakeQuantity')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.stockItemHoldings.lastCostPrice" for="field_lastCostPrice">Last Cost Price</label>
+                    <input type="number" class="form-control" name="lastCostPrice" id="field_lastCostPrice"
+                           formControlName="lastCostPrice"/>
+                    <div *ngIf="editForm.get('lastCostPrice').invalid && (editForm.get('lastCostPrice').dirty || editForm.get('lastCostPrice').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('lastCostPrice').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('lastCostPrice')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.stockItemHoldings.reorderLevel" for="field_reorderLevel">Reorder Level</label>
+                    <input type="number" class="form-control" name="reorderLevel" id="field_reorderLevel"
+                           formControlName="reorderLevel"/>
+                    <div *ngIf="editForm.get('reorderLevel').invalid && (editForm.get('reorderLevel').dirty || editForm.get('reorderLevel').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('reorderLevel').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('reorderLevel')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.stockItemHoldings.targerStockLevel" for="field_targerStockLevel">Targer Stock Level</label>
+                    <input type="number" class="form-control" name="targerStockLevel" id="field_targerStockLevel"
+                           formControlName="targerStockLevel"/>
+                    <div *ngIf="editForm.get('targerStockLevel').invalid && (editForm.get('targerStockLevel').dirty || editForm.get('targerStockLevel').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('targerStockLevel').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('targerStockLevel')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="epmwebApp.stockItemHoldings.stockItemHoldingOnStockItem" for="field_stockItemHoldingOnStockItem">Stock Item Holding On Stock Item</label>
+                    <select class="form-control" id="field_stockItemHoldingOnStockItem" name="stockItemHoldingOnStockItem" formControlName="stockItemHoldingOnStockItemId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="stockItemsOption.id" *ngFor="let stockItemsOption of stockitemholdingonstockitems; trackBy: trackStockItemsById">{{stockItemsOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,11 @@
+id;supplier_invoice_number;transaction_date;amount_excluding_tax;tax_amount;transaction_amount;outstanding_balance;finalization_date;is_finalized;last_edited_by;last_edited_when
+1;Granite FTP;2019-12-12T05:22:11;60637;48706;13919;60625;2019-12-12T05:57:28;true;Gloves Cambridgeshire revolutionize;2019-12-13T00:00:10
+2;leading-edge Sleek Steel Hat;2019-12-13T00:16:18;23255;96311;7996;54952;2019-12-12T08:52:28;true;e-markets;2019-12-12T20:01:56
+3;Cambridgeshire solutions Refined;2019-12-12T12:08:10;33;21603;1768;61958;2019-12-12T13:03:17;true;Shirt Awesome Soft Mouse;2019-12-12T16:28:50
+4;Sleek Frozen Cheese;2019-12-13T02:07:44;61949;69503;29735;98367;2019-12-12T17:11:16;false;Steel;2019-12-13T00:36:09
+5;data-warehouse Intelligent Saudi Riyal;2019-12-13T02:01:15;61805;50942;63318;99669;2019-12-12T22:01:20;true;Savings Account;2019-12-12T20:09:57
+6;Credit Card Account;2019-12-12T14:52:01;84801;42608;72431;13071;2019-12-12T08:30:21;true;Ports pink;2019-12-12T18:41:23
+7;supply-chains hacking;2019-12-12T09:54:33;38707;76930;96382;1103;2019-12-12T21:33:00;false;Land;2019-12-13T03:03:18
+8;logistical synthesize Concrete;2019-12-12T14:40:06;61894;21520;32350;1212;2019-12-12T07:29:34;false;Officer primary;2019-12-12T04:29:10
+9;Berkshire;2019-12-13T00:52:56;26585;54795;64609;45437;2019-12-12T15:31:55;true;Rustic;2019-12-12T15:47:53
+10;Pizza;2019-12-12T19:43:25;24347;73735;65171;47601;2019-12-12T08:03:34;false;exploit Key;2019-12-12T08:40:32

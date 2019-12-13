@@ -1,0 +1,25 @@
+{
+  "epmwebApp": {
+    "paymentTransactions": {
+      "home": {
+        "title": "Payment Transactions",
+        "createLabel": "Create a new Payment Transactions",
+        "createOrEditLabel": "Create or edit a Payment Transactions",
+        "notFound": "No Payment Transactions found"
+      },
+      "created": "A new Payment Transactions is created with identifier {{ param }}",
+      "updated": "A Payment Transactions is updated with identifier {{ param }}",
+      "deleted": "A Payment Transactions is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Payment Transactions {{ id }}?"
+      },
+      "detail": {
+        "title": "Payment Transactions"
+      },
+      "returnedCompletedPaymentData": "Returned Completed Payment Data",
+      "lastEditedBy": "Last Edited By",
+      "lastEditedWhen": "Last Edited When",
+      "paymentOnOrder": "Payment On Order"
+    }
+  }
+}

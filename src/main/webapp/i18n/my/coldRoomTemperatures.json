@@ -1,0 +1,26 @@
+{
+  "epmwebApp": {
+    "coldRoomTemperatures": {
+      "home": {
+        "title": "Cold Room Temperatures",
+        "createLabel": "Cold Room Temperatures အသစ်ထည့်မည်",
+        "createOrEditLabel": "Cold Room Temperatures အသစ်ထည့်ခြင်း (သို့) ပြုပြင်ခြင်း",
+        "notFound": "No Cold Room Temperatures found"
+      },
+      "created": "{{ param }} အိုင်ဒီဖြင့် Cold Room Temperatures အသစ်တစ်ခုအား ထည့်ပြီးပါပြီ။",
+      "updated": "{{ param }} အိုင်ဒီဖြင့် Cold Room Temperatures တစ်ခုအား ပြုပြင်ပြီးပါပြီ။",
+      "deleted": "{{ param }} အိုင်ဒီဖြင့် Cold Room Temperatures တစ်ခုအား ဖျက်ပြီးပါပြီ။",
+      "delete": {
+        "question": "Cold Room Temperatures {{ id }} အား ဖျက်ပါမည်။ သေချာပါသလား?"
+      },
+      "detail": {
+        "title": "Cold Room Temperatures"
+      },
+      "coldRoomSensorNumber": "Cold Room Sensor Number",
+      "recordedWhen": "Recorded When",
+      "temperature": "Temperature",
+      "validFrom": "Valid From",
+      "validTo": "Valid To"
+    }
+  }
+}
