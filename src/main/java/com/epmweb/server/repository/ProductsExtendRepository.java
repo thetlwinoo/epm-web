@@ -16,9 +16,9 @@ public interface ProductsExtendRepository extends ProductsRepository{
 
     List<Products> findAllByProductCategoryIdIsNotOrderBySellCountDesc(Long productCategoryId, Pageable pageable);
 
-    List<Products> findAllByProductNameContainingIgnoreCase(String name, Pageable pageable);
+    List<Products> findAllByNameContainingIgnoreCase(String name, Pageable pageable);
 
-    List<Products> findAllByProductNameContainingIgnoreCase(String name);
+    List<Products> findAllByNameContainingIgnoreCase(String name);
 
     Products findProductsById(Long id);
 }
