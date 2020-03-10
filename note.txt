@@ -1,0 +1,43 @@
+domain>
+	ShoppingCarts>>
+	 @OneToMany(mappedBy = "cart",cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true)
+	ShoppingCartItems>>
+	 @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH})
+
+	Invoices>>
+	InvoiceLines>>
+
+	Orders>>
+	OrderLines>>
+
+	Orders
+	@OneToOne(mappedBy = "paymentOnOrder", cascade = CascadeType.ALL, orphanRemoval = true)
+
+	Wishlists>>
+	WishlistProducts>>
+
+	Compare>>
+	CompareProducts>>
+
+	PurchaseOrders>>
+	PurchaseOrderLines>>
+
+	StockItems>>
+	Photos>>
+
+	StockItems>>
+	SpecialDeals>>
+
+	Products>>
+	StockItems>>
+
+	people
+	@OneToOne(mappedBy = "cartUser", cascade = CascadeType.ALL, orphanRemoval = true)
+	>>
+	>>
+
+
+
+	Reviews
+	@OneToOne(mappedBy = "review", cascade = CascadeType.ALL, orphanRemoval = true)
+	ReviewLines>>

@@ -2,6 +2,7 @@ package com.epmweb.server.web.rest;
 
 import com.epmweb.server.EpmwebApp;
 import com.epmweb.server.config.TestSecurityConfiguration;
+import com.epmweb.server.service.OrdersExtendService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.MockitoAnnotations;
@@ -20,12 +21,17 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 public class OrdersExtendResourceIT {
 
     private MockMvc restMockMvc;
+    private final OrdersExtendService ordersExtendService;
+
+    public OrdersExtendResourceIT(OrdersExtendService ordersExtendService) {
+        this.ordersExtendService = ordersExtendService;
+    }
 
     @BeforeEach
     public void setUp() {
         MockitoAnnotations.initMocks(this);
 
-        OrdersExtendResource ordersExtendResource = new OrdersExtendResource();
+        OrdersExtendResource ordersExtendResource = new OrdersExtendResource(ordersExtendService);
         restMockMvc = MockMvcBuilders
             .standaloneSetup(ordersExtendResource)
             .build();

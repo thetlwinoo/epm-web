@@ -108,11 +108,11 @@ public class Photos implements Serializable {
     @Column(name = "default_ind")
     private Boolean defaultInd;
 
-    @ManyToOne
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH})
     @JsonIgnoreProperties("photoLists")
     private StockItems stockItem;
 
-    @ManyToOne
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH})
     @JsonIgnoreProperties("photoLists")
     private ProductCategory productCategory;
 

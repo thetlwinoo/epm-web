@@ -27,7 +27,7 @@ public class Compares implements Serializable {
     @JoinColumn(unique = true)
     private People compareUser;
 
-    @OneToMany(mappedBy = "compare")
+    @OneToMany(mappedBy = "compare",cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true)
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<CompareProducts> compareLists = new HashSet<>();
 

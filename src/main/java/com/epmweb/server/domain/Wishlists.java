@@ -27,7 +27,7 @@ public class Wishlists implements Serializable {
     @JoinColumn(unique = true)
     private People wishlistUser;
 
-    @OneToMany(mappedBy = "wishlist")
+    @OneToMany(mappedBy = "wishlist",cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true)
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<WishlistProducts> wishlistLists = new HashSet<>();
 

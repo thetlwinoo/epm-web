@@ -42,7 +42,7 @@ public class ShoppingCarts implements Serializable {
     @JoinColumn(unique = true)
     private People cartUser;
 
-    @OneToMany(mappedBy = "cart")
+    @OneToMany(mappedBy = "cart",cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true)
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<ShoppingCartItems> cartItemLists = new HashSet<>();
 

@@ -2,6 +2,7 @@ package com.epmweb.server.web.rest;
 
 import com.epmweb.server.EpmwebApp;
 import com.epmweb.server.config.TestSecurityConfiguration;
+import com.epmweb.server.service.ProductCategoryExtendService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.MockitoAnnotations;
@@ -20,12 +21,17 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 public class ProductCategoryExtendResourceIT {
 
     private MockMvc restMockMvc;
+    private final ProductCategoryExtendService productCategoryExtendService;
+
+    public ProductCategoryExtendResourceIT(ProductCategoryExtendService productCategoryExtendService) {
+        this.productCategoryExtendService = productCategoryExtendService;
+    }
 
     @BeforeEach
     public void setUp() {
         MockitoAnnotations.initMocks(this);
 
-        ProductCategoryExtendResource productCategoryExtendResource = new ProductCategoryExtendResource();
+        ProductCategoryExtendResource productCategoryExtendResource = new ProductCategoryExtendResource(productCategoryExtendService);
         restMockMvc = MockMvcBuilders
             .standaloneSetup(productCategoryExtendResource)
             .build();

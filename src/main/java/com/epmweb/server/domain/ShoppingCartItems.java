@@ -36,7 +36,7 @@ public class ShoppingCartItems implements Serializable {
     @JsonIgnoreProperties("shoppingCartItems")
     private StockItems stockItem;
 
-    @ManyToOne
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH})
     @JsonIgnoreProperties("cartItemLists")
     private ShoppingCarts cart;
 

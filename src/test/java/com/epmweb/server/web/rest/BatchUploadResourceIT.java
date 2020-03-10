@@ -2,6 +2,8 @@ package com.epmweb.server.web.rest;
 
 import com.epmweb.server.EpmwebApp;
 import com.epmweb.server.config.TestSecurityConfiguration;
+import com.epmweb.server.service.BatchUploadService;
+import com.epmweb.server.service.ProductsService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.MockitoAnnotations;
@@ -20,12 +22,19 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 public class BatchUploadResourceIT {
 
     private MockMvc restMockMvc;
+    private final ProductsService productsService;
+    private final BatchUploadService batchUploadService;
+
+    public BatchUploadResourceIT(ProductsService productsService, BatchUploadService batchUploadService) {
+        this.productsService = productsService;
+        this.batchUploadService = batchUploadService;
+    }
 
     @BeforeEach
     public void setUp() {
         MockitoAnnotations.initMocks(this);
 
-        BatchUploadResource batchUploadResource = new BatchUploadResource();
+        BatchUploadResource batchUploadResource = new BatchUploadResource(productsService,batchUploadService);
         restMockMvc = MockMvcBuilders
             .standaloneSetup(batchUploadResource)
             .build();

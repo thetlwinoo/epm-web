@@ -26,7 +26,7 @@ public class WishlistProducts implements Serializable {
     @JsonIgnoreProperties("wishlistProducts")
     private Products product;
 
-    @ManyToOne
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH})
     @JsonIgnoreProperties("wishlistLists")
     private Wishlists wishlist;
 

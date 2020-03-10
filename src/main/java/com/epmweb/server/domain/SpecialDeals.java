@@ -57,11 +57,11 @@ public class SpecialDeals implements Serializable {
     @Column(name = "last_edited_when")
     private Instant lastEditedWhen;
 
-    @OneToMany(mappedBy = "specialDeals")
+    @OneToMany(mappedBy = "specialDeals",cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true)
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<ShoppingCarts> cartDiscounts = new HashSet<>();
 
-    @OneToMany(mappedBy = "specialDeals")
+    @OneToMany(mappedBy = "specialDeals",cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true)
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<Orders> orderDiscounts = new HashSet<>();
 

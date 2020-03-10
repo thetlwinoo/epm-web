@@ -92,14 +92,14 @@ public class ProductsExtendServiceImpl implements ProductsExtendService {
             throw new IllegalArgumentException("Page and size parameters are required");
         }
         PageRequest pageRequest = PageRequest.of(page, size);
-        return productsExtendRepository.findAllByProductNameContainingIgnoreCase(keyword, pageRequest).stream()
+        return productsExtendRepository.findAllByNameContainingIgnoreCase(keyword, pageRequest).stream()
             .map(productsMapper::toDto)
             .collect(Collectors.toCollection(LinkedList::new));
     }
 
     @Override
     public List<ProductsDTO> searchProductsAll(String keyword) {
-        return productsExtendRepository.findAllByProductNameContainingIgnoreCase(keyword).stream()
+        return productsExtendRepository.findAllByNameContainingIgnoreCase(keyword).stream()
             .map(productsMapper::toDto)
             .collect(Collectors.toCollection(LinkedList::new));
     }

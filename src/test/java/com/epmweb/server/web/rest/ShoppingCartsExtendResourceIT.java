@@ -2,8 +2,7 @@ package com.epmweb.server.web.rest;
 
 import com.epmweb.server.EpmwebApp;
 import com.epmweb.server.config.TestSecurityConfiguration;
-import com.epmweb.server.repository.PhotosExtendRepository;
-import com.epmweb.server.service.PhotosExtendService;
+import com.epmweb.server.service.ShoppingCartsExtendService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.MockitoAnnotations;
@@ -14,29 +13,27 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 /**
- * Test class for the PhotosExtendResource REST controller.
+ * Test class for the ShoppingCartsExtendResource REST controller.
  *
- * @see PhotosExtendResource
+ * @see ShoppingCartsExtendResource
  */
 @SpringBootTest(classes = {EpmwebApp.class, TestSecurityConfiguration.class})
-public class PhotosExtendResourceIT {
+public class ShoppingCartsExtendResourceIT {
 
     private MockMvc restMockMvc;
-    private final PhotosExtendService photosExtendService;
-    private final PhotosExtendRepository photosExtendRepository;
+    private final ShoppingCartsExtendService cartService;
 
-    public PhotosExtendResourceIT(PhotosExtendService photosExtendService, PhotosExtendRepository photosExtendRepository) {
-        this.photosExtendService = photosExtendService;
-        this.photosExtendRepository = photosExtendRepository;
+    public ShoppingCartsExtendResourceIT(ShoppingCartsExtendService cartService) {
+        this.cartService = cartService;
     }
 
     @BeforeEach
     public void setUp() {
         MockitoAnnotations.initMocks(this);
 
-        PhotosExtendResource photosExtendResource = new PhotosExtendResource(photosExtendService,photosExtendRepository);
+        ShoppingCartsExtendResource shoppingCartsExtendResource = new ShoppingCartsExtendResource(cartService);
         restMockMvc = MockMvcBuilders
-            .standaloneSetup(photosExtendResource)
+            .standaloneSetup(shoppingCartsExtendResource)
             .build();
     }
 
@@ -45,7 +42,7 @@ public class PhotosExtendResourceIT {
      */
     @Test
     public void testDefaultAction() throws Exception {
-        restMockMvc.perform(get("/api/photos-extend/default-action"))
+        restMockMvc.perform(get("/api/shopping-carts-extend/default-action"))
             .andExpect(status().isOk());
     }
 }

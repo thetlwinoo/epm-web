@@ -61,7 +61,7 @@ public class PurchaseOrderLines implements Serializable {
     @JsonIgnoreProperties("purchaseOrderLines")
     private StockItems stockItem;
 
-    @ManyToOne
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH})
     @JsonIgnoreProperties("purchaseOrderLineLists")
     private PurchaseOrders purchaseOrder;
 

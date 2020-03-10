@@ -66,7 +66,7 @@ public class InvoiceLines implements Serializable {
     @JsonIgnoreProperties("invoiceLines")
     private StockItems stockItem;
 
-    @ManyToOne
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH})
     @JsonIgnoreProperties("invoiceLineLists")
     private Invoices invoice;
 

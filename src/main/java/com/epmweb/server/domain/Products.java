@@ -61,7 +61,7 @@ public class Products implements Serializable {
     @JoinColumn(unique = true)
     private ProductDocument productDocument;
 
-    @OneToMany(mappedBy = "product")
+    @OneToMany(mappedBy = "product",cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true)
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<StockItems> stockItemLists = new HashSet<>();
 

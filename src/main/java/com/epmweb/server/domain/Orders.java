@@ -88,7 +88,7 @@ public class Orders implements Serializable {
     @JoinColumn(unique = true)
     private Reviews orderOnReview;
 
-    @OneToMany(mappedBy = "order")
+    @OneToMany(mappedBy = "order",cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true)
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<OrderLines> orderLineLists = new HashSet<>();
 
@@ -112,7 +112,7 @@ public class Orders implements Serializable {
     @JsonIgnoreProperties("orders")
     private CurrencyRate currencyRate;
 
-    @OneToOne(mappedBy = "paymentOnOrder")
+    @OneToOne(mappedBy = "paymentOnOrder", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonIgnore
     private PaymentTransactions paymentTransaction;
 
